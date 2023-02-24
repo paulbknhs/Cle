@@ -1,0 +1,16 @@
+﻿CREATE TABLE [SGB VIII] (
+Jahr  VARCHAR(255),
+Anmeldenummer  VARCHAR(255),
+Abschlussgrund VARCHAR(255),
+Wartezeit  VARCHAR(255),
+Wohnort VARCHAR(255),
+Anmeldung_durch VARCHAR(255),
+Anregung_durch VARCHAR(255),
+Art_der_Leistung VARCHAR(255),
+Geschlecht VARCHAR(255),
+Migrationshintergrund VARCHAR(255),
+Wirtschaftliche_Situation VARCHAR(255),
+Herkunftshaushalt VARCHAR(255),
+Hilfe_Nr  VARCHAR(255),
+Stunden  VARCHAR(255),
+);
