@@ -33,7 +33,9 @@
             this.dropStaat = new CregForm.Controls.DropDown();
             this.label1 = new System.Windows.Forms.Label();
             this.numBeratungszeit = new System.Windows.Forms.NumericUpDown();
-            this.tbLfdNummer = new CustomControls.RJControls.RJTextBox();
+            this.tbLaufnummer = new CustomControls.RJControls.RJTextBox();
+            this.buttonSave = new RJCodeAdvance.RJControls.RJButton();
+            this.dropAlter = new CregForm.Controls.DropDown();
             ((System.ComponentModel.ISupportInitialize)(this.numBeratungszeit)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,36 +125,78 @@
             this.numBeratungszeit.Size = new System.Drawing.Size(70, 23);
             this.numBeratungszeit.TabIndex = 12;
             // 
-            // tbLfdNummer
+            // tbLaufnummer
             // 
-            this.tbLfdNummer.BackColor = System.Drawing.SystemColors.Window;
-            this.tbLfdNummer.BorderColor = System.Drawing.Color.Black;
-            this.tbLfdNummer.BorderFocusColor = System.Drawing.Color.Green;
-            this.tbLfdNummer.BorderRadius = 0;
-            this.tbLfdNummer.BorderSize = 1;
-            this.tbLfdNummer.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbLfdNummer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbLfdNummer.Location = new System.Drawing.Point(40, 100);
-            this.tbLfdNummer.Margin = new System.Windows.Forms.Padding(10);
-            this.tbLfdNummer.Multiline = false;
-            this.tbLfdNummer.Name = "tbLfdNummer";
-            this.tbLfdNummer.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.tbLfdNummer.PasswordChar = false;
-            this.tbLfdNummer.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbLfdNummer.PlaceholderText = "Laufende Nummer";
-            this.tbLfdNummer.Size = new System.Drawing.Size(200, 32);
-            this.tbLfdNummer.TabIndex = 14;
-            this.tbLfdNummer.Texts = "";
-            this.tbLfdNummer.UnderlinedStyle = true;
+            this.tbLaufnummer.BackColor = System.Drawing.SystemColors.Window;
+            this.tbLaufnummer.BorderColor = System.Drawing.Color.Black;
+            this.tbLaufnummer.BorderFocusColor = System.Drawing.Color.Green;
+            this.tbLaufnummer.BorderRadius = 0;
+            this.tbLaufnummer.BorderSize = 1;
+            this.tbLaufnummer.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbLaufnummer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbLaufnummer.Location = new System.Drawing.Point(40, 100);
+            this.tbLaufnummer.Margin = new System.Windows.Forms.Padding(10);
+            this.tbLaufnummer.Multiline = false;
+            this.tbLaufnummer.Name = "tbLaufnummer";
+            this.tbLaufnummer.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.tbLaufnummer.PasswordChar = false;
+            this.tbLaufnummer.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.tbLaufnummer.PlaceholderText = "Laufende Nummer";
+            this.tbLaufnummer.Size = new System.Drawing.Size(200, 32);
+            this.tbLaufnummer.TabIndex = 14;
+            this.tbLaufnummer.Texts = "";
+            this.tbLaufnummer.UnderlinedStyle = true;
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.BackColor = System.Drawing.Color.White;
+            this.buttonSave.BackgroundColor = System.Drawing.Color.White;
+            this.buttonSave.BorderColor = System.Drawing.Color.Black;
+            this.buttonSave.BorderRadius = 0;
+            this.buttonSave.BorderSize = 1;
+            this.buttonSave.FlatAppearance.BorderSize = 0;
+            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSave.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonSave.ForeColor = System.Drawing.Color.Black;
+            this.buttonSave.Location = new System.Drawing.Point(258, 541);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(200, 40);
+            this.buttonSave.TabIndex = 15;
+            this.buttonSave.Text = "Speichern";
+            this.buttonSave.TextColor = System.Drawing.Color.Black;
+            this.buttonSave.UseVisualStyleBackColor = false;
+            this.buttonSave.Click += new System.EventHandler(this.OnButtonSave);
+            // 
+            // dropAlter
+            // 
+            this.dropAlter.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.dropAlter.BorderColor = System.Drawing.Color.Black;
+            this.dropAlter.BorderSize = 1;
+            this.dropAlter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dropAlter.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dropAlter.ForeColor = System.Drawing.Color.DimGray;
+            this.dropAlter.IconColor = System.Drawing.Color.Black;
+            this.dropAlter.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.dropAlter.ListTextColor = System.Drawing.Color.DimGray;
+            this.dropAlter.Location = new System.Drawing.Point(260, 100);
+            this.dropAlter.Margin = new System.Windows.Forms.Padding(10);
+            this.dropAlter.MinimumSize = new System.Drawing.Size(200, 30);
+            this.dropAlter.Name = "dropAlter";
+            this.dropAlter.Padding = new System.Windows.Forms.Padding(1);
+            this.dropAlter.Size = new System.Drawing.Size(200, 32);
+            this.dropAlter.TabIndex = 10;
+            this.dropAlter.Texts = "";
             // 
             // AllgSgs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.tbLfdNummer);
+            this.Controls.Add(this.buttonSave);
+            this.Controls.Add(this.tbLaufnummer);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.numBeratungszeit);
             this.Controls.Add(this.dropErwerb);
+            this.Controls.Add(this.dropAlter);
             this.Controls.Add(this.dropStand);
             this.Controls.Add(this.dropStaat);
             this.Name = "AllgSgs";
@@ -171,6 +215,8 @@
         private Controls.DropDown dropStaat;
         private Label label1;
         private NumericUpDown numBeratungszeit;
-        private CustomControls.RJControls.RJTextBox tbLfdNummer;
+        private CustomControls.RJControls.RJTextBox tbLaufnummer;
+        private RJCodeAdvance.RJControls.RJButton buttonSave;
+        private Controls.DropDown dropAlter;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -22,6 +23,20 @@ namespace CregForm.AddSpecific
         {
             dropErwerb.DataSource = LSTS.P2aErwerb;
             dropStand.DataSource = LSTS.P2aStand;
+        }
+
+        private void OnButtonSave(object sender, EventArgs e)
+        {
+            DICT.P2a.Clear();
+            
+            DICT.P2a.Add("Jahr", DICT.Allgemein["Jahr"]);
+            DSTR.StoreDropDownContent(this, DICT.P2a);
+            DSTR.StoreNumBoxContent(this, DICT.P2a);
+
+            DatabaseHelper database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+            database.Connect();
+            database.InsertData("§ 2a", DICT.P2a);
+            database.Disconnect();
         }
     }
 }

@@ -35,6 +35,9 @@
             this.dropBelastung = new CregForm.Controls.DropDown();
             this.dropBasis = new CregForm.Controls.DropDown();
             this.dropEinsZwei = new CregForm.Controls.DropDown();
+            this.buttonSave = new RJCodeAdvance.RJControls.RJButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // dropWochen
@@ -177,10 +180,53 @@
             this.dropEinsZwei.TabIndex = 18;
             this.dropEinsZwei.Texts = "";
             // 
+            // buttonSave
+            // 
+            this.buttonSave.BackColor = System.Drawing.Color.White;
+            this.buttonSave.BackgroundColor = System.Drawing.Color.White;
+            this.buttonSave.BorderColor = System.Drawing.Color.Black;
+            this.buttonSave.BorderRadius = 0;
+            this.buttonSave.BorderSize = 1;
+            this.buttonSave.FlatAppearance.BorderSize = 0;
+            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSave.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonSave.ForeColor = System.Drawing.Color.Black;
+            this.buttonSave.Location = new System.Drawing.Point(258, 541);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(200, 40);
+            this.buttonSave.TabIndex = 19;
+            this.buttonSave.Text = "Speichern";
+            this.buttonSave.TextColor = System.Drawing.Color.Black;
+            this.buttonSave.UseVisualStyleBackColor = false;
+            this.buttonSave.Click += new System.EventHandler(this.OnButtonSave);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(40, 170);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 20);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Basis";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(258, 170);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 20);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Komplett";
+            // 
             // ARGE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.dropEinsZwei);
             this.Controls.Add(this.dropBasis);
             this.Controls.Add(this.dropBelastung);
@@ -192,6 +238,7 @@
             this.Size = new System.Drawing.Size(500, 590);
             this.Load += new System.EventHandler(this.ARGE_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -204,5 +251,8 @@
         private Controls.DropDown dropBelastung;
         private Controls.DropDown dropBasis;
         private Controls.DropDown dropEinsZwei;
+        private RJCodeAdvance.RJControls.RJButton buttonSave;
+        private Label label1;
+        private Label label2;
     }
 }

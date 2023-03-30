@@ -181,6 +181,7 @@ public partial class AddView : UserControl
         SetDropDowns();
         InitializeContent();
         SetGridAlter();
+        panelBlocker.Visible = false;
     }
 
     private void OnToggle(object sender, EventArgs e)
@@ -221,6 +222,31 @@ public partial class AddView : UserControl
         database.Connect();
         database.InsertData("Allgemein", DICT.Allgemein);
         database.Disconnect();
+
+        panelBlocker.Visible = false;
+
+    }
+
+    private void OnButtonFill(object sender, EventArgs e)
+    {
+        tbJahr.Texts = "0000";
+        tbAnmeldenummer.Texts = "0000";
+        tbName.Texts = "ABC";
+        tbWohnort.Texts = "01234";
+
+        dropARGE.SelectedIndex = 1;
+        dropBeratung.SelectedIndex = 1;
+        dropMigra.SelectedIndex = 1;
+        dropAnregung.SelectedIndex = 1;
+
+        gridAlter.Rows[0].Cells[1].Value = "11";
+        gridAlter.Rows[2].Cells[2].Value = "22";
+
+
+    }
+
+    private void label3_Click(object sender, EventArgs e)
+    {
 
     }
 }

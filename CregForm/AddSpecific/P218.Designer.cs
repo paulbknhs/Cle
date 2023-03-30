@@ -56,8 +56,11 @@
             this.dropStand = new CregForm.Controls.DropDown();
             this.dropVerhütung = new CregForm.Controls.DropDown();
             this.dropErwerb = new CregForm.Controls.DropDown();
-            this.tbErlauterung = new CustomControls.RJControls.RJTextBox();
-            this.tbLfdNummer = new CustomControls.RJControls.RJTextBox();
+            this.tbErläuterung = new CustomControls.RJControls.RJTextBox();
+            this.tbLaufnummer = new CustomControls.RJControls.RJTextBox();
+            this.buttonSave = new RJCodeAdvance.RJControls.RJButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.toggleTelefonberatung = new RJCodeAdvance.RJControls.RJToggleButton();
             ((System.ComponentModel.ISupportInitialize)(this.numBeratungszeit)).BeginInit();
             this.grpAnm.SuspendLayout();
             this.SuspendLayout();
@@ -409,56 +412,102 @@
             this.dropErwerb.TabIndex = 11;
             this.dropErwerb.Texts = "";
             // 
-            // tbErlauterung
+            // tbErläuterung
             // 
-            this.tbErlauterung.BackColor = System.Drawing.SystemColors.Window;
-            this.tbErlauterung.BorderColor = System.Drawing.Color.Black;
-            this.tbErlauterung.BorderFocusColor = System.Drawing.Color.Green;
-            this.tbErlauterung.BorderRadius = 0;
-            this.tbErlauterung.BorderSize = 1;
-            this.tbErlauterung.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbErlauterung.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbErlauterung.Location = new System.Drawing.Point(40, 548);
-            this.tbErlauterung.Margin = new System.Windows.Forms.Padding(10);
-            this.tbErlauterung.Multiline = false;
-            this.tbErlauterung.Name = "tbErlauterung";
-            this.tbErlauterung.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.tbErlauterung.PasswordChar = false;
-            this.tbErlauterung.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbErlauterung.PlaceholderText = "Erläuterung zu anderen Gründen";
-            this.tbErlauterung.Size = new System.Drawing.Size(420, 32);
-            this.tbErlauterung.TabIndex = 6;
-            this.tbErlauterung.Texts = "";
-            this.tbErlauterung.UnderlinedStyle = true;
+            this.tbErläuterung.BackColor = System.Drawing.SystemColors.Window;
+            this.tbErläuterung.BorderColor = System.Drawing.Color.Black;
+            this.tbErläuterung.BorderFocusColor = System.Drawing.Color.Green;
+            this.tbErläuterung.BorderRadius = 0;
+            this.tbErläuterung.BorderSize = 1;
+            this.tbErläuterung.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbErläuterung.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbErläuterung.Location = new System.Drawing.Point(40, 548);
+            this.tbErläuterung.Margin = new System.Windows.Forms.Padding(10);
+            this.tbErläuterung.Multiline = false;
+            this.tbErläuterung.Name = "tbErläuterung";
+            this.tbErläuterung.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.tbErläuterung.PasswordChar = false;
+            this.tbErläuterung.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.tbErläuterung.PlaceholderText = "Erläuterung zu anderen Gründen";
+            this.tbErläuterung.Size = new System.Drawing.Size(200, 32);
+            this.tbErläuterung.TabIndex = 6;
+            this.tbErläuterung.Texts = "";
+            this.tbErläuterung.UnderlinedStyle = true;
             // 
-            // tbLfdNummer
+            // tbLaufnummer
             // 
-            this.tbLfdNummer.BackColor = System.Drawing.SystemColors.Window;
-            this.tbLfdNummer.BorderColor = System.Drawing.Color.Black;
-            this.tbLfdNummer.BorderFocusColor = System.Drawing.Color.Green;
-            this.tbLfdNummer.BorderRadius = 0;
-            this.tbLfdNummer.BorderSize = 1;
-            this.tbLfdNummer.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbLfdNummer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbLfdNummer.Location = new System.Drawing.Point(40, 77);
-            this.tbLfdNummer.Margin = new System.Windows.Forms.Padding(10);
-            this.tbLfdNummer.Multiline = false;
-            this.tbLfdNummer.Name = "tbLfdNummer";
-            this.tbLfdNummer.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.tbLfdNummer.PasswordChar = false;
-            this.tbLfdNummer.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbLfdNummer.PlaceholderText = "Laufende Nummer";
-            this.tbLfdNummer.Size = new System.Drawing.Size(200, 32);
-            this.tbLfdNummer.TabIndex = 15;
-            this.tbLfdNummer.Texts = "";
-            this.tbLfdNummer.UnderlinedStyle = true;
+            this.tbLaufnummer.BackColor = System.Drawing.SystemColors.Window;
+            this.tbLaufnummer.BorderColor = System.Drawing.Color.Black;
+            this.tbLaufnummer.BorderFocusColor = System.Drawing.Color.Green;
+            this.tbLaufnummer.BorderRadius = 0;
+            this.tbLaufnummer.BorderSize = 1;
+            this.tbLaufnummer.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbLaufnummer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbLaufnummer.Location = new System.Drawing.Point(40, 40);
+            this.tbLaufnummer.Margin = new System.Windows.Forms.Padding(10);
+            this.tbLaufnummer.Multiline = false;
+            this.tbLaufnummer.Name = "tbLaufnummer";
+            this.tbLaufnummer.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.tbLaufnummer.PasswordChar = false;
+            this.tbLaufnummer.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.tbLaufnummer.PlaceholderText = "Laufende Nummer";
+            this.tbLaufnummer.Size = new System.Drawing.Size(200, 32);
+            this.tbLaufnummer.TabIndex = 15;
+            this.tbLaufnummer.Texts = "";
+            this.tbLaufnummer.UnderlinedStyle = true;
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.BackColor = System.Drawing.Color.White;
+            this.buttonSave.BackgroundColor = System.Drawing.Color.White;
+            this.buttonSave.BorderColor = System.Drawing.Color.Black;
+            this.buttonSave.BorderRadius = 0;
+            this.buttonSave.BorderSize = 1;
+            this.buttonSave.FlatAppearance.BorderSize = 0;
+            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSave.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonSave.ForeColor = System.Drawing.Color.Black;
+            this.buttonSave.Location = new System.Drawing.Point(258, 541);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(200, 40);
+            this.buttonSave.TabIndex = 16;
+            this.buttonSave.Text = "Speichern";
+            this.buttonSave.TextColor = System.Drawing.Color.Black;
+            this.buttonSave.UseVisualStyleBackColor = false;
+            this.buttonSave.Click += new System.EventHandler(this.OnButtonSave);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(91, 89);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(123, 15);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Telefonische Beratung";
+            // 
+            // toggleTelefonberatung
+            // 
+            this.toggleTelefonberatung.AutoSize = true;
+            this.toggleTelefonberatung.Location = new System.Drawing.Point(40, 86);
+            this.toggleTelefonberatung.MinimumSize = new System.Drawing.Size(45, 22);
+            this.toggleTelefonberatung.Name = "toggleTelefonberatung";
+            this.toggleTelefonberatung.OffBackColor = System.Drawing.Color.Gray;
+            this.toggleTelefonberatung.OffToggleColor = System.Drawing.Color.Gainsboro;
+            this.toggleTelefonberatung.OnBackColor = System.Drawing.Color.Green;
+            this.toggleTelefonberatung.OnToggleColor = System.Drawing.Color.WhiteSmoke;
+            this.toggleTelefonberatung.Size = new System.Drawing.Size(45, 22);
+            this.toggleTelefonberatung.TabIndex = 17;
+            this.toggleTelefonberatung.UseVisualStyleBackColor = true;
             // 
             // P218
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.tbLfdNummer);
-            this.Controls.Add(this.tbErlauterung);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.toggleTelefonberatung);
+            this.Controls.Add(this.buttonSave);
+            this.Controls.Add(this.tbLaufnummer);
+            this.Controls.Add(this.tbErläuterung);
             this.Controls.Add(this.grpAnm);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.numBeratungszeit);
@@ -507,7 +556,10 @@
         private CheckBox checkBox2;
         private CheckBox checkBox1;
         private CheckBox checkBox6;
-        private CustomControls.RJControls.RJTextBox tbErlauterung;
-        private CustomControls.RJControls.RJTextBox tbLfdNummer;
+        private CustomControls.RJControls.RJTextBox tbErläuterung;
+        private CustomControls.RJControls.RJTextBox tbLaufnummer;
+        private RJCodeAdvance.RJControls.RJButton buttonSave;
+        private Label label2;
+        private RJCodeAdvance.RJControls.RJToggleButton toggleTelefonberatung;
     }
 }

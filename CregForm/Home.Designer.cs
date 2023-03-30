@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.NavigationBar = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.SettingsButton = new System.Windows.Forms.Button();
             this.ExportButton = new System.Windows.Forms.Button();
             this.SearchButton = new System.Windows.Forms.Button();
@@ -44,6 +45,7 @@
             // NavigationBar
             // 
             this.NavigationBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.NavigationBar.Controls.Add(this.label1);
             this.NavigationBar.Controls.Add(this.SettingsButton);
             this.NavigationBar.Controls.Add(this.ExportButton);
             this.NavigationBar.Controls.Add(this.SearchButton);
@@ -53,6 +55,16 @@
             this.NavigationBar.Name = "NavigationBar";
             this.NavigationBar.Size = new System.Drawing.Size(200, 690);
             this.NavigationBar.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(3, 61);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(167, 23);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "______________________________________";
             // 
             // SettingsButton
             // 
@@ -80,6 +92,7 @@
             this.ExportButton.FlatAppearance.BorderSize = 0;
             this.ExportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ExportButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ExportButton.ForeColor = System.Drawing.Color.DimGray;
             this.ExportButton.Image = global::CregForm.Properties.Resources.icons8_export_24;
             this.ExportButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ExportButton.Location = new System.Drawing.Point(0, 194);
@@ -100,6 +113,7 @@
             this.SearchButton.FlatAppearance.BorderSize = 0;
             this.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SearchButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SearchButton.ForeColor = System.Drawing.Color.DimGray;
             this.SearchButton.Image = global::CregForm.Properties.Resources.icons8_search_database_24;
             this.SearchButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SearchButton.Location = new System.Drawing.Point(0, 144);
@@ -120,6 +134,7 @@
             this.AddButton.FlatAppearance.BorderSize = 0;
             this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AddButton.ForeColor = System.Drawing.Color.DimGray;
             this.AddButton.Image = global::CregForm.Properties.Resources.icons8_plus_math_24;
             this.AddButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.AddButton.Location = new System.Drawing.Point(0, 94);
@@ -140,9 +155,10 @@
             this.HomeButton.FlatAppearance.BorderSize = 0;
             this.HomeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.HomeButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.HomeButton.ForeColor = System.Drawing.Color.DimGray;
             this.HomeButton.Image = global::CregForm.Properties.Resources.icons8_home_24;
             this.HomeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.HomeButton.Location = new System.Drawing.Point(0, 0);
+            this.HomeButton.Location = new System.Drawing.Point(0, 11);
             this.HomeButton.Margin = new System.Windows.Forms.Padding(0);
             this.HomeButton.Name = "HomeButton";
             this.HomeButton.Padding = new System.Windows.Forms.Padding(10);
@@ -221,5 +237,6 @@
         private Button AddButton;
         private Button HomeButton;
         private Panel noView;
+        private Label label1;
     }
 }

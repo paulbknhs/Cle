@@ -131,7 +131,7 @@ namespace CregForm.Resources.classes
 
         public static readonly List<string> P218Verhütung = new()
         {
-            "Art der Verhütung", "Nicht Verhütet", "Medikamentös", "Mech", "Natürlich", "Keine Angabe"
+            "Verhütung", "Nicht Verhütet", "Medikamentös", "Mech", "Natürlich", "Keine Angabe"
         };
 
         #endregion
@@ -154,6 +154,11 @@ namespace CregForm.Resources.classes
             "Zusätzlich SGII", "Schule oder Sudium", "Sonstige nicht Erwerbstätig", "Sonstige", "Keine Angabe"
         };
 
+        public static readonly List<string> AllgSgsAlter = new()
+        {
+            "Betroffende*r", "Erwachsene*r 1", "Erwachsene*r 2", "Kind 1", "Kind 2", "Kind 3", "Kind 4", "Kind 4"
+        };
+
         #endregion
 
         #region ARGE
@@ -170,7 +175,7 @@ namespace CregForm.Resources.classes
 
         public static readonly List<string> ARGEBasis = new()
         {
-            "Basis", "Kein Verm. hemmnis", "Kunde stabilisiert", "Problem bleibt", "Weitervermittlung", "Weiterleitung", "Anbahnung"
+            "Basis Status", "Kein Verm. hemmnis", "Kunde stabilisiert", "Problem bleibt", "Weitervermittlung", "Weiterleitung", "Anbahnung"
         };
 
         public static readonly List<string> ARGEAbbruch = new()
@@ -180,7 +185,7 @@ namespace CregForm.Resources.classes
 
         public static readonly List<string> ARGEKomplett = new()
         {
-            "Komplett", "Kein Psy. hemmnis", "Kunde stabilisiert", "Problem bleibt", "Weitervermittlung", "Weiterleitung",
+            "Komplett Status", "Kein Psy. hemmnis", "Kunde stabilisiert", "Problem bleibt", "Weitervermittlung", "Weiterleitung",
             "Anbahnung"
         };
 
@@ -224,7 +229,7 @@ namespace CregForm.Resources.classes
 
         public static readonly List<string> Tabellen = new()
         {
-            "Allgemein", "Ehe und Leben", "SGB VIII", "Mutter & Kind", "§ 218", "Allg. Schwgs.", "ARGE", "§ 2a"
+            "Allgemein", "Ehe und Leben", "SGB VIII", "Mutter Kind", "§ 218", "Allgemeine Schwangerschaft", "ARGE", "§ 2a"
         };
 
         #endregion
@@ -234,6 +239,12 @@ namespace CregForm.Resources.classes
     {
         public static Dictionary<string, string> Allgemein { get; set; } = new();
         public static Dictionary<string, string> EheUndLeben { get; set; } = new();
+        public static Dictionary<string, string> AllgSgs { get; set; } = new();
+        public static Dictionary<string, string> ARGE { get; set; } = new();
+        public static Dictionary<string, string> MutterKind { get; set; } = new();
+        public static Dictionary<string, string> P218 { get; set; } = new();
+        public static Dictionary<string, string> P2a { get; set; } = new();
+        public static Dictionary<string, string> Sgb8 { get; set; } = new();
     }
 
     public static class DSTR
@@ -252,7 +263,7 @@ namespace CregForm.Resources.classes
         {
             foreach (Control item in frame.Controls)
             {
-                if (!item.Enabled || item is not DropDown) continue;
+                if (!item.Enabled || item is not DropDown || item.Name == "dropAlter") continue;
 
                 var dd = (DropDown)item;
                 var key = dd.Items[0].ToString();
@@ -373,6 +384,16 @@ namespace CregForm.Resources.classes
             }
         }
 
+        public static void StoreNumBoxContent(Control frame, Dictionary<string, string> dictionary)
+        {
+            foreach (Control control in frame.Controls)
+            {
+                if (control is not NumericUpDown numBox || numBox.Text == "") continue;
+
+                dictionary.Add(numBox.Name[3..], numBox.Text);
+            }
+        }
+
         public static void ValidateEntries(Dictionary<string, string> dictionary)
         {
             DataGridView grid = new()
@@ -385,9 +406,6 @@ namespace CregForm.Resources.classes
             grid.Columns.Add("Key", "Schlüssel");
             grid.Columns.Add("Value", "Wert");
             grid.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-
-
-
 
             foreach (var pair in dictionary)
             {

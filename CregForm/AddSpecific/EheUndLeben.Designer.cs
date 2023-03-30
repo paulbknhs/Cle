@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dropLeistung = new CregForm.Controls.DropDown();
             this.dropWirtschaft = new CregForm.Controls.DropDown();
             this.groupAnmeldung = new System.Windows.Forms.GroupBox();
@@ -407,14 +407,14 @@
             this.gridStunden.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Art,
             this.Stunden});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightGreen;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridStunden.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightGreen;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridStunden.DefaultCellStyle = dataGridViewCellStyle1;
             this.gridStunden.EnableHeadersVisualStyles = false;
             this.gridStunden.GridColor = System.Drawing.SystemColors.ControlLight;
             this.gridStunden.Location = new System.Drawing.Point(258, 315);
@@ -453,7 +453,7 @@
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(200, 40);
             this.buttonSave.TabIndex = 12;
-            this.buttonSave.Text = "(2) Speichern";
+            this.buttonSave.Text = "Speichern";
             this.buttonSave.TextColor = System.Drawing.Color.Black;
             this.buttonSave.UseVisualStyleBackColor = false;
             this.buttonSave.Click += new System.EventHandler(this.OnButtonSave);

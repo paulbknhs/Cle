@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dropARGE = new CregForm.Controls.DropDown();
             this.tbJahr = new CustomControls.RJControls.RJTextBox();
             this.tbName = new CustomControls.RJControls.RJTextBox();
@@ -60,10 +60,14 @@
             this.m = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.w = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nb = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panelBlocker = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.rjButton2 = new RJCodeAdvance.RJControls.RJButton();
             this.ContentFrame.SuspendLayout();
             this.TabNavControl.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridAlter)).BeginInit();
+            this.panelBlocker.SuspendLayout();
             this.SuspendLayout();
             // 
             // dropARGE
@@ -339,7 +343,7 @@
             this.rjButton1.Name = "rjButton1";
             this.rjButton1.Size = new System.Drawing.Size(200, 40);
             this.rjButton1.TabIndex = 6;
-            this.rjButton1.Text = "(1) Speichern";
+            this.rjButton1.Text = "Speichern";
             this.rjButton1.TextColor = System.Drawing.Color.Black;
             this.rjButton1.UseVisualStyleBackColor = false;
             this.rjButton1.Click += new System.EventHandler(this.OnButtonSave);
@@ -516,28 +520,28 @@
             this.gridAlter.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridAlter.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.gridAlter.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridAlter.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridAlter.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.gridAlter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridAlter.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Person,
             this.m,
             this.w,
             this.nb});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightGreen;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridAlter.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightGreen;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridAlter.DefaultCellStyle = dataGridViewCellStyle4;
             this.gridAlter.EnableHeadersVisualStyles = false;
             this.gridAlter.GridColor = System.Drawing.SystemColors.ControlLight;
             this.gridAlter.Location = new System.Drawing.Point(74, 275);
@@ -571,14 +575,57 @@
             this.nb.HeaderText = "non-binär";
             this.nb.Name = "nb";
             // 
+            // panelBlocker
+            // 
+            this.panelBlocker.Controls.Add(this.label3);
+            this.panelBlocker.Location = new System.Drawing.Point(509, 15);
+            this.panelBlocker.Name = "panelBlocker";
+            this.panelBlocker.Size = new System.Drawing.Size(557, 661);
+            this.panelBlocker.TabIndex = 13;
+            // 
+            // label3
+            // 
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.IndianRed;
+            this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(557, 661);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Bitte Angaben speichern";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // rjButton2
+            // 
+            this.rjButton2.BackColor = System.Drawing.Color.Sienna;
+            this.rjButton2.BackgroundColor = System.Drawing.Color.Sienna;
+            this.rjButton2.BorderColor = System.Drawing.Color.Black;
+            this.rjButton2.BorderRadius = 0;
+            this.rjButton2.BorderSize = 1;
+            this.rjButton2.FlatAppearance.BorderSize = 0;
+            this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rjButton2.ForeColor = System.Drawing.Color.White;
+            this.rjButton2.Location = new System.Drawing.Point(282, 636);
+            this.rjButton2.Name = "rjButton2";
+            this.rjButton2.Size = new System.Drawing.Size(200, 40);
+            this.rjButton2.TabIndex = 6;
+            this.rjButton2.Text = "Fill Form";
+            this.rjButton2.TextColor = System.Drawing.Color.White;
+            this.rjButton2.UseVisualStyleBackColor = false;
+            this.rjButton2.Click += new System.EventHandler(this.OnButtonFill);
+            // 
             // AddView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Controls.Add(this.panelBlocker);
             this.Controls.Add(this.gridAlter);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.ContentFrame);
+            this.Controls.Add(this.rjButton2);
             this.Controls.Add(this.rjButton1);
             this.Controls.Add(this.tbWohnort);
             this.Controls.Add(this.tbAnmeldenummer);
@@ -601,6 +648,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridAlter)).EndInit();
+            this.panelBlocker.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -636,5 +684,8 @@
         private DataGridViewTextBoxColumn m;
         private DataGridViewTextBoxColumn w;
         private DataGridViewTextBoxColumn nb;
+        private Panel panelBlocker;
+        private Label label3;
+        private RJCodeAdvance.RJControls.RJButton rjButton2;
     }
 }

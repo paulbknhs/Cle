@@ -51,10 +51,12 @@ namespace CregForm
             {
                 e.Graphics.FillRectangle(Brushes.Green, new Rectangle(0, 0, 5, btn.Height));
                 btn.Font = new Font(btn.Font, FontStyle.Bold);
+                btn.ForeColor = Color.Black;
             }
             else
             {
                 btn.Font = new Font(btn.Font, FontStyle.Regular);
+                btn.ForeColor = Color.FromArgb(40, 40, 40);
             }
         }
 
@@ -110,7 +112,7 @@ namespace CregForm
 
         private void OnExportButton(object sender, EventArgs e)
         {
-            var exportView = new ExportView { Location = new Point(200, 30) };
+            var exportView = new StatisticsView { Location = new Point(200, 30) };
             foreach (Control control in Controls)
             {
                 if (control.Tag == "View") Controls.Remove(control);

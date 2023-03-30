@@ -35,6 +35,7 @@
             this.dropErwerb = new CregForm.Controls.DropDown();
             this.numBeratungszeit = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
+            this.buttonSave = new RJCodeAdvance.RJControls.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.numBeratungszeit)).BeginInit();
             this.SuspendLayout();
             // 
@@ -164,10 +165,31 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Beratungszeit in min";
             // 
+            // buttonSave
+            // 
+            this.buttonSave.BackColor = System.Drawing.Color.White;
+            this.buttonSave.BackgroundColor = System.Drawing.Color.White;
+            this.buttonSave.BorderColor = System.Drawing.Color.Black;
+            this.buttonSave.BorderRadius = 0;
+            this.buttonSave.BorderSize = 1;
+            this.buttonSave.FlatAppearance.BorderSize = 0;
+            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSave.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonSave.ForeColor = System.Drawing.Color.Black;
+            this.buttonSave.Location = new System.Drawing.Point(258, 541);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(200, 40);
+            this.buttonSave.TabIndex = 20;
+            this.buttonSave.Text = "Speichern";
+            this.buttonSave.TextColor = System.Drawing.Color.Black;
+            this.buttonSave.UseVisualStyleBackColor = false;
+            this.buttonSave.Click += new System.EventHandler(this.OnButtonSave);
+            // 
             // MutterKind
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.numBeratungszeit);
             this.Controls.Add(this.dropErwerb);
@@ -193,5 +215,6 @@
         private Controls.DropDown dropErwerb;
         private NumericUpDown numBeratungszeit;
         private Label label1;
+        private RJCodeAdvance.RJControls.RJButton buttonSave;
     }
 }

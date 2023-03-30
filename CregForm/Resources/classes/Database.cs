@@ -26,7 +26,8 @@ namespace CregForm.Resources.classes
 
         public void InsertData(string tableName, Dictionary<string, string> data)
         {
-            if (data.Count == 0) throw new ArgumentException("Dictionary enthält keine Einträge", nameof(data));
+            if (data.Count == 0)
+                throw new ArgumentException("Dictionary enthält keine Einträge", nameof(data));
 
             var columns = "";
             var values = "";
@@ -40,8 +41,10 @@ namespace CregForm.Resources.classes
             columns = columns.Remove(columns.Length - 1);
             values = values.Remove(values.Length - 1);
 
-            var command = new SqlCommand($"INSERT INTO [dbo].[{tableName}] ({columns}) VALUES ({values})",
-                _connection);
+            var command = new SqlCommand(
+                $"INSERT INTO [dbo].[{tableName}] ({columns}) VALUES ({values})",
+                _connection
+            );
             command.ExecuteNonQuery();
         }
 
@@ -67,7 +70,10 @@ namespace CregForm.Resources.classes
             }
 
             filter = filter.Remove(filter.Length - 5);
-            using SqlCommand command = new SqlCommand($"SELECT * FROM [dbo].[{tableName}] WHERE {filter}", _connection);
+            using SqlCommand command = new SqlCommand(
+                $"SELECT * FROM [dbo].[{tableName}] WHERE {filter}",
+                _connection
+            );
             using SqlDataReader reader = command.ExecuteReader();
             dataTable.Load(reader);
             return dataTable;
@@ -84,7 +90,10 @@ namespace CregForm.Resources.classes
 
             remove = remove.Remove(remove.Length - 5);
 
-            using SqlCommand command = new SqlCommand($"DELETE FROM [dbo].[{tableName}] WHERE {remove}", _connection);
+            using SqlCommand command = new SqlCommand(
+                $"DELETE FROM [dbo].[{tableName}] WHERE {remove}",
+                _connection
+            );
             using SqlDataReader reader = command.ExecuteReader();
 
             return true;
