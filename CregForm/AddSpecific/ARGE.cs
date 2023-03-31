@@ -28,7 +28,7 @@ namespace CregForm.AddSpecific
             dropKomplettAbbruch.DataSource = LSTS.ARGEKomplettAbbruch;
             dropEinsZwei.DataSource = LSTS.ARGE12;
             dropBelastung.DataSource = LSTS.ARGEBelastung;
-            dropWochen.DataSource = LSTS.ARGEWochen;
+            dropWartezeit.DataSource = LSTS.ARGEWochen;
         }
 
         private void OnButtonSave(object sender, EventArgs e)
@@ -60,6 +60,9 @@ namespace CregForm.AddSpecific
             DICT.ARGE.Add("Geschlecht", gender);
 
             DSTR.StoreDropDownContent(this, DICT.ARGE);
+
+            var result = DSTR.ValidateEntries(DICT.ARGE);
+            if (result != DialogResult.OK) return;
 
             DatabaseHelper database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
             database.Connect();

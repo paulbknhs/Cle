@@ -2,16 +2,9 @@
 {
     partial class P218
     {
-        /// <summary> 
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+                                private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
+                                        protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
             {
@@ -22,11 +15,7 @@
 
         #region Component Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
+                                        private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
             this.numBeratungszeit = new System.Windows.Forms.NumericUpDown();
@@ -61,22 +50,17 @@
             this.buttonSave = new RJCodeAdvance.RJControls.RJButton();
             this.label2 = new System.Windows.Forms.Label();
             this.toggleTelefonberatung = new RJCodeAdvance.RJControls.RJToggleButton();
+            this.tbAlter = new CustomControls.RJControls.RJTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numBeratungszeit)).BeginInit();
             this.grpAnm.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
+                                                this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(336, 86);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 15);
             this.label1.TabIndex = 13;
             this.label1.Text = "Beratungszeit in min";
-            // 
-            // numBeratungszeit
-            // 
-            this.numBeratungszeit.Increment = new decimal(new int[] {
+                                                this.numBeratungszeit.Increment = new decimal(new int[] {
             45,
             0,
             0,
@@ -90,10 +74,7 @@
             this.numBeratungszeit.Name = "numBeratungszeit";
             this.numBeratungszeit.Size = new System.Drawing.Size(70, 23);
             this.numBeratungszeit.TabIndex = 12;
-            // 
-            // dropStaat
-            // 
-            this.dropStaat.BackColor = System.Drawing.Color.WhiteSmoke;
+                                                this.dropStaat.BackColor = System.Drawing.Color.WhiteSmoke;
             this.dropStaat.BorderColor = System.Drawing.Color.Black;
             this.dropStaat.BorderSize = 1;
             this.dropStaat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -110,10 +91,7 @@
             this.dropStaat.Size = new System.Drawing.Size(200, 32);
             this.dropStaat.TabIndex = 11;
             this.dropStaat.Texts = "";
-            // 
-            // grpAnm
-            // 
-            this.grpAnm.Controls.Add(this.checkBox6);
+                                                this.grpAnm.Controls.Add(this.checkBox6);
             this.grpAnm.Controls.Add(this.checkBox5);
             this.grpAnm.Controls.Add(this.checkBox3);
             this.grpAnm.Controls.Add(this.cbAndere);
@@ -141,220 +119,154 @@
             this.grpAnm.TabIndex = 14;
             this.grpAnm.TabStop = false;
             this.grpAnm.Text = "Abbruchsgründe";
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
+                                                this.checkBox6.AutoSize = true;
             this.checkBox6.Location = new System.Drawing.Point(8, 274);
             this.checkBox6.Name = "checkBox6";
             this.checkBox6.Size = new System.Drawing.Size(106, 19);
             this.checkBox6.TabIndex = 0;
             this.checkBox6.Text = "Keine Angaben";
             this.checkBox6.UseVisualStyleBackColor = true;
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
+                                                this.checkBox5.AutoSize = true;
             this.checkBox5.Location = new System.Drawing.Point(231, 249);
             this.checkBox5.Name = "checkBox5";
             this.checkBox5.Size = new System.Drawing.Size(113, 19);
             this.checkBox5.TabIndex = 0;
             this.checkBox5.Text = "Sonstige Gründe";
             this.checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
+                                                this.checkBox3.AutoSize = true;
             this.checkBox3.Location = new System.Drawing.Point(231, 199);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(147, 19);
             this.checkBox3.TabIndex = 0;
             this.checkBox3.Text = "Psychische Gesundheit";
             this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // cbAndere
-            // 
-            this.cbAndere.AutoSize = true;
+                                                this.cbAndere.AutoSize = true;
             this.cbAndere.Location = new System.Drawing.Point(231, 124);
             this.cbAndere.Name = "cbAndere";
             this.cbAndere.Size = new System.Drawing.Size(167, 19);
             this.cbAndere.TabIndex = 0;
             this.cbAndere.Text = "Körperliche Überforderung";
             this.cbAndere.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
+                                                this.checkBox4.AutoSize = true;
             this.checkBox4.Location = new System.Drawing.Point(231, 224);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(164, 19);
             this.checkBox4.TabIndex = 0;
             this.checkBox4.Text = "Drohende Bhd. des Kindes";
             this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
+                                                this.checkBox2.AutoSize = true;
             this.checkBox2.Location = new System.Drawing.Point(231, 174);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(149, 19);
             this.checkBox2.TabIndex = 0;
             this.checkBox2.Text = "Körperliche Gesundheit";
             this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // cbStraft
-            // 
-            this.cbStraft.AutoSize = true;
+                                                this.cbStraft.AutoSize = true;
             this.cbStraft.Location = new System.Drawing.Point(231, 99);
             this.cbStraft.Name = "cbStraft";
             this.cbStraft.Size = new System.Drawing.Size(56, 19);
             this.cbStraft.TabIndex = 0;
             this.cbStraft.Text = "Zu alt";
             this.cbStraft.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
+                                                this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(231, 149);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(165, 19);
             this.checkBox1.TabIndex = 0;
             this.checkBox1.Text = "Psychische Überforderung";
             this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // cbFamilie
-            // 
-            this.cbFamilie.AutoSize = true;
+                                                this.cbFamilie.AutoSize = true;
             this.cbFamilie.Location = new System.Drawing.Point(231, 74);
             this.cbFamilie.Name = "cbFamilie";
             this.cbFamilie.Size = new System.Drawing.Size(67, 19);
             this.cbFamilie.TabIndex = 0;
             this.cbFamilie.Text = "Zu jung";
             this.cbFamilie.UseVisualStyleBackColor = true;
-            // 
-            // cbPartn
-            // 
-            this.cbPartn.AutoSize = true;
+                                                this.cbPartn.AutoSize = true;
             this.cbPartn.Location = new System.Drawing.Point(231, 49);
             this.cbPartn.Name = "cbPartn";
             this.cbPartn.Size = new System.Drawing.Size(117, 19);
             this.cbPartn.TabIndex = 0;
             this.cbPartn.Text = "Schule / Studium";
             this.cbPartn.UseVisualStyleBackColor = true;
-            // 
-            // cbGeld
-            // 
-            this.cbGeld.AutoSize = true;
+                                                this.cbGeld.AutoSize = true;
             this.cbGeld.Location = new System.Drawing.Point(231, 24);
             this.cbGeld.Name = "cbGeld";
             this.cbGeld.Size = new System.Drawing.Size(131, 19);
             this.cbGeld.TabIndex = 0;
             this.cbGeld.Text = "Soziale Unsicherheit";
             this.cbGeld.UseVisualStyleBackColor = true;
-            // 
-            // cbMisshand
-            // 
-            this.cbMisshand.AutoSize = true;
+                                                this.cbMisshand.AutoSize = true;
             this.cbMisshand.Location = new System.Drawing.Point(8, 224);
             this.cbMisshand.Name = "cbMisshand";
             this.cbMisshand.Size = new System.Drawing.Size(113, 19);
             this.cbMisshand.TabIndex = 0;
             this.cbMisshand.Text = "Erhalt des Stand.";
             this.cbMisshand.UseVisualStyleBackColor = true;
-            // 
-            // cbKörpBehind
-            // 
-            this.cbKörpBehind.AutoSize = true;
+                                                this.cbKörpBehind.AutoSize = true;
             this.cbKörpBehind.Location = new System.Drawing.Point(8, 174);
             this.cbKörpBehind.Name = "cbKörpBehind";
             this.cbKörpBehind.Size = new System.Drawing.Size(116, 19);
             this.cbKörpBehind.TabIndex = 0;
             this.cbKörpBehind.Text = "Familiäre Gründe";
             this.cbKörpBehind.UseVisualStyleBackColor = true;
-            // 
-            // cbSucht
-            // 
-            this.cbSucht.AutoSize = true;
+                                                this.cbSucht.AutoSize = true;
             this.cbSucht.Location = new System.Drawing.Point(8, 124);
             this.cbSucht.Name = "cbSucht";
             this.cbSucht.Size = new System.Drawing.Size(120, 19);
             this.cbSucht.TabIndex = 0;
             this.cbSucht.Text = "Abl. d. d. Kindesv.";
             this.cbSucht.UseVisualStyleBackColor = true;
-            // 
-            // cbPsychosen
-            // 
-            this.cbPsychosen.AutoSize = true;
+                                                this.cbPsychosen.AutoSize = true;
             this.cbPsychosen.Location = new System.Drawing.Point(8, 99);
             this.cbPsychosen.Name = "cbPsychosen";
             this.cbPsychosen.Size = new System.Drawing.Size(107, 19);
             this.cbPsychosen.TabIndex = 0;
             this.cbPsychosen.Text = "Alleinerziehend";
             this.cbPsychosen.UseVisualStyleBackColor = true;
-            // 
-            // cbSexuell
-            // 
-            this.cbSexuell.AutoSize = true;
+                                                this.cbSexuell.AutoSize = true;
             this.cbSexuell.Location = new System.Drawing.Point(8, 249);
             this.cbSexuell.Name = "cbSexuell";
             this.cbSexuell.Size = new System.Drawing.Size(121, 19);
             this.cbSexuell.TabIndex = 0;
             this.cbSexuell.Text = "Berufliche Gründe";
             this.cbSexuell.UseVisualStyleBackColor = true;
-            // 
-            // cbSuizid
-            // 
-            this.cbSuizid.AutoSize = true;
+                                                this.cbSuizid.AutoSize = true;
             this.cbSuizid.Location = new System.Drawing.Point(8, 74);
             this.cbSuizid.Name = "cbSuizid";
             this.cbSuizid.Size = new System.Drawing.Size(123, 19);
             this.cbSuizid.TabIndex = 0;
             this.cbSuizid.Text = "Finanzielle Gründe";
             this.cbSuizid.UseVisualStyleBackColor = true;
-            // 
-            // cbTrennung
-            // 
-            this.cbTrennung.AutoSize = true;
+                                                this.cbTrennung.AutoSize = true;
             this.cbTrennung.Location = new System.Drawing.Point(8, 199);
             this.cbTrennung.Name = "cbTrennung";
             this.cbTrennung.Size = new System.Drawing.Size(104, 19);
             this.cbTrennung.TabIndex = 0;
             this.cbTrennung.Text = "Wohnsituation";
             this.cbTrennung.UseVisualStyleBackColor = true;
-            // 
-            // cbPsychisch
-            // 
-            this.cbPsychisch.AutoSize = true;
+                                                this.cbPsychisch.AutoSize = true;
             this.cbPsychisch.Location = new System.Drawing.Point(8, 49);
             this.cbPsychisch.Name = "cbPsychisch";
             this.cbPsychisch.Size = new System.Drawing.Size(158, 19);
             this.cbPsychisch.TabIndex = 0;
             this.cbPsychisch.Text = "Abgeschlossene Planung";
             this.cbPsychisch.UseVisualStyleBackColor = true;
-            // 
-            // chKrankTod
-            // 
-            this.chKrankTod.AutoSize = true;
+                                                this.chKrankTod.AutoSize = true;
             this.chKrankTod.Location = new System.Drawing.Point(8, 149);
             this.chKrankTod.Name = "chKrankTod";
             this.chKrankTod.Size = new System.Drawing.Size(96, 19);
             this.chKrankTod.TabIndex = 0;
             this.chKrankTod.Text = "Partnerschaft";
             this.chKrankTod.UseVisualStyleBackColor = true;
-            // 
-            // cbKörper
-            // 
-            this.cbKörper.AutoSize = true;
+                                                this.cbKörper.AutoSize = true;
             this.cbKörper.Location = new System.Drawing.Point(8, 24);
             this.cbKörper.Name = "cbKörper";
             this.cbKörper.Size = new System.Drawing.Size(172, 19);
             this.cbKörper.TabIndex = 0;
             this.cbKörper.Text = "Generell kein Kinderwunsch";
             this.cbKörper.UseVisualStyleBackColor = true;
-            // 
-            // dropStand
-            // 
-            this.dropStand.BackColor = System.Drawing.Color.WhiteSmoke;
+                                                this.dropStand.BackColor = System.Drawing.Color.WhiteSmoke;
             this.dropStand.BorderColor = System.Drawing.Color.Black;
             this.dropStand.BorderSize = 1;
             this.dropStand.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -371,10 +283,7 @@
             this.dropStand.Size = new System.Drawing.Size(200, 32);
             this.dropStand.TabIndex = 11;
             this.dropStand.Texts = "";
-            // 
-            // dropVerhütung
-            // 
-            this.dropVerhütung.BackColor = System.Drawing.Color.WhiteSmoke;
+                                                this.dropVerhütung.BackColor = System.Drawing.Color.WhiteSmoke;
             this.dropVerhütung.BorderColor = System.Drawing.Color.Black;
             this.dropVerhütung.BorderSize = 1;
             this.dropVerhütung.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -391,10 +300,7 @@
             this.dropVerhütung.Size = new System.Drawing.Size(200, 32);
             this.dropVerhütung.TabIndex = 11;
             this.dropVerhütung.Texts = "";
-            // 
-            // dropErwerb
-            // 
-            this.dropErwerb.BackColor = System.Drawing.Color.WhiteSmoke;
+                                                this.dropErwerb.BackColor = System.Drawing.Color.WhiteSmoke;
             this.dropErwerb.BorderColor = System.Drawing.Color.Black;
             this.dropErwerb.BorderSize = 1;
             this.dropErwerb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -411,10 +317,7 @@
             this.dropErwerb.Size = new System.Drawing.Size(200, 32);
             this.dropErwerb.TabIndex = 11;
             this.dropErwerb.Texts = "";
-            // 
-            // tbErläuterung
-            // 
-            this.tbErläuterung.BackColor = System.Drawing.SystemColors.Window;
+                                                this.tbErläuterung.BackColor = System.Drawing.SystemColors.Window;
             this.tbErläuterung.BorderColor = System.Drawing.Color.Black;
             this.tbErläuterung.BorderFocusColor = System.Drawing.Color.Green;
             this.tbErläuterung.BorderRadius = 0;
@@ -423,7 +326,7 @@
             this.tbErläuterung.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbErläuterung.Location = new System.Drawing.Point(40, 548);
             this.tbErläuterung.Margin = new System.Windows.Forms.Padding(10);
-            this.tbErläuterung.Multiline = false;
+            this.tbErläuterung.Multiline = true;
             this.tbErläuterung.Name = "tbErläuterung";
             this.tbErläuterung.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.tbErläuterung.PasswordChar = false;
@@ -433,17 +336,14 @@
             this.tbErläuterung.TabIndex = 6;
             this.tbErläuterung.Texts = "";
             this.tbErläuterung.UnderlinedStyle = true;
-            // 
-            // tbLaufnummer
-            // 
-            this.tbLaufnummer.BackColor = System.Drawing.SystemColors.Window;
+                                                this.tbLaufnummer.BackColor = System.Drawing.SystemColors.Window;
             this.tbLaufnummer.BorderColor = System.Drawing.Color.Black;
             this.tbLaufnummer.BorderFocusColor = System.Drawing.Color.Green;
             this.tbLaufnummer.BorderRadius = 0;
             this.tbLaufnummer.BorderSize = 1;
             this.tbLaufnummer.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbLaufnummer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbLaufnummer.Location = new System.Drawing.Point(40, 40);
+            this.tbLaufnummer.Location = new System.Drawing.Point(260, 37);
             this.tbLaufnummer.Margin = new System.Windows.Forms.Padding(10);
             this.tbLaufnummer.Multiline = false;
             this.tbLaufnummer.Name = "tbLaufnummer";
@@ -455,10 +355,7 @@
             this.tbLaufnummer.TabIndex = 15;
             this.tbLaufnummer.Texts = "";
             this.tbLaufnummer.UnderlinedStyle = true;
-            // 
-            // buttonSave
-            // 
-            this.buttonSave.BackColor = System.Drawing.Color.White;
+                                                this.buttonSave.BackColor = System.Drawing.Color.White;
             this.buttonSave.BackgroundColor = System.Drawing.Color.White;
             this.buttonSave.BorderColor = System.Drawing.Color.Black;
             this.buttonSave.BorderRadius = 0;
@@ -475,19 +372,13 @@
             this.buttonSave.TextColor = System.Drawing.Color.Black;
             this.buttonSave.UseVisualStyleBackColor = false;
             this.buttonSave.Click += new System.EventHandler(this.OnButtonSave);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
+                                                this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(91, 89);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(123, 15);
             this.label2.TabIndex = 18;
             this.label2.Text = "Telefonische Beratung";
-            // 
-            // toggleTelefonberatung
-            // 
-            this.toggleTelefonberatung.AutoSize = true;
+                                                this.toggleTelefonberatung.AutoSize = true;
             this.toggleTelefonberatung.Location = new System.Drawing.Point(40, 86);
             this.toggleTelefonberatung.MinimumSize = new System.Drawing.Size(45, 22);
             this.toggleTelefonberatung.Name = "toggleTelefonberatung";
@@ -498,14 +389,31 @@
             this.toggleTelefonberatung.Size = new System.Drawing.Size(45, 22);
             this.toggleTelefonberatung.TabIndex = 17;
             this.toggleTelefonberatung.UseVisualStyleBackColor = true;
-            // 
-            // P218
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+                                                this.tbAlter.BackColor = System.Drawing.SystemColors.Window;
+            this.tbAlter.BorderColor = System.Drawing.Color.Black;
+            this.tbAlter.BorderFocusColor = System.Drawing.Color.Green;
+            this.tbAlter.BorderRadius = 0;
+            this.tbAlter.BorderSize = 1;
+            this.tbAlter.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbAlter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbAlter.Location = new System.Drawing.Point(40, 37);
+            this.tbAlter.Margin = new System.Windows.Forms.Padding(10);
+            this.tbAlter.Multiline = false;
+            this.tbAlter.Name = "tbAlter";
+            this.tbAlter.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.tbAlter.PasswordChar = false;
+            this.tbAlter.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.tbAlter.PlaceholderText = "Alter";
+            this.tbAlter.Size = new System.Drawing.Size(200, 32);
+            this.tbAlter.TabIndex = 15;
+            this.tbAlter.Texts = "";
+            this.tbAlter.UnderlinedStyle = true;
+                                                this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label2);
             this.Controls.Add(this.toggleTelefonberatung);
             this.Controls.Add(this.buttonSave);
+            this.Controls.Add(this.tbAlter);
             this.Controls.Add(this.tbLaufnummer);
             this.Controls.Add(this.tbErläuterung);
             this.Controls.Add(this.grpAnm);
@@ -561,5 +469,6 @@
         private RJCodeAdvance.RJControls.RJButton buttonSave;
         private Label label2;
         private RJCodeAdvance.RJControls.RJToggleButton toggleTelefonberatung;
+        private CustomControls.RJControls.RJTextBox tbAlter;
     }
 }

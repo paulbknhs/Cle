@@ -2,16 +2,9 @@
 {
     partial class AllgSgs
     {
-        /// <summary> 
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+                                private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
+                                        protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
             {
@@ -22,11 +15,7 @@
 
         #region Component Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
+                                        private void InitializeComponent()
         {
             this.dropErwerb = new CregForm.Controls.DropDown();
             this.dropStand = new CregForm.Controls.DropDown();
@@ -38,10 +27,7 @@
             this.dropAlter = new CregForm.Controls.DropDown();
             ((System.ComponentModel.ISupportInitialize)(this.numBeratungszeit)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dropErwerb
-            // 
-            this.dropErwerb.BackColor = System.Drawing.Color.WhiteSmoke;
+                                                this.dropErwerb.BackColor = System.Drawing.Color.WhiteSmoke;
             this.dropErwerb.BorderColor = System.Drawing.Color.Black;
             this.dropErwerb.BorderSize = 1;
             this.dropErwerb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -58,10 +44,7 @@
             this.dropErwerb.Size = new System.Drawing.Size(200, 32);
             this.dropErwerb.TabIndex = 9;
             this.dropErwerb.Texts = "";
-            // 
-            // dropStand
-            // 
-            this.dropStand.BackColor = System.Drawing.Color.WhiteSmoke;
+                                                this.dropStand.BackColor = System.Drawing.Color.WhiteSmoke;
             this.dropStand.BorderColor = System.Drawing.Color.Black;
             this.dropStand.BorderSize = 1;
             this.dropStand.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -78,10 +61,7 @@
             this.dropStand.Size = new System.Drawing.Size(200, 32);
             this.dropStand.TabIndex = 10;
             this.dropStand.Texts = "";
-            // 
-            // dropStaat
-            // 
-            this.dropStaat.BackColor = System.Drawing.Color.WhiteSmoke;
+                                                this.dropStaat.BackColor = System.Drawing.Color.WhiteSmoke;
             this.dropStaat.BorderColor = System.Drawing.Color.Black;
             this.dropStaat.BorderSize = 1;
             this.dropStaat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -98,19 +78,13 @@
             this.dropStaat.Size = new System.Drawing.Size(200, 32);
             this.dropStaat.TabIndex = 11;
             this.dropStaat.Texts = "";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
+                                                this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(336, 243);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 15);
             this.label1.TabIndex = 13;
             this.label1.Text = "Beratungszeit in min";
-            // 
-            // numBeratungszeit
-            // 
-            this.numBeratungszeit.Increment = new decimal(new int[] {
+                                                this.numBeratungszeit.Increment = new decimal(new int[] {
             45,
             0,
             0,
@@ -124,10 +98,7 @@
             this.numBeratungszeit.Name = "numBeratungszeit";
             this.numBeratungszeit.Size = new System.Drawing.Size(70, 23);
             this.numBeratungszeit.TabIndex = 12;
-            // 
-            // tbLaufnummer
-            // 
-            this.tbLaufnummer.BackColor = System.Drawing.SystemColors.Window;
+                                                this.tbLaufnummer.BackColor = System.Drawing.SystemColors.Window;
             this.tbLaufnummer.BorderColor = System.Drawing.Color.Black;
             this.tbLaufnummer.BorderFocusColor = System.Drawing.Color.Green;
             this.tbLaufnummer.BorderRadius = 0;
@@ -146,10 +117,7 @@
             this.tbLaufnummer.TabIndex = 14;
             this.tbLaufnummer.Texts = "";
             this.tbLaufnummer.UnderlinedStyle = true;
-            // 
-            // buttonSave
-            // 
-            this.buttonSave.BackColor = System.Drawing.Color.White;
+                                                this.buttonSave.BackColor = System.Drawing.Color.White;
             this.buttonSave.BackgroundColor = System.Drawing.Color.White;
             this.buttonSave.BorderColor = System.Drawing.Color.Black;
             this.buttonSave.BorderRadius = 0;
@@ -166,10 +134,7 @@
             this.buttonSave.TextColor = System.Drawing.Color.Black;
             this.buttonSave.UseVisualStyleBackColor = false;
             this.buttonSave.Click += new System.EventHandler(this.OnButtonSave);
-            // 
-            // dropAlter
-            // 
-            this.dropAlter.BackColor = System.Drawing.Color.WhiteSmoke;
+                                                this.dropAlter.BackColor = System.Drawing.Color.WhiteSmoke;
             this.dropAlter.BorderColor = System.Drawing.Color.Black;
             this.dropAlter.BorderSize = 1;
             this.dropAlter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -186,10 +151,7 @@
             this.dropAlter.Size = new System.Drawing.Size(200, 32);
             this.dropAlter.TabIndex = 10;
             this.dropAlter.Texts = "";
-            // 
-            // AllgSgs
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+                                                this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.tbLaufnummer);

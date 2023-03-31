@@ -2,16 +2,9 @@
 {
     partial class Sgb8
     {
-        /// <summary> 
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+                                private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
+                                        protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
             {
@@ -22,13 +15,9 @@
 
         #region Component Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
+                                        private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toggleWartezeit = new RJCodeAdvance.RJControls.RJToggleButton();
             this.dropLeistung = new CregForm.Controls.DropDown();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,13 +28,12 @@
             this.Art = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stunden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonSave = new RJCodeAdvance.RJControls.RJButton();
+            this.dropKind = new CregForm.Controls.DropDown();
+            this.dropAnmeldung = new CregForm.Controls.DropDown();
             ((System.ComponentModel.ISupportInitialize)(this.gridStunden)).BeginInit();
             this.SuspendLayout();
-            // 
-            // toggleWartezeit
-            // 
-            this.toggleWartezeit.AutoSize = true;
-            this.toggleWartezeit.Location = new System.Drawing.Point(40, 100);
+                                                this.toggleWartezeit.AutoSize = true;
+            this.toggleWartezeit.Location = new System.Drawing.Point(202, 50);
             this.toggleWartezeit.MinimumSize = new System.Drawing.Size(45, 22);
             this.toggleWartezeit.Name = "toggleWartezeit";
             this.toggleWartezeit.OffBackColor = System.Drawing.Color.Gray;
@@ -55,10 +43,7 @@
             this.toggleWartezeit.Size = new System.Drawing.Size(45, 22);
             this.toggleWartezeit.TabIndex = 8;
             this.toggleWartezeit.UseVisualStyleBackColor = true;
-            // 
-            // dropLeistung
-            // 
-            this.dropLeistung.BackColor = System.Drawing.Color.WhiteSmoke;
+                                                this.dropLeistung.BackColor = System.Drawing.Color.WhiteSmoke;
             this.dropLeistung.BorderColor = System.Drawing.Color.Black;
             this.dropLeistung.BorderSize = 1;
             this.dropLeistung.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -75,19 +60,13 @@
             this.dropLeistung.Size = new System.Drawing.Size(200, 32);
             this.dropLeistung.TabIndex = 7;
             this.dropLeistung.Texts = "";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(91, 103);
+                                                this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(253, 53);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(165, 15);
             this.label1.TabIndex = 9;
             this.label1.Text = "Wartezeit länger als 4 Wochen";
-            // 
-            // dropWirtschaft
-            // 
-            this.dropWirtschaft.BackColor = System.Drawing.Color.WhiteSmoke;
+                                                this.dropWirtschaft.BackColor = System.Drawing.Color.WhiteSmoke;
             this.dropWirtschaft.BorderColor = System.Drawing.Color.Black;
             this.dropWirtschaft.BorderSize = 1;
             this.dropWirtschaft.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -104,10 +83,7 @@
             this.dropWirtschaft.Size = new System.Drawing.Size(200, 32);
             this.dropWirtschaft.TabIndex = 7;
             this.dropWirtschaft.Texts = "";
-            // 
-            // dropHerkunftHh
-            // 
-            this.dropHerkunftHh.BackColor = System.Drawing.Color.WhiteSmoke;
+                                                this.dropHerkunftHh.BackColor = System.Drawing.Color.WhiteSmoke;
             this.dropHerkunftHh.BorderColor = System.Drawing.Color.Black;
             this.dropHerkunftHh.BorderSize = 1;
             this.dropHerkunftHh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -124,10 +100,7 @@
             this.dropHerkunftHh.Size = new System.Drawing.Size(200, 32);
             this.dropHerkunftHh.TabIndex = 7;
             this.dropHerkunftHh.Texts = "";
-            // 
-            // dropHilfe
-            // 
-            this.dropHilfe.BackColor = System.Drawing.Color.WhiteSmoke;
+                                                this.dropHilfe.BackColor = System.Drawing.Color.WhiteSmoke;
             this.dropHilfe.BorderColor = System.Drawing.Color.Black;
             this.dropHilfe.BorderSize = 1;
             this.dropHilfe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -144,10 +117,7 @@
             this.dropHilfe.Size = new System.Drawing.Size(200, 32);
             this.dropHilfe.TabIndex = 7;
             this.dropHilfe.Texts = "";
-            // 
-            // gridStunden
-            // 
-            this.gridStunden.AllowUserToAddRows = false;
+                                                this.gridStunden.AllowUserToAddRows = false;
             this.gridStunden.AllowUserToDeleteRows = false;
             this.gridStunden.AllowUserToResizeColumns = false;
             this.gridStunden.AllowUserToResizeRows = false;
@@ -158,14 +128,14 @@
             this.gridStunden.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Art,
             this.Stunden});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Green;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridStunden.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridStunden.DefaultCellStyle = dataGridViewCellStyle1;
             this.gridStunden.EnableHeadersVisualStyles = false;
             this.gridStunden.GridColor = System.Drawing.SystemColors.ControlLight;
             this.gridStunden.Location = new System.Drawing.Point(253, 212);
@@ -177,20 +147,11 @@
             this.gridStunden.Size = new System.Drawing.Size(200, 220);
             this.gridStunden.TabIndex = 10;
             this.gridStunden.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.OnValueChange);
-            // 
-            // Art
-            // 
-            this.Art.HeaderText = "Art";
+                                                this.Art.HeaderText = "Art";
             this.Art.Name = "Art";
-            // 
-            // Stunden
-            // 
-            this.Stunden.HeaderText = "Stunden";
+                                                this.Stunden.HeaderText = "Stunden";
             this.Stunden.Name = "Stunden";
-            // 
-            // buttonSave
-            // 
-            this.buttonSave.BackColor = System.Drawing.Color.White;
+                                                this.buttonSave.BackColor = System.Drawing.Color.White;
             this.buttonSave.BackgroundColor = System.Drawing.Color.White;
             this.buttonSave.BorderColor = System.Drawing.Color.Black;
             this.buttonSave.BorderRadius = 0;
@@ -207,15 +168,48 @@
             this.buttonSave.TextColor = System.Drawing.Color.Black;
             this.buttonSave.UseVisualStyleBackColor = false;
             this.buttonSave.Click += new System.EventHandler(this.OnButtonSave);
-            // 
-            // Sgb8
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+                                                this.dropKind.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.dropKind.BorderColor = System.Drawing.Color.Black;
+            this.dropKind.BorderSize = 1;
+            this.dropKind.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dropKind.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dropKind.ForeColor = System.Drawing.Color.DimGray;
+            this.dropKind.IconColor = System.Drawing.Color.Black;
+            this.dropKind.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.dropKind.ListTextColor = System.Drawing.Color.DimGray;
+            this.dropKind.Location = new System.Drawing.Point(40, 420);
+            this.dropKind.Margin = new System.Windows.Forms.Padding(10);
+            this.dropKind.MinimumSize = new System.Drawing.Size(200, 30);
+            this.dropKind.Name = "dropKind";
+            this.dropKind.Padding = new System.Windows.Forms.Padding(1);
+            this.dropKind.Size = new System.Drawing.Size(200, 32);
+            this.dropKind.TabIndex = 7;
+            this.dropKind.Texts = "";
+                                                this.dropAnmeldung.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.dropAnmeldung.BorderColor = System.Drawing.Color.Black;
+            this.dropAnmeldung.BorderSize = 1;
+            this.dropAnmeldung.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dropAnmeldung.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dropAnmeldung.ForeColor = System.Drawing.Color.DimGray;
+            this.dropAnmeldung.IconColor = System.Drawing.Color.Black;
+            this.dropAnmeldung.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.dropAnmeldung.ListTextColor = System.Drawing.Color.DimGray;
+            this.dropAnmeldung.Location = new System.Drawing.Point(40, 160);
+            this.dropAnmeldung.Margin = new System.Windows.Forms.Padding(10);
+            this.dropAnmeldung.MinimumSize = new System.Drawing.Size(200, 30);
+            this.dropAnmeldung.Name = "dropAnmeldung";
+            this.dropAnmeldung.Padding = new System.Windows.Forms.Padding(1);
+            this.dropAnmeldung.Size = new System.Drawing.Size(200, 32);
+            this.dropAnmeldung.TabIndex = 18;
+            this.dropAnmeldung.Texts = "";
+                                                this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dropAnmeldung);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.gridStunden);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toggleWartezeit);
+            this.Controls.Add(this.dropKind);
             this.Controls.Add(this.dropHilfe);
             this.Controls.Add(this.dropHerkunftHh);
             this.Controls.Add(this.dropWirtschaft);
@@ -241,5 +235,7 @@
         private DataGridViewTextBoxColumn Art;
         private DataGridViewTextBoxColumn Stunden;
         private RJCodeAdvance.RJControls.RJButton buttonSave;
+        private Controls.DropDown dropKind;
+        private Controls.DropDown dropAnmeldung;
     }
 }

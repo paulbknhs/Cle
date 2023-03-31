@@ -31,15 +31,16 @@ namespace CregForm.AddSpecific
         private void OnButtonSave(object sender, EventArgs e)
         {
             DICT.P218.Clear();
-
-            DICT.P218.Add("Jahr", DICT.Allgemein["Erwachsene*r 1"][..2]);
-            DICT.P218.Add("Alter", DICT.Allgemein["Jahr"]);
+            DICT.P218.Add("Jahr", DateTime.Now.Year.ToString());
             
             DSTR.StoreDropDownContent(this, DICT.P218);
             DSTR.StoreTextBoxContent(this, DICT.P218);
             DSTR.StoreNumBoxContent(this, DICT.P218);
             DSTR.StoreToggleContent(this, DICT.P218);
             DSTR.StoreCheckBoxContent(grpAnm, DICT.P218);
+
+            var result = DSTR.ValidateEntries(DICT.P218);
+            if (result != DialogResult.OK) return;
 
             DatabaseHelper database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
             database.Connect();

@@ -40,6 +40,9 @@ namespace CregForm.AddSpecific
             DSTR.StoreDropDownContent(this, DICT.AllgSgs);
             DSTR.StoreNumBoxContent(this, DICT.AllgSgs);
 
+            var result = DSTR.ValidateEntries(DICT.AllgSgs);
+            if (result != DialogResult.OK) return;
+
             DatabaseHelper database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
             database.Connect();
             database.InsertData("Allgemeine Schwangerschaft", DICT.AllgSgs);

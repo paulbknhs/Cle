@@ -15,8 +15,7 @@ namespace CustomControls.RJControls
     public partial class RJTextBox : UserControl
     {
         #region -> Fields
-        //Fields
-        private Color borderColor = Color.MediumSlateBlue;
+                private Color borderColor = Color.MediumSlateBlue;
         private Color borderFocusColor = Color.HotPink;
         private int borderSize = 2;
         private bool underlinedStyle = false;
@@ -28,16 +27,13 @@ namespace CustomControls.RJControls
         private bool isPlaceholder = false;
         private bool isPasswordChar = false;
 
-        //Events
-        public event EventHandler _TextChanged;
+                public event EventHandler _TextChanged;
 
         #endregion
 
-        //-> Constructor
-        public RJTextBox()
+                public RJTextBox()
         {
-            //Created by designer
-            InitializeComponent();
+                        InitializeComponent();
         }
 
         #region -> Properties
@@ -162,8 +158,7 @@ namespace CustomControls.RJControls
                 if (value >= 0)
                 {
                     borderRadius = value;
-                    this.Invalidate();//Redraw control
-                }
+                    this.Invalidate();                }
             }
         }
 
@@ -212,10 +207,8 @@ namespace CustomControls.RJControls
             base.OnPaint(e);
             Graphics graph = e.Graphics;
 
-            if (borderRadius > 1)//Rounded TextBox
-            {
-                //-Fields
-                var rectBorderSmooth = this.ClientRectangle;
+            if (borderRadius > 1)            {
+                                var rectBorderSmooth = this.ClientRectangle;
                 var rectBorder = Rectangle.Inflate(rectBorderSmooth, -borderSize, -borderSize);
                 int smoothSize = borderSize > 0 ? borderSize : 1;
 
@@ -224,43 +217,30 @@ namespace CustomControls.RJControls
                 using (Pen penBorderSmooth = new Pen(this.Parent.BackColor, smoothSize))
                 using (Pen penBorder = new Pen(borderColor, borderSize))
                 {
-                    //-Drawing
-                    this.Region = new Region(pathBorderSmooth);//Set the rounded region of UserControl
-                    if (borderRadius > 15) SetTextBoxRoundedRegion();//Set the rounded region of TextBox component
-                    graph.SmoothingMode = SmoothingMode.AntiAlias;
+                                        this.Region = new Region(pathBorderSmooth);                    if (borderRadius > 15) SetTextBoxRoundedRegion();                    graph.SmoothingMode = SmoothingMode.AntiAlias;
                     penBorder.Alignment = System.Drawing.Drawing2D.PenAlignment.Center;
                     if (isFocused) penBorder.Color = borderFocusColor;
 
-                    if (underlinedStyle) //Line Style
-                    {
-                        //Draw border smoothing
-                        graph.DrawPath(penBorderSmooth, pathBorderSmooth);
-                        //Draw border
-                        graph.SmoothingMode = SmoothingMode.None;
+                    if (underlinedStyle)                     {
+                                                graph.DrawPath(penBorderSmooth, pathBorderSmooth);
+                                                graph.SmoothingMode = SmoothingMode.None;
                         graph.DrawLine(penBorder, 0, this.Height - 1, this.Width, this.Height - 1);
                     }
-                    else //Normal Style
-                    {
-                        //Draw border smoothing
-                        graph.DrawPath(penBorderSmooth, pathBorderSmooth);
-                        //Draw border
-                        graph.DrawPath(penBorder, pathBorder);
+                    else                     {
+                                                graph.DrawPath(penBorderSmooth, pathBorderSmooth);
+                                                graph.DrawPath(penBorder, pathBorder);
                     }
                 }
             }
-            else //Square/Normal TextBox
-            {
-                //Draw border
-                using (Pen penBorder = new Pen(borderColor, borderSize))
+            else             {
+                                using (Pen penBorder = new Pen(borderColor, borderSize))
                 {
                     this.Region = new Region(this.ClientRectangle);
                     penBorder.Alignment = System.Drawing.Drawing2D.PenAlignment.Inset;
                     if (isFocused) penBorder.Color = borderFocusColor;
 
-                    if (underlinedStyle) //Line Style
-                        graph.DrawLine(penBorder, 0, this.Height - 1, this.Width, this.Height - 1);
-                    else //Normal Style
-                        graph.DrawRectangle(penBorder, 0, 0, this.Width - 0.5F, this.Height - 0.5F);
+                    if (underlinedStyle)                         graph.DrawLine(penBorder, 0, this.Height - 1, this.Width, this.Height - 1);
+                    else                         graph.DrawRectangle(penBorder, 0, 0, this.Width - 0.5F, this.Height - 0.5F);
                 }
             }
         }
@@ -366,7 +346,6 @@ namespace CustomControls.RJControls
             this.Invalidate();
             SetPlaceholder();
         }
-        ///::::+
-        #endregion
+                #endregion
     }
 }

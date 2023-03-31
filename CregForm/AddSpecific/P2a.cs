@@ -33,6 +33,9 @@ namespace CregForm.AddSpecific
             DSTR.StoreDropDownContent(this, DICT.P2a);
             DSTR.StoreNumBoxContent(this, DICT.P2a);
 
+            var result = DSTR.ValidateEntries(DICT.P2a);
+            if (result != DialogResult.OK) return;
+
             DatabaseHelper database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
             database.Connect();
             database.InsertData("§ 2a", DICT.P2a);

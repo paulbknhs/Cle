@@ -2,16 +2,9 @@
 {
     partial class P2a
     {
-        /// <summary> 
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+                                private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
+                                        protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
             {
@@ -22,11 +15,7 @@
 
         #region Component Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
+                                        private void InitializeComponent()
         {
             this.dropStand = new CregForm.Controls.DropDown();
             this.label1 = new System.Windows.Forms.Label();
@@ -35,10 +24,7 @@
             this.buttonSave = new RJCodeAdvance.RJControls.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.numBeratungszeit)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dropStand
-            // 
-            this.dropStand.BackColor = System.Drawing.Color.WhiteSmoke;
+                                                this.dropStand.BackColor = System.Drawing.Color.WhiteSmoke;
             this.dropStand.BorderColor = System.Drawing.Color.Black;
             this.dropStand.BorderSize = 1;
             this.dropStand.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -55,19 +41,13 @@
             this.dropStand.Size = new System.Drawing.Size(200, 32);
             this.dropStand.TabIndex = 12;
             this.dropStand.Texts = "";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
+                                                this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(116, 191);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 15);
             this.label1.TabIndex = 15;
             this.label1.Text = "Beratungszeit in min";
-            // 
-            // numBeratungszeit
-            // 
-            this.numBeratungszeit.Increment = new decimal(new int[] {
+                                                this.numBeratungszeit.Increment = new decimal(new int[] {
             45,
             0,
             0,
@@ -81,10 +61,7 @@
             this.numBeratungszeit.Name = "numBeratungszeit";
             this.numBeratungszeit.Size = new System.Drawing.Size(70, 23);
             this.numBeratungszeit.TabIndex = 14;
-            // 
-            // dropErwerb
-            // 
-            this.dropErwerb.BackColor = System.Drawing.Color.WhiteSmoke;
+                                                this.dropErwerb.BackColor = System.Drawing.Color.WhiteSmoke;
             this.dropErwerb.BorderColor = System.Drawing.Color.Black;
             this.dropErwerb.BorderSize = 1;
             this.dropErwerb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -101,10 +78,7 @@
             this.dropErwerb.Size = new System.Drawing.Size(200, 32);
             this.dropErwerb.TabIndex = 12;
             this.dropErwerb.Texts = "";
-            // 
-            // buttonSave
-            // 
-            this.buttonSave.BackColor = System.Drawing.Color.White;
+                                                this.buttonSave.BackColor = System.Drawing.Color.White;
             this.buttonSave.BackgroundColor = System.Drawing.Color.White;
             this.buttonSave.BorderColor = System.Drawing.Color.Black;
             this.buttonSave.BorderRadius = 0;
@@ -121,10 +95,7 @@
             this.buttonSave.TextColor = System.Drawing.Color.Black;
             this.buttonSave.UseVisualStyleBackColor = false;
             this.buttonSave.Click += new System.EventHandler(this.OnButtonSave);
-            // 
-            // P2a
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+                                                this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.label1);

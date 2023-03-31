@@ -12,12 +12,7 @@ namespace CregForm.Resources.classes
     public static class LSTS
     {
         #region Allgemein
-
-        public static readonly List<string> Arge = new()
-        {
-            "ARGE", "Ja", "Nein", "Unbekannt"
-        };
-
+        
         public static readonly List<string> Migra = new()
         {
             "Migrationshintergrund", "Ja", "Nein", "Unbekannt"
@@ -25,7 +20,7 @@ namespace CregForm.Resources.classes
 
         public static readonly List<string> Beratung = new()
         {
-            "Beratungsart", "SGB VII", "MuKi + allgem. Sgs", "Beratung n. pränatal", "Allgem. LB",
+            "Beratungsart", "Allgem. LB", "SGB VIII", "MuKi + allgem. Sgs", "Beratung n. pränatal", 
             "RA"
         };
 
@@ -34,14 +29,9 @@ namespace CregForm.Resources.classes
             "Anregung durch", "Schule", "Jugendamt", "Gericht", "Bekannte", "Soz.", "Sonstige", "Unbekannt"
         };
 
-        public static readonly List<string> Anmeldung = new()
-        {
-            "Anmeldung durch", "Erwachsene*r", "Junger Mensch"
-        };
-
         public static readonly List<string> Grund = new()
         {
-            "Abschlussgrund", "Grund 1", "Grund 2"
+            "Abschlussgrund", "1", "2", "3", "4", "5"
         };
 
         #endregion
@@ -54,7 +44,7 @@ namespace CregForm.Resources.classes
 
         public static readonly List<string> EheUndLebenWirtschaft = new()
         {
-            "Wirtschaftlicher Hintergrund", "Ja", "Nein", "Unbekannt"
+            "Beziehen von Leistungen", "Ja", "Nein", "Unbekannt"
         };
         #endregion
 
@@ -64,10 +54,15 @@ namespace CregForm.Resources.classes
         {
             "Art der Leistung", "Mit Familie", "Mit Eltern", "Junge Menschen", "Trennung", "§ 8a", "Fallbesprechung"
         };
+   
+        public static readonly List<string> Anmeldung = new()
+        {
+            "Anmeldung durch", "Erwachsene*r", "Junger Mensch"
+        };
 
         public static readonly List<string> Sgb8Wirtschaft = new()
         {
-            "Wirtschaftliche Situation", "Ja", "Nein", "Unbekannt"
+            "Beziehen von Leistungen", "Ja", "Nein", "Unbekannt"
         };
 
         public static readonly List<string> Sgb8Haushalt = new()
@@ -96,7 +91,7 @@ namespace CregForm.Resources.classes
 
         public static readonly List<string> MuKiKommunikation = new()
         {
-            "Kommunikation", "Online", "Telefonisch", "Keine Angabe"
+            "Kommunikation", "Online", "Telefonisch", "Persönlich"
         };
 
         public static readonly List<string> MuKiLebensstand = new()
@@ -275,13 +270,10 @@ namespace CregForm.Resources.classes
 
         public static void StoreToggleContent(Control frame, Dictionary<string, string> dictionary)
         {
-            foreach (Control item in frame.Controls)
+            foreach (var toggle in frame.Controls.OfType<RJToggleButton>())
             {
-                if (item is not RJToggleButton) continue;
-
-                var tb = (RJToggleButton)item;
-                var key = tb.Name[6..];
-                var value = tb.Checked switch
+                var key = toggle.Name[6..];
+                var value = toggle.Checked switch
                 {
                     true => "Ja",
                     false => "Nein"
@@ -289,19 +281,28 @@ namespace CregForm.Resources.classes
 
                 switch (key)
                 {
-                    case "Grund" when tb.Checked:
-                    case "Sonstige" when !tb.Checked:
-                    case "Unbekannt" when !tb.Checked:
-                        continue;
-                    case "Wartezeit" when tb.Checked:
+                    case "Sonstige" when !toggle.Checked:
+                    case "Unbekannt" when !toggle.Checked:
+                        return;
+
+                    case "Wiederanmeldung" when !toggle.Checked:
+                        dictionary.Add("Wiederanmeldung", "Neu");
+                        return;
+                    case "Wiederanmeldung" when toggle.Checked:
+                        dictionary.Add("Wiederanmeldung", "Wiederanmeldung");
+                        return;
+
+                    case "Wartezeit" when toggle.Checked:
                         dictionary.Add("Wartezeit", "Länger als 4 Wochen");
-                        break;
-                    case "Wartezeit" when !tb.Checked:
+                        return;
+
+                    case "Wartezeit" when !toggle.Checked:
                         dictionary.Add("Wartezeit", "Bis zu 4 Wochen");
-                        break;
+                        return;
+
                     default:
                         dictionary.Add(key, value);
-                        break;
+                        return;
                 }
             }
         }
@@ -394,35 +395,69 @@ namespace CregForm.Resources.classes
             }
         }
 
-        public static void ValidateEntries(Dictionary<string, string> dictionary)
-        {
-            DataGridView grid = new()
-            {
-                AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells,
-                AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells,
-                RowHeadersVisible = false,
-                AutoSize = true
-            };
-            grid.Columns.Add("Key", "Schlüssel");
-            grid.Columns.Add("Value", "Wert");
-            grid.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
 
-            foreach (var pair in dictionary)
+        public static DialogResult ValidateEntries(Dictionary<string, string> dictionary)
+        {
+            var form = new Form
             {
-                grid.Rows.Add(pair.Key, pair.Value);
+                Text = "Eingaben prüfen",
+                MaximizeBox = false,
+                MinimizeBox = false,
+                StartPosition = FormStartPosition.CenterParent,
+            };
+
+            var dgv = new DataGridView
+            {
+                Dock = DockStyle.Top,
+                Size = new Size(300, 420),
+                AutoGenerateColumns = true,
+                RowHeadersVisible = false,
+                BackgroundColor = Color.LightGreen,
+            };
+
+            dgv.Columns.Add("Key", "Feld");
+            dgv.Columns.Add("Value", "Wert");
+
+            dgv.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgv.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            foreach (var kvp in dictionary)
+            {
+                dgv.Rows.Add(kvp.Key, kvp.Value);
             }
 
-            Form presenter = new()
+            form.Controls.Add(dgv);
+            var btnOk = new Button
             {
-                AutoSize = true,
-                Name = "Presenter",
-                FormBorderStyle = FormBorderStyle.FixedSingle
+                Dock = DockStyle.Right,
+                Text = "OK",
+                DialogResult = DialogResult.OK
             };
-            presenter.Controls.Add(grid);
-            grid.Dock = DockStyle.Fill;
 
-            presenter.ShowDialog();
+            var btnCancel = new Button
+            {
+                Dock = DockStyle.Left,
+                Text = "Cancel",
+                DialogResult = DialogResult.Cancel
+            };
+
+            var panel = new Panel
+            {
+                Dock = DockStyle.Bottom,
+                Padding = new Padding(5),
+
+            };
+            
+            panel.Height = btnOk.Height + panel.Padding.Vertical;
+            panel.Controls.Add(btnOk);
+            panel.Controls.Add(btnCancel);
+
+            form.Controls.Add(panel);
+            form.ClientSize = new Size(dgv.Width, dgv.Height + panel.Height);
+
+            return form.ShowDialog();
         }
+
     }
 }
 

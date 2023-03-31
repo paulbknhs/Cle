@@ -85,18 +85,29 @@ namespace CregForm.AddSpecific
 
             if (!toggleUnbekannt.Checked)
             {
-                if (togglePartnerschaft.Checked)
-                    DICT.EheUndLeben.Add("Sozialer Hintergrund", toggleKinder.Checked ? "Verpartnert mit Kind" : "Verpartnert ohne Kind");
-               
-                else if (!togglePartnerschaft.Checked) DICT.EheUndLeben.Add("Sozialer Hintergrund",
-                    toggleKinder.Checked ? "Alleinstehend mit Kind" : "Alleinstehend ohne Kind");
-                else if (toggleSonstige.Checked) DICT.EheUndLeben.Add("Sozialer Hintergrund", "Sonstige");
+                switch (togglePartnerschaft.Checked)
+                {
+                    case true:
+                        DICT.EheUndLeben.Add("Sozialer Hintergrund", toggleKinder.Checked ? "Verpartnert mit Kind" : "Verpartnert ohne Kind");
+                        break;
+                    case false:
+                        DICT.EheUndLeben.Add("Sozialer Hintergrund",
+                            toggleKinder.Checked ? "Alleinstehend mit Kind" : "Alleinstehend ohne Kind");
+                        break;
+                    }
+                if (toggleSonstige.Checked)
+                {
+                    DICT.EheUndLeben["Sozialer Hintergrund"] += " & Sonstiges";
+                }
             }
             else
                 DICT.EheUndLeben.Add("Sozialer Hintergrund", "Unbekannt");
 
             DSTR.StoreStundenGridContent(this, DICT.EheUndLeben);
             DSTR.StoreCheckBoxContent(groupAnmeldung, DICT.EheUndLeben);
+
+            var result = DSTR.ValidateEntries(DICT.EheUndLeben);
+            if (result != DialogResult.OK) return;
 
             DatabaseHelper database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
             database.Connect();

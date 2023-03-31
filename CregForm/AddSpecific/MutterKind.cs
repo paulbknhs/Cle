@@ -52,6 +52,9 @@ namespace CregForm.AddSpecific
             DSTR.StoreDropDownContent(this, DICT.MutterKind);
             DSTR.StoreNumBoxContent(this, DICT.MutterKind);
 
+            var result = DSTR.ValidateEntries(DICT.MutterKind);
+            if (result != DialogResult.OK) return;
+
             DatabaseHelper database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
             database.Connect();
             database.InsertData("Mutter Kind", DICT.MutterKind);

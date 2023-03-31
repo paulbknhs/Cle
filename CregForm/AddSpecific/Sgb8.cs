@@ -32,6 +32,7 @@ public partial class Sgb8 : UserControl
         dropWirtschaft.DataSource = LSTS.Sgb8Wirtschaft;
         dropHilfe.DataSource = LSTS.Sgb8Hilfe;
 
+
         foreach (var item in _arten)
             gridStunden.Rows.Add(item, 0);
         gridStunden.Columns[0].ReadOnly = true;
@@ -91,6 +92,8 @@ public partial class Sgb8 : UserControl
         DSTR.StoreToggleContent(this, DICT.Sgb8);
         DSTR.StoreStundenGridContent(this, DICT.Sgb8);
 
+        var result = DSTR.ValidateEntries(DICT.Sgb8);
+        if (result != DialogResult.OK) return;
 
         DatabaseHelper database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
         database.Connect();

@@ -1,113 +1,94 @@
-﻿using System.Data;
-using DB = CregForm.Resources.classes.DatabaseHelper;
+﻿using CregForm.Resources.classes;
 using System.Configuration;
+using System.Data;
+using System.Text.RegularExpressions;
+using DB = CregForm.Resources.classes.DatabaseHelper;
 
-namespace CregForm.Views
+namespace CregForm.Views;
+
+public partial class StatisticsView : UserControl
 {
-    public partial class StatisticsView : UserControl
+    public StatisticsView()
     {
-        public StatisticsView()
+        InitializeComponent();
+    }
+
+    private void OnLoad(object sender, EventArgs e) { }
+
+    public Dictionary<int, int> gesamtAlter = new();
+    public Dictionary<int, int> neuAlter = new();
+    public Dictionary<string, string> filter = new() { { "Wiederanmeldung", "Neu" } };
+    public Dictionary<int, string> personDict =
+        new()
         {
-            InitializeComponent();
-        }
+            { 0, "Erwachsene*r 1" },
+            { 1, "Erwachsene*r 2" },
+            { 2, "Kind 1" },
+            { 3, "Kind 2" },
+            { 4, "Kind 3" },
+            { 5, "Kind 4" },
+        };
 
-        private void OnLoad(object sender, EventArgs e)
+    public void setUpTables()
+    {
+        DB db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        db.Connect();
+        var dataTable = db.GetData("Allgemein");
+        db.Disconnect();
+
+        var ageTable = CalculateAgeFrequency(dataTable);
+
+        dataGridAge.DataSource = ageTable;
+    }
+
+    public DataTable CalculateAgeFrequency(DataTable dataTable)
+    {
+        var ageFrequency = new Dictionary<int, int>();
+        var ageFrequencyNeu = new Dictionary<int, int>();
+
+        foreach (DataRow row in dataTable.Rows)
         {
-            var table = GetAgeAndGenderData();
-            dataGridAge.DataSource = table;
-        }
-
-
-
-            public static DataTable GetAgeAndGenderData()
+            for (var i = 11; i <= 15; i++)
             {
-                var db = new DB(ConfigurationManager.AppSettings.Get("ConnectionString") ?? string.Empty);
-                var table = new DataTable();
-
-                db.Connect();
-                var data = db.GetData("Allgemein");
-                var columns = new List<string>()
-                    { "Erwachsene*r 1", "Erwachsene*r 2", "Kind 1", "Kind 2", "Kind 3", "Kind 4", "Kind 5" };
-
-                table = FilterColumns(data, columns);
-
-                var freqAgeGender = new Dictionary<(int age, string gender), int>();
-
-                foreach (DataRow row in table.Rows)
+                if (!int.TryParse(row[i].ToString(), out int age)) continue;
+                if (ageFrequency.ContainsKey(age))
                 {
-                    for (var i = 0; i < row.ItemArray.Length; i++)
-                    {
-                        var value = row.ItemArray[i].ToString();
-                        if (!value.Contains("m") && !value.Contains("w") && !value.Contains("nb")) continue;
-                        var age = int.Parse(value.Split(" ")[0]);
-                        var gender = value.Contains("m") ? "Männlich" : value.Contains("w") ? "Weiblich" : "Non-Binär";
-
-                        var ageGenderTuple = (age, gender);
-                        if (freqAgeGender.ContainsKey(ageGenderTuple))
-                            freqAgeGender[ageGenderTuple]++;
-                        else
-                            freqAgeGender[ageGenderTuple] = 1;
-                    }
+                    ageFrequency[age]++;
+                }
+                else
+                {
+                    ageFrequency[age] = 1;
                 }
 
-
-            var sortedFreqAgeGender = from entry in freqAgeGender orderby entry.Key.age ascending select entry;
-
-                var result = new DataTable();
-                result.Columns.Add("Alter", typeof(int));
-                result.Columns.Add("Gesamt", typeof(int));
-                result.Columns.Add("Männlich", typeof(int));
-                result.Columns.Add("Weiblich", typeof(int));
-                result.Columns.Add("Non-Binär", typeof(int));
-
-                foreach (var entry in sortedFreqAgeGender)
+                if (row["Wiederanmeldung"].ToString() != "Neu") continue;
+                if (ageFrequencyNeu.ContainsKey(age))
                 {
-                    var row = result.NewRow();
-                    row["Alter"] = entry.Key.age;
-                    row["Gesamt"] = entry.Value;
-
-                    if (entry.Key.gender == "Männlich")
-                        row["Männlich"] = entry.Value;
-                    else if (entry.Key.gender == "Weiblich")
-                        row["Weiblich"] = entry.Value;
-                    else
-                        row["Non-Binär"] = entry.Value;
-
-                    result.Rows.Add(row);
+                    ageFrequencyNeu[age]++;
                 }
-
-                result.DefaultView.Sort = "Alter ASC";
-                result = result.DefaultView.ToTable();
-                
-                return result;
+                else
+                {
+                    ageFrequencyNeu[age] = 1;
+                }
             }
-
-
-
-        public static DataTable FilterColumns(DataTable dataTable, List<string> columnNames)
-        {
-            var filteredDataTable = new DataTable();
-            foreach (var column in columnNames.Select(columnName => dataTable.Columns[columnName]))
-                filteredDataTable.Columns.Add(column.ColumnName, column.DataType);
-
-            foreach (DataRow row in dataTable.Rows)
-            {
-                var filteredRow = filteredDataTable.NewRow();
-                foreach (var columnName in columnNames) filteredRow[columnName] = row[columnName];
-                filteredDataTable.Rows.Add(filteredRow);
-            }
-            return filteredDataTable;
         }
 
+        var ageFrequencyTable = new DataTable();
+        ageFrequencyTable.Columns.Add("Alter", typeof(int));
+        ageFrequencyTable.Columns.Add("Gesamt", typeof(int));
+        ageFrequencyTable.Columns.Add("Gesamt Neu", typeof(int));
 
-        public static DataTable Age()
+        foreach (var kvp in ageFrequency)
         {
-            DataTable dt = new();
-
-            
-            return dt;
+            ageFrequencyTable.Rows.Add(
+                kvp.Key,
+                kvp.Value,
+                ageFrequencyNeu.GetValueOrDefault(kvp.Key, 0)
+            );
         }
 
+        ageFrequencyTable.DefaultView.Sort = "Alter ASC";
+        ageFrequencyTable = ageFrequencyTable.DefaultView.ToTable();
 
+        return ageFrequencyTable;
     }
 }

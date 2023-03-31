@@ -2,16 +2,9 @@
 {
     partial class SearchView
     {
-        /// <summary> 
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+                                private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
+                                        protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
             {
@@ -22,11 +15,7 @@
 
         #region Component Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
+                                        private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -42,10 +31,7 @@
             this.lblErgebnisse = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridData)).BeginInit();
             this.SuspendLayout();
-            // 
-            // gridData
-            // 
-            this.gridData.AllowUserToAddRows = false;
+                                                this.gridData.AllowUserToAddRows = false;
             this.gridData.AllowUserToDeleteRows = false;
             this.gridData.AllowUserToOrderColumns = true;
             this.gridData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
@@ -85,10 +71,7 @@
             this.gridData.RowTemplate.Height = 25;
             this.gridData.Size = new System.Drawing.Size(1060, 561);
             this.gridData.TabIndex = 0;
-            // 
-            // dropTabelle
-            // 
-            this.dropTabelle.BackColor = System.Drawing.Color.WhiteSmoke;
+                                                this.dropTabelle.BackColor = System.Drawing.Color.WhiteSmoke;
             this.dropTabelle.BorderColor = System.Drawing.Color.Black;
             this.dropTabelle.BorderSize = 1;
             this.dropTabelle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -106,10 +89,7 @@
             this.dropTabelle.TabIndex = 4;
             this.dropTabelle.Texts = "";
             this.dropTabelle.OnSelectedIndexChanged += new System.EventHandler(this.OnSelection);
-            // 
-            // buttonDelete
-            // 
-            this.buttonDelete.BackColor = System.Drawing.Color.Red;
+                                                this.buttonDelete.BackColor = System.Drawing.Color.Red;
             this.buttonDelete.BackgroundColor = System.Drawing.Color.Red;
             this.buttonDelete.BorderColor = System.Drawing.Color.Black;
             this.buttonDelete.BorderRadius = 0;
@@ -126,10 +106,7 @@
             this.buttonDelete.TextColor = System.Drawing.Color.White;
             this.buttonDelete.UseVisualStyleBackColor = false;
             this.buttonDelete.Click += new System.EventHandler(this.OnDelete);
-            // 
-            // tbFilter
-            // 
-            this.tbFilter.BackColor = System.Drawing.SystemColors.Window;
+                                                this.tbFilter.BackColor = System.Drawing.SystemColors.Window;
             this.tbFilter.BorderColor = System.Drawing.Color.Black;
             this.tbFilter.BorderFocusColor = System.Drawing.Color.Green;
             this.tbFilter.BorderRadius = 0;
@@ -148,10 +125,7 @@
             this.tbFilter.TabIndex = 15;
             this.tbFilter.Texts = "";
             this.tbFilter.UnderlinedStyle = true;
-            // 
-            // rjButton1
-            // 
-            this.rjButton1.BackColor = System.Drawing.Color.Green;
+                                                this.rjButton1.BackColor = System.Drawing.Color.Green;
             this.rjButton1.BackgroundColor = System.Drawing.Color.Green;
             this.rjButton1.BorderColor = System.Drawing.Color.White;
             this.rjButton1.BorderRadius = 0;
@@ -168,10 +142,7 @@
             this.rjButton1.TextColor = System.Drawing.Color.White;
             this.rjButton1.UseVisualStyleBackColor = false;
             this.rjButton1.Click += new System.EventHandler(this.OnFilterAdd);
-            // 
-            // dropFilter
-            // 
-            this.dropFilter.BackColor = System.Drawing.Color.WhiteSmoke;
+                                                this.dropFilter.BackColor = System.Drawing.Color.WhiteSmoke;
             this.dropFilter.BorderColor = System.Drawing.Color.Black;
             this.dropFilter.BorderSize = 1;
             this.dropFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -189,10 +160,7 @@
             this.dropFilter.TabIndex = 4;
             this.dropFilter.Texts = "";
             this.dropFilter.OnSelectedIndexChanged += new System.EventHandler(this.OnSelection);
-            // 
-            // rjButton2
-            // 
-            this.rjButton2.BackColor = System.Drawing.Color.Tomato;
+                                                this.rjButton2.BackColor = System.Drawing.Color.Tomato;
             this.rjButton2.BackgroundColor = System.Drawing.Color.Tomato;
             this.rjButton2.BorderColor = System.Drawing.Color.White;
             this.rjButton2.BorderRadius = 0;
@@ -209,10 +177,7 @@
             this.rjButton2.TextColor = System.Drawing.Color.Black;
             this.rjButton2.UseVisualStyleBackColor = false;
             this.rjButton2.Click += new System.EventHandler(this.OnReset);
-            // 
-            // tbListFilters
-            // 
-            this.tbListFilters.AutoSize = true;
+                                                this.tbListFilters.AutoSize = true;
             this.tbListFilters.BackColor = System.Drawing.SystemColors.Window;
             this.tbListFilters.BorderColor = System.Drawing.Color.DimGray;
             this.tbListFilters.BorderFocusColor = System.Drawing.Color.Black;
@@ -233,10 +198,7 @@
             this.tbListFilters.TabIndex = 15;
             this.tbListFilters.Texts = "";
             this.tbListFilters.UnderlinedStyle = false;
-            // 
-            // lblErgebnisse
-            // 
-            this.lblErgebnisse.AutoSize = true;
+                                                this.lblErgebnisse.AutoSize = true;
             this.lblErgebnisse.BackColor = System.Drawing.Color.Transparent;
             this.lblErgebnisse.ForeColor = System.Drawing.Color.Green;
             this.lblErgebnisse.Location = new System.Drawing.Point(395, 19);
@@ -244,10 +206,7 @@
             this.lblErgebnisse.Size = new System.Drawing.Size(63, 15);
             this.lblErgebnisse.TabIndex = 16;
             this.lblErgebnisse.Text = "Ergebnisse";
-            // 
-            // SearchView
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+                                                this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.Controls.Add(this.lblErgebnisse);

@@ -15,76 +15,54 @@ namespace CregForm.Controls
     [DefaultEvent("OnSelectedIndexChanged")]
     public class DropDown : UserControl
     {
-        //Fields
-        private Color backColor = Color.WhiteSmoke;
+                private Color backColor = Color.WhiteSmoke;
         private Color iconColor = Color.MediumSlateBlue;
         private Color listBackColor = Color.FromArgb(230, 228, 245);
         private Color listTextColor = Color.DimGray;
         private Color borderColor = Color.MediumSlateBlue;
         private int borderSize = 1;
 
-        //Items
-        private ComboBox cmbList;
+                private ComboBox cmbList;
         private Label lblText;
         private Button btnIcon;
 
-        //Events
-        public event EventHandler OnSelectedIndexChanged; //Default event
-
-        //Constructor
-        public DropDown()
+                public event EventHandler OnSelectedIndexChanged; 
+                public DropDown()
         {
             cmbList = new ComboBox();
             lblText = new Label();
             btnIcon = new Button();
             this.SuspendLayout();
 
-            //ComboBox: Dropdown list
-            cmbList.BackColor = listBackColor;
+                        cmbList.BackColor = listBackColor;
             cmbList.Font = new Font(this.Font.Name, 10F);
             cmbList.ForeColor = listTextColor;
-            cmbList.SelectedIndexChanged += new EventHandler(ComboBox_SelectedIndexChanged); //Default event
-            cmbList.TextChanged += new EventHandler(ComboBox_TextChanged); //Refresh text
-
-            //Button: Icon
-            btnIcon.Dock = DockStyle.Right;
+            cmbList.SelectedIndexChanged += new EventHandler(ComboBox_SelectedIndexChanged);             cmbList.TextChanged += new EventHandler(ComboBox_TextChanged); 
+                        btnIcon.Dock = DockStyle.Right;
             btnIcon.FlatStyle = FlatStyle.Flat;
             btnIcon.FlatAppearance.BorderSize = 0;
             btnIcon.BackColor = backColor;
             btnIcon.Size = new Size(30, 30);
             btnIcon.Cursor = Cursors.Hand;
-            btnIcon.Click += new EventHandler(Icon_Click); //Open dropdown list
-            btnIcon.Paint += new PaintEventHandler(Icon_Paint); //Draw icon
-
-            //Label: Text
-            lblText.Dock = DockStyle.Fill;
+            btnIcon.Click += new EventHandler(Icon_Click);             btnIcon.Paint += new PaintEventHandler(Icon_Paint); 
+                        lblText.Dock = DockStyle.Fill;
             lblText.AutoSize = false;
             lblText.BackColor = backColor;
             lblText.TextAlign = ContentAlignment.MiddleLeft;
             lblText.Padding = new Padding(8, 0, 0, 0);
             lblText.Font = new Font(this.Font.Name, 10F);
-            //->Attach label events to user control event
-            lblText.Click += new EventHandler(Surface_Click); //Select combo box
-            lblText.MouseEnter += new EventHandler(Surface_MouseEnter);
+                        lblText.Click += new EventHandler(Surface_Click);             lblText.MouseEnter += new EventHandler(Surface_MouseEnter);
             lblText.MouseLeave += new EventHandler(Surface_MouseLeave);
 
-            //User Control
-            this.Controls.Add(lblText); //2
-            this.Controls.Add(btnIcon); //1
-            this.Controls.Add(cmbList); //0
-            this.MinimumSize = new Size(200, 30);
+                        this.Controls.Add(lblText);             this.Controls.Add(btnIcon);             this.Controls.Add(cmbList);             this.MinimumSize = new Size(200, 30);
             this.Size = new Size(200, 30);
             this.ForeColor = Color.DimGray;
-            this.Padding = new Padding(borderSize); //Border Size
-            this.Font = new Font(this.Font.Name, 10F);
-            base.BackColor = borderColor; //Border Color
-            this.ResumeLayout();
+            this.Padding = new Padding(borderSize);             this.Font = new Font(this.Font.Name, 10F);
+            base.BackColor = borderColor;             this.ResumeLayout();
             AdjustComboBoxDimensions();
         }
 
-        //Properties
-        //-> Appearance
-        [Category("DropDown - Appearance")]
+                        [Category("DropDown - Appearance")]
         public new Color BackColor
         {
             get { return backColor; }
@@ -103,8 +81,7 @@ namespace CregForm.Controls
             set
             {
                 iconColor = value;
-                btnIcon.Invalidate(); //Redraw icon
-            }
+                btnIcon.Invalidate();             }
         }
 
         [Category("DropDown - Appearance")]
@@ -136,8 +113,7 @@ namespace CregForm.Controls
             set
             {
                 borderColor = value;
-                base.BackColor = borderColor; //Border Color
-            }
+                base.BackColor = borderColor;             }
         }
 
         [Category("DropDown - Appearance")]
@@ -147,8 +123,7 @@ namespace CregForm.Controls
             set
             {
                 borderSize = value;
-                this.Padding = new Padding(borderSize); //Border Size
-                AdjustComboBoxDimensions();
+                this.Padding = new Padding(borderSize);                 AdjustComboBoxDimensions();
             }
         }
 
@@ -171,8 +146,7 @@ namespace CregForm.Controls
             {
                 base.Font = value;
                 lblText.Font = value;
-                cmbList.Font = value; //Optional
-            }
+                cmbList.Font = value;             }
         }
 
         [Category("DropDown - Appearance")]
@@ -193,9 +167,7 @@ namespace CregForm.Controls
             }
         }
 
-        //Properties
-        //-> Data
-        [Category("DropDown - Data")]
+                        [Category("DropDown - Data")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         [Editor(
             "System.Windows.Forms.Design.ListControlStringCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
@@ -298,8 +270,7 @@ namespace CregForm.Controls
             set { cmbList.ValueMember = value; }
         }
 
-        //Private methods
-        private void AdjustComboBoxDimensions()
+                private void AdjustComboBoxDimensions()
         {
             cmbList.Width = lblText.Width;
             cmbList.Location = new Point()
@@ -309,22 +280,17 @@ namespace CregForm.Controls
             };
         }
 
-        //Event methods
-
-        //-> Default event
-        private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        
+                private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (OnSelectedIndexChanged != null)
                 OnSelectedIndexChanged.Invoke(sender, e);
-            //Refresh text
-            lblText.Text = cmbList.Text;
+                        lblText.Text = cmbList.Text;
         }
 
-        //-> Draw icon
-        private void Icon_Paint(object sender, PaintEventArgs e)
+                private void Icon_Paint(object sender, PaintEventArgs e)
         {
-            //Fields
-            int iconWidht = 14;
+                        int iconWidht = 14;
             int iconHeight = 6;
             var rectIcon = new Rectangle(
                 (btnIcon.Width - iconWidht) / 2,
@@ -334,8 +300,7 @@ namespace CregForm.Controls
             );
             Graphics graph = e.Graphics;
 
-            //Draw arrow down icon
-            using (GraphicsPath path = new GraphicsPath())
+                        using (GraphicsPath path = new GraphicsPath())
             using (Pen pen = new Pen(iconColor, 2))
             {
                 graph.SmoothingMode = SmoothingMode.AntiAlias;
@@ -350,32 +315,25 @@ namespace CregForm.Controls
             }
         }
 
-        //-> Items actions
-        private void Icon_Click(object sender, EventArgs e)
+                private void Icon_Click(object sender, EventArgs e)
         {
-            //Open dropdown list
-            cmbList.Select();
+                        cmbList.Select();
             cmbList.DroppedDown = true;
         }
 
         private void Surface_Click(object sender, EventArgs e)
         {
-            //Attach label click to user control click
-            this.OnClick(e);
-            //Select combo box
-            cmbList.Select();
+                        this.OnClick(e);
+                        cmbList.Select();
             if (cmbList.DropDownStyle == ComboBoxStyle.DropDownList)
-                cmbList.DroppedDown = true; //Open dropdown list
-        }
+                cmbList.DroppedDown = true;         }
 
         private void ComboBox_TextChanged(object sender, EventArgs e)
         {
-            //Refresh text
-            lblText.Text = cmbList.Text;
+                        lblText.Text = cmbList.Text;
         }
 
-        //->Attach label events to user control event
-        private void Surface_MouseLeave(object sender, EventArgs e)
+                private void Surface_MouseLeave(object sender, EventArgs e)
         {
             this.OnMouseLeave(e);
         }
@@ -385,10 +343,8 @@ namespace CregForm.Controls
             this.OnMouseEnter(e);
         }
 
-        //::::+
-
-        //Overridden methods
-        protected override void OnResize(EventArgs e)
+        
+                protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
             AdjustComboBoxDimensions();

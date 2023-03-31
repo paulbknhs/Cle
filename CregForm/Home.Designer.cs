@@ -2,16 +2,9 @@
 {
     partial class Home
     {
-        /// <summary>
-        ///  Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+                                private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        ///  Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
+                                        protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
             {
@@ -22,11 +15,7 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
+                                        private void InitializeComponent()
         {
             this.NavigationBar = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,10 +30,7 @@
             this.NavigationBar.SuspendLayout();
             this.ControlStrip.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // NavigationBar
-            // 
-            this.NavigationBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+                                                this.NavigationBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.NavigationBar.Controls.Add(this.label1);
             this.NavigationBar.Controls.Add(this.SettingsButton);
             this.NavigationBar.Controls.Add(this.ExportButton);
@@ -55,20 +41,14 @@
             this.NavigationBar.Name = "NavigationBar";
             this.NavigationBar.Size = new System.Drawing.Size(200, 690);
             this.NavigationBar.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
+                                                this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label1.Location = new System.Drawing.Point(3, 61);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 23);
+            this.label1.Size = new System.Drawing.Size(182, 23);
             this.label1.TabIndex = 1;
             this.label1.Text = "______________________________________";
-            // 
-            // SettingsButton
-            // 
-            this.SettingsButton.BackColor = System.Drawing.Color.Transparent;
+                                                this.SettingsButton.BackColor = System.Drawing.Color.Transparent;
             this.SettingsButton.FlatAppearance.BorderSize = 0;
             this.SettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SettingsButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -85,10 +65,7 @@
             this.SettingsButton.UseVisualStyleBackColor = false;
             this.SettingsButton.Click += new System.EventHandler(this.OnSettingsButton);
             this.SettingsButton.Paint += new System.Windows.Forms.PaintEventHandler(this.OnNavigationPaint);
-            // 
-            // ExportButton
-            // 
-            this.ExportButton.BackColor = System.Drawing.Color.Transparent;
+                                                this.ExportButton.BackColor = System.Drawing.Color.Transparent;
             this.ExportButton.FlatAppearance.BorderSize = 0;
             this.ExportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ExportButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -106,10 +83,7 @@
             this.ExportButton.UseVisualStyleBackColor = false;
             this.ExportButton.Click += new System.EventHandler(this.OnExportButton);
             this.ExportButton.Paint += new System.Windows.Forms.PaintEventHandler(this.OnNavigationPaint);
-            // 
-            // SearchButton
-            // 
-            this.SearchButton.BackColor = System.Drawing.Color.Transparent;
+                                                this.SearchButton.BackColor = System.Drawing.Color.Transparent;
             this.SearchButton.FlatAppearance.BorderSize = 0;
             this.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SearchButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -127,10 +101,7 @@
             this.SearchButton.UseVisualStyleBackColor = false;
             this.SearchButton.Click += new System.EventHandler(this.OnSearchButton);
             this.SearchButton.Paint += new System.Windows.Forms.PaintEventHandler(this.OnNavigationPaint);
-            // 
-            // AddButton
-            // 
-            this.AddButton.BackColor = System.Drawing.Color.Transparent;
+                                                this.AddButton.BackColor = System.Drawing.Color.Transparent;
             this.AddButton.FlatAppearance.BorderSize = 0;
             this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -148,10 +119,7 @@
             this.AddButton.UseVisualStyleBackColor = false;
             this.AddButton.Click += new System.EventHandler(this.OnAddButton);
             this.AddButton.Paint += new System.Windows.Forms.PaintEventHandler(this.OnNavigationPaint);
-            // 
-            // HomeButton
-            // 
-            this.HomeButton.BackColor = System.Drawing.Color.Transparent;
+                                                this.HomeButton.BackColor = System.Drawing.Color.Transparent;
             this.HomeButton.FlatAppearance.BorderSize = 0;
             this.HomeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.HomeButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -169,10 +137,7 @@
             this.HomeButton.UseVisualStyleBackColor = false;
             this.HomeButton.Click += new System.EventHandler(this.OnHomeButton);
             this.HomeButton.Paint += new System.Windows.Forms.PaintEventHandler(this.OnNavigationPaint);
-            // 
-            // ControlStrip
-            // 
-            this.ControlStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+                                                this.ControlStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ControlStrip.Controls.Add(this.ButtonClose);
             this.ControlStrip.Dock = System.Windows.Forms.DockStyle.Top;
             this.ControlStrip.Location = new System.Drawing.Point(0, 0);
@@ -181,10 +146,7 @@
             this.ControlStrip.Size = new System.Drawing.Size(1280, 30);
             this.ControlStrip.TabIndex = 1;
             this.ControlStrip.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnControlStrip);
-            // 
-            // ButtonClose
-            // 
-            this.ButtonClose.BackColor = System.Drawing.Color.Transparent;
+                                                this.ButtonClose.BackColor = System.Drawing.Color.Transparent;
             this.ButtonClose.FlatAppearance.BorderSize = 0;
             this.ButtonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonClose.Image = global::CregForm.Properties.Resources.icons8_close_16;
@@ -195,19 +157,13 @@
             this.ButtonClose.TabIndex = 0;
             this.ButtonClose.UseVisualStyleBackColor = true;
             this.ButtonClose.Click += new System.EventHandler(this.OnButtonClose);
-            // 
-            // noView
-            // 
-            this.noView.BackColor = System.Drawing.Color.Transparent;
+                                                this.noView.BackColor = System.Drawing.Color.Transparent;
             this.noView.Location = new System.Drawing.Point(200, 30);
             this.noView.Name = "noView";
             this.noView.Size = new System.Drawing.Size(1080, 690);
             this.noView.TabIndex = 2;
             this.noView.Tag = "View";
-            // 
-            // Home
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+                                                this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CregForm.Properties.Resources.Background_Waves;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
