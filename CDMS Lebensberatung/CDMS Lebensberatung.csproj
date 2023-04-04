@@ -6,11 +6,27 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-    <ApplicationIcon>Lebensberatung_Logo 1.ico</ApplicationIcon>
+    <ApplicationIcon>cdms.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="Lebensberatung_Logo 1.ico" />
+    <Compile Remove="images\**" />
+    <EmbeddedResource Remove="images\**" />
+    <None Remove="images\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include=".cs\Dictionaries.cs" />
+    <Compile Include=".cs\Graphics.cs" />
+    <Compile Include=".cs\Lists.cs" />
+    <Compile Include=".cs\Program.cs" />
+    <Compile Include=".cs\ReadInput.cs" />
+    <Compile Include=".cs\SQL.cs" />
+    <Compile Include=".cs\Statistics.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="cdms.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,23 +45,23 @@
     <Reference Include="office">
       <HintPath>..\..\..\..\..\..\Windows\assembly\GAC_MSIL\office\15.0.0.0__71e9bce111e9429c\OFFICE.DLL</HintPath>
     </Reference>
+    <Reference Include="RoundedRectangles">
+      <HintPath>..\..\RoundedRectangles\RoundedRectangles\bin\Debug\RoundedRectangles.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Properties\Resources.Designer.cs">
+    <Compile Update="Properties\images.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Update="Views\AddView - Copy.cs">
-      <SubType>UserControl</SubType>
+      <DependentUpon>images.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Properties\Resources.resx">
+    <EmbeddedResource Update="Properties\images.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <LastGenOutput>images.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 

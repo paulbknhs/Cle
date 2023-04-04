@@ -26,9 +26,13 @@
             this.HomeButton = new System.Windows.Forms.Button();
             this.ControlStrip = new System.Windows.Forms.Panel();
             this.ButtonClose = new System.Windows.Forms.Button();
-            this.noView = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.NavigationBar.SuspendLayout();
             this.ControlStrip.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // NavigationBar
@@ -62,7 +66,7 @@
             this.SettingsButton.FlatAppearance.BorderSize = 0;
             this.SettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SettingsButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SettingsButton.Image = global::CDMS_Lebensberatung.Properties.Resources.icons8_user_settings_24;
+            this.SettingsButton.Image = global::CDMS_Lebensberatung.Properties.images.settings24x24;
             this.SettingsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SettingsButton.Location = new System.Drawing.Point(0, 640);
             this.SettingsButton.Margin = new System.Windows.Forms.Padding(0);
@@ -83,7 +87,7 @@
             this.ExportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ExportButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ExportButton.ForeColor = System.Drawing.Color.DimGray;
-            this.ExportButton.Image = global::CDMS_Lebensberatung.Properties.Resources.icons8_export_24;
+            this.ExportButton.Image = global::CDMS_Lebensberatung.Properties.images.export24x24;
             this.ExportButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ExportButton.Location = new System.Drawing.Point(0, 184);
             this.ExportButton.Margin = new System.Windows.Forms.Padding(0);
@@ -104,7 +108,7 @@
             this.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SearchButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SearchButton.ForeColor = System.Drawing.Color.DimGray;
-            this.SearchButton.Image = global::CDMS_Lebensberatung.Properties.Resources.icons8_search_database_24;
+            this.SearchButton.Image = global::CDMS_Lebensberatung.Properties.images.search_db24x24;
             this.SearchButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SearchButton.Location = new System.Drawing.Point(0, 134);
             this.SearchButton.Margin = new System.Windows.Forms.Padding(0);
@@ -125,7 +129,7 @@
             this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.AddButton.ForeColor = System.Drawing.Color.DimGray;
-            this.AddButton.Image = global::CDMS_Lebensberatung.Properties.Resources.icons8_plus_math_24;
+            this.AddButton.Image = global::CDMS_Lebensberatung.Properties.images.add_new24x24;
             this.AddButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.AddButton.Location = new System.Drawing.Point(0, 84);
             this.AddButton.Margin = new System.Windows.Forms.Padding(0);
@@ -146,7 +150,7 @@
             this.HomeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.HomeButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.HomeButton.ForeColor = System.Drawing.Color.DimGray;
-            this.HomeButton.Image = global::CDMS_Lebensberatung.Properties.Resources.icons8_home_24;
+            this.HomeButton.Image = global::CDMS_Lebensberatung.Properties.images.home24x24;
             this.HomeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.HomeButton.Location = new System.Drawing.Point(0, 11);
             this.HomeButton.Margin = new System.Windows.Forms.Padding(0);
@@ -177,7 +181,7 @@
             this.ButtonClose.BackColor = System.Drawing.Color.Transparent;
             this.ButtonClose.FlatAppearance.BorderSize = 0;
             this.ButtonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonClose.Image = global::CDMS_Lebensberatung.Properties.Resources.icons8_close_16;
+            this.ButtonClose.Image = global::CDMS_Lebensberatung.Properties.images.close_16;
             this.ButtonClose.Location = new System.Drawing.Point(1240, 0);
             this.ButtonClose.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonClose.Name = "ButtonClose";
@@ -186,23 +190,62 @@
             this.ButtonClose.UseVisualStyleBackColor = true;
             this.ButtonClose.Click += new System.EventHandler(this.OnButtonClose);
             // 
-            // noView
+            // panel4
             // 
-            this.noView.BackColor = System.Drawing.Color.Transparent;
-            this.noView.Location = new System.Drawing.Point(200, 30);
-            this.noView.Name = "noView";
-            this.noView.Size = new System.Drawing.Size(1080, 690);
-            this.noView.TabIndex = 2;
-            this.noView.Tag = "View";
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel4.Controls.Add(this.label5);
+            this.panel4.Controls.Add(this.label4);
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 720);
+            this.panel4.Margin = new System.Windows.Forms.Padding(0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1280, 20);
+            this.panel4.TabIndex = 3;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(144, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(370, 20);
+            this.label5.TabIndex = 2;
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(514, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(370, 20);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "CDMS-0.2.1";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(884, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(396, 20);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Client Data Management System - Die Lebensberatung";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::CDMS_Lebensberatung.Properties.Resources.Background_Waves;
+            this.BackgroundImage = global::CDMS_Lebensberatung.Properties.images.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1280, 720);
-            this.Controls.Add(this.noView);
+            this.ClientSize = new System.Drawing.Size(1280, 740);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.ControlStrip);
             this.Controls.Add(this.NavigationBar);
             this.DoubleBuffered = true;
@@ -210,8 +253,10 @@
             this.MaximizeBox = false;
             this.Name = "Home";
             this.Text = "Home";
+            this.Load += new System.EventHandler(this.OnHomeLoad);
             this.NavigationBar.ResumeLayout(false);
             this.ControlStrip.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -226,7 +271,10 @@
         private Button SearchButton;
         private Button AddButton;
         private Button HomeButton;
-        private Panel noView;
         private Label label1;
+        private Panel panel4;
+        private Label label5;
+        private Label label4;
+        private Label label3;
     }
 }
