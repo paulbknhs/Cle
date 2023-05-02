@@ -1,32 +1,45 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Configuration;
+using System.Diagnostics;
+using System.ServiceProcess;
 using CDMS_Lebensberatung.cs;
 using static System.DateTime;
 
-namespace CDMS_Lebensberatung.UserControls
+namespace CDMS_Lebensberatung.UserControls;
+
+public partial class FrameHome : UserControl
 {
-    public partial class FrameHome : UserControl
+    public string serviceName = ConfigurationManager.AppSettings.Get("ServiceName");
+
+    public FrameHome()
     {
-        public FrameHome()
+        InitializeComponent();
+    }
+
+    private void OnFrameLoad(object sender, EventArgs e)
+    {
+        var name = Environment.UserName;
+        if (name == "ubak") name = "Ute";
+        var wochentag = Lists.Wochentage[(int)Now.DayOfWeek];
+
+        labelHallo.Text = $"Hallo {name}!";
+
+        labelDatum.Text = $"{wochentag}, {Now.Day}.{Now.Month}.{Now.Year}";
+
+        if (IsServiceRunning(serviceName))
         {
-            InitializeComponent();
+            serverState.Text = "Gestartet";
+            serverState.ForeColor = Color.Green;
         }
-
-        private void OnFrameLoad(object sender, EventArgs e)
+        else
         {
-            var name = Environment.UserName;
-            var wochentag = Lists.Wochentage[(int)Now.DayOfWeek];
-
-            labelHallo.Text = $"Hallo {name}!";
-
-            labelDatum.Text = $"{wochentag}, der {Now.Day}.{Now.Month}.{Now.Year}";
+            serverState.Text = "Gestoppt";
+            serverState.ForeColor = Color.IndianRed;
         }
+    }
+
+    private static bool IsServiceRunning(string serviceName)
+    {
+        var sc = new ServiceController(serviceName);
+        return sc.Status == ServiceControllerStatus.Running;
     }
 }

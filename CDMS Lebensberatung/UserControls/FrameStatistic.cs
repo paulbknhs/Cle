@@ -1,14 +1,15 @@
 ﻿using System.Configuration;
 using System.Data;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
+using System.ServiceProcess;
 using System.Text;
 using CDMS_Lebensberatung.cs;
+using Microsoft.IdentityModel.Tokens;
 using Application = Microsoft.Office.Interop.Excel.Application;
-using CheckBox = System.Windows.Forms.CheckBox;
+using Range = Microsoft.Office.Interop.Excel.Range;
 using Workbook = Microsoft.Office.Interop.Excel.Workbook;
 using Worksheet = Microsoft.Office.Interop.Excel.Worksheet;
-using Excel = Microsoft.Office.Interop.Excel;
-
 
 namespace CDMS_Lebensberatung.UserControls;
 
@@ -17,6 +18,7 @@ public partial class FrameStatistics : UserControl
     public FrameStatistics()
     {
         InitializeComponent();
+        UpdateGrid();
     }
 
     public static List<int> CollectAgesUnfiltered()
@@ -142,14 +144,17 @@ public partial class FrameStatistics : UserControl
         gridAge.DataSource = Statistics.ListeZuTabelle(CollectAgesUnfiltered());
     }
 
+    private static bool IsServiceRunning()
+    {
+        var sc = new ServiceController(ConfigurationManager.AppSettings.Get("ServiceName"));
+        return sc.Status == ServiceControllerStatus.Running;
+    }
+
     private void OnLoad(object sender, EventArgs e)
     {
-        UpdateGrid();
+        if (IsServiceRunning()) UpdateGrid();
 
-        for (var i = 0; i < checkListStats.Items.Count; i++)
-        {
-            checkListStats.SetItemChecked(i, true);
-        }
+        for (var i = 0; i < checkListStats.Items.Count; i++) checkListStats.SetItemChecked(i, true);
     }
 
     private void ExportToXlsx(List<DataTable> tableList)
@@ -160,61 +165,60 @@ public partial class FrameStatistics : UserControl
             return;
         }
 
+        if (!ConfigurationManager.AppSettings.Get("DefaultPath").IsNullOrEmpty())
+            exportStatisticsFileSave.InitialDirectory = ConfigurationManager.AppSettings.Get("DefaultPath");
+
         exportStatisticsFileSave.Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
 
-        if (exportStatisticsFileSave.ShowDialog() == DialogResult.OK)
+        if (exportStatisticsFileSave.ShowDialog() != DialogResult.OK) return;
+        var excel = new Application();
+        Workbook? workbook = null;
+        try
         {
-            var excel = new Application();
-            Workbook? workbook = null;
-            try
+            workbook = excel.Workbooks.Add();
+            var worksheet = workbook.Worksheets.Add() as Worksheet;
+            worksheet.Name = $"Statistik {DateTime.Now.Year}";
+
+            var rowIndex = 2;
+
+            foreach (var dt in tableList)
             {
-                workbook = excel.Workbooks.Add();
-                var worksheet = workbook.Worksheets.Add() as Worksheet;
-                worksheet.Name = $"Statistik {DateTime.Now.Year.ToString()}";
+                worksheet.Range[worksheet.Cells[rowIndex, 2], worksheet.Cells[rowIndex, 3]].Merge();
 
-                var rowIndex = 2;
+                worksheet.Cells[rowIndex, 2] = dt.TableName;
+                var heading = worksheet.Cells[rowIndex, 2] as Range;
+                heading.Interior.Color = Color.LightGreen;
 
-                foreach (var dt in tableList)
+
+                rowIndex++;
+
+                for (var i = 0; i < dt.Rows.Count; i++)
                 {
-                    worksheet.Range[worksheet.Cells[rowIndex, 2], worksheet.Cells[rowIndex, 3]].Merge();
-
-                    worksheet.Cells[rowIndex, 2] = dt.TableName;
-                    var heading = worksheet.Cells[rowIndex, 2] as Excel.Range;
-                    heading.Interior.Color = Color.LightGreen;
-                    
+                    for (var j = 0; j < dt.Columns.Count; j++)
+                        worksheet.Cells[rowIndex, j + 2] = dt.Rows[i][j];
 
                     rowIndex++;
-
-                    for (var i = 0; i < dt.Rows.Count; i++)
-                    {
-                        for (var j = 0; j < dt.Columns.Count; j++)
-                            worksheet.Cells[rowIndex, j + 2] = dt.Rows[i][j];
-
-                        rowIndex++;
-                    }
-
-                    var columns = worksheet.UsedRange.Columns;
-                    columns.AutoFit();
-                    rowIndex += 2;
                 }
 
-                workbook.SaveAs(exportStatisticsFileSave.FileName);
-                workbook.Close();
-                excel.Quit();
+                var columns = worksheet.UsedRange.Columns;
+                columns.AutoFit();
+                rowIndex += 2;
             }
-            catch (COMException ex)
-            {
-                MessageBox.Show(
-                    "Error: " + ex.Message,
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
-                if (workbook != null)
-                    workbook.Close(false);
 
-                excel.Quit();
-            }
+            workbook.SaveAs(exportStatisticsFileSave.FileName);
+            workbook.Close();
+            excel.Quit();
+        }
+        catch (COMException ex)
+        {
+            MessageBox.Show(
+                "Error: " + ex.Message,
+                "Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error
+            );
+            workbook?.Close(false);
+            excel.Quit();
         }
     }
 
@@ -225,12 +229,11 @@ public partial class FrameStatistics : UserControl
 
     private void OnButtonExport(object sender, EventArgs e)
     {
-        var tableList = new List<DataTable>();
-        var checkedList = new List<string>();
+        var btn = sender as Button;
 
-        foreach (var item in checkListStats.CheckedItems)
-            checkedList.Add(item.ToString());
-        
+        var tableList = new List<DataTable>();
+        var checkedList = (from object? item in checkListStats.CheckedItems select item.ToString()).ToList();
+
 
         if (checkedList.Contains("Neuanmeldungen nach Beratungsart")) tableList.Add(Statistics.BeratungAlsNeu());
         if (checkedList.Contains("Fortführungen nach Beratungsart")) tableList.Add(Statistics.BeratungAlsAlt());
@@ -238,10 +241,16 @@ public partial class FrameStatistics : UserControl
         if (checkedList.Contains("Gesamt nach Ort")) tableList.Add(Statistics.Wohnort());
         if (checkedList.Contains("Anmeldegründe LB")) tableList.Add(Statistics.GründeFürEheUndLeben());
         if (checkedList.Contains("Anmeldegründe SGB VIII")) tableList.Add(Statistics.GründeFürErziehung());
-        if (checkedList.Contains("Art der Beratung für Schwangere")) tableList.Add(Statistics.SchwangerschaftAufteilung());
-
-
+        if (checkedList.Contains("Art der Beratung für Schwangere"))
+            tableList.Add(Statistics.SchwangerschaftAufteilung());
 
         ExportToXlsx(tableList);
+    }
+
+    private void OnOpenFolderClick(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+        if (ConfigurationManager.AppSettings.Get("DefaultPath").IsNullOrEmpty())
+            Process.Start("explorer");
+        else Process.Start("explorer", ConfigurationManager.AppSettings.Get("DefaultPath"));
     }
 }

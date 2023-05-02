@@ -15,11 +15,14 @@
 
         #region Component Designer generated code
 
-                                        private void InitializeComponent()
+        private void InitializeComponent()
         {
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-                                                this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox1.Location = new System.Drawing.Point(10, 7);
             this.textBox1.Name = "textBox1";
@@ -32,7 +35,10 @@
             this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             this.textBox1.MouseEnter += new System.EventHandler(this.textBox1_MouseEnter);
             this.textBox1.MouseLeave += new System.EventHandler(this.textBox1_MouseLeave);
-                                                this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            // 
+            // RJTextBox
+            // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.textBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);

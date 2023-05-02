@@ -183,15 +183,13 @@ public partial class FrameAddNew : UserControl
 
     #endregion
 
+    public bool IsSaved { get; set; }
 
-    private void OnLoad(object sender, EventArgs e)
+    public void OnLoad(object sender, EventArgs e)
     {
         SetDropDowns();
         InitializeContent();
         SetGridAlter();
-
-
-        // panelBlocker.Visible = false;
     }
 
     private void OnToggle(object sender, EventArgs e)
@@ -296,7 +294,9 @@ public partial class FrameAddNew : UserControl
         database.InsertStringDict("Allgemein", Dictionaries.Allgemein);
         database.Disconnect();
 
+        indicateSaved.Value = 100;
         panelBlocker.Visible = false;
+        IsSaved = true;
     }
 
     private static string GetAgeFromRow(DataRow row)
@@ -400,6 +400,41 @@ public partial class FrameAddNew : UserControl
         #endregion
     }
 
+    private void ClearFields()
+    {
+        // Set all fields to default
+        foreach (Control control in Controls)
+            if (control is RJTextBox tb)
+            {
+                tb.Texts = "";
+            }
+            else if (control is DropDown dd)
+            {
+                dd.SelectedIndex = 0;
+            }
+            else if (control is CheckBox cb)
+            {
+                cb.Checked = false;
+            }
+            else if (control is RJToggleButton ts)
+            {
+                ts.Checked = false;
+            }
+            else if (control is DataGridView view)
+            {
+                var dgv = view;
+                foreach (DataGridViewRow row in dgv.Rows)
+                    foreach (DataGridViewCell cell in row.Cells)
+                        if (cell.ColumnIndex != 0) cell.Value = "";
+            }
+
+        ClearUserControl();
+        ButtonEheUndLeben_Click(ButtonEheUndLeben, EventArgs.Empty);
+        panelBlocker.Visible = true;
+        panelBlockerShadow.Visible = true;
+        indicateSaved.Value = 0;
+    }
+
     private void OnClick(object sender, EventArgs e)
     {
         var check = (CheckBox)sender;
@@ -409,6 +444,8 @@ public partial class FrameAddNew : UserControl
     private void OnTextBoxClick(object sender, EventArgs e)
     {
         var textBox = (RJTextBox)sender;
+
+        if (IsSaved) ClearFields();
 
         textBox.UnderlinedStyle = true;
         textBox.BorderColor = Color.Black;
@@ -432,6 +469,6 @@ public partial class FrameAddNew : UserControl
 
     private void panelBlocker_Paint(object sender, PaintEventArgs e)
     {
-
     }
+
 }

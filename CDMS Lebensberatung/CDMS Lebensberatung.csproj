@@ -45,9 +45,6 @@
     <Reference Include="office">
       <HintPath>..\..\..\..\..\..\Windows\assembly\GAC_MSIL\office\15.0.0.0__71e9bce111e9429c\OFFICE.DLL</HintPath>
     </Reference>
-    <Reference Include="RoundedRectangles">
-      <HintPath>..\..\RoundedRectangles\RoundedRectangles\bin\Debug\RoundedRectangles.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
   <ItemGroup>

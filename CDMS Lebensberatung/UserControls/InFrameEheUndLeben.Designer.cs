@@ -19,9 +19,9 @@ namespace CDMS_Lebensberatung.AddSpecific
 
                                         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dropLeistung = new DropDown();
-            this.dropWirtschaft = new DropDown();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.dropLeistung = new CDMS_Lebensberatung.UserControls.DropDown();
+            this.dropWirtschaft = new CDMS_Lebensberatung.UserControls.DropDown();
             this.groupAnmeldung = new System.Windows.Forms.GroupBox();
             this.cbAndere = new System.Windows.Forms.CheckBox();
             this.cbStraft = new System.Windows.Forms.CheckBox();
@@ -38,7 +38,7 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.cbPsychisch = new System.Windows.Forms.CheckBox();
             this.chKrankTod = new System.Windows.Forms.CheckBox();
             this.cbKörper = new System.Windows.Forms.CheckBox();
-            this.tbErläuterung = new RJTextBox();
+            this.tbErläuterung = new CDMS_Lebensberatung.UserControls.RJTextBox();
             this.togglePartnerschaft = new RJCodeAdvance.RJControls.RJToggleButton();
             this.toggleKinder = new RJCodeAdvance.RJControls.RJToggleButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,11 +50,15 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.gridStunden = new System.Windows.Forms.DataGridView();
             this.Art = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stunden = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonSave = new RJCodeAdvance.RJControls.RJButton();
+            this.btnSave = new RJCodeAdvance.RJControls.RJButton();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.groupAnmeldung.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridStunden)).BeginInit();
             this.SuspendLayout();
-                                                this.dropLeistung.BackColor = System.Drawing.Color.WhiteSmoke;
+            // 
+            // dropLeistung
+            // 
+            this.dropLeistung.BackColor = System.Drawing.Color.WhiteSmoke;
             this.dropLeistung.BorderColor = System.Drawing.Color.Black;
             this.dropLeistung.BorderSize = 1;
             this.dropLeistung.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -71,7 +75,10 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.dropLeistung.Size = new System.Drawing.Size(200, 32);
             this.dropLeistung.TabIndex = 3;
             this.dropLeistung.Texts = "";
-                                                this.dropWirtschaft.BackColor = System.Drawing.Color.WhiteSmoke;
+            // 
+            // dropWirtschaft
+            // 
+            this.dropWirtschaft.BackColor = System.Drawing.Color.WhiteSmoke;
             this.dropWirtschaft.BorderColor = System.Drawing.Color.Black;
             this.dropWirtschaft.BorderSize = 1;
             this.dropWirtschaft.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -88,7 +95,10 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.dropWirtschaft.Size = new System.Drawing.Size(200, 32);
             this.dropWirtschaft.TabIndex = 3;
             this.dropWirtschaft.Texts = "";
-                                                this.groupAnmeldung.Controls.Add(this.cbAndere);
+            // 
+            // groupAnmeldung
+            // 
+            this.groupAnmeldung.Controls.Add(this.cbAndere);
             this.groupAnmeldung.Controls.Add(this.cbStraft);
             this.groupAnmeldung.Controls.Add(this.cbFamilie);
             this.groupAnmeldung.Controls.Add(this.cbPartn);
@@ -110,119 +120,167 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.groupAnmeldung.TabIndex = 4;
             this.groupAnmeldung.TabStop = false;
             this.groupAnmeldung.Text = "Anmeldegründe";
-                                                this.cbAndere.AutoSize = true;
+            // 
+            // cbAndere
+            // 
+            this.cbAndere.AutoSize = true;
             this.cbAndere.Location = new System.Drawing.Point(8, 356);
             this.cbAndere.Name = "cbAndere";
             this.cbAndere.Size = new System.Drawing.Size(118, 19);
             this.cbAndere.TabIndex = 0;
             this.cbAndere.Text = "Andere Probleme";
             this.cbAndere.UseVisualStyleBackColor = true;
-                                                this.cbStraft.AutoSize = true;
+            // 
+            // cbStraft
+            // 
+            this.cbStraft.AutoSize = true;
             this.cbStraft.Location = new System.Drawing.Point(8, 331);
             this.cbStraft.Name = "cbStraft";
             this.cbStraft.Size = new System.Drawing.Size(77, 19);
             this.cbStraft.TabIndex = 0;
             this.cbStraft.Text = "Straftaten";
             this.cbStraft.UseVisualStyleBackColor = true;
-                                                this.cbFamilie.AutoSize = true;
+            // 
+            // cbFamilie
+            // 
+            this.cbFamilie.AutoSize = true;
             this.cbFamilie.Location = new System.Drawing.Point(8, 306);
             this.cbFamilie.Name = "cbFamilie";
             this.cbFamilie.Size = new System.Drawing.Size(128, 19);
             this.cbFamilie.TabIndex = 0;
             this.cbFamilie.Text = "Familiäre Probleme";
             this.cbFamilie.UseVisualStyleBackColor = true;
-                                                this.cbPartn.AutoSize = true;
+            // 
+            // cbPartn
+            // 
+            this.cbPartn.AutoSize = true;
             this.cbPartn.Location = new System.Drawing.Point(8, 281);
             this.cbPartn.Name = "cbPartn";
             this.cbPartn.Size = new System.Drawing.Size(154, 19);
             this.cbPartn.TabIndex = 0;
             this.cbPartn.Text = "Probleme mit Partner*in";
             this.cbPartn.UseVisualStyleBackColor = true;
-                                                this.cbGeld.AutoSize = true;
+            // 
+            // cbGeld
+            // 
+            this.cbGeld.AutoSize = true;
             this.cbGeld.Location = new System.Drawing.Point(8, 256);
             this.cbGeld.Name = "cbGeld";
             this.cbGeld.Size = new System.Drawing.Size(93, 19);
             this.cbGeld.TabIndex = 0;
             this.cbGeld.Text = "Geld / Arbeit";
             this.cbGeld.UseVisualStyleBackColor = true;
-                                                this.cbMisshand.AutoSize = true;
+            // 
+            // cbMisshand
+            // 
+            this.cbMisshand.AutoSize = true;
             this.cbMisshand.Location = new System.Drawing.Point(8, 206);
             this.cbMisshand.Name = "cbMisshand";
             this.cbMisshand.Size = new System.Drawing.Size(164, 19);
             this.cbMisshand.TabIndex = 0;
             this.cbMisshand.Text = "Allgemeine Misshandlung";
             this.cbMisshand.UseVisualStyleBackColor = true;
-                                                this.cbKörpBehind.AutoSize = true;
+            // 
+            // cbKörpBehind
+            // 
+            this.cbKörpBehind.AutoSize = true;
             this.cbKörpBehind.Location = new System.Drawing.Point(8, 156);
             this.cbKörpBehind.Name = "cbKörpBehind";
             this.cbKörpBehind.Size = new System.Drawing.Size(157, 19);
             this.cbKörpBehind.TabIndex = 0;
             this.cbKörpBehind.Text = "Körperliche Behinderung";
             this.cbKörpBehind.UseVisualStyleBackColor = true;
-                                                this.cbSucht.AutoSize = true;
+            // 
+            // cbSucht
+            // 
+            this.cbSucht.AutoSize = true;
             this.cbSucht.Location = new System.Drawing.Point(8, 106);
             this.cbSucht.Name = "cbSucht";
             this.cbSucht.Size = new System.Drawing.Size(107, 19);
             this.cbSucht.TabIndex = 0;
             this.cbSucht.Text = "Suchtprobleme";
             this.cbSucht.UseVisualStyleBackColor = true;
-                                                this.cbPsychosen.AutoSize = true;
+            // 
+            // cbPsychosen
+            // 
+            this.cbPsychosen.AutoSize = true;
             this.cbPsychosen.Location = new System.Drawing.Point(83, 81);
             this.cbPsychosen.Name = "cbPsychosen";
             this.cbPsychosen.Size = new System.Drawing.Size(82, 19);
             this.cbPsychosen.TabIndex = 0;
             this.cbPsychosen.Text = "Psychosen";
             this.cbPsychosen.UseVisualStyleBackColor = true;
-                                                this.cbSexuell.AutoSize = true;
+            // 
+            // cbSexuell
+            // 
+            this.cbSexuell.AutoSize = true;
             this.cbSexuell.Location = new System.Drawing.Point(8, 231);
             this.cbSexuell.Name = "cbSexuell";
             this.cbSexuell.Size = new System.Drawing.Size(123, 19);
             this.cbSexuell.TabIndex = 0;
             this.cbSexuell.Text = "Sexueller Übergriff";
             this.cbSexuell.UseVisualStyleBackColor = true;
-                                                this.cbSuizid.AutoSize = true;
+            // 
+            // cbSuizid
+            // 
+            this.cbSuizid.AutoSize = true;
             this.cbSuizid.Location = new System.Drawing.Point(8, 81);
             this.cbSuizid.Name = "cbSuizid";
             this.cbSuizid.Size = new System.Drawing.Size(57, 19);
             this.cbSuizid.TabIndex = 0;
             this.cbSuizid.Text = "Suizid";
             this.cbSuizid.UseVisualStyleBackColor = true;
-                                                this.cbTrennung.AutoSize = true;
+            // 
+            // cbTrennung
+            // 
+            this.cbTrennung.AutoSize = true;
             this.cbTrennung.Location = new System.Drawing.Point(8, 181);
             this.cbTrennung.Name = "cbTrennung";
             this.cbTrennung.Size = new System.Drawing.Size(143, 19);
             this.cbTrennung.TabIndex = 0;
             this.cbTrennung.Text = "Trennung / Scheidung";
             this.cbTrennung.UseVisualStyleBackColor = true;
-                                                this.cbPsychisch.AutoSize = true;
+            // 
+            // cbPsychisch
+            // 
+            this.cbPsychisch.AutoSize = true;
             this.cbPsychisch.Location = new System.Drawing.Point(8, 56);
             this.cbPsychisch.Name = "cbPsychisch";
             this.cbPsychisch.Size = new System.Drawing.Size(145, 19);
             this.cbPsychisch.TabIndex = 0;
             this.cbPsychisch.Text = "Psychische Schmerzen";
             this.cbPsychisch.UseVisualStyleBackColor = true;
-                                                this.chKrankTod.AutoSize = true;
+            // 
+            // chKrankTod
+            // 
+            this.chKrankTod.AutoSize = true;
             this.chKrankTod.Location = new System.Drawing.Point(8, 131);
             this.chKrankTod.Name = "chKrankTod";
             this.chKrankTod.Size = new System.Drawing.Size(106, 19);
             this.chKrankTod.TabIndex = 0;
             this.chKrankTod.Text = "Krankheit / Tod";
             this.chKrankTod.UseVisualStyleBackColor = true;
-                                                this.cbKörper.AutoSize = true;
+            // 
+            // cbKörper
+            // 
+            this.cbKörper.AutoSize = true;
             this.cbKörper.Location = new System.Drawing.Point(8, 31);
             this.cbKörper.Name = "cbKörper";
             this.cbKörper.Size = new System.Drawing.Size(147, 19);
             this.cbKörper.TabIndex = 0;
             this.cbKörper.Text = "Körperliche Schmerzen";
             this.cbKörper.UseVisualStyleBackColor = true;
-                                                this.tbErläuterung.BackColor = System.Drawing.SystemColors.Window;
+            // 
+            // tbErläuterung
+            // 
+            this.tbErläuterung.BackColor = System.Drawing.SystemColors.Window;
             this.tbErläuterung.BorderColor = System.Drawing.Color.Black;
             this.tbErläuterung.BorderFocusColor = System.Drawing.Color.Green;
             this.tbErläuterung.BorderRadius = 0;
             this.tbErläuterung.BorderSize = 1;
             this.tbErläuterung.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbErläuterung.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbErläuterung.Location = new System.Drawing.Point(38, 548);
+            this.tbErläuterung.Location = new System.Drawing.Point(38, 541);
             this.tbErläuterung.Margin = new System.Windows.Forms.Padding(10);
             this.tbErläuterung.Multiline = false;
             this.tbErläuterung.Name = "tbErläuterung";
@@ -234,7 +292,10 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.tbErläuterung.TabIndex = 5;
             this.tbErläuterung.Texts = "";
             this.tbErläuterung.UnderlinedStyle = true;
-                                                this.togglePartnerschaft.AutoSize = true;
+            // 
+            // togglePartnerschaft
+            // 
+            this.togglePartnerschaft.AutoSize = true;
             this.togglePartnerschaft.Location = new System.Drawing.Point(258, 148);
             this.togglePartnerschaft.MinimumSize = new System.Drawing.Size(45, 22);
             this.togglePartnerschaft.Name = "togglePartnerschaft";
@@ -245,7 +306,10 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.togglePartnerschaft.Size = new System.Drawing.Size(45, 22);
             this.togglePartnerschaft.TabIndex = 6;
             this.togglePartnerschaft.UseVisualStyleBackColor = true;
-                                                this.toggleKinder.AutoSize = true;
+            // 
+            // toggleKinder
+            // 
+            this.toggleKinder.AutoSize = true;
             this.toggleKinder.Location = new System.Drawing.Point(258, 192);
             this.toggleKinder.MinimumSize = new System.Drawing.Size(45, 22);
             this.toggleKinder.Name = "toggleKinder";
@@ -256,19 +320,28 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.toggleKinder.Size = new System.Drawing.Size(45, 22);
             this.toggleKinder.TabIndex = 6;
             this.toggleKinder.UseVisualStyleBackColor = true;
-                                                this.label1.AutoSize = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(309, 151);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 15);
             this.label1.TabIndex = 7;
             this.label1.Text = "in Partnerschaft";
-                                                this.label2.AutoSize = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(309, 195);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 15);
             this.label2.TabIndex = 7;
             this.label2.Text = "mit Kind";
-                                                this.toggleSonstige.AutoSize = true;
+            // 
+            // toggleSonstige
+            // 
+            this.toggleSonstige.AutoSize = true;
             this.toggleSonstige.Location = new System.Drawing.Point(258, 236);
             this.toggleSonstige.MinimumSize = new System.Drawing.Size(45, 22);
             this.toggleSonstige.Name = "toggleSonstige";
@@ -279,13 +352,19 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.toggleSonstige.Size = new System.Drawing.Size(45, 22);
             this.toggleSonstige.TabIndex = 6;
             this.toggleSonstige.UseVisualStyleBackColor = true;
-                                                this.label3.AutoSize = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(309, 239);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 15);
             this.label3.TabIndex = 7;
             this.label3.Text = "Sonstiges";
-                                                this.toggleUnbekannt.AutoSize = true;
+            // 
+            // toggleUnbekannt
+            // 
+            this.toggleUnbekannt.AutoSize = true;
             this.toggleUnbekannt.Location = new System.Drawing.Point(258, 280);
             this.toggleUnbekannt.MinimumSize = new System.Drawing.Size(45, 22);
             this.toggleUnbekannt.Name = "toggleUnbekannt";
@@ -297,13 +376,19 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.toggleUnbekannt.TabIndex = 6;
             this.toggleUnbekannt.UseVisualStyleBackColor = true;
             this.toggleUnbekannt.CheckedChanged += new System.EventHandler(this.onToggleUnbekannt);
-                                                this.label4.AutoSize = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(309, 283);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 15);
             this.label4.TabIndex = 7;
             this.label4.Text = "Unbekannt";
-                                                this.gridStunden.AllowUserToAddRows = false;
+            // 
+            // gridStunden
+            // 
+            this.gridStunden.AllowUserToAddRows = false;
             this.gridStunden.AllowUserToDeleteRows = false;
             this.gridStunden.AllowUserToResizeColumns = false;
             this.gridStunden.AllowUserToResizeRows = false;
@@ -314,14 +399,14 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.gridStunden.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Art,
             this.Stunden});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightGreen;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridStunden.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightGreen;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridStunden.DefaultCellStyle = dataGridViewCellStyle1;
             this.gridStunden.EnableHeadersVisualStyles = false;
             this.gridStunden.GridColor = System.Drawing.SystemColors.ControlLight;
             this.gridStunden.Location = new System.Drawing.Point(258, 315);
@@ -333,31 +418,53 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.gridStunden.Size = new System.Drawing.Size(200, 220);
             this.gridStunden.TabIndex = 11;
             this.gridStunden.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.OnValueChange);
-                                                this.Art.HeaderText = "Art";
+            // 
+            // Art
+            // 
+            this.Art.HeaderText = "Art";
             this.Art.Name = "Art";
             this.Art.ReadOnly = true;
-                                                this.Stunden.HeaderText = "Stunden";
+            // 
+            // Stunden
+            // 
+            this.Stunden.HeaderText = "Stunden";
             this.Stunden.Name = "Stunden";
-                                                this.buttonSave.BackColor = System.Drawing.Color.White;
-            this.buttonSave.BackgroundColor = System.Drawing.Color.White;
-            this.buttonSave.BorderColor = System.Drawing.Color.Black;
-            this.buttonSave.BorderRadius = 0;
-            this.buttonSave.BorderSize = 1;
-            this.buttonSave.FlatAppearance.BorderSize = 0;
-            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSave.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonSave.ForeColor = System.Drawing.Color.Black;
-            this.buttonSave.Location = new System.Drawing.Point(258, 541);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(200, 40);
-            this.buttonSave.TabIndex = 12;
-            this.buttonSave.Text = "Speichern";
-            this.buttonSave.TextColor = System.Drawing.Color.Black;
-            this.buttonSave.UseVisualStyleBackColor = false;
-            this.buttonSave.Click += new System.EventHandler(this.OnButtonSave);
-                                                this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.Green;
+            this.btnSave.BackgroundColor = System.Drawing.Color.Green;
+            this.btnSave.BorderColor = System.Drawing.Color.Transparent;
+            this.btnSave.BorderRadius = 0;
+            this.btnSave.BorderSize = 1;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(258, 541);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(200, 40);
+            this.btnSave.TabIndex = 23;
+            this.btnSave.Text = "Speichern";
+            this.btnSave.TextColor = System.Drawing.Color.White;
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.OnButtonSave);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel4.Location = new System.Drawing.Point(258, 541);
+            this.panel4.Margin = new System.Windows.Forms.Padding(0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(203, 43);
+            this.panel4.TabIndex = 24;
+            // 
+            // EheUndLeben
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.buttonSave);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.gridStunden);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
@@ -414,6 +521,7 @@ namespace CDMS_Lebensberatung.AddSpecific
         private DataGridView gridStunden;
         private DataGridViewTextBoxColumn Art;
         private DataGridViewTextBoxColumn Stunden;
-        private RJCodeAdvance.RJControls.RJButton buttonSave;
+        private RJCodeAdvance.RJControls.RJButton btnSave;
+        private Panel panel4;
     }
 }

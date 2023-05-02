@@ -96,5 +96,7 @@ public partial class Sgb8 : UserControl
         database.Connect();
         database.InsertStringDict("SGB VIII", Dictionaries.Sgb8);
         database.Disconnect();
+
+        
     }
 }

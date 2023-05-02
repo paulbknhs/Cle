@@ -19,21 +19,22 @@ namespace CDMS_Lebensberatung.AddSpecific
 
                                         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toggleWartezeit = new RJCodeAdvance.RJControls.RJToggleButton();
-            this.dropLeistung = new DropDown();
+            this.dropLeistung = new CDMS_Lebensberatung.UserControls.DropDown();
             this.label1 = new System.Windows.Forms.Label();
-            this.dropWirtschaft = new DropDown();
-            this.dropHerkunftHh = new DropDown();
-            this.dropHilfe = new DropDown();
+            this.dropWirtschaft = new CDMS_Lebensberatung.UserControls.DropDown();
+            this.dropHerkunftHh = new CDMS_Lebensberatung.UserControls.DropDown();
+            this.dropHilfe = new CDMS_Lebensberatung.UserControls.DropDown();
             this.gridStunden = new System.Windows.Forms.DataGridView();
             this.Art = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stunden = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonSave = new RJCodeAdvance.RJControls.RJButton();
-            this.dropAnmeldung = new DropDown();
-            this.tbAge = new RJTextBox();
-            this.dropGender = new DropDown();
-            this.tbErläuterungen = new RJTextBox();
+            this.dropAnmeldung = new CDMS_Lebensberatung.UserControls.DropDown();
+            this.tbAge = new CDMS_Lebensberatung.UserControls.RJTextBox();
+            this.dropGender = new CDMS_Lebensberatung.UserControls.DropDown();
+            this.tbErläuterungen = new CDMS_Lebensberatung.UserControls.RJTextBox();
+            this.btnSave = new RJCodeAdvance.RJControls.RJButton();
+            this.panel4 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.gridStunden)).BeginInit();
             this.SuspendLayout();
             // 
@@ -153,14 +154,14 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.gridStunden.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Art,
             this.Stunden});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Green;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridStunden.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridStunden.DefaultCellStyle = dataGridViewCellStyle1;
             this.gridStunden.EnableHeadersVisualStyles = false;
             this.gridStunden.GridColor = System.Drawing.SystemColors.ControlLight;
             this.gridStunden.Location = new System.Drawing.Point(253, 265);
@@ -182,26 +183,6 @@ namespace CDMS_Lebensberatung.AddSpecific
             // 
             this.Stunden.HeaderText = "Stunden";
             this.Stunden.Name = "Stunden";
-            // 
-            // buttonSave
-            // 
-            this.buttonSave.BackColor = System.Drawing.Color.White;
-            this.buttonSave.BackgroundColor = System.Drawing.Color.White;
-            this.buttonSave.BorderColor = System.Drawing.Color.Black;
-            this.buttonSave.BorderRadius = 0;
-            this.buttonSave.BorderSize = 1;
-            this.buttonSave.FlatAppearance.BorderSize = 0;
-            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSave.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonSave.ForeColor = System.Drawing.Color.Black;
-            this.buttonSave.Location = new System.Drawing.Point(253, 517);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(200, 40);
-            this.buttonSave.TabIndex = 17;
-            this.buttonSave.Text = "Speichern";
-            this.buttonSave.TextColor = System.Drawing.Color.Black;
-            this.buttonSave.UseVisualStyleBackColor = false;
-            this.buttonSave.Click += new System.EventHandler(this.OnButtonSave);
             // 
             // dropAnmeldung
             // 
@@ -287,14 +268,45 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.tbErläuterungen.Texts = "";
             this.tbErläuterungen.UnderlinedStyle = true;
             // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.Green;
+            this.btnSave.BackgroundColor = System.Drawing.Color.Green;
+            this.btnSave.BorderColor = System.Drawing.Color.Transparent;
+            this.btnSave.BorderRadius = 0;
+            this.btnSave.BorderSize = 1;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(253, 517);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(200, 40);
+            this.btnSave.TabIndex = 23;
+            this.btnSave.Text = "Speichern";
+            this.btnSave.TextColor = System.Drawing.Color.White;
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.OnButtonSave);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel4.Location = new System.Drawing.Point(253, 517);
+            this.panel4.Margin = new System.Windows.Forms.Padding(0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(203, 43);
+            this.panel4.TabIndex = 24;
+            this.panel4.Click += new System.EventHandler(this.OnButtonSave);
+            // 
             // Sgb8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.tbErläuterungen);
             this.Controls.Add(this.tbAge);
             this.Controls.Add(this.dropAnmeldung);
-            this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.gridStunden);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toggleWartezeit);
@@ -323,10 +335,11 @@ namespace CDMS_Lebensberatung.AddSpecific
         private DataGridView gridStunden;
         private DataGridViewTextBoxColumn Art;
         private DataGridViewTextBoxColumn Stunden;
-        private RJCodeAdvance.RJControls.RJButton buttonSave;
         private DropDown dropAnmeldung;
         private RJTextBox tbAge;
         private DropDown dropGender;
         private RJTextBox tbErläuterungen;
+        private RJCodeAdvance.RJControls.RJButton btnSave;
+        private Panel panel4;
     }
 }

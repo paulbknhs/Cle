@@ -7,14 +7,14 @@ namespace CDMS_Lebensberatung.UserControls
     [DefaultEvent("OnSelectedIndexChanged")]
     public class DropDown : UserControl
     {
-                private Color backColor = Color.WhiteSmoke;
+        private Color backColor = Color.WhiteSmoke;
         private Color iconColor = Color.MediumSlateBlue;
         private Color listBackColor = Color.FromArgb(230, 228, 245);
         private Color listTextColor = Color.DimGray;
         private Color borderColor = Color.MediumSlateBlue;
         private int borderSize = 1;
 
-                private ComboBox cmbList;
+        private ComboBox cmbList;
         private Label lblText;
         private Button btnIcon;
 

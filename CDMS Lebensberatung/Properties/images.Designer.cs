@@ -93,49 +93,19 @@ namespace CDMS_Lebensberatung.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap database_error100x100 {
-            get {
-                object obj = ResourceManager.GetObject("database_error100x100", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap database_view100x100 {
-            get {
-                object obj = ResourceManager.GetObject("database_view100x100", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap error_db24x24 {
-            get {
-                object obj = ResourceManager.GetObject("error_db24x24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap excel20x20 {
-            get {
-                object obj = ResourceManager.GetObject("excel20x20", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap excel26x26 {
             get {
                 object obj = ResourceManager.GetObject("excel26x26", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap excel26x261 {
+            get {
+                object obj = ResourceManager.GetObject("excel26x261", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,9 +173,9 @@ namespace CDMS_Lebensberatung.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap view_db24x24 {
+        internal static System.Drawing.Bitmap txt26x26 {
             get {
-                object obj = ResourceManager.GetObject("view_db24x24", resourceCulture);
+                object obj = ResourceManager.GetObject("txt26x26", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -216,26 +186,6 @@ namespace CDMS_Lebensberatung.Properties {
         internal static System.Drawing.Bitmap xlsx {
             get {
                 object obj = ResourceManager.GetObject("xlsx", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap xlsx20x20 {
-            get {
-                object obj = ResourceManager.GetObject("xlsx20x20", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap xlxs {
-            get {
-                object obj = ResourceManager.GetObject("xlxs", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

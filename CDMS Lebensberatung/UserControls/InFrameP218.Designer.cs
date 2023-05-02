@@ -21,7 +21,7 @@ namespace CDMS_Lebensberatung.AddSpecific
         {
             this.label1 = new System.Windows.Forms.Label();
             this.numBeratungszeit = new System.Windows.Forms.NumericUpDown();
-            this.dropStaat = new DropDown();
+            this.dropStaat = new CDMS_Lebensberatung.UserControls.DropDown();
             this.grpAnm = new System.Windows.Forms.GroupBox();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.checkBox5 = new System.Windows.Forms.CheckBox();
@@ -44,15 +44,16 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.cbPsychisch = new System.Windows.Forms.CheckBox();
             this.chKrankTod = new System.Windows.Forms.CheckBox();
             this.cbKörper = new System.Windows.Forms.CheckBox();
-            this.dropStand = new DropDown();
-            this.dropVerhütung = new DropDown();
-            this.dropErwerb = new DropDown();
-            this.tbErläuterungen = new RJTextBox();
-            this.tbLaufnummer = new RJTextBox();
-            this.buttonSave = new RJCodeAdvance.RJControls.RJButton();
+            this.dropStand = new CDMS_Lebensberatung.UserControls.DropDown();
+            this.dropVerhütung = new CDMS_Lebensberatung.UserControls.DropDown();
+            this.dropErwerb = new CDMS_Lebensberatung.UserControls.DropDown();
+            this.tbErläuterungen = new CDMS_Lebensberatung.UserControls.RJTextBox();
+            this.tbLaufnummer = new CDMS_Lebensberatung.UserControls.RJTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.toggleTelefonberatung = new RJCodeAdvance.RJControls.RJToggleButton();
-            this.tbAlter = new RJTextBox();
+            this.tbAlter = new CDMS_Lebensberatung.UserControls.RJTextBox();
+            this.btnSave = new RJCodeAdvance.RJControls.RJButton();
+            this.panel4 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.numBeratungszeit)).BeginInit();
             this.grpAnm.SuspendLayout();
             this.SuspendLayout();
@@ -129,7 +130,7 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.grpAnm.Location = new System.Drawing.Point(40, 236);
             this.grpAnm.Name = "grpAnm";
             this.grpAnm.Padding = new System.Windows.Forms.Padding(5);
-            this.grpAnm.Size = new System.Drawing.Size(420, 299);
+            this.grpAnm.Size = new System.Drawing.Size(420, 296);
             this.grpAnm.TabIndex = 14;
             this.grpAnm.TabStop = false;
             this.grpAnm.Text = "Abbruchsgründe";
@@ -413,7 +414,7 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.tbErläuterungen.BorderSize = 1;
             this.tbErläuterungen.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbErläuterungen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbErläuterungen.Location = new System.Drawing.Point(40, 548);
+            this.tbErläuterungen.Location = new System.Drawing.Point(40, 538);
             this.tbErläuterungen.Margin = new System.Windows.Forms.Padding(10);
             this.tbErläuterungen.Multiline = true;
             this.tbErläuterungen.Name = "tbErläuterungen";
@@ -447,26 +448,6 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.tbLaufnummer.TabIndex = 15;
             this.tbLaufnummer.Texts = "";
             this.tbLaufnummer.UnderlinedStyle = true;
-            // 
-            // buttonSave
-            // 
-            this.buttonSave.BackColor = System.Drawing.Color.White;
-            this.buttonSave.BackgroundColor = System.Drawing.Color.White;
-            this.buttonSave.BorderColor = System.Drawing.Color.Black;
-            this.buttonSave.BorderRadius = 0;
-            this.buttonSave.BorderSize = 1;
-            this.buttonSave.FlatAppearance.BorderSize = 0;
-            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSave.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonSave.ForeColor = System.Drawing.Color.Black;
-            this.buttonSave.Location = new System.Drawing.Point(258, 541);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(200, 40);
-            this.buttonSave.TabIndex = 16;
-            this.buttonSave.Text = "Speichern";
-            this.buttonSave.TextColor = System.Drawing.Color.Black;
-            this.buttonSave.UseVisualStyleBackColor = false;
-            this.buttonSave.Click += new System.EventHandler(this.OnButtonSave);
             // 
             // label2
             // 
@@ -513,13 +494,44 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.tbAlter.Texts = "";
             this.tbAlter.UnderlinedStyle = true;
             // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.Green;
+            this.btnSave.BackgroundColor = System.Drawing.Color.Green;
+            this.btnSave.BorderColor = System.Drawing.Color.Transparent;
+            this.btnSave.BorderRadius = 0;
+            this.btnSave.BorderSize = 1;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(260, 538);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(200, 40);
+            this.btnSave.TabIndex = 23;
+            this.btnSave.Text = "Speichern";
+            this.btnSave.TextColor = System.Drawing.Color.White;
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.OnButtonSave);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel4.Location = new System.Drawing.Point(260, 538);
+            this.panel4.Margin = new System.Windows.Forms.Padding(0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(203, 43);
+            this.panel4.TabIndex = 24;
+            this.panel4.Click += new System.EventHandler(this.OnButtonSave);
+            // 
             // P218
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.toggleTelefonberatung);
-            this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.tbAlter);
             this.Controls.Add(this.tbLaufnummer);
             this.Controls.Add(this.tbErläuterungen);
@@ -573,9 +585,10 @@ namespace CDMS_Lebensberatung.AddSpecific
         private CheckBox checkBox6;
         private RJTextBox tbErläuterungen;
         private RJTextBox tbLaufnummer;
-        private RJCodeAdvance.RJControls.RJButton buttonSave;
         private Label label2;
         private RJCodeAdvance.RJControls.RJToggleButton toggleTelefonberatung;
         private RJTextBox tbAlter;
+        private RJCodeAdvance.RJControls.RJButton btnSave;
+        private Panel panel4;
     }
 }

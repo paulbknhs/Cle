@@ -101,6 +101,7 @@ public partial class EheUndLeben : UserControl
         database.Connect();
         database.InsertStringDict("Ehe und Leben", Dictionaries.EheUndLeben);
         database.Disconnect();
+
     }
 
     private void onToggleUnbekannt(object sender, EventArgs e)

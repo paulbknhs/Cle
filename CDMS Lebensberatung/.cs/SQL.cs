@@ -52,7 +52,7 @@ public class SQL
     {
         using var command = new SqlCommand($"SELECT * FROM [{tableName}]", _connection);
         var count = command.ExecuteNonQuery();
-
+        if (count < 1) count = 0;
         return count;
     }
 

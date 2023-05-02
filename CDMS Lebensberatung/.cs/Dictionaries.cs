@@ -11,4 +11,5 @@ public static class Dictionaries
     public static Dictionary<string, string> P2a { get; set; } = new();
     public static Dictionary<string, string> Sgb8 { get; set; } = new();
     public static Dictionary<string, string> FilterContentDictionary { get; } = new();
+    
 }

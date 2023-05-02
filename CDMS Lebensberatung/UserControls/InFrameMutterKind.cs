@@ -45,5 +45,7 @@ public partial class MutterKind : UserControl
         database.Connect();
         database.InsertStringDict("Mutter Kind", Dictionaries.MutterKind);
         database.Disconnect();
+
+        
     }
 }

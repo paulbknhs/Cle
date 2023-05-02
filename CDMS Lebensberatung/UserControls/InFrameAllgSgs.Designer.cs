@@ -19,17 +19,21 @@ namespace CDMS_Lebensberatung.AddSpecific
 
                                         private void InitializeComponent()
         {
-            this.dropErwerb = new DropDown();
-            this.dropStand = new DropDown();
-            this.dropStaat = new DropDown();
+            this.dropErwerb = new CDMS_Lebensberatung.UserControls.DropDown();
+            this.dropStand = new CDMS_Lebensberatung.UserControls.DropDown();
+            this.dropStaat = new CDMS_Lebensberatung.UserControls.DropDown();
             this.label1 = new System.Windows.Forms.Label();
             this.numBeratungszeit = new System.Windows.Forms.NumericUpDown();
-            this.tbLaufnummer = new RJTextBox();
-            this.buttonSave = new RJCodeAdvance.RJControls.RJButton();
-            this.dropAlter = new DropDown();
+            this.tbLaufnummer = new CDMS_Lebensberatung.UserControls.RJTextBox();
+            this.dropAlter = new CDMS_Lebensberatung.UserControls.DropDown();
+            this.btnSave = new RJCodeAdvance.RJControls.RJButton();
+            this.panel4 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.numBeratungszeit)).BeginInit();
             this.SuspendLayout();
-                                                this.dropErwerb.BackColor = System.Drawing.Color.WhiteSmoke;
+            // 
+            // dropErwerb
+            // 
+            this.dropErwerb.BackColor = System.Drawing.Color.WhiteSmoke;
             this.dropErwerb.BorderColor = System.Drawing.Color.Black;
             this.dropErwerb.BorderSize = 1;
             this.dropErwerb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -46,7 +50,10 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.dropErwerb.Size = new System.Drawing.Size(200, 32);
             this.dropErwerb.TabIndex = 9;
             this.dropErwerb.Texts = "";
-                                                this.dropStand.BackColor = System.Drawing.Color.WhiteSmoke;
+            // 
+            // dropStand
+            // 
+            this.dropStand.BackColor = System.Drawing.Color.WhiteSmoke;
             this.dropStand.BorderColor = System.Drawing.Color.Black;
             this.dropStand.BorderSize = 1;
             this.dropStand.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -63,7 +70,10 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.dropStand.Size = new System.Drawing.Size(200, 32);
             this.dropStand.TabIndex = 10;
             this.dropStand.Texts = "";
-                                                this.dropStaat.BackColor = System.Drawing.Color.WhiteSmoke;
+            // 
+            // dropStaat
+            // 
+            this.dropStaat.BackColor = System.Drawing.Color.WhiteSmoke;
             this.dropStaat.BorderColor = System.Drawing.Color.Black;
             this.dropStaat.BorderSize = 1;
             this.dropStaat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -80,13 +90,19 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.dropStaat.Size = new System.Drawing.Size(200, 32);
             this.dropStaat.TabIndex = 11;
             this.dropStaat.Texts = "";
-                                                this.label1.AutoSize = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(336, 243);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 15);
             this.label1.TabIndex = 13;
             this.label1.Text = "Beratungszeit in min";
-                                                this.numBeratungszeit.Increment = new decimal(new int[] {
+            // 
+            // numBeratungszeit
+            // 
+            this.numBeratungszeit.Increment = new decimal(new int[] {
             45,
             0,
             0,
@@ -100,7 +116,10 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.numBeratungszeit.Name = "numBeratungszeit";
             this.numBeratungszeit.Size = new System.Drawing.Size(70, 23);
             this.numBeratungszeit.TabIndex = 12;
-                                                this.tbLaufnummer.BackColor = System.Drawing.SystemColors.Window;
+            // 
+            // tbLaufnummer
+            // 
+            this.tbLaufnummer.BackColor = System.Drawing.SystemColors.Window;
             this.tbLaufnummer.BorderColor = System.Drawing.Color.Black;
             this.tbLaufnummer.BorderFocusColor = System.Drawing.Color.Green;
             this.tbLaufnummer.BorderRadius = 0;
@@ -119,24 +138,10 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.tbLaufnummer.TabIndex = 14;
             this.tbLaufnummer.Texts = "";
             this.tbLaufnummer.UnderlinedStyle = true;
-                                                this.buttonSave.BackColor = System.Drawing.Color.White;
-            this.buttonSave.BackgroundColor = System.Drawing.Color.White;
-            this.buttonSave.BorderColor = System.Drawing.Color.Black;
-            this.buttonSave.BorderRadius = 0;
-            this.buttonSave.BorderSize = 1;
-            this.buttonSave.FlatAppearance.BorderSize = 0;
-            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSave.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonSave.ForeColor = System.Drawing.Color.Black;
-            this.buttonSave.Location = new System.Drawing.Point(258, 541);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(200, 40);
-            this.buttonSave.TabIndex = 15;
-            this.buttonSave.Text = "Speichern";
-            this.buttonSave.TextColor = System.Drawing.Color.Black;
-            this.buttonSave.UseVisualStyleBackColor = false;
-            this.buttonSave.Click += new System.EventHandler(this.OnButtonSave);
-                                                this.dropAlter.BackColor = System.Drawing.Color.WhiteSmoke;
+            // 
+            // dropAlter
+            // 
+            this.dropAlter.BackColor = System.Drawing.Color.WhiteSmoke;
             this.dropAlter.BorderColor = System.Drawing.Color.Black;
             this.dropAlter.BorderSize = 1;
             this.dropAlter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -153,9 +158,43 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.dropAlter.Size = new System.Drawing.Size(200, 32);
             this.dropAlter.TabIndex = 10;
             this.dropAlter.Texts = "";
-                                                this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.Green;
+            this.btnSave.BackgroundColor = System.Drawing.Color.Green;
+            this.btnSave.BorderColor = System.Drawing.Color.Transparent;
+            this.btnSave.BorderRadius = 0;
+            this.btnSave.BorderSize = 1;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(260, 304);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(200, 40);
+            this.btnSave.TabIndex = 23;
+            this.btnSave.Text = "Speichern";
+            this.btnSave.TextColor = System.Drawing.Color.White;
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.OnButtonSave);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel4.Location = new System.Drawing.Point(260, 304);
+            this.panel4.Margin = new System.Windows.Forms.Padding(0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(203, 43);
+            this.panel4.TabIndex = 24;
+            this.panel4.Click += new System.EventHandler(this.OnButtonSave);
+            // 
+            // AllgSgs
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.buttonSave);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.tbLaufnummer);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.numBeratungszeit);
@@ -180,7 +219,8 @@ namespace CDMS_Lebensberatung.AddSpecific
         private Label label1;
         private NumericUpDown numBeratungszeit;
         private RJTextBox tbLaufnummer;
-        private RJCodeAdvance.RJControls.RJButton buttonSave;
         private DropDown dropAlter;
+        private RJCodeAdvance.RJControls.RJButton btnSave;
+        private Panel panel4;
     }
 }

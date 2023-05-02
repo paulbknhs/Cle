@@ -24,7 +24,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gridAge = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.cbNeu = new System.Windows.Forms.CheckBox();
             this.cbMale = new System.Windows.Forms.CheckBox();
             this.cbFemale = new System.Windows.Forms.CheckBox();
@@ -45,16 +44,16 @@
             this.gGeschlecht = new System.Windows.Forms.GroupBox();
             this.gridSum = new System.Windows.Forms.DataGridView();
             this.gNeu = new System.Windows.Forms.GroupBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.checkListStats = new System.Windows.Forms.CheckedListBox();
-            this.rjButton1 = new RJCodeAdvance.RJControls.RJButton();
+            this.xlsx = new RJCodeAdvance.RJControls.RJButton();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.exportStatisticsFileSave = new System.Windows.Forms.SaveFileDialog();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridAge)).BeginInit();
             this.filterPanel.SuspendLayout();
             this.gOrt.SuspendLayout();
@@ -100,6 +99,7 @@
             this.gridAge.Name = "gridAge";
             this.gridAge.ReadOnly = true;
             this.gridAge.RowHeadersVisible = false;
+            this.gridAge.RowHeadersWidth = 51;
             this.gridAge.RowTemplate.Height = 25;
             this.gridAge.ShowCellErrors = false;
             this.gridAge.ShowCellToolTips = false;
@@ -107,19 +107,6 @@
             this.gridAge.ShowRowErrors = false;
             this.gridAge.Size = new System.Drawing.Size(200, 514);
             this.gridAge.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(13, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 32);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Altersstatistik";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cbNeu
             // 
@@ -294,13 +281,11 @@
             this.filterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.filterPanel.Controls.Add(this.gOrt);
             this.filterPanel.Controls.Add(this.gBeratung);
-            this.filterPanel.Controls.Add(this.label1);
             this.filterPanel.Controls.Add(this.gGeschlecht);
             this.filterPanel.Controls.Add(this.gridSum);
+            this.filterPanel.Controls.Add(this.label3);
             this.filterPanel.Controls.Add(this.gNeu);
             this.filterPanel.Controls.Add(this.gridAge);
-            this.filterPanel.Controls.Add(this.panel3);
-            this.filterPanel.Controls.Add(this.panel6);
             this.filterPanel.Location = new System.Drawing.Point(51, 39);
             this.filterPanel.Name = "filterPanel";
             this.filterPanel.Size = new System.Drawing.Size(490, 622);
@@ -389,6 +374,7 @@
             this.gridSum.Name = "gridSum";
             this.gridSum.ReadOnly = true;
             this.gridSum.RowHeadersVisible = false;
+            this.gridSum.RowHeadersWidth = 51;
             this.gridSum.RowTemplate.Height = 25;
             this.gridSum.ShowCellErrors = false;
             this.gridSum.ShowCellToolTips = false;
@@ -412,34 +398,33 @@
             this.gNeu.TabStop = false;
             this.gNeu.Text = "Neuanmeldung";
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel3.Location = new System.Drawing.Point(13, 55);
-            this.panel3.Margin = new System.Windows.Forms.Padding(0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(203, 516);
-            this.panel3.TabIndex = 21;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel6.Location = new System.Drawing.Point(17, 549);
-            this.panel6.Margin = new System.Windows.Forms.Padding(0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(181, 63);
-            this.panel6.TabIndex = 21;
-            // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.checkListStats);
-            this.panel1.Controls.Add(this.rjButton1);
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.xlsx);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Location = new System.Drawing.Point(552, 39);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(267, 622);
+            this.panel1.Size = new System.Drawing.Size(501, 622);
             this.panel1.TabIndex = 5;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.linkLabel1.LinkColor = System.Drawing.Color.Green;
+            this.linkLabel1.Location = new System.Drawing.Point(30, 191);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(102, 20);
+            this.linkLabel1.TabIndex = 22;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Ordner öffnen";
+            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.Green;
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.OnOpenFolderClick);
             // 
             // checkListStats
             // 
@@ -452,33 +437,34 @@
             "Anmeldegründe LB",
             "Anmeldegründe SGB VIII",
             "Art der Beratung für Schwangere"});
-            this.checkListStats.Location = new System.Drawing.Point(18, 54);
+            this.checkListStats.Location = new System.Drawing.Point(30, 60);
             this.checkListStats.Name = "checkListStats";
-            this.checkListStats.Size = new System.Drawing.Size(231, 130);
+            this.checkListStats.Size = new System.Drawing.Size(231, 112);
             this.checkListStats.TabIndex = 19;
             // 
-            // rjButton1
+            // xlsx
             // 
-            this.rjButton1.BackColor = System.Drawing.Color.Green;
-            this.rjButton1.BackgroundColor = System.Drawing.Color.Green;
-            this.rjButton1.BorderColor = System.Drawing.Color.Empty;
-            this.rjButton1.BorderRadius = 0;
-            this.rjButton1.BorderSize = 1;
-            this.rjButton1.FlatAppearance.BorderSize = 0;
-            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rjButton1.ForeColor = System.Drawing.Color.White;
-            this.rjButton1.Image = global::CDMS_Lebensberatung.Properties.images.excel26x26;
-            this.rjButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rjButton1.Location = new System.Drawing.Point(18, 206);
-            this.rjButton1.Name = "rjButton1";
-            this.rjButton1.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.rjButton1.Size = new System.Drawing.Size(231, 52);
-            this.rjButton1.TabIndex = 18;
-            this.rjButton1.Text = "Als .xlsx speichern";
-            this.rjButton1.TextColor = System.Drawing.Color.White;
-            this.rjButton1.UseVisualStyleBackColor = false;
-            this.rjButton1.Click += new System.EventHandler(this.OnButtonExport);
+            this.xlsx.BackColor = System.Drawing.Color.Green;
+            this.xlsx.BackgroundColor = System.Drawing.Color.Green;
+            this.xlsx.BorderColor = System.Drawing.Color.Empty;
+            this.xlsx.BorderRadius = 0;
+            this.xlsx.BorderSize = 1;
+            this.xlsx.FlatAppearance.BorderSize = 0;
+            this.xlsx.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.xlsx.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.xlsx.ForeColor = System.Drawing.Color.White;
+            this.xlsx.Image = global::CDMS_Lebensberatung.Properties.images.excel26x26;
+            this.xlsx.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.xlsx.Location = new System.Drawing.Point(30, 227);
+            this.xlsx.Name = "xlsx";
+            this.xlsx.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.xlsx.Size = new System.Drawing.Size(231, 52);
+            this.xlsx.TabIndex = 18;
+            this.xlsx.Text = "Als .xlsx exportieren";
+            this.xlsx.TextColor = System.Drawing.Color.White;
+            this.xlsx.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.xlsx.UseVisualStyleBackColor = false;
+            this.xlsx.Click += new System.EventHandler(this.OnButtonExport);
             // 
             // label3
             // 
@@ -486,7 +472,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(18, 9);
+            this.label3.Location = new System.Drawing.Point(13, 13);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(135, 32);
             this.label3.TabIndex = 2;
@@ -496,7 +482,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel4.Location = new System.Drawing.Point(18, 206);
+            this.panel4.Location = new System.Drawing.Point(30, 227);
             this.panel4.Margin = new System.Windows.Forms.Padding(0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(234, 55);
@@ -514,7 +500,7 @@
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Margin = new System.Windows.Forms.Padding(0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1080, 8);
+            this.panel5.Size = new System.Drawing.Size(1080, 5);
             this.panel5.TabIndex = 6;
             // 
             // panel2
@@ -523,8 +509,21 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(8, 690);
+            this.panel2.Size = new System.Drawing.Size(5, 690);
             this.panel2.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(30, 22);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(163, 21);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Relevantes auswählen";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrameStatistics
             // 
@@ -560,7 +559,6 @@
         #endregion
 
         private DataGridView gridAge;
-        private Label label1;
         private CheckBox cbNeu;
         private CheckBox cbMale;
         private CheckBox cbFemale;
@@ -583,13 +581,13 @@
         private DataGridView gridSum;
         private Panel panel1;
         private SaveFileDialog exportStatisticsFileSave;
-        private RJCodeAdvance.RJControls.RJButton rjButton1;
+        private RJCodeAdvance.RJControls.RJButton xlsx;
         private CheckedListBox checkListStats;
         private Label label3;
         private Panel panel5;
         private Panel panel2;
         private Panel panel4;
-        private Panel panel3;
-        private Panel panel6;
+        private LinkLabel linkLabel1;
+        private Label label2;
     }
 }

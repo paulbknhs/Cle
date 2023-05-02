@@ -15,6 +15,7 @@ public partial class FrameShowTable : UserControl
         dropTabelle.DataSource = Lists.Tabellen;
         dropTabelle.SelectedIndex = 0;
         dropFilter.DataSource = gridData.Columns.Cast<DataGridViewColumn>().Select(x => x.HeaderText).ToList();
+        GetData();
     }
 
     private void OnSelection(object sender, EventArgs e)
@@ -123,7 +124,8 @@ public partial class FrameShowTable : UserControl
         GetData();
     }
 
-    private void OnButtonShow(object sender, EventArgs e)
+    private void OnUpdateClick(object sender, EventArgs e)
     {
+        GetData();
     }
 }

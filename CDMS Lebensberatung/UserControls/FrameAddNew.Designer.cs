@@ -51,9 +51,16 @@
             this.rjButton1 = new RJCodeAdvance.RJControls.RJButton();
             this.label3 = new System.Windows.Forms.Label();
             this.cbARGE = new System.Windows.Forms.CheckBox();
-            this.rjButton2 = new RJCodeAdvance.RJControls.RJButton();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnDebug = new RJCodeAdvance.RJControls.RJButton();
+            this.panelBlockerShadow = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.indicateSaved = new System.Windows.Forms.ProgressBar();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.ContentFrame.SuspendLayout();
             this.TabNavControl.SuspendLayout();
             this.panelToggle.SuspendLayout();
@@ -70,8 +77,8 @@
             this.tbJahr.BorderSize = 1;
             this.tbJahr.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbJahr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbJahr.Location = new System.Drawing.Point(74, 30);
-            this.tbJahr.Margin = new System.Windows.Forms.Padding(10);
+            this.tbJahr.Location = new System.Drawing.Point(72, 18);
+            this.tbJahr.Margin = new System.Windows.Forms.Padding(0);
             this.tbJahr.Multiline = false;
             this.tbJahr.Name = "tbJahr";
             this.tbJahr.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
@@ -94,8 +101,8 @@
             this.tbName.BorderSize = 1;
             this.tbName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbName.Location = new System.Drawing.Point(74, 72);
-            this.tbName.Margin = new System.Windows.Forms.Padding(10);
+            this.tbName.Location = new System.Drawing.Point(72, 72);
+            this.tbName.Margin = new System.Windows.Forms.Padding(0);
             this.tbName.Multiline = false;
             this.tbName.Name = "tbName";
             this.tbName.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
@@ -118,8 +125,8 @@
             this.tbAnmeldenummer.BorderSize = 1;
             this.tbAnmeldenummer.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbAnmeldenummer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbAnmeldenummer.Location = new System.Drawing.Point(282, 30);
-            this.tbAnmeldenummer.Margin = new System.Windows.Forms.Padding(10);
+            this.tbAnmeldenummer.Location = new System.Drawing.Point(280, 18);
+            this.tbAnmeldenummer.Margin = new System.Windows.Forms.Padding(0);
             this.tbAnmeldenummer.Multiline = false;
             this.tbAnmeldenummer.Name = "tbAnmeldenummer";
             this.tbAnmeldenummer.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
@@ -142,8 +149,8 @@
             this.tbWohnort.BorderSize = 1;
             this.tbWohnort.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbWohnort.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbWohnort.Location = new System.Drawing.Point(282, 72);
-            this.tbWohnort.Margin = new System.Windows.Forms.Padding(10);
+            this.tbWohnort.Location = new System.Drawing.Point(280, 72);
+            this.tbWohnort.Margin = new System.Windows.Forms.Padding(0);
             this.tbWohnort.Multiline = false;
             this.tbWohnort.Name = "tbWohnort";
             this.tbWohnort.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
@@ -306,7 +313,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(74, 580);
+            this.btnSave.Location = new System.Drawing.Point(280, 580);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(200, 40);
             this.btnSave.TabIndex = 6;
@@ -559,9 +566,9 @@
             this.panelBlocker.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.panelBlocker.Controls.Add(this.rjButton1);
             this.panelBlocker.Controls.Add(this.label3);
-            this.panelBlocker.Location = new System.Drawing.Point(508, 15);
+            this.panelBlocker.Location = new System.Drawing.Point(525, 30);
             this.panelBlocker.Name = "panelBlocker";
-            this.panelBlocker.Size = new System.Drawing.Size(545, 633);
+            this.panelBlocker.Size = new System.Drawing.Size(500, 590);
             this.panelBlocker.TabIndex = 14;
             this.panelBlocker.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBlocker_Paint);
             // 
@@ -576,7 +583,7 @@
             this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.rjButton1.ForeColor = System.Drawing.Color.White;
-            this.rjButton1.Location = new System.Drawing.Point(177, 403);
+            this.rjButton1.Location = new System.Drawing.Point(152, 511);
             this.rjButton1.Name = "rjButton1";
             this.rjButton1.Size = new System.Drawing.Size(200, 40);
             this.rjButton1.TabIndex = 6;
@@ -588,13 +595,14 @@
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.IndianRed;
-            this.label3.Location = new System.Drawing.Point(0, 169);
+            this.label3.Location = new System.Drawing.Point(0, 57);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(543, 193);
+            this.label3.Size = new System.Drawing.Size(502, 198);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Bitte Angaben speichern";
+            this.label3.Text = "Da einige Tabellen auf allgemeine Daten zur \r\nPerson und Anmeldung zugreifen, ist" +
+    " es notwendig\r\ndiese zuerst vorzunehmen und zu speichern.";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cbARGE
@@ -613,34 +621,35 @@
             this.cbARGE.UseVisualStyleBackColor = false;
             this.cbARGE.CheckedChanged += new System.EventHandler(this.OnClick);
             // 
-            // rjButton2
+            // btnDebug
             // 
-            this.rjButton2.BackColor = System.Drawing.Color.Gray;
-            this.rjButton2.BackgroundColor = System.Drawing.Color.Gray;
-            this.rjButton2.BorderColor = System.Drawing.Color.Transparent;
-            this.rjButton2.BorderRadius = 0;
-            this.rjButton2.BorderSize = 1;
-            this.rjButton2.FlatAppearance.BorderSize = 0;
-            this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rjButton2.ForeColor = System.Drawing.Color.White;
-            this.rjButton2.Location = new System.Drawing.Point(282, 580);
-            this.rjButton2.Name = "rjButton2";
-            this.rjButton2.Size = new System.Drawing.Size(200, 40);
-            this.rjButton2.TabIndex = 6;
-            this.rjButton2.Text = "Zufällig füllen";
-            this.rjButton2.TextColor = System.Drawing.Color.White;
-            this.rjButton2.UseVisualStyleBackColor = false;
-            this.rjButton2.Click += new System.EventHandler(this.OnButtonFill);
+            this.btnDebug.BackColor = System.Drawing.Color.Gray;
+            this.btnDebug.BackgroundColor = System.Drawing.Color.Gray;
+            this.btnDebug.BorderColor = System.Drawing.Color.Transparent;
+            this.btnDebug.BorderRadius = 0;
+            this.btnDebug.BorderSize = 1;
+            this.btnDebug.FlatAppearance.BorderSize = 0;
+            this.btnDebug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDebug.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnDebug.ForeColor = System.Drawing.Color.White;
+            this.btnDebug.Location = new System.Drawing.Point(282, 184);
+            this.btnDebug.Name = "btnDebug";
+            this.btnDebug.Size = new System.Drawing.Size(200, 32);
+            this.btnDebug.TabIndex = 6;
+            this.btnDebug.Text = "(debug)";
+            this.btnDebug.TextColor = System.Drawing.Color.White;
+            this.btnDebug.UseVisualStyleBackColor = false;
+            this.btnDebug.Visible = false;
+            this.btnDebug.Click += new System.EventHandler(this.OnButtonFill);
             // 
-            // panel5
+            // panelBlockerShadow
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel5.Location = new System.Drawing.Point(510, 20);
-            this.panel5.Margin = new System.Windows.Forms.Padding(0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(547, 631);
-            this.panel5.TabIndex = 15;
+            this.panelBlockerShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panelBlockerShadow.Location = new System.Drawing.Point(525, 30);
+            this.panelBlockerShadow.Margin = new System.Windows.Forms.Padding(0);
+            this.panelBlockerShadow.Name = "panelBlockerShadow";
+            this.panelBlockerShadow.Size = new System.Drawing.Size(502, 593);
+            this.panelBlockerShadow.TabIndex = 15;
             // 
             // panel1
             // 
@@ -651,18 +660,99 @@
             this.panel1.Size = new System.Drawing.Size(8, 689);
             this.panel1.TabIndex = 16;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel2.Location = new System.Drawing.Point(8, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1080, 8);
+            this.panel2.TabIndex = 17;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel4.Location = new System.Drawing.Point(280, 580);
+            this.panel4.Margin = new System.Windows.Forms.Padding(0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(203, 43);
+            this.panel4.TabIndex = 22;
+            // 
+            // indicateSaved
+            // 
+            this.indicateSaved.ForeColor = System.Drawing.Color.Green;
+            this.indicateSaved.Location = new System.Drawing.Point(20, 662);
+            this.indicateSaved.Name = "indicateSaved";
+            this.indicateSaved.Size = new System.Drawing.Size(1051, 23);
+            this.indicateSaved.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.indicateSaved.TabIndex = 23;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.label4.Location = new System.Drawing.Point(72, 50);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(32, 17);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Jahr";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.label5.Location = new System.Drawing.Point(280, 50);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(107, 17);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Anmeldenummer";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.label6.Location = new System.Drawing.Point(72, 104);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(43, 17);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Name";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.label7.Location = new System.Drawing.Point(280, 104);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(58, 17);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Wohnort";
+            // 
             // FrameAddNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Controls.Add(this.indicateSaved);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.cbARGE);
             this.Controls.Add(this.panelBlocker);
             this.Controls.Add(this.gridAlter);
             this.Controls.Add(this.panelToggle);
             this.Controls.Add(this.ContentFrame);
-            this.Controls.Add(this.rjButton2);
+            this.Controls.Add(this.btnDebug);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.tbWohnort);
             this.Controls.Add(this.tbAnmeldenummer);
@@ -672,7 +762,8 @@
             this.Controls.Add(this.dropMigra);
             this.Controls.Add(this.dropAnregung);
             this.Controls.Add(this.dropBeratung);
-            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panelBlockerShadow);
+            this.Controls.Add(this.panel4);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "FrameAddNew";
             this.Size = new System.Drawing.Size(1080, 690);
@@ -686,6 +777,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridAlter)).EndInit();
             this.panelBlocker.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -717,13 +809,20 @@
         private Panel panelBlocker;
         private Label label3;
         private CheckBox cbARGE;
-        private RJCodeAdvance.RJControls.RJButton rjButton2;
+        private RJCodeAdvance.RJControls.RJButton btnDebug;
         private DataGridViewTextBoxColumn Person;
         private DataGridViewTextBoxColumn m;
         private DataGridViewTextBoxColumn w;
         private DataGridViewTextBoxColumn nb;
         private RJCodeAdvance.RJControls.RJButton rjButton1;
-        private Panel panel5;
+        private Panel panelBlockerShadow;
         private Panel panel1;
+        private Panel panel2;
+        private Panel panel4;
+        private ProgressBar indicateSaved;
+        private Label label4;
+        private Label label5;
+        private Label label6;
+        private Label label7;
     }
 }

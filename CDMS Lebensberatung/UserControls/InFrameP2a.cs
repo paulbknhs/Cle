@@ -31,5 +31,7 @@ public partial class P2a : UserControl
         database.Connect();
         database.InsertStringDict("§ 2a", Dictionaries.P2a);
         database.Disconnect();
+
+        
     }
 }

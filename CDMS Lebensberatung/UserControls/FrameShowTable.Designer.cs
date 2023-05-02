@@ -34,6 +34,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.rjButton3 = new RJCodeAdvance.RJControls.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,6 +44,7 @@
             this.gridData.AllowUserToAddRows = false;
             this.gridData.AllowUserToDeleteRows = false;
             this.gridData.AllowUserToOrderColumns = true;
+            this.gridData.AllowUserToResizeRows = false;
             this.gridData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.gridData.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.gridData.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
@@ -54,7 +57,7 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gridData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.gridData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridData.ColumnHeadersHeight = 26;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -65,6 +68,7 @@
             this.gridData.DefaultCellStyle = dataGridViewCellStyle2;
             this.gridData.Location = new System.Drawing.Point(65, 119);
             this.gridData.Margin = new System.Windows.Forms.Padding(10);
+            this.gridData.MultiSelect = false;
             this.gridData.Name = "gridData";
             this.gridData.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -103,8 +107,8 @@
             // 
             // buttonDelete
             // 
-            this.buttonDelete.BackColor = System.Drawing.Color.Tomato;
-            this.buttonDelete.BackgroundColor = System.Drawing.Color.Tomato;
+            this.buttonDelete.BackColor = System.Drawing.Color.IndianRed;
+            this.buttonDelete.BackgroundColor = System.Drawing.Color.IndianRed;
             this.buttonDelete.BorderColor = System.Drawing.Color.Black;
             this.buttonDelete.BorderRadius = 0;
             this.buttonDelete.BorderSize = 0;
@@ -186,8 +190,8 @@
             // 
             // rjButton2
             // 
-            this.rjButton2.BackColor = System.Drawing.Color.Tomato;
-            this.rjButton2.BackgroundColor = System.Drawing.Color.Tomato;
+            this.rjButton2.BackColor = System.Drawing.Color.IndianRed;
+            this.rjButton2.BackgroundColor = System.Drawing.Color.IndianRed;
             this.rjButton2.BorderColor = System.Drawing.Color.White;
             this.rjButton2.BorderRadius = 0;
             this.rjButton2.BorderSize = 0;
@@ -234,7 +238,7 @@
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Margin = new System.Windows.Forms.Padding(0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1080, 8);
+            this.panel5.Size = new System.Drawing.Size(1080, 5);
             this.panel5.TabIndex = 16;
             // 
             // panel1
@@ -243,16 +247,16 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(8, 690);
+            this.panel1.Size = new System.Drawing.Size(5, 690);
             this.panel1.TabIndex = 17;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel2.Location = new System.Drawing.Point(65, 119);
+            this.panel2.Location = new System.Drawing.Point(67, 121);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1005, 560);
+            this.panel2.Size = new System.Drawing.Size(1000, 555);
             this.panel2.TabIndex = 18;
             // 
             // panel3
@@ -282,6 +286,35 @@
             this.panel6.Size = new System.Drawing.Size(202, 35);
             this.panel6.TabIndex = 21;
             // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel7.Location = new System.Drawing.Point(688, 27);
+            this.panel7.Margin = new System.Windows.Forms.Padding(0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(162, 35);
+            this.panel7.TabIndex = 19;
+            // 
+            // rjButton3
+            // 
+            this.rjButton3.BackColor = System.Drawing.Color.White;
+            this.rjButton3.BackgroundColor = System.Drawing.Color.White;
+            this.rjButton3.BorderColor = System.Drawing.Color.Black;
+            this.rjButton3.BorderRadius = 0;
+            this.rjButton3.BorderSize = 0;
+            this.rjButton3.FlatAppearance.BorderSize = 0;
+            this.rjButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rjButton3.ForeColor = System.Drawing.Color.Black;
+            this.rjButton3.Location = new System.Drawing.Point(688, 27);
+            this.rjButton3.Name = "rjButton3";
+            this.rjButton3.Size = new System.Drawing.Size(159, 32);
+            this.rjButton3.TabIndex = 13;
+            this.rjButton3.Text = "Aktualisieren";
+            this.rjButton3.TextColor = System.Drawing.Color.Black;
+            this.rjButton3.UseVisualStyleBackColor = false;
+            this.rjButton3.Click += new System.EventHandler(this.OnUpdateClick);
+            // 
             // FrameShowTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -291,12 +324,14 @@
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.tbListFilters);
             this.Controls.Add(this.tbFilter);
+            this.Controls.Add(this.rjButton3);
             this.Controls.Add(this.rjButton1);
             this.Controls.Add(this.rjButton2);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.dropFilter);
             this.Controls.Add(this.dropTabelle);
             this.Controls.Add(this.gridData);
+            this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
@@ -328,5 +363,7 @@
         private Panel panel3;
         private Panel panel4;
         private Panel panel6;
+        private Panel panel7;
+        private RJCodeAdvance.RJControls.RJButton rjButton3;
     }
 }
