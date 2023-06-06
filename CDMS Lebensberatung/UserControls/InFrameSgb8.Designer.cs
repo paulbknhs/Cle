@@ -19,7 +19,7 @@ namespace CDMS_Lebensberatung.AddSpecific
 
                                         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toggleWartezeit = new RJCodeAdvance.RJControls.RJToggleButton();
             this.dropLeistung = new CDMS_Lebensberatung.UserControls.DropDown();
             this.label1 = new System.Windows.Forms.Label();
@@ -30,11 +30,12 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.Art = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stunden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dropAnmeldung = new CDMS_Lebensberatung.UserControls.DropDown();
-            this.tbAge = new CDMS_Lebensberatung.UserControls.RJTextBox();
+            this.tbAlter = new CDMS_Lebensberatung.UserControls.RJTextBox();
             this.dropGender = new CDMS_Lebensberatung.UserControls.DropDown();
             this.tbErläuterungen = new CDMS_Lebensberatung.UserControls.RJTextBox();
             this.btnSave = new RJCodeAdvance.RJControls.RJButton();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridStunden)).BeginInit();
             this.SuspendLayout();
             // 
@@ -154,14 +155,14 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.gridStunden.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Art,
             this.Stunden});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Green;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridStunden.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridStunden.DefaultCellStyle = dataGridViewCellStyle2;
             this.gridStunden.EnableHeadersVisualStyles = false;
             this.gridStunden.GridColor = System.Drawing.SystemColors.ControlLight;
             this.gridStunden.Location = new System.Drawing.Point(253, 265);
@@ -204,27 +205,27 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.dropAnmeldung.TabIndex = 18;
             this.dropAnmeldung.Texts = "";
             // 
-            // tbAge
+            // tbAlter
             // 
-            this.tbAge.BackColor = System.Drawing.SystemColors.Window;
-            this.tbAge.BorderColor = System.Drawing.Color.Black;
-            this.tbAge.BorderFocusColor = System.Drawing.Color.Green;
-            this.tbAge.BorderRadius = 0;
-            this.tbAge.BorderSize = 1;
-            this.tbAge.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbAge.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbAge.Location = new System.Drawing.Point(40, 125);
-            this.tbAge.Margin = new System.Windows.Forms.Padding(10);
-            this.tbAge.Multiline = false;
-            this.tbAge.Name = "tbAge";
-            this.tbAge.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.tbAge.PasswordChar = false;
-            this.tbAge.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbAge.PlaceholderText = "Alter";
-            this.tbAge.Size = new System.Drawing.Size(200, 32);
-            this.tbAge.TabIndex = 19;
-            this.tbAge.Texts = "";
-            this.tbAge.UnderlinedStyle = true;
+            this.tbAlter.BackColor = System.Drawing.SystemColors.Window;
+            this.tbAlter.BorderColor = System.Drawing.Color.Black;
+            this.tbAlter.BorderFocusColor = System.Drawing.Color.Green;
+            this.tbAlter.BorderRadius = 0;
+            this.tbAlter.BorderSize = 1;
+            this.tbAlter.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbAlter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbAlter.Location = new System.Drawing.Point(40, 125);
+            this.tbAlter.Margin = new System.Windows.Forms.Padding(10);
+            this.tbAlter.Multiline = false;
+            this.tbAlter.Name = "tbAlter";
+            this.tbAlter.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.tbAlter.PasswordChar = false;
+            this.tbAlter.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.tbAlter.PlaceholderText = "Alter";
+            this.tbAlter.Size = new System.Drawing.Size(200, 32);
+            this.tbAlter.TabIndex = 19;
+            this.tbAlter.Texts = "";
+            this.tbAlter.UnderlinedStyle = true;
             // 
             // dropGender
             // 
@@ -298,14 +299,27 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.panel4.TabIndex = 24;
             this.panel4.Click += new System.EventHandler(this.OnButtonSave);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.label2.Location = new System.Drawing.Point(40, 560);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 13);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "Andere Gründe";
+            // 
             // Sgb8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.tbErläuterungen);
-            this.Controls.Add(this.tbAge);
+            this.Controls.Add(this.tbAlter);
             this.Controls.Add(this.dropAnmeldung);
             this.Controls.Add(this.gridStunden);
             this.Controls.Add(this.label1);
@@ -336,10 +350,11 @@ namespace CDMS_Lebensberatung.AddSpecific
         private DataGridViewTextBoxColumn Art;
         private DataGridViewTextBoxColumn Stunden;
         private DropDown dropAnmeldung;
-        private RJTextBox tbAge;
+        private RJTextBox tbAlter;
         private DropDown dropGender;
         private RJTextBox tbErläuterungen;
         private RJCodeAdvance.RJControls.RJButton btnSave;
         private Panel panel4;
+        private Label label2;
     }
 }

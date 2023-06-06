@@ -1,14 +1,15 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
+using System.Text;
 
 namespace CDMS_Lebensberatung.cs;
 
-public class SQL
+public class Sql
 {
     private SqlConnection _connection;
     private readonly string _connectionString;
 
-    public SQL(string connectionString)
+    public Sql(string connectionString)
     {
         _connectionString = connectionString;
     }
@@ -92,14 +93,15 @@ public class SQL
     public DataTable GetDataFiltered(string tableName, Dictionary<string, string> filters)
     {
         var dataTable = new DataTable();
-        var filter = "";
+        var required = new StringBuilder();
 
-        foreach (var item in filters)
-            filter += $"[{item.Key}] LIKE '%{item.Value}%' AND ";
+        foreach (var kvp in filters)
+            required.Append($"[{kvp.Key}] LIKE '%{kvp.Value}%' AND ");
+        
 
-        filter = filter.Remove(filter.Length - 5);
+        required.Length -= 5;
         using var command = new SqlCommand(
-            $"SELECT * FROM [dbo].[{tableName}] WHERE {filter}",
+            $"SELECT * FROM [dbo].[{tableName}] WHERE {required}",
             _connection
         );
         using var reader = command.ExecuteReader();
@@ -107,19 +109,10 @@ public class SQL
         return dataTable;
     }
 
-    public bool DeleteData(string tableName, Dictionary<string, string> toDelete)
+    public bool DeleteData(string tableName, string id)
     {
-        var remove = "";
-
-        foreach (var item in toDelete)
-            remove += $"[{item.Key}]= '{item.Value}' AND ";
-
-        remove = remove.Remove(remove.Length - 5);
-
         using var command = new SqlCommand(
-            $"DELETE FROM [dbo].[{tableName}] WHERE {remove}",
-            _connection
-        );
+            $"DELETE FROM [dbo].[{tableName}] WHERE ID = {id}", _connection );
         using var reader = command.ExecuteReader();
 
         return true;

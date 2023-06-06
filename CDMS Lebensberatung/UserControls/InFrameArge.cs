@@ -41,9 +41,9 @@ public partial class ARGE : UserControl
             if (Dictionaries.Allgemein.ContainsKey(pair.Key))
                 Dictionaries.ARGE.Add(pair.Key, Dictionaries.Allgemein[pair.Key]);
 
-        Dictionaries.ARGE.Add("Alter", Dictionaries.Allgemein["Erwachsene*r 1"][..2]);
+        Dictionaries.ARGE.Add("Alter", Dictionaries.Allgemein["Age"]);
 
-        var gender = Regex.Replace(Dictionaries.Allgemein["Erwachsene*r 1"], "[^a-z.]", "");
+        var gender = Dictionaries.Allgemein["Gender"];
         Dictionaries.ARGE.Add("Geschlecht", gender);
 
         ReadInput.FromDropDown(this, Dictionaries.ARGE);
@@ -51,7 +51,7 @@ public partial class ARGE : UserControl
         var result = ReadInput.LetUserVerify(Dictionaries.ARGE);
         if (result != DialogResult.OK) return;
 
-        SQL database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        Sql database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
         database.Connect();
         database.InsertStringDict("ARGE", Dictionaries.ARGE);
         database.Disconnect();

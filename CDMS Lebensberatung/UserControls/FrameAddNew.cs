@@ -190,6 +190,7 @@ public partial class FrameAddNew : UserControl
         SetDropDowns();
         InitializeContent();
         SetGridAlter();
+        if (AppDomain.CurrentDomain.FriendlyName.EndsWith("vshost.exe")) btnDebug.Visible = true;
     }
 
     private void OnToggle(object sender, EventArgs e)
@@ -218,7 +219,7 @@ public partial class FrameAddNew : UserControl
             new()
             {
                 { tbJahr, "Jahr" },
-                { tbAnmeldenummer, "Anmeldenummer" },
+                { tbNr, "Anmeldenummer" },
                 { tbWohnort, "Wohnort" },
                 { tbName, "Name" },
                 { dropMigra, "Migrationshintergrund" },
@@ -289,7 +290,7 @@ public partial class FrameAddNew : UserControl
 
         if (ReadInput.LetUserVerify(Dictionaries.Allgemein) != DialogResult.OK) return;
 
-        SQL database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        Sql database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
         database.Connect();
         database.InsertStringDict("Allgemein", Dictionaries.Allgemein);
         database.Disconnect();
@@ -362,7 +363,7 @@ public partial class FrameAddNew : UserControl
         Random rnd = new();
 
         tbJahr.Texts = "2023";
-        tbAnmeldenummer.Texts = rnd.Next(0, 9999).ToString();
+        tbNr.Texts = rnd.Next(0, 9999).ToString();
 
         const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         var text = chars[rnd.Next(chars.Length)].ToString();
@@ -395,39 +396,42 @@ public partial class FrameAddNew : UserControl
             toggleAbgeschlossen.Checked = false;
         }
 
-        toggleWiederanmeldung.Checked = rnd.Next(1, 15) == 5;
+        toggleWieder.Checked = rnd.Next(1, 15) == 5;
 
         #endregion
     }
 
     private void ClearFields()
     {
-        // Set all fields to default
-        foreach (Control control in Controls)
-            if (control is RJTextBox tb)
+        foreach (var control in Controls)
+            switch (control)
             {
-                tb.Texts = "";
+                case RJTextBox tb:
+                    tb.Texts = "";
+                    break;
+                case CheckBox cb:
+                    cb.Checked = false;
+                    break;
+                case DropDown drop:
+                    drop.SelectedIndex = 0;
+                    break;
+                case DataGridView dgv:
+                {
+                    foreach (DataGridViewRow row in dgv.Rows)
+                        foreach (DataGridViewCell cell in row.Cells)
+                            if (cell.ColumnIndex != 0)
+                                cell.Value = null;
+                    break;
+                }
+                case Panel panel:
+                {
+                    if (panel.Name != "panelToggle") break;
+                    foreach (var pControl in panel.Controls)
+                        if (pControl is RJToggleButton toggle)
+                            toggle.Checked = false;
+                    break;
+                }
             }
-            else if (control is DropDown dd)
-            {
-                dd.SelectedIndex = 0;
-            }
-            else if (control is CheckBox cb)
-            {
-                cb.Checked = false;
-            }
-            else if (control is RJToggleButton ts)
-            {
-                ts.Checked = false;
-            }
-            else if (control is DataGridView view)
-            {
-                var dgv = view;
-                foreach (DataGridViewRow row in dgv.Rows)
-                    foreach (DataGridViewCell cell in row.Cells)
-                        if (cell.ColumnIndex != 0) cell.Value = "";
-            }
-
         ClearUserControl();
         ButtonEheUndLeben_Click(ButtonEheUndLeben, EventArgs.Empty);
         panelBlocker.Visible = true;
@@ -445,7 +449,12 @@ public partial class FrameAddNew : UserControl
     {
         var textBox = (RJTextBox)sender;
 
-        if (IsSaved) ClearFields();
+        if (IsSaved)
+        {
+            ClearFields();
+            SetDropDowns();
+            IsSaved = false;
+        }
 
         textBox.UnderlinedStyle = true;
         textBox.BorderColor = Color.Black;
@@ -470,5 +479,4 @@ public partial class FrameAddNew : UserControl
     private void panelBlocker_Paint(object sender, PaintEventArgs e)
     {
     }
-
 }

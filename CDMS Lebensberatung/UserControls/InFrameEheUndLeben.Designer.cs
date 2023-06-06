@@ -52,6 +52,7 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.Stunden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSave = new RJCodeAdvance.RJControls.RJButton();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupAnmeldung.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridStunden)).BeginInit();
             this.SuspendLayout();
@@ -82,7 +83,7 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.dropWirtschaft.BorderColor = System.Drawing.Color.Black;
             this.dropWirtschaft.BorderSize = 1;
             this.dropWirtschaft.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dropWirtschaft.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dropWirtschaft.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dropWirtschaft.ForeColor = System.Drawing.Color.DimGray;
             this.dropWirtschaft.IconColor = System.Drawing.Color.Black;
             this.dropWirtschaft.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
@@ -113,7 +114,7 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.groupAnmeldung.Controls.Add(this.cbPsychisch);
             this.groupAnmeldung.Controls.Add(this.chKrankTod);
             this.groupAnmeldung.Controls.Add(this.cbKörper);
-            this.groupAnmeldung.Location = new System.Drawing.Point(38, 152);
+            this.groupAnmeldung.Location = new System.Drawing.Point(38, 130);
             this.groupAnmeldung.Name = "groupAnmeldung";
             this.groupAnmeldung.Padding = new System.Windows.Forms.Padding(5);
             this.groupAnmeldung.Size = new System.Drawing.Size(200, 383);
@@ -280,14 +281,14 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.tbErläuterung.BorderSize = 1;
             this.tbErläuterung.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbErläuterung.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbErläuterung.Location = new System.Drawing.Point(38, 541);
+            this.tbErläuterung.Location = new System.Drawing.Point(38, 526);
             this.tbErläuterung.Margin = new System.Windows.Forms.Padding(10);
             this.tbErläuterung.Multiline = false;
             this.tbErläuterung.Name = "tbErläuterung";
             this.tbErläuterung.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.tbErläuterung.PasswordChar = false;
             this.tbErläuterung.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbErläuterung.PlaceholderText = "Erläuterung zu anderen Problemen";
+            this.tbErläuterung.PlaceholderText = "Erläuterung zu Andere";
             this.tbErläuterung.Size = new System.Drawing.Size(200, 32);
             this.tbErläuterung.TabIndex = 5;
             this.tbErläuterung.Texts = "";
@@ -459,10 +460,23 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.panel4.Size = new System.Drawing.Size(203, 43);
             this.panel4.TabIndex = 24;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.label5.Location = new System.Drawing.Point(38, 564);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(123, 13);
+            this.label5.TabIndex = 26;
+            this.label5.Text = "Erläuterung zu Andere";
+            // 
             // EheUndLeben
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.gridStunden);
@@ -523,5 +537,6 @@ namespace CDMS_Lebensberatung.AddSpecific
         private DataGridViewTextBoxColumn Stunden;
         private RJCodeAdvance.RJControls.RJButton btnSave;
         private Panel panel4;
+        private Label label5;
     }
 }

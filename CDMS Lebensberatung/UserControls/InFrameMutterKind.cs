@@ -23,17 +23,17 @@ public partial class MutterKind : UserControl
     {
         Dictionaries.MutterKind.Clear();
 
-        Dictionary<string, string> toAdd =
-            new()
+        Dictionary<string, string> toAdd = new()
             {
                 { "Jahr", "" },
-                { "Anmeldenummer", "" }
+                { "Nr", "" }
             };
+
         foreach (var pair in toAdd)
             if (Dictionaries.Allgemein.ContainsKey(pair.Key))
                 Dictionaries.MutterKind.Add(pair.Key, Dictionaries.Allgemein[pair.Key]);
 
-        Dictionaries.MutterKind.Add("Alter", Dictionaries.Allgemein["Erwachsene*r 1"][..2]);
+        Dictionaries.MutterKind.Add("Alter", Dictionaries.Allgemein["E1"][..2]);
 
         ReadInput.FromDropDown(this, Dictionaries.MutterKind);
         ReadInput.FromNumberBox(this, Dictionaries.MutterKind);
@@ -41,7 +41,7 @@ public partial class MutterKind : UserControl
         var result = ReadInput.LetUserVerify(Dictionaries.MutterKind);
         if (result != DialogResult.OK) return;
 
-        SQL database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        Sql database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
         database.Connect();
         database.InsertStringDict("Mutter Kind", Dictionaries.MutterKind);
         database.Disconnect();

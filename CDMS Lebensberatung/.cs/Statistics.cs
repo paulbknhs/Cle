@@ -1,5 +1,6 @@
 ﻿using System.Configuration;
 using System.Data;
+using Microsoft.IdentityModel.Tokens;
 
 namespace CDMS_Lebensberatung.cs;
 
@@ -10,7 +11,7 @@ public static class Statistics
         List<int> ageList = new();
 
         foreach (DataRow row in table.Rows)
-            if (int.TryParse(row[18].ToString(), out var age))
+            if (int.TryParse(row["Age"].ToString(), out var age))
                 ageList.Add(age);
         return ageList;
     }
@@ -49,24 +50,29 @@ public static class Statistics
             { "Rechtsanwaltliche Erstberatung", 0 }
         };
 
-        var filter = new Dictionary<string, string> { { "Wiederanmeldung", "Neu" } };
-        SQL db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        var filter = new Dictionary<string, string> { { "Neu", "Ja" } };
+        Sql db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
         db.Connect();
         var dataTable = db.GetDataFiltered("Allgemein", filter);
         db.Disconnect();
 
         foreach (DataRow row in dataTable.Rows)
-            if (row.ItemArray[3].ToString() == "Allgem. LB")
-                neuanmeldungDict["Ehe- und Lebensberatung"]++;
-            else if (row.ItemArray[3].ToString() == "SGB VIII")
-                neuanmeldungDict["SGB VIII / Erziehungsberatung (KJHG-Fälle)"]++;
-            else if (
-                row.ItemArray[3].ToString() == "MuKi + allgem. Sgs"
-                || row.ItemArray[3].ToString() == "Beratung n. pränatal"
-            )
-                neuanmeldungDict["Schwangeren- und Schwangerschaftskonfliktberatungen"]++;
-            else if (row.ItemArray[3].ToString() == "RA")
-                neuanmeldungDict["Rechtsanwaltliche Erstberatung"]++;
+            switch (row["Beratungsart"].ToString())
+            {
+                case "Allgem. LB":
+                    neuanmeldungDict["Ehe- und Lebensberatung"]++;
+                    break;
+                case "SGB VIII":
+                    neuanmeldungDict["SGB VIII / Erziehungsberatung (KJHG-Fälle)"]++;
+                    break;
+                case "MuKi + allgem. Sgs":
+                case "Beratung n. pränatal":
+                    neuanmeldungDict["Schwangeren- und Schwangerschaftskonfliktberatungen"]++;
+                    break;
+                case "RA":
+                    neuanmeldungDict["Rechtsanwaltliche Erstberatung"]++;
+                    break;
+            }
 
         var table = new DataTable();
         table.Columns.Add("Art", typeof(string));
@@ -89,24 +95,29 @@ public static class Statistics
             { "Rechtsanwaltliche Erstberatung", 0 }
         };
 
-        var filter = new Dictionary<string, string> { { "Wiederanmeldung", "Wiederanmeldung" } };
-        SQL db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        var filter = new Dictionary<string, string> { { "Neu", "Nein" } };
+        Sql db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
         db.Connect();
         var dataTable = db.GetDataFiltered("Allgemein", filter);
         db.Disconnect();
 
         foreach (DataRow row in dataTable.Rows)
-            if (row.ItemArray[3].ToString() == "Allgem. LB")
-                neuanmeldungDict["Ehe- und Lebensberatung"]++;
-            else if (row.ItemArray[3].ToString() == "SGB VIII")
-                neuanmeldungDict["SGB VIII / Erziehungsberatung (KJHG-Fälle)"]++;
-            else if (
-                row.ItemArray[3].ToString() == "MuKi + allgem. Sgs"
-                || row.ItemArray[3].ToString() == "Beratung n. pränatal"
-            )
-                neuanmeldungDict["Schwangeren- und Schwangerschaftskonfliktberatungen"]++;
-            else if (row.ItemArray[3].ToString() == "RA")
-                neuanmeldungDict["Rechtsanwaltliche Erstberatung"]++;
+            switch (row["Beratungsart"].ToString())
+            {
+                case "Allgem. LB":
+                    neuanmeldungDict["Ehe- und Lebensberatung"]++;
+                    break;
+                case "SGB VIII":
+                    neuanmeldungDict["SGB VIII / Erziehungsberatung (KJHG-Fälle)"]++;
+                    break;
+                case "MuKi + allgem. Sgs":
+                case "Beratung n. pränatal":
+                    neuanmeldungDict["Schwangeren- und Schwangerschaftskonfliktberatungen"]++;
+                    break;
+                case "RA":
+                    neuanmeldungDict["Rechtsanwaltliche Erstberatung"]++;
+                    break;
+            }
 
         var table = new DataTable();
         table.Columns.Add("Art", typeof(string));
@@ -129,23 +140,28 @@ public static class Statistics
             { "Rechtsanwaltliche Erstberatung", 0 }
         };
 
-        SQL db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        Sql db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
         db.Connect();
         var dataTable = db.GetFullTable("Allgemein");
         db.Disconnect();
 
         foreach (DataRow row in dataTable.Rows)
-            if (row.ItemArray[3].ToString() == "Allgem. LB")
-                neuanmeldungDict["Ehe- und Lebensberatung"]++;
-            else if (row.ItemArray[3].ToString() == "SGB VIII")
-                neuanmeldungDict["SGB VIII / Erziehungsberatung (KJHG-Fälle)"]++;
-            else if (
-                row.ItemArray[3].ToString() == "MuKi + allgem. Sgs"
-                || row.ItemArray[3].ToString() == "Beratung n. pränatal"
-            )
-                neuanmeldungDict["Schwangeren- und Schwangerschaftskonfliktberatungen"]++;
-            else if (row.ItemArray[3].ToString() == "RA")
-                neuanmeldungDict["Rechtsanwaltliche Erstberatung"]++;
+            switch (row["Beratungsart"].ToString())
+            {
+                case "Allgem. LB":
+                    neuanmeldungDict["Ehe- und Lebensberatung"]++;
+                    break;
+                case "SGB VIII":
+                    neuanmeldungDict["SGB VIII / Erziehungsberatung (KJHG-Fälle)"]++;
+                    break;
+                case "MuKi + allgem. Sgs":
+                case "Beratung n. pränatal":
+                    neuanmeldungDict["Schwangeren- und Schwangerschaftskonfliktberatungen"]++;
+                    break;
+                case "RA":
+                    neuanmeldungDict["Rechtsanwaltliche Erstberatung"]++;
+                    break;
+            }
 
         var table = new DataTable();
         table.Columns.Add("Art", typeof(string));
@@ -160,7 +176,7 @@ public static class Statistics
 
     public static DataTable Wohnort()
     {
-        SQL db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        Sql db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
         db.Connect();
         var dataTable = db.GetFullTable("Allgemein");
         db.Disconnect();
@@ -169,7 +185,9 @@ public static class Statistics
 
         foreach (DataRow row in dataTable.Rows)
         {
-            var key = row[7].ToString();
+            if (row["Wohnort"].ToString() is "") continue;
+            
+            var key = row["Wohnort"].ToString() ?? "00000";
             if (ortAnzahlDict.ContainsKey(key))
                 ortAnzahlDict[key]++;
             else
@@ -189,7 +207,7 @@ public static class Statistics
 
     public static DataTable GründeFürEheUndLeben()
     {
-        SQL db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        Sql db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
         db.Connect();
         var dataTable = db.GetColumn("Ehe und Leben", "Anmeldegründe");
         db.Disconnect();
@@ -236,18 +254,13 @@ public static class Statistics
         };
 
         var grundSgb8Anzahl = new Dictionary<string, int>();
-        var grundSgb8Index = new Dictionary<string, string>();
 
-        SQL db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        Sql db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
         db.Connect();
-        var dataTable = db.GetColumn("SGB VIII", "Hilfe Nr.");
+        var dataTable = db.GetColumn("SGB VIII", "Hilfe");
         db.Disconnect();
 
-        foreach (DataRow row in dataTable.Rows)
-        {
-            var c = row[0].ToString()[0].ToString();
-            grundSgb8Index.Add(c, grundSgb8Dict[c]);
-        }
+        var grundSgb8Index = (from DataRow row in dataTable.Rows select row[0].ToString()[0].ToString()).ToDictionary(c => c, c => grundSgb8Dict[c]);
 
         foreach (var pair in grundSgb8Index)
             if (grundSgb8Anzahl.ContainsKey(pair.Value))
@@ -268,7 +281,7 @@ public static class Statistics
 
     public static DataTable SchwangerschaftAufteilung()
     {
-        SQL db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        Sql db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
 
         var table = new DataTable();
 

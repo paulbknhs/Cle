@@ -1,15 +1,16 @@
 ﻿using System.Configuration;
 using System.Data;
-using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.ServiceProcess;
 using System.Text;
 using CDMS_Lebensberatung.cs;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.Office.Core;
 using Application = Microsoft.Office.Interop.Excel.Application;
 using Range = Microsoft.Office.Interop.Excel.Range;
 using Workbook = Microsoft.Office.Interop.Excel.Workbook;
 using Worksheet = Microsoft.Office.Interop.Excel.Worksheet;
+using XlHAlign = Microsoft.Office.Interop.Excel.XlHAlign;
 
 namespace CDMS_Lebensberatung.UserControls;
 
@@ -23,7 +24,7 @@ public partial class FrameStatistics : UserControl
 
     public static List<int> CollectAgesUnfiltered()
     {
-        SQL db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        Sql db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
         db.Connect();
         var dataTable = db.GetFullTable("Allgemein");
         db.Disconnect();
@@ -58,18 +59,21 @@ public partial class FrameStatistics : UserControl
                     filters.Add("Beratungsart = 'MuKi + allgem. Sgs'");
                     filters.Add("Beratungsart = 'Beratung n. pränatal'");
                     break;
+                case "cb218":
+                    filters.Add("Beratungsart = '§218'");
+                    break;
                 case "cbRA":
                     filters.Add("Beratungsart = 'RA'");
                     break;
 
                 case "cbBurgwedel":
-                    filters.Add("Wohnort = '30938'");
+                    filters.Add("Wohnort = 'Burgwedel'");
                     break;
                 case "cbWedemark":
-                    filters.Add("Wohnort = '30916'");
+                    filters.Add("Wohnort = 'Wedemark'");
                     break;
                 case "cbIsernhagen":
-                    filters.Add("Wohnort = '30900'");
+                    filters.Add("Wohnort = 'Isernhagen'");
                     break;
 
                 case "cbMale":
@@ -110,7 +114,7 @@ public partial class FrameStatistics : UserControl
             query.Append(filters[i]);
         }
 
-        SQL db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        Sql db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
         db.Connect();
         var dataTable = db.SendQuery(query.ToString());
         db.Disconnect();
@@ -196,13 +200,22 @@ public partial class FrameStatistics : UserControl
                 {
                     for (var j = 0; j < dt.Columns.Count; j++)
                         worksheet.Cells[rowIndex, j + 2] = dt.Rows[i][j];
-
                     rowIndex++;
                 }
 
+                var totalRow = worksheet.Range[worksheet.Cells[rowIndex, 2], worksheet.Cells[rowIndex, 3]];
+                totalRow.Interior.Color = Color.LightGray;
+                
+                worksheet.Cells[rowIndex, 2] = "Gesamt:";
+                var cellRange = worksheet.Cells[rowIndex, 3] as Range; 
+                cellRange.Formula = $"=SUM(C{rowIndex - dt.Rows.Count}:C{rowIndex - 1})";
+                rowIndex += 2;
+
                 var columns = worksheet.UsedRange.Columns;
                 columns.AutoFit();
+                columns.HorizontalAlignment = XlHAlign.xlHAlignLeft;
                 rowIndex += 2;
+
             }
 
             workbook.SaveAs(exportStatisticsFileSave.FileName);
@@ -229,8 +242,6 @@ public partial class FrameStatistics : UserControl
 
     private void OnButtonExport(object sender, EventArgs e)
     {
-        var btn = sender as Button;
-
         var tableList = new List<DataTable>();
         var checkedList = (from object? item in checkListStats.CheckedItems select item.ToString()).ToList();
 
@@ -245,12 +256,5 @@ public partial class FrameStatistics : UserControl
             tableList.Add(Statistics.SchwangerschaftAufteilung());
 
         ExportToXlsx(tableList);
-    }
-
-    private void OnOpenFolderClick(object sender, LinkLabelLinkClickedEventArgs e)
-    {
-        if (ConfigurationManager.AppSettings.Get("DefaultPath").IsNullOrEmpty())
-            Process.Start("explorer");
-        else Process.Start("explorer", ConfigurationManager.AppSettings.Get("DefaultPath"));
     }
 }

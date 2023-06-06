@@ -15,17 +15,14 @@ public partial class AllgSgs : UserControl
         dropErwerb.DataSource = Lists.AllgSgsErwerb;
         dropStand.DataSource = Lists.AllgSgsLebensstand;
         dropStaat.DataSource = Lists.AllgSgsStaat;
-        dropAlter.DataSource = Lists.AllgSgsAlter;
     }
 
     private void OnButtonSave(object sender, EventArgs e)
     {
         Dictionaries.AllgSgs.Clear();
 
-        var betroffen = dropAlter.SelectedItem.ToString();
-
         Dictionaries.AllgSgs.Add("Jahr", Dictionaries.Allgemein["Jahr"]);
-        Dictionaries.AllgSgs.Add("Alter", Dictionaries.Allgemein[betroffen][..2]);
+        Dictionaries.AllgSgs.Add("Alter", Dictionaries.Allgemein["E1"][..2]);
 
         ReadInput.FromTextBox(this, Dictionaries.AllgSgs);
         ReadInput.FromDropDown(this, Dictionaries.AllgSgs);
@@ -34,7 +31,7 @@ public partial class AllgSgs : UserControl
         var result = ReadInput.LetUserVerify(Dictionaries.AllgSgs);
         if (result != DialogResult.OK) return;
 
-        SQL database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        Sql database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
         database.Connect();
         database.InsertStringDict("Allgemeine Schwangerschaft", Dictionaries.AllgSgs);
         database.Disconnect();

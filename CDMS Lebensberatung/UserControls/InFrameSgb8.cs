@@ -73,18 +73,19 @@ public partial class Sgb8 : UserControl
             new()
             {
                 { "Jahr", "" },
-                { "Anmeldenummer", "" },
-                { "Abgeschlossen", "" },
+                { "Nr", "" },
+                { "Grund", "" },
                 { "Wohnort", "" },
-                { "Anregung durch", "" },
-                { "Anmeldung durch", "" },
-                { "Migrationshintergrund", "" }
+                { "Anregung", "" },
+                { "Migra", "" }
             };
 
         foreach (var pair in toAdd)
             if (Dictionaries.Allgemein.ContainsKey(pair.Key))
                 Dictionaries.Sgb8.Add(pair.Key, Dictionaries.Allgemein[pair.Key]);
 
+
+        ReadInput.FromTextBox(this, Dictionaries.Sgb8);
         ReadInput.FromDropDown(this, Dictionaries.Sgb8);
         ReadInput.FromToggleSwitch(this, Dictionaries.Sgb8);
         ReadInput.HoursFromGridView(this, Dictionaries.Sgb8);
@@ -92,11 +93,9 @@ public partial class Sgb8 : UserControl
         var result = ReadInput.LetUserVerify(Dictionaries.Sgb8);
         if (result != DialogResult.OK) return;
 
-        SQL database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        Sql database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
         database.Connect();
         database.InsertStringDict("SGB VIII", Dictionaries.Sgb8);
         database.Disconnect();
-
-        
     }
 }

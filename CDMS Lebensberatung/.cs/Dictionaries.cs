@@ -10,6 +10,6 @@ public static class Dictionaries
     public static Dictionary<string, string> P218 { get; set; } = new();
     public static Dictionary<string, string> P2a { get; set; } = new();
     public static Dictionary<string, string> Sgb8 { get; set; } = new();
-    public static Dictionary<string, string> FilterContentDictionary { get; } = new();
+    public static Dictionary<string, string> Filters { get; set; } = new();
     
 }

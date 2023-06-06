@@ -35,7 +35,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.rjButton3 = new RJCodeAdvance.RJControls.RJButton();
+            this.btnUpdate = new RJCodeAdvance.RJControls.RJButton();
+            this.txtRows = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,7 +91,7 @@
             this.dropTabelle.BorderColor = System.Drawing.Color.Black;
             this.dropTabelle.BorderSize = 1;
             this.dropTabelle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dropTabelle.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dropTabelle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dropTabelle.ForeColor = System.Drawing.Color.DimGray;
             this.dropTabelle.IconColor = System.Drawing.Color.Black;
             this.dropTabelle.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
@@ -103,7 +104,7 @@
             this.dropTabelle.Size = new System.Drawing.Size(200, 32);
             this.dropTabelle.TabIndex = 4;
             this.dropTabelle.Texts = "";
-            this.dropTabelle.OnSelectedIndexChanged += new System.EventHandler(this.OnSelection);
+            this.dropTabelle.OnSelectedIndexChanged += new System.EventHandler(this.OnTableChange);
             // 
             // buttonDelete
             // 
@@ -186,7 +187,6 @@
             this.dropFilter.Size = new System.Drawing.Size(200, 32);
             this.dropFilter.TabIndex = 4;
             this.dropFilter.Texts = "";
-            this.dropFilter.OnSelectedIndexChanged += new System.EventHandler(this.OnSelection);
             // 
             // rjButton2
             // 
@@ -295,36 +295,49 @@
             this.panel7.Size = new System.Drawing.Size(162, 35);
             this.panel7.TabIndex = 19;
             // 
-            // rjButton3
+            // btnUpdate
             // 
-            this.rjButton3.BackColor = System.Drawing.Color.White;
-            this.rjButton3.BackgroundColor = System.Drawing.Color.White;
-            this.rjButton3.BorderColor = System.Drawing.Color.Black;
-            this.rjButton3.BorderRadius = 0;
-            this.rjButton3.BorderSize = 0;
-            this.rjButton3.FlatAppearance.BorderSize = 0;
-            this.rjButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rjButton3.ForeColor = System.Drawing.Color.Black;
-            this.rjButton3.Location = new System.Drawing.Point(688, 27);
-            this.rjButton3.Name = "rjButton3";
-            this.rjButton3.Size = new System.Drawing.Size(159, 32);
-            this.rjButton3.TabIndex = 13;
-            this.rjButton3.Text = "Aktualisieren";
-            this.rjButton3.TextColor = System.Drawing.Color.Black;
-            this.rjButton3.UseVisualStyleBackColor = false;
-            this.rjButton3.Click += new System.EventHandler(this.OnUpdateClick);
+            this.btnUpdate.BackColor = System.Drawing.Color.White;
+            this.btnUpdate.BackgroundColor = System.Drawing.Color.White;
+            this.btnUpdate.BorderColor = System.Drawing.Color.Black;
+            this.btnUpdate.BorderRadius = 0;
+            this.btnUpdate.BorderSize = 0;
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnUpdate.ForeColor = System.Drawing.Color.Black;
+            this.btnUpdate.Location = new System.Drawing.Point(688, 27);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(159, 32);
+            this.btnUpdate.TabIndex = 13;
+            this.btnUpdate.Text = "Aktualisieren";
+            this.btnUpdate.TextColor = System.Drawing.Color.Black;
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.OnUpdateClick);
+            // 
+            // txtRows
+            // 
+            this.txtRows.BackColor = System.Drawing.Color.White;
+            this.txtRows.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRows.ForeColor = System.Drawing.Color.IndianRed;
+            this.txtRows.Location = new System.Drawing.Point(688, 72);
+            this.txtRows.Name = "txtRows";
+            this.txtRows.Size = new System.Drawing.Size(159, 32);
+            this.txtRows.TabIndex = 22;
+            this.txtRows.Text = "Keine Einträge";
+            this.txtRows.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrameShowTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Controls.Add(this.txtRows);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.tbListFilters);
             this.Controls.Add(this.tbFilter);
-            this.Controls.Add(this.rjButton3);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.rjButton1);
             this.Controls.Add(this.rjButton2);
             this.Controls.Add(this.buttonDelete);
@@ -364,6 +377,7 @@
         private Panel panel4;
         private Panel panel6;
         private Panel panel7;
-        private RJCodeAdvance.RJControls.RJButton rjButton3;
+        private RJCodeAdvance.RJControls.RJButton btnUpdate;
+        private Label txtRows;
     }
 }

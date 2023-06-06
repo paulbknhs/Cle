@@ -1,5 +1,11 @@
 ﻿using System.Configuration;
+using System.Data;
+using System.Linq;
+using Accessibility;
 using CDMS_Lebensberatung.cs;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.Office.Interop.Excel;
+using DataTable = System.Data.DataTable;
 
 namespace CDMS_Lebensberatung.UserControls;
 
@@ -18,114 +24,132 @@ public partial class FrameShowTable : UserControl
         GetData();
     }
 
-    private void OnSelection(object sender, EventArgs e)
-    {
-        GetData();
-
-
-        if (dropTabelle.SelectedItem.ToString() != "Ehe und Leben") return;
-
-        foreach (DataGridViewColumn col in gridData.Columns)
-        {
-            var column = gridData.Columns.Cast<DataGridViewColumn>()
-                .FirstOrDefault(x => x.HeaderText is "Stunden" or "Anmeldegründe");
-            col.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-        }
-    }
-
-
     private void OnDelete(object sender, EventArgs e)
     {
+        var table = dropTabelle.SelectedItem.ToString();
         foreach (DataGridViewCell cell in gridData.SelectedCells)
             cell.OwningRow.Selected = true;
 
+        var row = gridData.SelectedCells[0].OwningRow;
+        var id = row.Cells[0].Value.ToString();
+
         if (MessageBox.Show(
-                $"Ausgewählten Eintrag unwiderruflich aus Tabelle \"{dropTabelle.SelectedItem}\" entfernen?",
+                $"Ausgewählten Eintrag mit ID: {id} unwiderruflich aus Tabelle \"{dropTabelle.SelectedItem}\" entfernen?",
                 "Bestätigung", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             return;
 
 
-        var row = gridData.SelectedCells[0].OwningRow;
-        var data = new Dictionary<string, string>();
-
-        foreach (DataGridViewCell cell in row.Cells)
-            data.Add(cell.OwningColumn.HeaderText, cell.Value.ToString());
-
-        data = data.Where(x => !string.IsNullOrEmpty(x.Value)).ToDictionary(x => x.Key, x => x.Value);
-
-
-        SQL database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        Sql database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
         database.Connect();
-        database.DeleteData(dropTabelle.SelectedItem.ToString(), data);
+        database.DeleteData(table, id);
 
-        GetData();
+        OnUpdateClick(btnUpdate, EventArgs.Empty);
     }
 
     private void GetData()
     {
-        SQL database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        Sql database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
         database.Connect();
 
         var table = database.GetFullTable(dropTabelle.SelectedItem.ToString());
         database.Disconnect();
-
-        if (table.Columns.Contains("Age"))
-            table.Columns.Remove("Age");
-
-        if (table.Columns.Contains("Gender"))
-            table.Columns.Remove("Gender");
-
+        
+        List<string> toRemove = new() { "Age", "Gender" };
+        table = RemoveColumns(table, toRemove);
+        if (table.Columns.Contains("Beratungsart"))
+        {
+            var rowsToRemove = table.AsEnumerable().Where(r => r["Beratungsart"].ToString() == "§218").ToList();
+            foreach (var r in rowsToRemove)
+                table.Rows.Remove(r);
+        }
         gridData.DataSource = table;
+
+        txtRows.Text = table.Rows.Count switch
+        {
+            > 0 => $"{table.Rows.Count} Einträge",
+            _ => "Keine Einträge"
+        };
+        txtRows.ForeColor = table.Rows.Count switch
+        {
+            > 0 => Color.Green,
+            _   => Color.Red
+        };
     }
 
     private void GetDataFiltered()
     {
-        SQL database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        var tableName = dropTabelle.SelectedItem.ToString() ?? "";
+        Sql database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
         database.Connect();
-        var table = database.GetDataFiltered(dropTabelle.SelectedItem.ToString(), Dictionaries.FilterContentDictionary);
+        var table = database.GetDataFiltered(tableName, Dictionaries.Filters);
         database.Disconnect();
 
-        if (table.Columns.Contains("Age"))
-            table.Columns.Remove("Age");
-
-        if (table.Columns.Contains("Gender"))
-            table.Columns.Remove("Gender");
+        List<string> toRemove = new() { "Age", "Gender" };
+        table = RemoveColumns(table, toRemove);
+        if (table.Columns.Contains("Beratungsart"))
+        {
+            var rowsToRemove = table.AsEnumerable().Where(r => r["Beratungsart"].ToString() == "§218").ToList();
+            foreach (var r in rowsToRemove)
+                table.Rows.Remove(r);
+        }
 
         gridData.DataSource = table;
+        txtRows.Text = table.Rows.Count switch
+        {
+            > 0 => $"{table.Rows.Count} Einträge",
+            _ => "Keine Einträge"
+        };
+        txtRows.ForeColor = table.Rows.Count switch
+        {
+            > 0 => Color.Green,
+            _ => Color.Red
+        };
     }
 
     private void OnFilterAdd(object sender, EventArgs e)
     {
-        if (string.IsNullOrEmpty(tbFilter.Texts))
-            return;
-        if (Dictionaries.FilterContentDictionary.ContainsKey(dropFilter.SelectedItem.ToString())) Dictionaries.FilterContentDictionary.Remove(dropFilter.SelectedItem.ToString());
+        var key = dropFilter.SelectedItem.ToString() ?? "";
+        if (tbFilter.Texts == "") return;
+        var value = tbFilter.Texts;
 
-        Dictionaries.FilterContentDictionary.Add(dropFilter.SelectedItem.ToString(), tbFilter.Texts);
-        GetDataFiltered();
+        tbListFilters.Texts += $"[{key}] {value}; ";
+
+        if (Dictionaries.Filters.ContainsKey(key)) Dictionaries.Filters[key] = value;
+        else  Dictionaries.Filters.Add(key, value);
         UpdateFiltered();
+    }
+
+    public static DataTable RemoveColumns(DataTable table, List<string> toRemove)
+    {
+        foreach (var columnName in toRemove.Where(columnName => table.Columns.Contains(columnName))) 
+            table.Columns.Remove(columnName);
+        return table;
     }
 
     private void UpdateFiltered()
     {
         tbFilter.Text = "";
-        tbListFilters.Texts = "";
-
-        foreach (var item in Dictionaries.FilterContentDictionary)
-            if (tbListFilters.Texts == "") tbListFilters.Texts += $"[{item.Key}]: {item.Value}";
-            else tbListFilters.Texts += $", {item.Key}: {item.Value}";
-
         GetDataFiltered();
     }
 
     private void OnReset(object sender, EventArgs e)
     {
         tbListFilters.Texts = "";
-        Dictionaries.FilterContentDictionary.Clear();
+        tbFilter.Texts = "";
         GetData();
+        Dictionaries.Filters.Clear();
+        dropFilter.DataSource = gridData.Columns.Cast<DataGridViewColumn>().Select(x => x.HeaderText).ToList();
+        dropFilter.SelectedIndex = 0;
     }
 
     private void OnUpdateClick(object sender, EventArgs e)
     {
-        GetData();
+        if (Dictionaries.Filters.IsNullOrEmpty()) GetData();
+        else GetDataFiltered();
+    }
+
+    private void OnTableChange(object sender, EventArgs e)
+    {   
+        OnReset(rjButton2, EventArgs.Empty);
     }
 }

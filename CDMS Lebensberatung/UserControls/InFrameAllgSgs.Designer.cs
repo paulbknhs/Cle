@@ -24,10 +24,10 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.dropStaat = new CDMS_Lebensberatung.UserControls.DropDown();
             this.label1 = new System.Windows.Forms.Label();
             this.numBeratungszeit = new System.Windows.Forms.NumericUpDown();
-            this.tbLaufnummer = new CDMS_Lebensberatung.UserControls.RJTextBox();
-            this.dropAlter = new CDMS_Lebensberatung.UserControls.DropDown();
+            this.tbNr = new CDMS_Lebensberatung.UserControls.RJTextBox();
             this.btnSave = new RJCodeAdvance.RJControls.RJButton();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numBeratungszeit)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,7 +94,7 @@ namespace CDMS_Lebensberatung.AddSpecific
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(336, 243);
+            this.label1.Location = new System.Drawing.Point(336, 238);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 15);
             this.label1.TabIndex = 13;
@@ -107,7 +107,7 @@ namespace CDMS_Lebensberatung.AddSpecific
             0,
             0,
             0});
-            this.numBeratungszeit.Location = new System.Drawing.Point(260, 241);
+            this.numBeratungszeit.Location = new System.Drawing.Point(260, 236);
             this.numBeratungszeit.Maximum = new decimal(new int[] {
             270,
             0,
@@ -117,47 +117,27 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.numBeratungszeit.Size = new System.Drawing.Size(70, 23);
             this.numBeratungszeit.TabIndex = 12;
             // 
-            // tbLaufnummer
+            // tbNr
             // 
-            this.tbLaufnummer.BackColor = System.Drawing.SystemColors.Window;
-            this.tbLaufnummer.BorderColor = System.Drawing.Color.Black;
-            this.tbLaufnummer.BorderFocusColor = System.Drawing.Color.Green;
-            this.tbLaufnummer.BorderRadius = 0;
-            this.tbLaufnummer.BorderSize = 1;
-            this.tbLaufnummer.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbLaufnummer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbLaufnummer.Location = new System.Drawing.Point(40, 100);
-            this.tbLaufnummer.Margin = new System.Windows.Forms.Padding(10);
-            this.tbLaufnummer.Multiline = false;
-            this.tbLaufnummer.Name = "tbLaufnummer";
-            this.tbLaufnummer.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.tbLaufnummer.PasswordChar = false;
-            this.tbLaufnummer.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbLaufnummer.PlaceholderText = "Laufende Nummer";
-            this.tbLaufnummer.Size = new System.Drawing.Size(200, 32);
-            this.tbLaufnummer.TabIndex = 14;
-            this.tbLaufnummer.Texts = "";
-            this.tbLaufnummer.UnderlinedStyle = true;
-            // 
-            // dropAlter
-            // 
-            this.dropAlter.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.dropAlter.BorderColor = System.Drawing.Color.Black;
-            this.dropAlter.BorderSize = 1;
-            this.dropAlter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dropAlter.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dropAlter.ForeColor = System.Drawing.Color.DimGray;
-            this.dropAlter.IconColor = System.Drawing.Color.Black;
-            this.dropAlter.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.dropAlter.ListTextColor = System.Drawing.Color.DimGray;
-            this.dropAlter.Location = new System.Drawing.Point(260, 100);
-            this.dropAlter.Margin = new System.Windows.Forms.Padding(10);
-            this.dropAlter.MinimumSize = new System.Drawing.Size(200, 30);
-            this.dropAlter.Name = "dropAlter";
-            this.dropAlter.Padding = new System.Windows.Forms.Padding(1);
-            this.dropAlter.Size = new System.Drawing.Size(200, 32);
-            this.dropAlter.TabIndex = 10;
-            this.dropAlter.Texts = "";
+            this.tbNr.BackColor = System.Drawing.SystemColors.Window;
+            this.tbNr.BorderColor = System.Drawing.Color.Black;
+            this.tbNr.BorderFocusColor = System.Drawing.Color.Green;
+            this.tbNr.BorderRadius = 0;
+            this.tbNr.BorderSize = 1;
+            this.tbNr.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbNr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbNr.Location = new System.Drawing.Point(40, 110);
+            this.tbNr.Margin = new System.Windows.Forms.Padding(10);
+            this.tbNr.Multiline = false;
+            this.tbNr.Name = "tbNr";
+            this.tbNr.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.tbNr.PasswordChar = false;
+            this.tbNr.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.tbNr.PlaceholderText = "Laufende Nummer";
+            this.tbNr.Size = new System.Drawing.Size(200, 32);
+            this.tbNr.TabIndex = 14;
+            this.tbNr.Texts = "";
+            this.tbNr.UnderlinedStyle = true;
             // 
             // btnSave
             // 
@@ -170,7 +150,7 @@ namespace CDMS_Lebensberatung.AddSpecific
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(260, 304);
+            this.btnSave.Location = new System.Drawing.Point(260, 281);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(200, 40);
             this.btnSave.TabIndex = 23;
@@ -182,24 +162,36 @@ namespace CDMS_Lebensberatung.AddSpecific
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel4.Location = new System.Drawing.Point(260, 304);
+            this.panel4.Location = new System.Drawing.Point(260, 281);
             this.panel4.Margin = new System.Windows.Forms.Padding(0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(203, 43);
             this.panel4.TabIndex = 24;
             this.panel4.Click += new System.EventHandler(this.OnButtonSave);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.label4.Location = new System.Drawing.Point(40, 144);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(101, 13);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "Laufende Nummer";
+            // 
             // AllgSgs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.tbLaufnummer);
+            this.Controls.Add(this.tbNr);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.numBeratungszeit);
             this.Controls.Add(this.dropErwerb);
-            this.Controls.Add(this.dropAlter);
             this.Controls.Add(this.dropStand);
             this.Controls.Add(this.dropStaat);
             this.Name = "AllgSgs";
@@ -218,9 +210,9 @@ namespace CDMS_Lebensberatung.AddSpecific
         private DropDown dropStaat;
         private Label label1;
         private NumericUpDown numBeratungszeit;
-        private RJTextBox tbLaufnummer;
-        private DropDown dropAlter;
+        private RJTextBox tbNr;
         private RJCodeAdvance.RJControls.RJButton btnSave;
         private Panel panel4;
+        private Label label4;
     }
 }

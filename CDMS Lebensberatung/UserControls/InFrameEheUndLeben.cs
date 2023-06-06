@@ -61,8 +61,8 @@ public partial class EheUndLeben : UserControl
             new()
             {
                 { "Jahr", "" },
-                { "Anmeldenummer", "" },
-                { "Abgeschlossen", "" }
+                { "Nr", "" },
+                { "Grund", "" }
             };
         foreach (var pair in toAdd)
             if (Dictionaries.Allgemein.ContainsKey(pair.Key))
@@ -97,7 +97,7 @@ public partial class EheUndLeben : UserControl
         var result = ReadInput.LetUserVerify(Dictionaries.EheUndLeben);
         if (result != DialogResult.OK) return;
 
-        SQL database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        Sql database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
         database.Connect();
         database.InsertStringDict("Ehe und Leben", Dictionaries.EheUndLeben);
         database.Disconnect();

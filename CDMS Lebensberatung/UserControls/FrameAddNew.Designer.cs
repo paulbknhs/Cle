@@ -17,17 +17,17 @@
 
                                         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tbJahr = new CDMS_Lebensberatung.UserControls.RJTextBox();
             this.tbName = new CDMS_Lebensberatung.UserControls.RJTextBox();
-            this.tbAnmeldenummer = new CDMS_Lebensberatung.UserControls.RJTextBox();
+            this.tbNr = new CDMS_Lebensberatung.UserControls.RJTextBox();
             this.tbWohnort = new CDMS_Lebensberatung.UserControls.RJTextBox();
             this.dropBeratung = new CDMS_Lebensberatung.UserControls.DropDown();
             this.dropMigra = new CDMS_Lebensberatung.UserControls.DropDown();
             this.dropAnregung = new CDMS_Lebensberatung.UserControls.DropDown();
             this.dropGrund = new CDMS_Lebensberatung.UserControls.DropDown();
-            this.toggleWiederanmeldung = new RJCodeAdvance.RJControls.RJToggleButton();
+            this.toggleWieder = new RJCodeAdvance.RJControls.RJToggleButton();
             this.label1 = new System.Windows.Forms.Label();
             this.toggleAbgeschlossen = new RJCodeAdvance.RJControls.RJToggleButton();
             this.label2 = new System.Windows.Forms.Label();
@@ -61,6 +61,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.tbDatum = new CDMS_Lebensberatung.UserControls.RJTextBox();
+            this.Abschlussdatum = new System.Windows.Forms.Label();
             this.ContentFrame.SuspendLayout();
             this.TabNavControl.SuspendLayout();
             this.panelToggle.SuspendLayout();
@@ -116,29 +118,29 @@
             this.tbName.Click += new System.EventHandler(this.OnTextBoxClick);
             this.tbName.Enter += new System.EventHandler(this.OnTextBoxClick);
             // 
-            // tbAnmeldenummer
+            // tbNr
             // 
-            this.tbAnmeldenummer.BackColor = System.Drawing.SystemColors.Window;
-            this.tbAnmeldenummer.BorderColor = System.Drawing.Color.Black;
-            this.tbAnmeldenummer.BorderFocusColor = System.Drawing.Color.Green;
-            this.tbAnmeldenummer.BorderRadius = 0;
-            this.tbAnmeldenummer.BorderSize = 1;
-            this.tbAnmeldenummer.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbAnmeldenummer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbAnmeldenummer.Location = new System.Drawing.Point(280, 18);
-            this.tbAnmeldenummer.Margin = new System.Windows.Forms.Padding(0);
-            this.tbAnmeldenummer.Multiline = false;
-            this.tbAnmeldenummer.Name = "tbAnmeldenummer";
-            this.tbAnmeldenummer.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.tbAnmeldenummer.PasswordChar = false;
-            this.tbAnmeldenummer.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbAnmeldenummer.PlaceholderText = "Anmeldenummer";
-            this.tbAnmeldenummer.Size = new System.Drawing.Size(200, 32);
-            this.tbAnmeldenummer.TabIndex = 1;
-            this.tbAnmeldenummer.Texts = "";
-            this.tbAnmeldenummer.UnderlinedStyle = true;
-            this.tbAnmeldenummer.Click += new System.EventHandler(this.OnTextBoxClick);
-            this.tbAnmeldenummer.Enter += new System.EventHandler(this.OnTextBoxClick);
+            this.tbNr.BackColor = System.Drawing.SystemColors.Window;
+            this.tbNr.BorderColor = System.Drawing.Color.Black;
+            this.tbNr.BorderFocusColor = System.Drawing.Color.Green;
+            this.tbNr.BorderRadius = 0;
+            this.tbNr.BorderSize = 1;
+            this.tbNr.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbNr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbNr.Location = new System.Drawing.Point(280, 18);
+            this.tbNr.Margin = new System.Windows.Forms.Padding(0);
+            this.tbNr.Multiline = false;
+            this.tbNr.Name = "tbNr";
+            this.tbNr.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.tbNr.PasswordChar = false;
+            this.tbNr.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.tbNr.PlaceholderText = "Anmeldenummer";
+            this.tbNr.Size = new System.Drawing.Size(200, 32);
+            this.tbNr.TabIndex = 1;
+            this.tbNr.Texts = "";
+            this.tbNr.UnderlinedStyle = true;
+            this.tbNr.Click += new System.EventHandler(this.OnTextBoxClick);
+            this.tbNr.Enter += new System.EventHandler(this.OnTextBoxClick);
             // 
             // tbWohnort
             // 
@@ -248,24 +250,24 @@
             this.dropGrund.Name = "dropGrund";
             this.dropGrund.Padding = new System.Windows.Forms.Padding(1);
             this.dropGrund.Size = new System.Drawing.Size(200, 32);
-            this.dropGrund.TabIndex = 10;
+            this.dropGrund.TabIndex = 11;
             this.dropGrund.Texts = "";
             this.dropGrund.Click += new System.EventHandler(this.OnDropDownClick);
             this.dropGrund.Enter += new System.EventHandler(this.OnDropDownClick);
             // 
-            // toggleWiederanmeldung
+            // toggleWieder
             // 
-            this.toggleWiederanmeldung.AutoSize = true;
-            this.toggleWiederanmeldung.Location = new System.Drawing.Point(20, 11);
-            this.toggleWiederanmeldung.MinimumSize = new System.Drawing.Size(45, 22);
-            this.toggleWiederanmeldung.Name = "toggleWiederanmeldung";
-            this.toggleWiederanmeldung.OffBackColor = System.Drawing.Color.Gray;
-            this.toggleWiederanmeldung.OffToggleColor = System.Drawing.Color.Gainsboro;
-            this.toggleWiederanmeldung.OnBackColor = System.Drawing.Color.Green;
-            this.toggleWiederanmeldung.OnToggleColor = System.Drawing.Color.WhiteSmoke;
-            this.toggleWiederanmeldung.Size = new System.Drawing.Size(45, 22);
-            this.toggleWiederanmeldung.TabIndex = 7;
-            this.toggleWiederanmeldung.UseVisualStyleBackColor = true;
+            this.toggleWieder.AutoSize = true;
+            this.toggleWieder.Location = new System.Drawing.Point(20, 11);
+            this.toggleWieder.MinimumSize = new System.Drawing.Size(45, 22);
+            this.toggleWieder.Name = "toggleWieder";
+            this.toggleWieder.OffBackColor = System.Drawing.Color.Gray;
+            this.toggleWieder.OffToggleColor = System.Drawing.Color.Gainsboro;
+            this.toggleWieder.OnBackColor = System.Drawing.Color.Green;
+            this.toggleWieder.OnToggleColor = System.Drawing.Color.WhiteSmoke;
+            this.toggleWieder.Size = new System.Drawing.Size(45, 22);
+            this.toggleWieder.TabIndex = 8;
+            this.toggleWieder.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -288,7 +290,7 @@
             this.toggleAbgeschlossen.OnBackColor = System.Drawing.Color.Green;
             this.toggleAbgeschlossen.OnToggleColor = System.Drawing.Color.WhiteSmoke;
             this.toggleAbgeschlossen.Size = new System.Drawing.Size(45, 22);
-            this.toggleAbgeschlossen.TabIndex = 8;
+            this.toggleAbgeschlossen.TabIndex = 9;
             this.toggleAbgeschlossen.UseVisualStyleBackColor = true;
             this.toggleAbgeschlossen.CheckedChanged += new System.EventHandler(this.OnToggle);
             // 
@@ -476,7 +478,7 @@
             // panelToggle
             // 
             this.panelToggle.BackColor = System.Drawing.Color.White;
-            this.panelToggle.Controls.Add(this.toggleWiederanmeldung);
+            this.panelToggle.Controls.Add(this.toggleWieder);
             this.panelToggle.Controls.Add(this.toggleAbgeschlossen);
             this.panelToggle.Controls.Add(this.label1);
             this.panelToggle.Controls.Add(this.label2);
@@ -496,28 +498,28 @@
             this.gridAlter.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.gridAlter.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gridAlter.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridAlter.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridAlter.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.gridAlter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridAlter.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Person,
             this.m,
             this.w,
             this.nb});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightGreen;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridAlter.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightGreen;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridAlter.DefaultCellStyle = dataGridViewCellStyle4;
             this.gridAlter.GridColor = System.Drawing.SystemColors.ControlLight;
             this.gridAlter.Location = new System.Drawing.Point(74, 238);
             this.gridAlter.Name = "gridAlter";
@@ -527,7 +529,7 @@
             this.gridAlter.RowTemplate.Height = 25;
             this.gridAlter.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.gridAlter.Size = new System.Drawing.Size(408, 203);
-            this.gridAlter.TabIndex = 12;
+            this.gridAlter.TabIndex = 7;
             this.gridAlter.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.OnValueChanged);
             // 
             // Person
@@ -614,7 +616,7 @@
             this.cbARGE.Name = "cbARGE";
             this.cbARGE.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
             this.cbARGE.Size = new System.Drawing.Size(200, 32);
-            this.cbARGE.TabIndex = 9;
+            this.cbARGE.TabIndex = 10;
             this.cbARGE.Text = "ARGE: Nein";
             this.cbARGE.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.cbARGE.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -735,6 +737,42 @@
             this.label7.TabIndex = 5;
             this.label7.Text = "Wohnort";
             // 
+            // tbDatum
+            // 
+            this.tbDatum.BackColor = System.Drawing.SystemColors.Window;
+            this.tbDatum.BorderColor = System.Drawing.Color.Black;
+            this.tbDatum.BorderFocusColor = System.Drawing.Color.Green;
+            this.tbDatum.BorderRadius = 0;
+            this.tbDatum.BorderSize = 1;
+            this.tbDatum.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbDatum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbDatum.Location = new System.Drawing.Point(74, 580);
+            this.tbDatum.Margin = new System.Windows.Forms.Padding(0);
+            this.tbDatum.Multiline = false;
+            this.tbDatum.Name = "tbDatum";
+            this.tbDatum.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.tbDatum.PasswordChar = false;
+            this.tbDatum.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.tbDatum.PlaceholderText = "Abgeschlossen am";
+            this.tbDatum.Size = new System.Drawing.Size(200, 32);
+            this.tbDatum.TabIndex = 12;
+            this.tbDatum.Texts = "";
+            this.tbDatum.UnderlinedStyle = true;
+            this.tbDatum.Click += new System.EventHandler(this.OnTextBoxClick);
+            this.tbDatum.Enter += new System.EventHandler(this.OnTextBoxClick);
+            // 
+            // Abschlussdatum
+            // 
+            this.Abschlussdatum.AutoSize = true;
+            this.Abschlussdatum.BackColor = System.Drawing.Color.Transparent;
+            this.Abschlussdatum.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Abschlussdatum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.Abschlussdatum.Location = new System.Drawing.Point(74, 612);
+            this.Abschlussdatum.Name = "Abschlussdatum";
+            this.Abschlussdatum.Size = new System.Drawing.Size(117, 17);
+            this.Abschlussdatum.TabIndex = 5;
+            this.Abschlussdatum.Text = "Abgeschlossen am";
+            // 
             // FrameAddNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -743,6 +781,7 @@
             this.Controls.Add(this.indicateSaved);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.Abschlussdatum);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -755,7 +794,8 @@
             this.Controls.Add(this.btnDebug);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.tbWohnort);
-            this.Controls.Add(this.tbAnmeldenummer);
+            this.Controls.Add(this.tbNr);
+            this.Controls.Add(this.tbDatum);
             this.Controls.Add(this.tbName);
             this.Controls.Add(this.tbJahr);
             this.Controls.Add(this.dropGrund);
@@ -784,13 +824,13 @@
         #endregion
         private RJTextBox tbJahr;
         private RJTextBox tbName;
-        private RJTextBox tbAnmeldenummer;
+        private RJTextBox tbNr;
         private RJTextBox tbWohnort;
         private DropDown dropBeratung;
         private DropDown dropMigra;
         private DropDown dropAnregung;
         private DropDown dropGrund;
-        private RJCodeAdvance.RJControls.RJToggleButton toggleWiederanmeldung;
+        private RJCodeAdvance.RJControls.RJToggleButton toggleWieder;
         private Label label1;
         private RJCodeAdvance.RJControls.RJToggleButton toggleAbgeschlossen;
         private Label label2;
@@ -824,5 +864,7 @@
         private Label label5;
         private Label label6;
         private Label label7;
+        private RJTextBox tbDatum;
+        private Label Abschlussdatum;
     }
 }

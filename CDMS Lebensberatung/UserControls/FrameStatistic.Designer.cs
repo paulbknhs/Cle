@@ -20,9 +20,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gridAge = new System.Windows.Forms.DataGridView();
             this.cbNeu = new System.Windows.Forms.CheckBox();
             this.cbMale = new System.Windows.Forms.CheckBox();
@@ -41,25 +38,23 @@
             this.filterPanel = new System.Windows.Forms.Panel();
             this.gOrt = new System.Windows.Forms.GroupBox();
             this.gBeratung = new System.Windows.Forms.GroupBox();
+            this.cb218 = new System.Windows.Forms.CheckBox();
             this.gGeschlecht = new System.Windows.Forms.GroupBox();
-            this.gridSum = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
             this.gNeu = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.checkListStats = new System.Windows.Forms.CheckedListBox();
             this.xlsx = new RJCodeAdvance.RJControls.RJButton();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.exportStatisticsFileSave = new System.Windows.Forms.SaveFileDialog();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridAge)).BeginInit();
             this.filterPanel.SuspendLayout();
             this.gOrt.SuspendLayout();
             this.gBeratung.SuspendLayout();
             this.gGeschlecht.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSum)).BeginInit();
             this.gNeu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -94,7 +89,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gridAge.DefaultCellStyle = dataGridViewCellStyle3;
-            this.gridAge.Location = new System.Drawing.Point(13, 54);
+            this.gridAge.Location = new System.Drawing.Point(23, 54);
             this.gridAge.Margin = new System.Windows.Forms.Padding(0);
             this.gridAge.Name = "gridAge";
             this.gridAge.ReadOnly = true;
@@ -220,7 +215,7 @@
             // 
             this.cbRA.AutoSize = true;
             this.cbRA.BackColor = System.Drawing.Color.Transparent;
-            this.cbRA.Location = new System.Drawing.Point(6, 97);
+            this.cbRA.Location = new System.Drawing.Point(6, 122);
             this.cbRA.Name = "cbRA";
             this.cbRA.Size = new System.Drawing.Size(115, 19);
             this.cbRA.TabIndex = 3;
@@ -282,13 +277,12 @@
             this.filterPanel.Controls.Add(this.gOrt);
             this.filterPanel.Controls.Add(this.gBeratung);
             this.filterPanel.Controls.Add(this.gGeschlecht);
-            this.filterPanel.Controls.Add(this.gridSum);
             this.filterPanel.Controls.Add(this.label3);
             this.filterPanel.Controls.Add(this.gNeu);
             this.filterPanel.Controls.Add(this.gridAge);
-            this.filterPanel.Location = new System.Drawing.Point(51, 39);
+            this.filterPanel.Location = new System.Drawing.Point(41, 39);
             this.filterPanel.Name = "filterPanel";
-            this.filterPanel.Size = new System.Drawing.Size(490, 622);
+            this.filterPanel.Size = new System.Drawing.Size(500, 622);
             this.filterPanel.TabIndex = 4;
             // 
             // gOrt
@@ -300,7 +294,7 @@
             this.gOrt.Controls.Add(this.cbWedemark);
             this.gOrt.Controls.Add(this.cbAndere);
             this.gOrt.ForeColor = System.Drawing.Color.Black;
-            this.gOrt.Location = new System.Drawing.Point(375, 54);
+            this.gOrt.Location = new System.Drawing.Point(385, 54);
             this.gOrt.Name = "gOrt";
             this.gOrt.Size = new System.Drawing.Size(104, 124);
             this.gOrt.TabIndex = 4;
@@ -313,15 +307,28 @@
             this.gBeratung.BackColor = System.Drawing.Color.Transparent;
             this.gBeratung.Controls.Add(this.cbAllg);
             this.gBeratung.Controls.Add(this.cbSGB8);
+            this.gBeratung.Controls.Add(this.cb218);
             this.gBeratung.Controls.Add(this.cbSchwanger);
             this.gBeratung.Controls.Add(this.cbRA);
             this.gBeratung.ForeColor = System.Drawing.Color.Black;
-            this.gBeratung.Location = new System.Drawing.Point(326, 184);
+            this.gBeratung.Location = new System.Drawing.Point(336, 184);
             this.gBeratung.Name = "gBeratung";
-            this.gBeratung.Size = new System.Drawing.Size(153, 124);
+            this.gBeratung.Size = new System.Drawing.Size(153, 154);
             this.gBeratung.TabIndex = 4;
             this.gBeratung.TabStop = false;
             this.gBeratung.Text = "Beratungsart";
+            // 
+            // cb218
+            // 
+            this.cb218.AutoSize = true;
+            this.cb218.BackColor = System.Drawing.Color.Transparent;
+            this.cb218.Location = new System.Drawing.Point(6, 97);
+            this.cb218.Name = "cb218";
+            this.cb218.Size = new System.Drawing.Size(52, 19);
+            this.cb218.TabIndex = 3;
+            this.cb218.Text = "§ 218";
+            this.cb218.UseVisualStyleBackColor = false;
+            this.cb218.CheckedChanged += new System.EventHandler(this.OnCheckedChanged);
             // 
             // gGeschlecht
             // 
@@ -331,57 +338,25 @@
             this.gGeschlecht.Controls.Add(this.cbFemale);
             this.gGeschlecht.Controls.Add(this.cbNonBin);
             this.gGeschlecht.ForeColor = System.Drawing.Color.Black;
-            this.gGeschlecht.Location = new System.Drawing.Point(227, 184);
+            this.gGeschlecht.Location = new System.Drawing.Point(237, 184);
             this.gGeschlecht.Name = "gGeschlecht";
             this.gGeschlecht.Size = new System.Drawing.Size(93, 124);
             this.gGeschlecht.TabIndex = 4;
             this.gGeschlecht.TabStop = false;
             this.gGeschlecht.Text = "Geschlecht";
             // 
-            // gridSum
+            // label3
             // 
-            this.gridSum.AllowUserToAddRows = false;
-            this.gridSum.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.gridSum.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.gridSum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridSum.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gridSum.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.gridSum.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gridSum.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.gridSum.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.LightGreen;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridSum.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.gridSum.ColumnHeadersHeight = 32;
-            this.gridSum.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.gridSum.ColumnHeadersVisible = false;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LightGreen;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightGreen;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridSum.DefaultCellStyle = dataGridViewCellStyle6;
-            this.gridSum.Location = new System.Drawing.Point(13, 568);
-            this.gridSum.Margin = new System.Windows.Forms.Padding(0);
-            this.gridSum.Name = "gridSum";
-            this.gridSum.ReadOnly = true;
-            this.gridSum.RowHeadersVisible = false;
-            this.gridSum.RowHeadersWidth = 51;
-            this.gridSum.RowTemplate.Height = 25;
-            this.gridSum.ShowCellErrors = false;
-            this.gridSum.ShowCellToolTips = false;
-            this.gridSum.ShowEditingIcon = false;
-            this.gridSum.ShowRowErrors = false;
-            this.gridSum.Size = new System.Drawing.Size(181, 40);
-            this.gridSum.TabIndex = 1;
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(23, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(96, 32);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Statistik";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // gNeu
             // 
@@ -391,7 +366,7 @@
             this.gNeu.Controls.Add(this.cb1Jahr);
             this.gNeu.Controls.Add(this.cb2Jahr);
             this.gNeu.ForeColor = System.Drawing.Color.Black;
-            this.gNeu.Location = new System.Drawing.Point(227, 54);
+            this.gNeu.Location = new System.Drawing.Point(237, 54);
             this.gNeu.Name = "gNeu";
             this.gNeu.Size = new System.Drawing.Size(142, 124);
             this.gNeu.TabIndex = 4;
@@ -401,7 +376,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.checkListStats);
             this.panel1.Controls.Add(this.xlsx);
             this.panel1.Controls.Add(this.label2);
@@ -410,21 +384,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(501, 622);
             this.panel1.TabIndex = 5;
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.linkLabel1.LinkColor = System.Drawing.Color.Green;
-            this.linkLabel1.Location = new System.Drawing.Point(30, 191);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(102, 20);
-            this.linkLabel1.TabIndex = 22;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Ordner öffnen";
-            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.Green;
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.OnOpenFolderClick);
             // 
             // checkListStats
             // 
@@ -455,7 +414,7 @@
             this.xlsx.ForeColor = System.Drawing.Color.White;
             this.xlsx.Image = global::CDMS_Lebensberatung.Properties.images.excel26x26;
             this.xlsx.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.xlsx.Location = new System.Drawing.Point(30, 227);
+            this.xlsx.Location = new System.Drawing.Point(30, 206);
             this.xlsx.Name = "xlsx";
             this.xlsx.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.xlsx.Size = new System.Drawing.Size(231, 52);
@@ -466,23 +425,23 @@
             this.xlsx.UseVisualStyleBackColor = false;
             this.xlsx.Click += new System.EventHandler(this.OnButtonExport);
             // 
-            // label3
+            // label2
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(13, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(135, 32);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Exportieren";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(30, 22);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(163, 21);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Relevantes auswählen";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel4.Location = new System.Drawing.Point(30, 227);
+            this.panel4.Location = new System.Drawing.Point(30, 206);
             this.panel4.Margin = new System.Windows.Forms.Padding(0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(234, 55);
@@ -512,19 +471,6 @@
             this.panel2.Size = new System.Drawing.Size(5, 690);
             this.panel2.TabIndex = 7;
             // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(30, 22);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(163, 21);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Relevantes auswählen";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // FrameStatistics
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -547,7 +493,6 @@
             this.gBeratung.PerformLayout();
             this.gGeschlecht.ResumeLayout(false);
             this.gGeschlecht.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSum)).EndInit();
             this.gNeu.ResumeLayout(false);
             this.gNeu.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -578,7 +523,6 @@
         private GroupBox gBeratung;
         private GroupBox gGeschlecht;
         private GroupBox gNeu;
-        private DataGridView gridSum;
         private Panel panel1;
         private SaveFileDialog exportStatisticsFileSave;
         private RJCodeAdvance.RJControls.RJButton xlsx;
@@ -587,7 +531,7 @@
         private Panel panel5;
         private Panel panel2;
         private Panel panel4;
-        private LinkLabel linkLabel1;
         private Label label2;
+        private CheckBox cb218;
     }
 }

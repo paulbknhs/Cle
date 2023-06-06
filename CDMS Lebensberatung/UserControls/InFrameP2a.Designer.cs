@@ -51,7 +51,7 @@ namespace CDMS_Lebensberatung.AddSpecific
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(116, 191);
+            this.label1.Location = new System.Drawing.Point(116, 171);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 15);
             this.label1.TabIndex = 15;
@@ -64,7 +64,7 @@ namespace CDMS_Lebensberatung.AddSpecific
             0,
             0,
             0});
-            this.numBeratungszeit.Location = new System.Drawing.Point(40, 189);
+            this.numBeratungszeit.Location = new System.Drawing.Point(40, 169);
             this.numBeratungszeit.Maximum = new decimal(new int[] {
             270,
             0,
