@@ -112,7 +112,8 @@ public partial class FrameShowTable : UserControl
         if (tbFilter.Texts == "") return;
         var value = tbFilter.Texts;
 
-        tbListFilters.Texts += $"[{key}] {value}; ";
+        tbListFilters.Texts = string.Concat(tbListFilters.Texts, $"[{key}] {value}; ");
+        Console.WriteLine(tbListFilters.Texts);
 
         if (Dictionaries.Filters.ContainsKey(key)) Dictionaries.Filters[key] = value;
         else  Dictionaries.Filters.Add(key, value);

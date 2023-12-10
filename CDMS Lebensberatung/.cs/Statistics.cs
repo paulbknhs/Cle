@@ -50,7 +50,7 @@ public static class Statistics
             { "Rechtsanwaltliche Erstberatung", 0 }
         };
 
-        var filter = new Dictionary<string, string> { { "Neu", "Ja" } };
+        var filter = new Dictionary<string, string> { { "Wieder", "Nein" } };
         Sql db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
         db.Connect();
         var dataTable = db.GetDataFiltered("Allgemein", filter);
@@ -95,7 +95,7 @@ public static class Statistics
             { "Rechtsanwaltliche Erstberatung", 0 }
         };
 
-        var filter = new Dictionary<string, string> { { "Neu", "Nein" } };
+        var filter = new Dictionary<string, string> { { "Wieder", "Ja" } };
         Sql db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
         db.Connect();
         var dataTable = db.GetDataFiltered("Allgemein", filter);
