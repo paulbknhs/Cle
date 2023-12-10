@@ -31,9 +31,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.0" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.2" />
     <PackageReference Include="Microsoft.Office.Interop.Excel" Version="15.0.4795.1001" />
-    <PackageReference Include="Microsoft.Windows.Compatibility" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Windows.Compatibility" Version="8.0.0" />
+    <PackageReference Include="MicrosoftOfficeCore" Version="15.0.0" />
     <PackageReference Include="RJCodeAdvance.RJControls" Version="1.0.0">
       <NoWarn>NU1701</NoWarn>
     </PackageReference>

@@ -31,7 +31,7 @@ public partial class Home : Form
         var btn = (Button)sender;
         if (ReferenceEquals(btn.Tag, "selected"))
         {
-            e.Graphics.FillRectangle(Brushes.Green, new Rectangle(0, 0, 5, btn.Height));
+            e.Graphics.FillRectangle(Brushes.MediumTurquoise, new Rectangle(0, 0, 5, btn.Height));
             btn.Font = new Font(btn.Font, FontStyle.Bold);
             btn.ForeColor = Color.Black;
         }

@@ -20,162 +20,136 @@
             base.Dispose(disposing);
         }
 
-        #region Component Designer generated code
+		#region Component Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.labelHallo = new System.Windows.Forms.Label();
-            this.labelDatum = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panelBack = new System.Windows.Forms.Panel();
-            this.panelSQL = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.serverState = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panelBack.SuspendLayout();
-            this.panelSQL.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1080, 5);
-            this.panel5.TabIndex = 16;
-            // 
-            // labelHallo
-            // 
-            this.labelHallo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelHallo.AutoSize = true;
-            this.labelHallo.BackColor = System.Drawing.Color.Transparent;
-            this.labelHallo.Font = new System.Drawing.Font("Segoe UI", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelHallo.ForeColor = System.Drawing.Color.Green;
-            this.labelHallo.Location = new System.Drawing.Point(41, 43);
-            this.labelHallo.Margin = new System.Windows.Forms.Padding(0);
-            this.labelHallo.Name = "labelHallo";
-            this.labelHallo.Size = new System.Drawing.Size(135, 59);
-            this.labelHallo.TabIndex = 4;
-            this.labelHallo.Text = "Hallo!";
-            this.labelHallo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelDatum
-            // 
-            this.labelDatum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.labelDatum.AutoSize = true;
-            this.labelDatum.BackColor = System.Drawing.Color.Transparent;
-            this.labelDatum.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelDatum.ForeColor = System.Drawing.Color.DimGray;
-            this.labelDatum.Location = new System.Drawing.Point(45, 13);
-            this.labelDatum.Margin = new System.Windows.Forms.Padding(0);
-            this.labelDatum.Name = "labelDatum";
-            this.labelDatum.Size = new System.Drawing.Size(87, 30);
-            this.labelDatum.TabIndex = 17;
-            this.labelDatum.Text = "Datum?";
-            this.labelDatum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(5, 690);
-            this.panel1.TabIndex = 18;
-            // 
-            // panelBack
-            // 
-            this.panelBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panelBack.Controls.Add(this.panelSQL);
-            this.panelBack.Controls.Add(this.label1);
-            this.panelBack.Location = new System.Drawing.Point(41, 103);
-            this.panelBack.Margin = new System.Windows.Forms.Padding(0);
-            this.panelBack.Name = "panelBack";
-            this.panelBack.Size = new System.Drawing.Size(974, 567);
-            this.panelBack.TabIndex = 23;
-            // 
-            // panelSQL
-            // 
-            this.panelSQL.Controls.Add(this.label4);
-            this.panelSQL.Controls.Add(this.serverState);
-            this.panelSQL.Location = new System.Drawing.Point(41, 500);
-            this.panelSQL.Name = "panelSQL";
-            this.panelSQL.Size = new System.Drawing.Size(195, 49);
-            this.panelSQL.TabIndex = 29;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(12, 11);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 25);
-            this.label4.TabIndex = 32;
-            this.label4.Text = "Status:";
-            // 
-            // serverState
-            // 
-            this.serverState.AutoSize = true;
-            this.serverState.BackColor = System.Drawing.Color.Transparent;
-            this.serverState.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.serverState.ForeColor = System.Drawing.Color.IndianRed;
-            this.serverState.Location = new System.Drawing.Point(82, 11);
-            this.serverState.Name = "serverState";
-            this.serverState.Size = new System.Drawing.Size(94, 25);
-            this.serverState.TabIndex = 31;
-            this.serverState.Text = "Gestoppt";
-            this.serverState.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(41, 45);
-            this.label1.Margin = new System.Windows.Forms.Padding(0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(341, 20);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Bitte gehen Sie weiter, hier gibt es nichts zu sehen.";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // FrameHome
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.labelDatum);
-            this.Controls.Add(this.labelHallo);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panelBack);
-            this.Name = "FrameHome";
-            this.Size = new System.Drawing.Size(1080, 690);
-            this.Load += new System.EventHandler(this.OnFrameLoad);
-            this.panelBack.ResumeLayout(false);
-            this.panelBack.PerformLayout();
-            this.panelSQL.ResumeLayout(false);
-            this.panelSQL.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+		/// <summary> 
+		/// Required method for Designer support - do not modify 
+		/// the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
+			labelHallo = new Label();
+			labelDatum = new Label();
+			panelBack = new Panel();
+			panelSQL = new Panel();
+			label4 = new Label();
+			serverState = new Label();
+			label1 = new Label();
+			panelBack.SuspendLayout();
+			panelSQL.SuspendLayout();
+			SuspendLayout();
+			// 
+			// labelHallo
+			// 
+			labelHallo.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+			labelHallo.AutoSize = true;
+			labelHallo.BackColor = Color.Transparent;
+			labelHallo.Font = new Font("Segoe UI", 32F);
+			labelHallo.ForeColor = Color.Green;
+			labelHallo.Location = new Point(41, 43);
+			labelHallo.Margin = new Padding(0);
+			labelHallo.Name = "labelHallo";
+			labelHallo.Size = new Size(135, 59);
+			labelHallo.TabIndex = 4;
+			labelHallo.Text = "Hallo!";
+			labelHallo.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// labelDatum
+			// 
+			labelDatum.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+			labelDatum.AutoSize = true;
+			labelDatum.BackColor = Color.Transparent;
+			labelDatum.Font = new Font("Segoe UI", 16F);
+			labelDatum.ForeColor = Color.DimGray;
+			labelDatum.Location = new Point(45, 13);
+			labelDatum.Margin = new Padding(0);
+			labelDatum.Name = "labelDatum";
+			labelDatum.Size = new Size(87, 30);
+			labelDatum.TabIndex = 17;
+			labelDatum.Text = "Datum?";
+			labelDatum.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// panelBack
+			// 
+			panelBack.BackColor = Color.FromArgb(160, 255, 255, 255);
+			panelBack.Controls.Add(panelSQL);
+			panelBack.Controls.Add(label1);
+			panelBack.Location = new Point(41, 103);
+			panelBack.Margin = new Padding(0);
+			panelBack.Name = "panelBack";
+			panelBack.Size = new Size(974, 567);
+			panelBack.TabIndex = 23;
+			// 
+			// panelSQL
+			// 
+			panelSQL.Controls.Add(label4);
+			panelSQL.Controls.Add(serverState);
+			panelSQL.Location = new Point(41, 500);
+			panelSQL.Name = "panelSQL";
+			panelSQL.Size = new Size(195, 49);
+			panelSQL.TabIndex = 29;
+			// 
+			// label4
+			// 
+			label4.AutoSize = true;
+			label4.BackColor = Color.Transparent;
+			label4.Font = new Font("Segoe UI", 13F);
+			label4.Location = new Point(12, 11);
+			label4.Name = "label4";
+			label4.Size = new Size(64, 25);
+			label4.TabIndex = 32;
+			label4.Text = "Status:";
+			// 
+			// serverState
+			// 
+			serverState.AutoSize = true;
+			serverState.BackColor = Color.Transparent;
+			serverState.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
+			serverState.ForeColor = Color.IndianRed;
+			serverState.Location = new Point(82, 11);
+			serverState.Name = "serverState";
+			serverState.Size = new Size(94, 25);
+			serverState.TabIndex = 31;
+			serverState.Text = "Gestoppt";
+			serverState.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// label1
+			// 
+			label1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+			label1.AutoSize = true;
+			label1.BackColor = Color.Transparent;
+			label1.Font = new Font("Segoe UI", 11F);
+			label1.ForeColor = SystemColors.ControlDarkDark;
+			label1.Location = new Point(41, 45);
+			label1.Margin = new Padding(0);
+			label1.Name = "label1";
+			label1.Size = new Size(341, 20);
+			label1.TabIndex = 4;
+			label1.Text = "Bitte gehen Sie weiter, hier gibt es nichts zu sehen.";
+			label1.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// FrameHome
+			// 
+			AutoScaleDimensions = new SizeF(7F, 15F);
+			AutoScaleMode = AutoScaleMode.Font;
+			BackColor = Color.FromArgb(160, 255, 255, 255);
+			Controls.Add(labelDatum);
+			Controls.Add(labelHallo);
+			Controls.Add(panelBack);
+			Name = "FrameHome";
+			Size = new Size(1080, 690);
+			Load += OnFrameLoad;
+			panelBack.ResumeLayout(false);
+			panelBack.PerformLayout();
+			panelSQL.ResumeLayout(false);
+			panelSQL.PerformLayout();
+			ResumeLayout(false);
+			PerformLayout();
+		}
 
-        }
-
-        #endregion
-
-        private Panel panel5;
-        private Label labelHallo;
+		#endregion
+		private Label labelHallo;
         private Label labelDatum;
-        private Panel panel1;
         private Panel panelBack;
         private Label label1;
         private Panel panelSQL;

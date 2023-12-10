@@ -13,497 +13,456 @@
             base.Dispose(disposing);
         }
 
-        #region Component Designer generated code
+		#region Component Designer generated code
 
-                                        private void InitializeComponent()
-        {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.gridAge = new System.Windows.Forms.DataGridView();
-            this.cbNeu = new System.Windows.Forms.CheckBox();
-            this.cbMale = new System.Windows.Forms.CheckBox();
-            this.cbFemale = new System.Windows.Forms.CheckBox();
-            this.cbNonBin = new System.Windows.Forms.CheckBox();
-            this.cb1Jahr = new System.Windows.Forms.CheckBox();
-            this.cb2Jahr = new System.Windows.Forms.CheckBox();
-            this.cbAllg = new System.Windows.Forms.CheckBox();
-            this.cbSGB8 = new System.Windows.Forms.CheckBox();
-            this.cbSchwanger = new System.Windows.Forms.CheckBox();
-            this.cbRA = new System.Windows.Forms.CheckBox();
-            this.cbBurgwedel = new System.Windows.Forms.CheckBox();
-            this.cbIsernhagen = new System.Windows.Forms.CheckBox();
-            this.cbWedemark = new System.Windows.Forms.CheckBox();
-            this.cbAndere = new System.Windows.Forms.CheckBox();
-            this.filterPanel = new System.Windows.Forms.Panel();
-            this.gOrt = new System.Windows.Forms.GroupBox();
-            this.gBeratung = new System.Windows.Forms.GroupBox();
-            this.cb218 = new System.Windows.Forms.CheckBox();
-            this.gGeschlecht = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.gNeu = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.checkListStats = new System.Windows.Forms.CheckedListBox();
-            this.xlsx = new RJCodeAdvance.RJControls.RJButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.exportStatisticsFileSave = new System.Windows.Forms.SaveFileDialog();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.gridAge)).BeginInit();
-            this.filterPanel.SuspendLayout();
-            this.gOrt.SuspendLayout();
-            this.gBeratung.SuspendLayout();
-            this.gGeschlecht.SuspendLayout();
-            this.gNeu.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // gridAge
-            // 
-            this.gridAge.AllowUserToAddRows = false;
-            this.gridAge.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.gridAge.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.gridAge.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridAge.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gridAge.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.gridAge.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gridAge.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.gridAge.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightGreen;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridAge.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.gridAge.ColumnHeadersHeight = 32;
-            this.gridAge.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Honeydew;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridAge.DefaultCellStyle = dataGridViewCellStyle3;
-            this.gridAge.Location = new System.Drawing.Point(23, 54);
-            this.gridAge.Margin = new System.Windows.Forms.Padding(0);
-            this.gridAge.Name = "gridAge";
-            this.gridAge.ReadOnly = true;
-            this.gridAge.RowHeadersVisible = false;
-            this.gridAge.RowHeadersWidth = 51;
-            this.gridAge.RowTemplate.Height = 25;
-            this.gridAge.ShowCellErrors = false;
-            this.gridAge.ShowCellToolTips = false;
-            this.gridAge.ShowEditingIcon = false;
-            this.gridAge.ShowRowErrors = false;
-            this.gridAge.Size = new System.Drawing.Size(200, 514);
-            this.gridAge.TabIndex = 1;
-            // 
-            // cbNeu
-            // 
-            this.cbNeu.AutoSize = true;
-            this.cbNeu.BackColor = System.Drawing.Color.Transparent;
-            this.cbNeu.Location = new System.Drawing.Point(6, 22);
-            this.cbNeu.Name = "cbNeu";
-            this.cbNeu.Size = new System.Drawing.Size(109, 19);
-            this.cbNeu.TabIndex = 3;
-            this.cbNeu.Text = "Neuanmeldung";
-            this.cbNeu.UseVisualStyleBackColor = false;
-            this.cbNeu.CheckedChanged += new System.EventHandler(this.OnCheckedChanged);
-            // 
-            // cbMale
-            // 
-            this.cbMale.AutoSize = true;
-            this.cbMale.BackColor = System.Drawing.Color.Transparent;
-            this.cbMale.Location = new System.Drawing.Point(6, 22);
-            this.cbMale.Name = "cbMale";
-            this.cbMale.Size = new System.Drawing.Size(76, 19);
-            this.cbMale.TabIndex = 3;
-            this.cbMale.Text = "Männlich";
-            this.cbMale.UseVisualStyleBackColor = false;
-            this.cbMale.CheckedChanged += new System.EventHandler(this.OnCheckedChanged);
-            // 
-            // cbFemale
-            // 
-            this.cbFemale.AutoSize = true;
-            this.cbFemale.BackColor = System.Drawing.Color.Transparent;
-            this.cbFemale.Location = new System.Drawing.Point(6, 47);
-            this.cbFemale.Name = "cbFemale";
-            this.cbFemale.Size = new System.Drawing.Size(72, 19);
-            this.cbFemale.TabIndex = 3;
-            this.cbFemale.Text = "Weiblich";
-            this.cbFemale.UseVisualStyleBackColor = false;
-            this.cbFemale.CheckedChanged += new System.EventHandler(this.OnCheckedChanged);
-            // 
-            // cbNonBin
-            // 
-            this.cbNonBin.AutoSize = true;
-            this.cbNonBin.BackColor = System.Drawing.Color.Transparent;
-            this.cbNonBin.Location = new System.Drawing.Point(6, 72);
-            this.cbNonBin.Name = "cbNonBin";
-            this.cbNonBin.Size = new System.Drawing.Size(81, 19);
-            this.cbNonBin.TabIndex = 3;
-            this.cbNonBin.Text = "Non-Binär";
-            this.cbNonBin.UseVisualStyleBackColor = false;
-            this.cbNonBin.CheckedChanged += new System.EventHandler(this.OnCheckedChanged);
-            // 
-            // cb1Jahr
-            // 
-            this.cb1Jahr.AutoSize = true;
-            this.cb1Jahr.BackColor = System.Drawing.Color.Transparent;
-            this.cb1Jahr.Location = new System.Drawing.Point(6, 47);
-            this.cb1Jahr.Name = "cb1Jahr";
-            this.cb1Jahr.Size = new System.Drawing.Size(86, 19);
-            this.cb1Jahr.TabIndex = 3;
-            this.cb1Jahr.Text = "Aus Vorjahr";
-            this.cb1Jahr.UseVisualStyleBackColor = false;
-            this.cb1Jahr.CheckedChanged += new System.EventHandler(this.OnCheckedChanged);
-            // 
-            // cb2Jahr
-            // 
-            this.cb2Jahr.AutoSize = true;
-            this.cb2Jahr.BackColor = System.Drawing.Color.Transparent;
-            this.cb2Jahr.Location = new System.Drawing.Point(6, 72);
-            this.cb2Jahr.Name = "cb2Jahr";
-            this.cb2Jahr.Size = new System.Drawing.Size(108, 19);
-            this.cb2Jahr.TabIndex = 3;
-            this.cb2Jahr.Text = "Aus Vor-Vorjahr";
-            this.cb2Jahr.UseVisualStyleBackColor = false;
-            this.cb2Jahr.CheckedChanged += new System.EventHandler(this.OnCheckedChanged);
-            // 
-            // cbAllg
-            // 
-            this.cbAllg.AutoSize = true;
-            this.cbAllg.BackColor = System.Drawing.Color.Transparent;
-            this.cbAllg.Location = new System.Drawing.Point(6, 22);
-            this.cbAllg.Name = "cbAllg";
-            this.cbAllg.Size = new System.Drawing.Size(138, 19);
-            this.cbAllg.TabIndex = 3;
-            this.cbAllg.Text = "Allg. Lebensberatung";
-            this.cbAllg.UseVisualStyleBackColor = false;
-            this.cbAllg.CheckedChanged += new System.EventHandler(this.OnCheckedChanged);
-            // 
-            // cbSGB8
-            // 
-            this.cbSGB8.AutoSize = true;
-            this.cbSGB8.BackColor = System.Drawing.Color.Transparent;
-            this.cbSGB8.Location = new System.Drawing.Point(6, 47);
-            this.cbSGB8.Name = "cbSGB8";
-            this.cbSGB8.Size = new System.Drawing.Size(66, 19);
-            this.cbSGB8.TabIndex = 3;
-            this.cbSGB8.Text = "SGB VIII";
-            this.cbSGB8.UseVisualStyleBackColor = false;
-            this.cbSGB8.CheckedChanged += new System.EventHandler(this.OnCheckedChanged);
-            // 
-            // cbSchwanger
-            // 
-            this.cbSchwanger.AutoSize = true;
-            this.cbSchwanger.BackColor = System.Drawing.Color.Transparent;
-            this.cbSchwanger.Location = new System.Drawing.Point(6, 72);
-            this.cbSchwanger.Name = "cbSchwanger";
-            this.cbSchwanger.Size = new System.Drawing.Size(116, 19);
-            this.cbSchwanger.TabIndex = 3;
-            this.cbSchwanger.Text = "Schwangerschaft";
-            this.cbSchwanger.UseVisualStyleBackColor = false;
-            this.cbSchwanger.CheckedChanged += new System.EventHandler(this.OnCheckedChanged);
-            // 
-            // cbRA
-            // 
-            this.cbRA.AutoSize = true;
-            this.cbRA.BackColor = System.Drawing.Color.Transparent;
-            this.cbRA.Location = new System.Drawing.Point(6, 122);
-            this.cbRA.Name = "cbRA";
-            this.cbRA.Size = new System.Drawing.Size(115, 19);
-            this.cbRA.TabIndex = 3;
-            this.cbRA.Text = "Rechtsanwaltlich";
-            this.cbRA.UseVisualStyleBackColor = false;
-            this.cbRA.CheckedChanged += new System.EventHandler(this.OnCheckedChanged);
-            // 
-            // cbBurgwedel
-            // 
-            this.cbBurgwedel.AutoSize = true;
-            this.cbBurgwedel.BackColor = System.Drawing.Color.Transparent;
-            this.cbBurgwedel.Location = new System.Drawing.Point(6, 22);
-            this.cbBurgwedel.Name = "cbBurgwedel";
-            this.cbBurgwedel.Size = new System.Drawing.Size(82, 19);
-            this.cbBurgwedel.TabIndex = 3;
-            this.cbBurgwedel.Text = "Burgwedel";
-            this.cbBurgwedel.UseVisualStyleBackColor = false;
-            this.cbBurgwedel.CheckedChanged += new System.EventHandler(this.OnCheckedChanged);
-            // 
-            // cbIsernhagen
-            // 
-            this.cbIsernhagen.AutoSize = true;
-            this.cbIsernhagen.BackColor = System.Drawing.Color.Transparent;
-            this.cbIsernhagen.Location = new System.Drawing.Point(6, 47);
-            this.cbIsernhagen.Name = "cbIsernhagen";
-            this.cbIsernhagen.Size = new System.Drawing.Size(84, 19);
-            this.cbIsernhagen.TabIndex = 3;
-            this.cbIsernhagen.Text = "Isernhagen";
-            this.cbIsernhagen.UseVisualStyleBackColor = false;
-            this.cbIsernhagen.CheckedChanged += new System.EventHandler(this.OnCheckedChanged);
-            // 
-            // cbWedemark
-            // 
-            this.cbWedemark.AutoSize = true;
-            this.cbWedemark.BackColor = System.Drawing.Color.Transparent;
-            this.cbWedemark.Location = new System.Drawing.Point(6, 72);
-            this.cbWedemark.Name = "cbWedemark";
-            this.cbWedemark.Size = new System.Drawing.Size(83, 19);
-            this.cbWedemark.TabIndex = 3;
-            this.cbWedemark.Text = "Wedemark";
-            this.cbWedemark.UseVisualStyleBackColor = false;
-            this.cbWedemark.CheckedChanged += new System.EventHandler(this.OnCheckedChanged);
-            // 
-            // cbAndere
-            // 
-            this.cbAndere.AutoSize = true;
-            this.cbAndere.BackColor = System.Drawing.Color.Transparent;
-            this.cbAndere.Location = new System.Drawing.Point(5, 97);
-            this.cbAndere.Name = "cbAndere";
-            this.cbAndere.Size = new System.Drawing.Size(64, 19);
-            this.cbAndere.TabIndex = 3;
-            this.cbAndere.Text = "Andere";
-            this.cbAndere.UseVisualStyleBackColor = false;
-            this.cbAndere.CheckedChanged += new System.EventHandler(this.OnCheckedChanged);
-            // 
-            // filterPanel
-            // 
-            this.filterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.filterPanel.Controls.Add(this.gOrt);
-            this.filterPanel.Controls.Add(this.gBeratung);
-            this.filterPanel.Controls.Add(this.gGeschlecht);
-            this.filterPanel.Controls.Add(this.label3);
-            this.filterPanel.Controls.Add(this.gNeu);
-            this.filterPanel.Controls.Add(this.gridAge);
-            this.filterPanel.Location = new System.Drawing.Point(41, 39);
-            this.filterPanel.Name = "filterPanel";
-            this.filterPanel.Size = new System.Drawing.Size(500, 622);
-            this.filterPanel.TabIndex = 4;
-            // 
-            // gOrt
-            // 
-            this.gOrt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.gOrt.BackColor = System.Drawing.Color.Transparent;
-            this.gOrt.Controls.Add(this.cbBurgwedel);
-            this.gOrt.Controls.Add(this.cbIsernhagen);
-            this.gOrt.Controls.Add(this.cbWedemark);
-            this.gOrt.Controls.Add(this.cbAndere);
-            this.gOrt.ForeColor = System.Drawing.Color.Black;
-            this.gOrt.Location = new System.Drawing.Point(385, 54);
-            this.gOrt.Name = "gOrt";
-            this.gOrt.Size = new System.Drawing.Size(104, 124);
-            this.gOrt.TabIndex = 4;
-            this.gOrt.TabStop = false;
-            this.gOrt.Text = "Ort";
-            // 
-            // gBeratung
-            // 
-            this.gBeratung.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.gBeratung.BackColor = System.Drawing.Color.Transparent;
-            this.gBeratung.Controls.Add(this.cbAllg);
-            this.gBeratung.Controls.Add(this.cbSGB8);
-            this.gBeratung.Controls.Add(this.cb218);
-            this.gBeratung.Controls.Add(this.cbSchwanger);
-            this.gBeratung.Controls.Add(this.cbRA);
-            this.gBeratung.ForeColor = System.Drawing.Color.Black;
-            this.gBeratung.Location = new System.Drawing.Point(336, 184);
-            this.gBeratung.Name = "gBeratung";
-            this.gBeratung.Size = new System.Drawing.Size(153, 154);
-            this.gBeratung.TabIndex = 4;
-            this.gBeratung.TabStop = false;
-            this.gBeratung.Text = "Beratungsart";
-            // 
-            // cb218
-            // 
-            this.cb218.AutoSize = true;
-            this.cb218.BackColor = System.Drawing.Color.Transparent;
-            this.cb218.Location = new System.Drawing.Point(6, 97);
-            this.cb218.Name = "cb218";
-            this.cb218.Size = new System.Drawing.Size(52, 19);
-            this.cb218.TabIndex = 3;
-            this.cb218.Text = "§ 218";
-            this.cb218.UseVisualStyleBackColor = false;
-            this.cb218.CheckedChanged += new System.EventHandler(this.OnCheckedChanged);
-            // 
-            // gGeschlecht
-            // 
-            this.gGeschlecht.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.gGeschlecht.BackColor = System.Drawing.Color.Transparent;
-            this.gGeschlecht.Controls.Add(this.cbMale);
-            this.gGeschlecht.Controls.Add(this.cbFemale);
-            this.gGeschlecht.Controls.Add(this.cbNonBin);
-            this.gGeschlecht.ForeColor = System.Drawing.Color.Black;
-            this.gGeschlecht.Location = new System.Drawing.Point(237, 184);
-            this.gGeschlecht.Name = "gGeschlecht";
-            this.gGeschlecht.Size = new System.Drawing.Size(93, 124);
-            this.gGeschlecht.TabIndex = 4;
-            this.gGeschlecht.TabStop = false;
-            this.gGeschlecht.Text = "Geschlecht";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(23, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 32);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Statistik";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // gNeu
-            // 
-            this.gNeu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.gNeu.BackColor = System.Drawing.Color.Transparent;
-            this.gNeu.Controls.Add(this.cbNeu);
-            this.gNeu.Controls.Add(this.cb1Jahr);
-            this.gNeu.Controls.Add(this.cb2Jahr);
-            this.gNeu.ForeColor = System.Drawing.Color.Black;
-            this.gNeu.Location = new System.Drawing.Point(237, 54);
-            this.gNeu.Name = "gNeu";
-            this.gNeu.Size = new System.Drawing.Size(142, 124);
-            this.gNeu.TabIndex = 4;
-            this.gNeu.TabStop = false;
-            this.gNeu.Text = "Neuanmeldung";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panel1.Controls.Add(this.checkListStats);
-            this.panel1.Controls.Add(this.xlsx);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Location = new System.Drawing.Point(552, 39);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(501, 622);
-            this.panel1.TabIndex = 5;
-            // 
-            // checkListStats
-            // 
-            this.checkListStats.FormattingEnabled = true;
-            this.checkListStats.Items.AddRange(new object[] {
-            "Neuanmeldungen nach Beratungsart",
-            "Fortführungen nach Beratungsart",
-            "Gesamt nach Beratungsart",
-            "Gesamt nach Ort",
-            "Anmeldegründe LB",
-            "Anmeldegründe SGB VIII",
-            "Art der Beratung für Schwangere"});
-            this.checkListStats.Location = new System.Drawing.Point(30, 60);
-            this.checkListStats.Name = "checkListStats";
-            this.checkListStats.Size = new System.Drawing.Size(231, 112);
-            this.checkListStats.TabIndex = 19;
-            // 
-            // xlsx
-            // 
-            this.xlsx.BackColor = System.Drawing.Color.Green;
-            this.xlsx.BackgroundColor = System.Drawing.Color.Green;
-            this.xlsx.BorderColor = System.Drawing.Color.Empty;
-            this.xlsx.BorderRadius = 0;
-            this.xlsx.BorderSize = 1;
-            this.xlsx.FlatAppearance.BorderSize = 0;
-            this.xlsx.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.xlsx.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.xlsx.ForeColor = System.Drawing.Color.White;
-            this.xlsx.Image = global::CDMS_Lebensberatung.Properties.images.excel26x26;
-            this.xlsx.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.xlsx.Location = new System.Drawing.Point(30, 206);
-            this.xlsx.Name = "xlsx";
-            this.xlsx.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.xlsx.Size = new System.Drawing.Size(231, 52);
-            this.xlsx.TabIndex = 18;
-            this.xlsx.Text = "Als .xlsx exportieren";
-            this.xlsx.TextColor = System.Drawing.Color.White;
-            this.xlsx.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.xlsx.UseVisualStyleBackColor = false;
-            this.xlsx.Click += new System.EventHandler(this.OnButtonExport);
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(30, 22);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(163, 21);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Relevantes auswählen";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel4.Location = new System.Drawing.Point(30, 206);
-            this.panel4.Margin = new System.Windows.Forms.Padding(0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(234, 55);
-            this.panel4.TabIndex = 21;
-            // 
-            // exportStatisticsFileSave
-            // 
-            this.exportStatisticsFileSave.DefaultExt = "xlsx";
-            this.exportStatisticsFileSave.FileName = "statistik_export";
-            this.exportStatisticsFileSave.RestoreDirectory = true;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1080, 5);
-            this.panel5.TabIndex = 6;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(5, 690);
-            this.panel2.TabIndex = 7;
-            // 
-            // FrameStatistics
-            // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.filterPanel);
-            this.Margin = new System.Windows.Forms.Padding(0);
-            this.Name = "FrameStatistics";
-            this.Size = new System.Drawing.Size(1080, 690);
-            this.Tag = "Frame";
-            this.Load += new System.EventHandler(this.OnLoad);
-            ((System.ComponentModel.ISupportInitialize)(this.gridAge)).EndInit();
-            this.filterPanel.ResumeLayout(false);
-            this.filterPanel.PerformLayout();
-            this.gOrt.ResumeLayout(false);
-            this.gOrt.PerformLayout();
-            this.gBeratung.ResumeLayout(false);
-            this.gBeratung.PerformLayout();
-            this.gGeschlecht.ResumeLayout(false);
-            this.gGeschlecht.PerformLayout();
-            this.gNeu.ResumeLayout(false);
-            this.gNeu.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.ResumeLayout(false);
+		private void InitializeComponent()
+		{
+			DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+			DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+			DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+			gridAge = new DataGridView();
+			cbNeu = new CheckBox();
+			cbMale = new CheckBox();
+			cbFemale = new CheckBox();
+			cbNonBin = new CheckBox();
+			cb1Jahr = new CheckBox();
+			cb2Jahr = new CheckBox();
+			cbAllg = new CheckBox();
+			cbSGB8 = new CheckBox();
+			cbSchwanger = new CheckBox();
+			cbRA = new CheckBox();
+			cbBurgwedel = new CheckBox();
+			cbIsernhagen = new CheckBox();
+			cbWedemark = new CheckBox();
+			cbAndere = new CheckBox();
+			filterPanel = new Panel();
+			gOrt = new GroupBox();
+			gBeratung = new GroupBox();
+			cb218 = new CheckBox();
+			gGeschlecht = new GroupBox();
+			label3 = new Label();
+			gNeu = new GroupBox();
+			panel1 = new Panel();
+			xlsx = new RJCodeAdvance.RJControls.RJButton();
+			label2 = new Label();
+			exportStatisticsFileSave = new SaveFileDialog();
+			checkListStats = new CheckedListBox();
+			((System.ComponentModel.ISupportInitialize)gridAge).BeginInit();
+			filterPanel.SuspendLayout();
+			gOrt.SuspendLayout();
+			gBeratung.SuspendLayout();
+			gGeschlecht.SuspendLayout();
+			gNeu.SuspendLayout();
+			panel1.SuspendLayout();
+			SuspendLayout();
+			// 
+			// gridAge
+			// 
+			gridAge.AllowUserToAddRows = false;
+			gridAge.AllowUserToDeleteRows = false;
+			dataGridViewCellStyle1.BackColor = Color.WhiteSmoke;
+			gridAge.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+			gridAge.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+			gridAge.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+			gridAge.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+			gridAge.BackgroundColor = SystemColors.ControlLightLight;
+			gridAge.BorderStyle = BorderStyle.Fixed3D;
+			gridAge.CellBorderStyle = DataGridViewCellBorderStyle.SingleVertical;
+			dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.BottomLeft;
+			dataGridViewCellStyle2.BackColor = SystemColors.Control;
+			dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
+			dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+			dataGridViewCellStyle2.SelectionBackColor = Color.LightGreen;
+			dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+			dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+			gridAge.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+			gridAge.ColumnHeadersHeight = 32;
+			gridAge.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+			dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleRight;
+			dataGridViewCellStyle3.BackColor = SystemColors.Window;
+			dataGridViewCellStyle3.Font = new Font("Segoe UI", 9.75F);
+			dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+			dataGridViewCellStyle3.SelectionBackColor = Color.Honeydew;
+			dataGridViewCellStyle3.SelectionForeColor = SystemColors.ControlText;
+			dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+			gridAge.DefaultCellStyle = dataGridViewCellStyle3;
+			gridAge.Location = new Point(23, 54);
+			gridAge.Margin = new Padding(0);
+			gridAge.Name = "gridAge";
+			gridAge.ReadOnly = true;
+			gridAge.RowHeadersVisible = false;
+			gridAge.RowHeadersWidth = 51;
+			gridAge.RowTemplate.Height = 25;
+			gridAge.ShowCellErrors = false;
+			gridAge.ShowCellToolTips = false;
+			gridAge.ShowEditingIcon = false;
+			gridAge.ShowRowErrors = false;
+			gridAge.Size = new Size(200, 514);
+			gridAge.TabIndex = 1;
+			// 
+			// cbNeu
+			// 
+			cbNeu.AutoSize = true;
+			cbNeu.BackColor = Color.Transparent;
+			cbNeu.Location = new Point(6, 22);
+			cbNeu.Name = "cbNeu";
+			cbNeu.Size = new Size(109, 19);
+			cbNeu.TabIndex = 3;
+			cbNeu.Text = "Neuanmeldung";
+			cbNeu.UseVisualStyleBackColor = false;
+			cbNeu.CheckedChanged += OnCheckedChanged;
+			// 
+			// cbMale
+			// 
+			cbMale.AutoSize = true;
+			cbMale.BackColor = Color.Transparent;
+			cbMale.Location = new Point(6, 22);
+			cbMale.Name = "cbMale";
+			cbMale.Size = new Size(76, 19);
+			cbMale.TabIndex = 3;
+			cbMale.Text = "Männlich";
+			cbMale.UseVisualStyleBackColor = false;
+			cbMale.CheckedChanged += OnCheckedChanged;
+			// 
+			// cbFemale
+			// 
+			cbFemale.AutoSize = true;
+			cbFemale.BackColor = Color.Transparent;
+			cbFemale.Location = new Point(6, 47);
+			cbFemale.Name = "cbFemale";
+			cbFemale.Size = new Size(72, 19);
+			cbFemale.TabIndex = 3;
+			cbFemale.Text = "Weiblich";
+			cbFemale.UseVisualStyleBackColor = false;
+			cbFemale.CheckedChanged += OnCheckedChanged;
+			// 
+			// cbNonBin
+			// 
+			cbNonBin.AutoSize = true;
+			cbNonBin.BackColor = Color.Transparent;
+			cbNonBin.Location = new Point(6, 72);
+			cbNonBin.Name = "cbNonBin";
+			cbNonBin.Size = new Size(81, 19);
+			cbNonBin.TabIndex = 3;
+			cbNonBin.Text = "Non-Binär";
+			cbNonBin.UseVisualStyleBackColor = false;
+			cbNonBin.CheckedChanged += OnCheckedChanged;
+			// 
+			// cb1Jahr
+			// 
+			cb1Jahr.AutoSize = true;
+			cb1Jahr.BackColor = Color.Transparent;
+			cb1Jahr.Location = new Point(6, 47);
+			cb1Jahr.Name = "cb1Jahr";
+			cb1Jahr.Size = new Size(86, 19);
+			cb1Jahr.TabIndex = 3;
+			cb1Jahr.Text = "Aus Vorjahr";
+			cb1Jahr.UseVisualStyleBackColor = false;
+			cb1Jahr.CheckedChanged += OnCheckedChanged;
+			// 
+			// cb2Jahr
+			// 
+			cb2Jahr.AutoSize = true;
+			cb2Jahr.BackColor = Color.Transparent;
+			cb2Jahr.Location = new Point(6, 72);
+			cb2Jahr.Name = "cb2Jahr";
+			cb2Jahr.Size = new Size(108, 19);
+			cb2Jahr.TabIndex = 3;
+			cb2Jahr.Text = "Aus Vor-Vorjahr";
+			cb2Jahr.UseVisualStyleBackColor = false;
+			cb2Jahr.CheckedChanged += OnCheckedChanged;
+			// 
+			// cbAllg
+			// 
+			cbAllg.AutoSize = true;
+			cbAllg.BackColor = Color.Transparent;
+			cbAllg.Location = new Point(6, 22);
+			cbAllg.Name = "cbAllg";
+			cbAllg.Size = new Size(138, 19);
+			cbAllg.TabIndex = 3;
+			cbAllg.Text = "Allg. Lebensberatung";
+			cbAllg.UseVisualStyleBackColor = false;
+			cbAllg.CheckedChanged += OnCheckedChanged;
+			// 
+			// cbSGB8
+			// 
+			cbSGB8.AutoSize = true;
+			cbSGB8.BackColor = Color.Transparent;
+			cbSGB8.Location = new Point(6, 47);
+			cbSGB8.Name = "cbSGB8";
+			cbSGB8.Size = new Size(66, 19);
+			cbSGB8.TabIndex = 3;
+			cbSGB8.Text = "SGB VIII";
+			cbSGB8.UseVisualStyleBackColor = false;
+			cbSGB8.CheckedChanged += OnCheckedChanged;
+			// 
+			// cbSchwanger
+			// 
+			cbSchwanger.AutoSize = true;
+			cbSchwanger.BackColor = Color.Transparent;
+			cbSchwanger.Location = new Point(6, 72);
+			cbSchwanger.Name = "cbSchwanger";
+			cbSchwanger.Size = new Size(116, 19);
+			cbSchwanger.TabIndex = 3;
+			cbSchwanger.Text = "Schwangerschaft";
+			cbSchwanger.UseVisualStyleBackColor = false;
+			cbSchwanger.CheckedChanged += OnCheckedChanged;
+			// 
+			// cbRA
+			// 
+			cbRA.AutoSize = true;
+			cbRA.BackColor = Color.Transparent;
+			cbRA.Location = new Point(6, 122);
+			cbRA.Name = "cbRA";
+			cbRA.Size = new Size(115, 19);
+			cbRA.TabIndex = 3;
+			cbRA.Text = "Rechtsanwaltlich";
+			cbRA.UseVisualStyleBackColor = false;
+			cbRA.CheckedChanged += OnCheckedChanged;
+			// 
+			// cbBurgwedel
+			// 
+			cbBurgwedel.AutoSize = true;
+			cbBurgwedel.BackColor = Color.Transparent;
+			cbBurgwedel.Location = new Point(6, 22);
+			cbBurgwedel.Name = "cbBurgwedel";
+			cbBurgwedel.Size = new Size(82, 19);
+			cbBurgwedel.TabIndex = 3;
+			cbBurgwedel.Text = "Burgwedel";
+			cbBurgwedel.UseVisualStyleBackColor = false;
+			cbBurgwedel.CheckedChanged += OnCheckedChanged;
+			// 
+			// cbIsernhagen
+			// 
+			cbIsernhagen.AutoSize = true;
+			cbIsernhagen.BackColor = Color.Transparent;
+			cbIsernhagen.Location = new Point(6, 47);
+			cbIsernhagen.Name = "cbIsernhagen";
+			cbIsernhagen.Size = new Size(84, 19);
+			cbIsernhagen.TabIndex = 3;
+			cbIsernhagen.Text = "Isernhagen";
+			cbIsernhagen.UseVisualStyleBackColor = false;
+			cbIsernhagen.CheckedChanged += OnCheckedChanged;
+			// 
+			// cbWedemark
+			// 
+			cbWedemark.AutoSize = true;
+			cbWedemark.BackColor = Color.Transparent;
+			cbWedemark.Location = new Point(6, 72);
+			cbWedemark.Name = "cbWedemark";
+			cbWedemark.Size = new Size(83, 19);
+			cbWedemark.TabIndex = 3;
+			cbWedemark.Text = "Wedemark";
+			cbWedemark.UseVisualStyleBackColor = false;
+			cbWedemark.CheckedChanged += OnCheckedChanged;
+			// 
+			// cbAndere
+			// 
+			cbAndere.AutoSize = true;
+			cbAndere.BackColor = Color.Transparent;
+			cbAndere.Location = new Point(5, 97);
+			cbAndere.Name = "cbAndere";
+			cbAndere.Size = new Size(64, 19);
+			cbAndere.TabIndex = 3;
+			cbAndere.Text = "Andere";
+			cbAndere.UseVisualStyleBackColor = false;
+			cbAndere.CheckedChanged += OnCheckedChanged;
+			// 
+			// filterPanel
+			// 
+			filterPanel.BackColor = Color.FromArgb(210, 255, 255, 255);
+			filterPanel.Controls.Add(gOrt);
+			filterPanel.Controls.Add(gBeratung);
+			filterPanel.Controls.Add(gGeschlecht);
+			filterPanel.Controls.Add(label3);
+			filterPanel.Controls.Add(gNeu);
+			filterPanel.Controls.Add(gridAge);
+			filterPanel.Location = new Point(41, 39);
+			filterPanel.Name = "filterPanel";
+			filterPanel.Size = new Size(500, 622);
+			filterPanel.TabIndex = 4;
+			// 
+			// gOrt
+			// 
+			gOrt.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+			gOrt.BackColor = Color.Transparent;
+			gOrt.Controls.Add(cbBurgwedel);
+			gOrt.Controls.Add(cbIsernhagen);
+			gOrt.Controls.Add(cbWedemark);
+			gOrt.Controls.Add(cbAndere);
+			gOrt.ForeColor = Color.Black;
+			gOrt.Location = new Point(385, 54);
+			gOrt.Name = "gOrt";
+			gOrt.Size = new Size(104, 124);
+			gOrt.TabIndex = 4;
+			gOrt.TabStop = false;
+			gOrt.Text = "Ort";
+			// 
+			// gBeratung
+			// 
+			gBeratung.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+			gBeratung.BackColor = Color.Transparent;
+			gBeratung.Controls.Add(cbAllg);
+			gBeratung.Controls.Add(cbSGB8);
+			gBeratung.Controls.Add(cb218);
+			gBeratung.Controls.Add(cbSchwanger);
+			gBeratung.Controls.Add(cbRA);
+			gBeratung.ForeColor = Color.Black;
+			gBeratung.Location = new Point(336, 184);
+			gBeratung.Name = "gBeratung";
+			gBeratung.Size = new Size(153, 154);
+			gBeratung.TabIndex = 4;
+			gBeratung.TabStop = false;
+			gBeratung.Text = "Beratungsart";
+			// 
+			// cb218
+			// 
+			cb218.AutoSize = true;
+			cb218.BackColor = Color.Transparent;
+			cb218.Location = new Point(6, 97);
+			cb218.Name = "cb218";
+			cb218.Size = new Size(52, 19);
+			cb218.TabIndex = 3;
+			cb218.Text = "§ 218";
+			cb218.UseVisualStyleBackColor = false;
+			cb218.CheckedChanged += OnCheckedChanged;
+			// 
+			// gGeschlecht
+			// 
+			gGeschlecht.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+			gGeschlecht.BackColor = Color.Transparent;
+			gGeschlecht.Controls.Add(cbMale);
+			gGeschlecht.Controls.Add(cbFemale);
+			gGeschlecht.Controls.Add(cbNonBin);
+			gGeschlecht.ForeColor = Color.Black;
+			gGeschlecht.Location = new Point(237, 184);
+			gGeschlecht.Name = "gGeschlecht";
+			gGeschlecht.Size = new Size(93, 124);
+			gGeschlecht.TabIndex = 4;
+			gGeschlecht.TabStop = false;
+			gGeschlecht.Text = "Geschlecht";
+			// 
+			// label3
+			// 
+			label3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+			label3.AutoSize = true;
+			label3.BackColor = Color.Transparent;
+			label3.Font = new Font("Segoe UI", 18F);
+			label3.Location = new Point(23, 13);
+			label3.Name = "label3";
+			label3.Size = new Size(96, 32);
+			label3.TabIndex = 2;
+			label3.Text = "Statistik";
+			label3.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// gNeu
+			// 
+			gNeu.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+			gNeu.BackColor = Color.Transparent;
+			gNeu.Controls.Add(cbNeu);
+			gNeu.Controls.Add(cb1Jahr);
+			gNeu.Controls.Add(cb2Jahr);
+			gNeu.ForeColor = Color.Black;
+			gNeu.Location = new Point(237, 54);
+			gNeu.Name = "gNeu";
+			gNeu.Size = new Size(142, 124);
+			gNeu.TabIndex = 4;
+			gNeu.TabStop = false;
+			gNeu.Text = "Neuanmeldung";
+			// 
+			// panel1
+			// 
+			panel1.BackColor = Color.FromArgb(210, 255, 255, 255);
+			panel1.Controls.Add(checkListStats);
+			panel1.Controls.Add(xlsx);
+			panel1.Controls.Add(label2);
+			panel1.Location = new Point(552, 39);
+			panel1.Name = "panel1";
+			panel1.Size = new Size(501, 622);
+			panel1.TabIndex = 5;
+			// 
+			// xlsx
+			// 
+			xlsx.BackColor = Color.Green;
+			xlsx.BackgroundColor = Color.Green;
+			xlsx.BorderColor = Color.Empty;
+			xlsx.BorderRadius = 0;
+			xlsx.BorderSize = 1;
+			xlsx.FlatAppearance.BorderSize = 0;
+			xlsx.FlatStyle = FlatStyle.Flat;
+			xlsx.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
+			xlsx.ForeColor = Color.White;
+			xlsx.Image = Properties.images.excel26x26;
+			xlsx.ImageAlign = ContentAlignment.MiddleLeft;
+			xlsx.Location = new Point(30, 206);
+			xlsx.Name = "xlsx";
+			xlsx.Padding = new Padding(30, 0, 0, 0);
+			xlsx.Size = new Size(231, 52);
+			xlsx.TabIndex = 18;
+			xlsx.Text = "Als .xlsx exportieren";
+			xlsx.TextColor = Color.White;
+			xlsx.TextImageRelation = TextImageRelation.ImageBeforeText;
+			xlsx.UseVisualStyleBackColor = false;
+			xlsx.Click += OnButtonExport;
+			// 
+			// label2
+			// 
+			label2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+			label2.AutoSize = true;
+			label2.BackColor = Color.Transparent;
+			label2.Font = new Font("Segoe UI", 12F);
+			label2.Location = new Point(30, 22);
+			label2.Name = "label2";
+			label2.Size = new Size(163, 21);
+			label2.TabIndex = 2;
+			label2.Text = "Relevantes auswählen";
+			label2.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// exportStatisticsFileSave
+			// 
+			exportStatisticsFileSave.DefaultExt = "xlsx";
+			exportStatisticsFileSave.FileName = "statistik_export";
+			exportStatisticsFileSave.RestoreDirectory = true;
+			// 
+			// checkListStats
+			// 
+			checkListStats.FormattingEnabled = true;
+			checkListStats.Items.AddRange(new object[] { "Neuanmeldungen nach Beratungsart", "Fortführungen nach Beratungsart", "Gesamt nach Beratungsart", "Gesamt nach Ort", "Anmeldegründe LB", "Anmeldegründe SGB VIII", "Art der Beratung für Schwangere" });
+			checkListStats.Location = new Point(30, 60);
+			checkListStats.Name = "checkListStats";
+			checkListStats.Size = new Size(231, 112);
+			checkListStats.TabIndex = 19;
+			// 
+			// FrameStatistics
+			// 
+			AutoScaleMode = AutoScaleMode.None;
+			BackColor = Color.FromArgb(160, 255, 255, 255);
+			Controls.Add(panel1);
+			Controls.Add(filterPanel);
+			Margin = new Padding(0);
+			Name = "FrameStatistics";
+			Size = new Size(1080, 690);
+			Tag = "Frame";
+			Load += OnLoad;
+			((System.ComponentModel.ISupportInitialize)gridAge).EndInit();
+			filterPanel.ResumeLayout(false);
+			filterPanel.PerformLayout();
+			gOrt.ResumeLayout(false);
+			gOrt.PerformLayout();
+			gBeratung.ResumeLayout(false);
+			gBeratung.PerformLayout();
+			gGeschlecht.ResumeLayout(false);
+			gGeschlecht.PerformLayout();
+			gNeu.ResumeLayout(false);
+			gNeu.PerformLayout();
+			panel1.ResumeLayout(false);
+			panel1.PerformLayout();
+			ResumeLayout(false);
+		}
 
-        }
+		#endregion
 
-        #endregion
-
-        private DataGridView gridAge;
+		private DataGridView gridAge;
         private CheckBox cbNeu;
         private CheckBox cbMale;
         private CheckBox cbFemale;
@@ -526,12 +485,9 @@
         private Panel panel1;
         private SaveFileDialog exportStatisticsFileSave;
         private RJCodeAdvance.RJControls.RJButton xlsx;
-        private CheckedListBox checkListStats;
         private Label label3;
-        private Panel panel5;
-        private Panel panel2;
-        private Panel panel4;
         private Label label2;
         private CheckBox cb218;
-    }
+		private CheckedListBox checkListStats;
+	}
 }

@@ -20,293 +20,230 @@
             base.Dispose(disposing);
         }
 
-        #region Component Designer generated code
+		#region Component Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.rjButton1 = new RJCodeAdvance.RJControls.RJButton();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.tbDefaultPath = new RJCodeAdvance.RJControls.RJTextBox();
-            this.tbServiceName = new RJCodeAdvance.RJControls.RJTextBox();
-            this.tbConnectionString = new RJCodeAdvance.RJControls.RJTextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.dialogueDefaultFolder = new System.Windows.Forms.FolderBrowserDialog();
-            this.rjButton2 = new RJCodeAdvance.RJControls.RJButton();
-            this.panel2.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(15, 12);
-            this.label1.Margin = new System.Windows.Forms.Padding(0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(195, 41);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Einstellungen";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.rjButton2);
-            this.panel2.Controls.Add(this.panel6);
-            this.panel2.Controls.Add(this.rjButton1);
-            this.panel2.Controls.Add(this.panel4);
-            this.panel2.Controls.Add(this.tbDefaultPath);
-            this.panel2.Controls.Add(this.tbServiceName);
-            this.panel2.Controls.Add(this.tbConnectionString);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(67, 45);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(959, 610);
-            this.panel2.TabIndex = 6;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel6.Location = new System.Drawing.Point(789, 287);
-            this.panel6.Margin = new System.Windows.Forms.Padding(0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(143, 33);
-            this.panel6.TabIndex = 24;
-            this.panel6.Click += new System.EventHandler(this.OnSaveConfig);
-            // 
-            // rjButton1
-            // 
-            this.rjButton1.BackColor = System.Drawing.Color.Green;
-            this.rjButton1.BackgroundColor = System.Drawing.Color.Green;
-            this.rjButton1.BorderColor = System.Drawing.Color.Transparent;
-            this.rjButton1.BorderRadius = 0;
-            this.rjButton1.BorderSize = 1;
-            this.rjButton1.FlatAppearance.BorderSize = 0;
-            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rjButton1.ForeColor = System.Drawing.Color.White;
-            this.rjButton1.Location = new System.Drawing.Point(729, 542);
-            this.rjButton1.Name = "rjButton1";
-            this.rjButton1.Size = new System.Drawing.Size(200, 40);
-            this.rjButton1.TabIndex = 23;
-            this.rjButton1.Text = "Speichern";
-            this.rjButton1.TextColor = System.Drawing.Color.White;
-            this.rjButton1.UseVisualStyleBackColor = false;
-            this.rjButton1.Click += new System.EventHandler(this.OnSaveConfig);
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel4.Location = new System.Drawing.Point(729, 542);
-            this.panel4.Margin = new System.Windows.Forms.Padding(0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(203, 43);
-            this.panel4.TabIndex = 24;
-            this.panel4.Click += new System.EventHandler(this.OnSaveConfig);
-            // 
-            // tbDefaultPath
-            // 
-            this.tbDefaultPath.BackColor = System.Drawing.SystemColors.Window;
-            this.tbDefaultPath.BorderColor = System.Drawing.Color.Green;
-            this.tbDefaultPath.BorderFocusColor = System.Drawing.Color.IndianRed;
-            this.tbDefaultPath.BorderRadius = 0;
-            this.tbDefaultPath.BorderSize = 2;
-            this.tbDefaultPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbDefaultPath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbDefaultPath.Location = new System.Drawing.Point(35, 287);
-            this.tbDefaultPath.Margin = new System.Windows.Forms.Padding(4);
-            this.tbDefaultPath.Multiline = false;
-            this.tbDefaultPath.Name = "tbDefaultPath";
-            this.tbDefaultPath.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.tbDefaultPath.PasswordChar = false;
-            this.tbDefaultPath.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbDefaultPath.PlaceholderText = "";
-            this.tbDefaultPath.Size = new System.Drawing.Size(750, 31);
-            this.tbDefaultPath.TabIndex = 0;
-            this.tbDefaultPath.Texts = "";
-            this.tbDefaultPath.UnderlinedStyle = true;
-            this.tbDefaultPath._TextChanged += new System.EventHandler(this.OnDpChanged);
-            // 
-            // tbServiceName
-            // 
-            this.tbServiceName.BackColor = System.Drawing.SystemColors.Window;
-            this.tbServiceName.BorderColor = System.Drawing.Color.Green;
-            this.tbServiceName.BorderFocusColor = System.Drawing.Color.IndianRed;
-            this.tbServiceName.BorderRadius = 0;
-            this.tbServiceName.BorderSize = 2;
-            this.tbServiceName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbServiceName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbServiceName.Location = new System.Drawing.Point(35, 192);
-            this.tbServiceName.Margin = new System.Windows.Forms.Padding(4);
-            this.tbServiceName.Multiline = false;
-            this.tbServiceName.Name = "tbServiceName";
-            this.tbServiceName.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.tbServiceName.PasswordChar = false;
-            this.tbServiceName.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbServiceName.PlaceholderText = "";
-            this.tbServiceName.Size = new System.Drawing.Size(894, 31);
-            this.tbServiceName.TabIndex = 0;
-            this.tbServiceName.Texts = "";
-            this.tbServiceName.UnderlinedStyle = true;
-            this.tbServiceName._TextChanged += new System.EventHandler(this.OnSnChanged);
-            // 
-            // tbConnectionString
-            // 
-            this.tbConnectionString.BackColor = System.Drawing.SystemColors.Window;
-            this.tbConnectionString.BorderColor = System.Drawing.Color.Green;
-            this.tbConnectionString.BorderFocusColor = System.Drawing.Color.IndianRed;
-            this.tbConnectionString.BorderRadius = 0;
-            this.tbConnectionString.BorderSize = 2;
-            this.tbConnectionString.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbConnectionString.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbConnectionString.Location = new System.Drawing.Point(35, 113);
-            this.tbConnectionString.Margin = new System.Windows.Forms.Padding(4);
-            this.tbConnectionString.Multiline = false;
-            this.tbConnectionString.Name = "tbConnectionString";
-            this.tbConnectionString.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.tbConnectionString.PasswordChar = false;
-            this.tbConnectionString.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbConnectionString.PlaceholderText = "";
-            this.tbConnectionString.Size = new System.Drawing.Size(894, 31);
-            this.tbConnectionString.TabIndex = 0;
-            this.tbConnectionString.Texts = "";
-            this.tbConnectionString.UnderlinedStyle = true;
-            this.tbConnectionString._TextChanged += new System.EventHandler(this.OnCsChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(35, 258);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(169, 25);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Statistik Zielordner";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(35, 163);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(165, 25);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "SQL Service Name";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(35, 84);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(204, 25);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "SQL Connection-String";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(5, 690);
-            this.panel5.TabIndex = 5;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1080, 5);
-            this.panel1.TabIndex = 5;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel3.Location = new System.Drawing.Point(71, 49);
-            this.panel3.Margin = new System.Windows.Forms.Padding(0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(959, 610);
-            this.panel3.TabIndex = 16;
-            // 
-            // dialogueDefaultFolder
-            // 
-            this.dialogueDefaultFolder.RootFolder = System.Environment.SpecialFolder.MyDocuments;
-            // 
-            // rjButton2
-            // 
-            this.rjButton2.BackColor = System.Drawing.Color.White;
-            this.rjButton2.BackgroundColor = System.Drawing.Color.White;
-            this.rjButton2.BorderColor = System.Drawing.Color.Transparent;
-            this.rjButton2.BorderRadius = 0;
-            this.rjButton2.BorderSize = 1;
-            this.rjButton2.FlatAppearance.BorderSize = 0;
-            this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rjButton2.ForeColor = System.Drawing.Color.Black;
-            this.rjButton2.Location = new System.Drawing.Point(789, 287);
-            this.rjButton2.Name = "rjButton2";
-            this.rjButton2.Size = new System.Drawing.Size(140, 31);
-            this.rjButton2.TabIndex = 23;
-            this.rjButton2.Text = "Durchsuchen...";
-            this.rjButton2.TextColor = System.Drawing.Color.Black;
-            this.rjButton2.UseVisualStyleBackColor = false;
-            this.rjButton2.Click += new System.EventHandler(this.OnOpenFolder);
-            // 
-            // FrameSettings
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel3);
-            this.Name = "FrameSettings";
-            this.Size = new System.Drawing.Size(1080, 690);
-            this.Load += new System.EventHandler(this.OnFrameLoad);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.ResumeLayout(false);
+		/// <summary> 
+		/// Required method for Designer support - do not modify 
+		/// the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
+			label1 = new Label();
+			panel2 = new Panel();
+			rjButton2 = new RJCodeAdvance.RJControls.RJButton();
+			rjButton1 = new RJCodeAdvance.RJControls.RJButton();
+			tbDefaultPath = new RJCodeAdvance.RJControls.RJTextBox();
+			tbServiceName = new RJCodeAdvance.RJControls.RJTextBox();
+			tbConnectionString = new RJCodeAdvance.RJControls.RJTextBox();
+			label3 = new Label();
+			label4 = new Label();
+			label2 = new Label();
+			dialogueDefaultFolder = new FolderBrowserDialog();
+			panel2.SuspendLayout();
+			SuspendLayout();
+			// 
+			// label1
+			// 
+			label1.AutoSize = true;
+			label1.BackColor = Color.Transparent;
+			label1.Font = new Font("Segoe UI", 22F);
+			label1.Location = new Point(15, 12);
+			label1.Margin = new Padding(0);
+			label1.Name = "label1";
+			label1.Size = new Size(195, 41);
+			label1.TabIndex = 3;
+			label1.Text = "Einstellungen";
+			label1.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// panel2
+			// 
+			panel2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+			panel2.Controls.Add(rjButton2);
+			panel2.Controls.Add(rjButton1);
+			panel2.Controls.Add(tbDefaultPath);
+			panel2.Controls.Add(tbServiceName);
+			panel2.Controls.Add(tbConnectionString);
+			panel2.Controls.Add(label3);
+			panel2.Controls.Add(label4);
+			panel2.Controls.Add(label1);
+			panel2.Controls.Add(label2);
+			panel2.Location = new Point(67, 45);
+			panel2.Name = "panel2";
+			panel2.Size = new Size(959, 610);
+			panel2.TabIndex = 6;
+			// 
+			// rjButton2
+			// 
+			rjButton2.BackColor = Color.White;
+			rjButton2.BackgroundColor = Color.White;
+			rjButton2.BorderColor = Color.Transparent;
+			rjButton2.BorderRadius = 0;
+			rjButton2.BorderSize = 1;
+			rjButton2.FlatAppearance.BorderSize = 0;
+			rjButton2.FlatStyle = FlatStyle.Flat;
+			rjButton2.Font = new Font("Segoe UI", 12F);
+			rjButton2.ForeColor = Color.Black;
+			rjButton2.Location = new Point(789, 287);
+			rjButton2.Name = "rjButton2";
+			rjButton2.Size = new Size(140, 31);
+			rjButton2.TabIndex = 23;
+			rjButton2.Text = "Durchsuchen...";
+			rjButton2.TextColor = Color.Black;
+			rjButton2.UseVisualStyleBackColor = false;
+			rjButton2.Click += OnOpenFolder;
+			// 
+			// rjButton1
+			// 
+			rjButton1.BackColor = Color.Green;
+			rjButton1.BackgroundColor = Color.Green;
+			rjButton1.BorderColor = Color.Transparent;
+			rjButton1.BorderRadius = 0;
+			rjButton1.BorderSize = 1;
+			rjButton1.FlatAppearance.BorderSize = 0;
+			rjButton1.FlatStyle = FlatStyle.Flat;
+			rjButton1.Font = new Font("Segoe UI", 12F);
+			rjButton1.ForeColor = Color.White;
+			rjButton1.Location = new Point(729, 542);
+			rjButton1.Name = "rjButton1";
+			rjButton1.Size = new Size(200, 40);
+			rjButton1.TabIndex = 23;
+			rjButton1.Text = "Speichern";
+			rjButton1.TextColor = Color.White;
+			rjButton1.UseVisualStyleBackColor = false;
+			rjButton1.Click += OnSaveConfig;
+			// 
+			// tbDefaultPath
+			// 
+			tbDefaultPath.BackColor = SystemColors.Window;
+			tbDefaultPath.BorderColor = Color.Green;
+			tbDefaultPath.BorderFocusColor = Color.IndianRed;
+			tbDefaultPath.BorderRadius = 0;
+			tbDefaultPath.BorderSize = 2;
+			tbDefaultPath.Font = new Font("Microsoft Sans Serif", 9.5F);
+			tbDefaultPath.ForeColor = Color.FromArgb(64, 64, 64);
+			tbDefaultPath.Location = new Point(35, 287);
+			tbDefaultPath.Margin = new Padding(4);
+			tbDefaultPath.Multiline = false;
+			tbDefaultPath.Name = "tbDefaultPath";
+			tbDefaultPath.Padding = new Padding(10, 7, 10, 7);
+			tbDefaultPath.PasswordChar = false;
+			tbDefaultPath.PlaceholderColor = Color.DarkGray;
+			tbDefaultPath.PlaceholderText = "";
+			tbDefaultPath.Size = new Size(750, 31);
+			tbDefaultPath.TabIndex = 0;
+			tbDefaultPath.Texts = "";
+			tbDefaultPath.UnderlinedStyle = true;
+			tbDefaultPath._TextChanged += OnDpChanged;
+			// 
+			// tbServiceName
+			// 
+			tbServiceName.BackColor = SystemColors.Window;
+			tbServiceName.BorderColor = Color.Green;
+			tbServiceName.BorderFocusColor = Color.IndianRed;
+			tbServiceName.BorderRadius = 0;
+			tbServiceName.BorderSize = 2;
+			tbServiceName.Font = new Font("Microsoft Sans Serif", 9.5F);
+			tbServiceName.ForeColor = Color.FromArgb(64, 64, 64);
+			tbServiceName.Location = new Point(35, 192);
+			tbServiceName.Margin = new Padding(4);
+			tbServiceName.Multiline = false;
+			tbServiceName.Name = "tbServiceName";
+			tbServiceName.Padding = new Padding(10, 7, 10, 7);
+			tbServiceName.PasswordChar = false;
+			tbServiceName.PlaceholderColor = Color.DarkGray;
+			tbServiceName.PlaceholderText = "";
+			tbServiceName.Size = new Size(894, 31);
+			tbServiceName.TabIndex = 0;
+			tbServiceName.Texts = "";
+			tbServiceName.UnderlinedStyle = true;
+			tbServiceName._TextChanged += OnSnChanged;
+			// 
+			// tbConnectionString
+			// 
+			tbConnectionString.BackColor = SystemColors.Window;
+			tbConnectionString.BorderColor = Color.Green;
+			tbConnectionString.BorderFocusColor = Color.IndianRed;
+			tbConnectionString.BorderRadius = 0;
+			tbConnectionString.BorderSize = 2;
+			tbConnectionString.Font = new Font("Microsoft Sans Serif", 9.5F);
+			tbConnectionString.ForeColor = Color.FromArgb(64, 64, 64);
+			tbConnectionString.Location = new Point(35, 113);
+			tbConnectionString.Margin = new Padding(4);
+			tbConnectionString.Multiline = false;
+			tbConnectionString.Name = "tbConnectionString";
+			tbConnectionString.Padding = new Padding(10, 7, 10, 7);
+			tbConnectionString.PasswordChar = false;
+			tbConnectionString.PlaceholderColor = Color.DarkGray;
+			tbConnectionString.PlaceholderText = "";
+			tbConnectionString.Size = new Size(894, 31);
+			tbConnectionString.TabIndex = 0;
+			tbConnectionString.Texts = "";
+			tbConnectionString.UnderlinedStyle = true;
+			tbConnectionString._TextChanged += OnCsChanged;
+			// 
+			// label3
+			// 
+			label3.AutoSize = true;
+			label3.BackColor = Color.Transparent;
+			label3.Font = new Font("Segoe UI", 14F);
+			label3.Location = new Point(35, 258);
+			label3.Name = "label3";
+			label3.Size = new Size(169, 25);
+			label3.TabIndex = 3;
+			label3.Text = "Statistik Zielordner";
+			label3.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// label4
+			// 
+			label4.AutoSize = true;
+			label4.BackColor = Color.Transparent;
+			label4.Font = new Font("Segoe UI", 14F);
+			label4.Location = new Point(35, 163);
+			label4.Name = "label4";
+			label4.Size = new Size(165, 25);
+			label4.TabIndex = 3;
+			label4.Text = "SQL Service Name";
+			label4.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// label2
+			// 
+			label2.AutoSize = true;
+			label2.BackColor = Color.Transparent;
+			label2.Font = new Font("Segoe UI", 14F);
+			label2.Location = new Point(35, 84);
+			label2.Name = "label2";
+			label2.Size = new Size(204, 25);
+			label2.TabIndex = 3;
+			label2.Text = "SQL Connection-String";
+			label2.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// dialogueDefaultFolder
+			// 
+			dialogueDefaultFolder.RootFolder = Environment.SpecialFolder.MyDocuments;
+			// 
+			// FrameSettings
+			// 
+			AutoScaleDimensions = new SizeF(7F, 15F);
+			AutoScaleMode = AutoScaleMode.Font;
+			BackColor = Color.FromArgb(160, 255, 255, 255);
+			Controls.Add(panel2);
+			Name = "FrameSettings";
+			Size = new Size(1080, 690);
+			Load += OnFrameLoad;
+			panel2.ResumeLayout(false);
+			panel2.PerformLayout();
+			ResumeLayout(false);
+		}
 
-        }
+		#endregion
 
-        #endregion
-
-        private Label label1;
+		private Label label1;
         private Panel panel2;
         private RJCodeAdvance.RJControls.RJTextBox tbConnectionString;
         private Label label2;
-        private Panel panel5;
-        private Panel panel1;
-        private Panel panel3;
         private RJCodeAdvance.RJControls.RJTextBox tbDefaultPath;
         private Label label3;
         private RJCodeAdvance.RJControls.RJButton rjButton1;
-        private Panel panel4;
-        private Panel panel6;
         private FolderBrowserDialog dialogueDefaultFolder;
         private RJCodeAdvance.RJControls.RJTextBox tbServiceName;
         private Label label4;

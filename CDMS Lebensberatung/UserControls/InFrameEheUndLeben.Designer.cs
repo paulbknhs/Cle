@@ -15,497 +15,494 @@ namespace CDMS_Lebensberatung.AddSpecific
             base.Dispose(disposing);
         }
 
-        #region Component Designer generated code
+		#region Component Designer generated code
 
-                                        private void InitializeComponent()
-        {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dropLeistung = new CDMS_Lebensberatung.UserControls.DropDown();
-            this.dropWirtschaft = new CDMS_Lebensberatung.UserControls.DropDown();
-            this.groupAnmeldung = new System.Windows.Forms.GroupBox();
-            this.cbAndere = new System.Windows.Forms.CheckBox();
-            this.cbStraft = new System.Windows.Forms.CheckBox();
-            this.cbFamilie = new System.Windows.Forms.CheckBox();
-            this.cbPartn = new System.Windows.Forms.CheckBox();
-            this.cbGeld = new System.Windows.Forms.CheckBox();
-            this.cbMisshand = new System.Windows.Forms.CheckBox();
-            this.cbKörpBehind = new System.Windows.Forms.CheckBox();
-            this.cbSucht = new System.Windows.Forms.CheckBox();
-            this.cbPsychosen = new System.Windows.Forms.CheckBox();
-            this.cbSexuell = new System.Windows.Forms.CheckBox();
-            this.cbSuizid = new System.Windows.Forms.CheckBox();
-            this.cbTrennung = new System.Windows.Forms.CheckBox();
-            this.cbPsychisch = new System.Windows.Forms.CheckBox();
-            this.chKrankTod = new System.Windows.Forms.CheckBox();
-            this.cbKörper = new System.Windows.Forms.CheckBox();
-            this.tbErläuterung = new CDMS_Lebensberatung.UserControls.RJTextBox();
-            this.togglePartnerschaft = new RJCodeAdvance.RJControls.RJToggleButton();
-            this.toggleKinder = new RJCodeAdvance.RJControls.RJToggleButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.toggleSonstige = new RJCodeAdvance.RJControls.RJToggleButton();
-            this.label3 = new System.Windows.Forms.Label();
-            this.toggleUnbekannt = new RJCodeAdvance.RJControls.RJToggleButton();
-            this.label4 = new System.Windows.Forms.Label();
-            this.gridStunden = new System.Windows.Forms.DataGridView();
-            this.Art = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stunden = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSave = new RJCodeAdvance.RJControls.RJButton();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.groupAnmeldung.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridStunden)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // dropLeistung
-            // 
-            this.dropLeistung.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.dropLeistung.BorderColor = System.Drawing.Color.Black;
-            this.dropLeistung.BorderSize = 1;
-            this.dropLeistung.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dropLeistung.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dropLeistung.ForeColor = System.Drawing.Color.DimGray;
-            this.dropLeistung.IconColor = System.Drawing.Color.Black;
-            this.dropLeistung.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.dropLeistung.ListTextColor = System.Drawing.Color.DimGray;
-            this.dropLeistung.Location = new System.Drawing.Point(38, 85);
-            this.dropLeistung.Margin = new System.Windows.Forms.Padding(10);
-            this.dropLeistung.MinimumSize = new System.Drawing.Size(200, 30);
-            this.dropLeistung.Name = "dropLeistung";
-            this.dropLeistung.Padding = new System.Windows.Forms.Padding(1);
-            this.dropLeistung.Size = new System.Drawing.Size(200, 32);
-            this.dropLeistung.TabIndex = 3;
-            this.dropLeistung.Texts = "";
-            // 
-            // dropWirtschaft
-            // 
-            this.dropWirtschaft.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.dropWirtschaft.BorderColor = System.Drawing.Color.Black;
-            this.dropWirtschaft.BorderSize = 1;
-            this.dropWirtschaft.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dropWirtschaft.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dropWirtschaft.ForeColor = System.Drawing.Color.DimGray;
-            this.dropWirtschaft.IconColor = System.Drawing.Color.Black;
-            this.dropWirtschaft.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.dropWirtschaft.ListTextColor = System.Drawing.Color.DimGray;
-            this.dropWirtschaft.Location = new System.Drawing.Point(258, 85);
-            this.dropWirtschaft.Margin = new System.Windows.Forms.Padding(10);
-            this.dropWirtschaft.MinimumSize = new System.Drawing.Size(200, 30);
-            this.dropWirtschaft.Name = "dropWirtschaft";
-            this.dropWirtschaft.Padding = new System.Windows.Forms.Padding(1);
-            this.dropWirtschaft.Size = new System.Drawing.Size(200, 32);
-            this.dropWirtschaft.TabIndex = 3;
-            this.dropWirtschaft.Texts = "";
-            // 
-            // groupAnmeldung
-            // 
-            this.groupAnmeldung.Controls.Add(this.cbAndere);
-            this.groupAnmeldung.Controls.Add(this.cbStraft);
-            this.groupAnmeldung.Controls.Add(this.cbFamilie);
-            this.groupAnmeldung.Controls.Add(this.cbPartn);
-            this.groupAnmeldung.Controls.Add(this.cbGeld);
-            this.groupAnmeldung.Controls.Add(this.cbMisshand);
-            this.groupAnmeldung.Controls.Add(this.cbKörpBehind);
-            this.groupAnmeldung.Controls.Add(this.cbSucht);
-            this.groupAnmeldung.Controls.Add(this.cbPsychosen);
-            this.groupAnmeldung.Controls.Add(this.cbSexuell);
-            this.groupAnmeldung.Controls.Add(this.cbSuizid);
-            this.groupAnmeldung.Controls.Add(this.cbTrennung);
-            this.groupAnmeldung.Controls.Add(this.cbPsychisch);
-            this.groupAnmeldung.Controls.Add(this.chKrankTod);
-            this.groupAnmeldung.Controls.Add(this.cbKörper);
-            this.groupAnmeldung.Location = new System.Drawing.Point(38, 130);
-            this.groupAnmeldung.Name = "groupAnmeldung";
-            this.groupAnmeldung.Padding = new System.Windows.Forms.Padding(5);
-            this.groupAnmeldung.Size = new System.Drawing.Size(200, 383);
-            this.groupAnmeldung.TabIndex = 4;
-            this.groupAnmeldung.TabStop = false;
-            this.groupAnmeldung.Text = "Anmeldegründe";
-            // 
-            // cbAndere
-            // 
-            this.cbAndere.AutoSize = true;
-            this.cbAndere.Location = new System.Drawing.Point(8, 356);
-            this.cbAndere.Name = "cbAndere";
-            this.cbAndere.Size = new System.Drawing.Size(118, 19);
-            this.cbAndere.TabIndex = 0;
-            this.cbAndere.Text = "Andere Probleme";
-            this.cbAndere.UseVisualStyleBackColor = true;
-            // 
-            // cbStraft
-            // 
-            this.cbStraft.AutoSize = true;
-            this.cbStraft.Location = new System.Drawing.Point(8, 331);
-            this.cbStraft.Name = "cbStraft";
-            this.cbStraft.Size = new System.Drawing.Size(77, 19);
-            this.cbStraft.TabIndex = 0;
-            this.cbStraft.Text = "Straftaten";
-            this.cbStraft.UseVisualStyleBackColor = true;
-            // 
-            // cbFamilie
-            // 
-            this.cbFamilie.AutoSize = true;
-            this.cbFamilie.Location = new System.Drawing.Point(8, 306);
-            this.cbFamilie.Name = "cbFamilie";
-            this.cbFamilie.Size = new System.Drawing.Size(128, 19);
-            this.cbFamilie.TabIndex = 0;
-            this.cbFamilie.Text = "Familiäre Probleme";
-            this.cbFamilie.UseVisualStyleBackColor = true;
-            // 
-            // cbPartn
-            // 
-            this.cbPartn.AutoSize = true;
-            this.cbPartn.Location = new System.Drawing.Point(8, 281);
-            this.cbPartn.Name = "cbPartn";
-            this.cbPartn.Size = new System.Drawing.Size(154, 19);
-            this.cbPartn.TabIndex = 0;
-            this.cbPartn.Text = "Probleme mit Partner*in";
-            this.cbPartn.UseVisualStyleBackColor = true;
-            // 
-            // cbGeld
-            // 
-            this.cbGeld.AutoSize = true;
-            this.cbGeld.Location = new System.Drawing.Point(8, 256);
-            this.cbGeld.Name = "cbGeld";
-            this.cbGeld.Size = new System.Drawing.Size(93, 19);
-            this.cbGeld.TabIndex = 0;
-            this.cbGeld.Text = "Geld / Arbeit";
-            this.cbGeld.UseVisualStyleBackColor = true;
-            // 
-            // cbMisshand
-            // 
-            this.cbMisshand.AutoSize = true;
-            this.cbMisshand.Location = new System.Drawing.Point(8, 206);
-            this.cbMisshand.Name = "cbMisshand";
-            this.cbMisshand.Size = new System.Drawing.Size(164, 19);
-            this.cbMisshand.TabIndex = 0;
-            this.cbMisshand.Text = "Allgemeine Misshandlung";
-            this.cbMisshand.UseVisualStyleBackColor = true;
-            // 
-            // cbKörpBehind
-            // 
-            this.cbKörpBehind.AutoSize = true;
-            this.cbKörpBehind.Location = new System.Drawing.Point(8, 156);
-            this.cbKörpBehind.Name = "cbKörpBehind";
-            this.cbKörpBehind.Size = new System.Drawing.Size(157, 19);
-            this.cbKörpBehind.TabIndex = 0;
-            this.cbKörpBehind.Text = "Körperliche Behinderung";
-            this.cbKörpBehind.UseVisualStyleBackColor = true;
-            // 
-            // cbSucht
-            // 
-            this.cbSucht.AutoSize = true;
-            this.cbSucht.Location = new System.Drawing.Point(8, 106);
-            this.cbSucht.Name = "cbSucht";
-            this.cbSucht.Size = new System.Drawing.Size(107, 19);
-            this.cbSucht.TabIndex = 0;
-            this.cbSucht.Text = "Suchtprobleme";
-            this.cbSucht.UseVisualStyleBackColor = true;
-            // 
-            // cbPsychosen
-            // 
-            this.cbPsychosen.AutoSize = true;
-            this.cbPsychosen.Location = new System.Drawing.Point(83, 81);
-            this.cbPsychosen.Name = "cbPsychosen";
-            this.cbPsychosen.Size = new System.Drawing.Size(82, 19);
-            this.cbPsychosen.TabIndex = 0;
-            this.cbPsychosen.Text = "Psychosen";
-            this.cbPsychosen.UseVisualStyleBackColor = true;
-            // 
-            // cbSexuell
-            // 
-            this.cbSexuell.AutoSize = true;
-            this.cbSexuell.Location = new System.Drawing.Point(8, 231);
-            this.cbSexuell.Name = "cbSexuell";
-            this.cbSexuell.Size = new System.Drawing.Size(123, 19);
-            this.cbSexuell.TabIndex = 0;
-            this.cbSexuell.Text = "Sexueller Übergriff";
-            this.cbSexuell.UseVisualStyleBackColor = true;
-            // 
-            // cbSuizid
-            // 
-            this.cbSuizid.AutoSize = true;
-            this.cbSuizid.Location = new System.Drawing.Point(8, 81);
-            this.cbSuizid.Name = "cbSuizid";
-            this.cbSuizid.Size = new System.Drawing.Size(57, 19);
-            this.cbSuizid.TabIndex = 0;
-            this.cbSuizid.Text = "Suizid";
-            this.cbSuizid.UseVisualStyleBackColor = true;
-            // 
-            // cbTrennung
-            // 
-            this.cbTrennung.AutoSize = true;
-            this.cbTrennung.Location = new System.Drawing.Point(8, 181);
-            this.cbTrennung.Name = "cbTrennung";
-            this.cbTrennung.Size = new System.Drawing.Size(143, 19);
-            this.cbTrennung.TabIndex = 0;
-            this.cbTrennung.Text = "Trennung / Scheidung";
-            this.cbTrennung.UseVisualStyleBackColor = true;
-            // 
-            // cbPsychisch
-            // 
-            this.cbPsychisch.AutoSize = true;
-            this.cbPsychisch.Location = new System.Drawing.Point(8, 56);
-            this.cbPsychisch.Name = "cbPsychisch";
-            this.cbPsychisch.Size = new System.Drawing.Size(145, 19);
-            this.cbPsychisch.TabIndex = 0;
-            this.cbPsychisch.Text = "Psychische Schmerzen";
-            this.cbPsychisch.UseVisualStyleBackColor = true;
-            // 
-            // chKrankTod
-            // 
-            this.chKrankTod.AutoSize = true;
-            this.chKrankTod.Location = new System.Drawing.Point(8, 131);
-            this.chKrankTod.Name = "chKrankTod";
-            this.chKrankTod.Size = new System.Drawing.Size(106, 19);
-            this.chKrankTod.TabIndex = 0;
-            this.chKrankTod.Text = "Krankheit / Tod";
-            this.chKrankTod.UseVisualStyleBackColor = true;
-            // 
-            // cbKörper
-            // 
-            this.cbKörper.AutoSize = true;
-            this.cbKörper.Location = new System.Drawing.Point(8, 31);
-            this.cbKörper.Name = "cbKörper";
-            this.cbKörper.Size = new System.Drawing.Size(147, 19);
-            this.cbKörper.TabIndex = 0;
-            this.cbKörper.Text = "Körperliche Schmerzen";
-            this.cbKörper.UseVisualStyleBackColor = true;
-            // 
-            // tbErläuterung
-            // 
-            this.tbErläuterung.BackColor = System.Drawing.SystemColors.Window;
-            this.tbErläuterung.BorderColor = System.Drawing.Color.Black;
-            this.tbErläuterung.BorderFocusColor = System.Drawing.Color.Green;
-            this.tbErläuterung.BorderRadius = 0;
-            this.tbErläuterung.BorderSize = 1;
-            this.tbErläuterung.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbErläuterung.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbErläuterung.Location = new System.Drawing.Point(38, 526);
-            this.tbErläuterung.Margin = new System.Windows.Forms.Padding(10);
-            this.tbErläuterung.Multiline = false;
-            this.tbErläuterung.Name = "tbErläuterung";
-            this.tbErläuterung.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.tbErläuterung.PasswordChar = false;
-            this.tbErläuterung.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbErläuterung.PlaceholderText = "Erläuterung zu Andere";
-            this.tbErläuterung.Size = new System.Drawing.Size(200, 32);
-            this.tbErläuterung.TabIndex = 5;
-            this.tbErläuterung.Texts = "";
-            this.tbErläuterung.UnderlinedStyle = true;
-            // 
-            // togglePartnerschaft
-            // 
-            this.togglePartnerschaft.AutoSize = true;
-            this.togglePartnerschaft.Location = new System.Drawing.Point(258, 148);
-            this.togglePartnerschaft.MinimumSize = new System.Drawing.Size(45, 22);
-            this.togglePartnerschaft.Name = "togglePartnerschaft";
-            this.togglePartnerschaft.OffBackColor = System.Drawing.Color.Gray;
-            this.togglePartnerschaft.OffToggleColor = System.Drawing.Color.Gainsboro;
-            this.togglePartnerschaft.OnBackColor = System.Drawing.Color.Green;
-            this.togglePartnerschaft.OnToggleColor = System.Drawing.Color.WhiteSmoke;
-            this.togglePartnerschaft.Size = new System.Drawing.Size(45, 22);
-            this.togglePartnerschaft.TabIndex = 6;
-            this.togglePartnerschaft.UseVisualStyleBackColor = true;
-            // 
-            // toggleKinder
-            // 
-            this.toggleKinder.AutoSize = true;
-            this.toggleKinder.Location = new System.Drawing.Point(258, 192);
-            this.toggleKinder.MinimumSize = new System.Drawing.Size(45, 22);
-            this.toggleKinder.Name = "toggleKinder";
-            this.toggleKinder.OffBackColor = System.Drawing.Color.Gray;
-            this.toggleKinder.OffToggleColor = System.Drawing.Color.Gainsboro;
-            this.toggleKinder.OnBackColor = System.Drawing.Color.Green;
-            this.toggleKinder.OnToggleColor = System.Drawing.Color.WhiteSmoke;
-            this.toggleKinder.Size = new System.Drawing.Size(45, 22);
-            this.toggleKinder.TabIndex = 6;
-            this.toggleKinder.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(309, 151);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 15);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "in Partnerschaft";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(309, 195);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 15);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "mit Kind";
-            // 
-            // toggleSonstige
-            // 
-            this.toggleSonstige.AutoSize = true;
-            this.toggleSonstige.Location = new System.Drawing.Point(258, 236);
-            this.toggleSonstige.MinimumSize = new System.Drawing.Size(45, 22);
-            this.toggleSonstige.Name = "toggleSonstige";
-            this.toggleSonstige.OffBackColor = System.Drawing.Color.Gray;
-            this.toggleSonstige.OffToggleColor = System.Drawing.Color.Gainsboro;
-            this.toggleSonstige.OnBackColor = System.Drawing.Color.Green;
-            this.toggleSonstige.OnToggleColor = System.Drawing.Color.WhiteSmoke;
-            this.toggleSonstige.Size = new System.Drawing.Size(45, 22);
-            this.toggleSonstige.TabIndex = 6;
-            this.toggleSonstige.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(309, 239);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 15);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Sonstiges";
-            // 
-            // toggleUnbekannt
-            // 
-            this.toggleUnbekannt.AutoSize = true;
-            this.toggleUnbekannt.Location = new System.Drawing.Point(258, 280);
-            this.toggleUnbekannt.MinimumSize = new System.Drawing.Size(45, 22);
-            this.toggleUnbekannt.Name = "toggleUnbekannt";
-            this.toggleUnbekannt.OffBackColor = System.Drawing.Color.Gray;
-            this.toggleUnbekannt.OffToggleColor = System.Drawing.Color.Gainsboro;
-            this.toggleUnbekannt.OnBackColor = System.Drawing.Color.Green;
-            this.toggleUnbekannt.OnToggleColor = System.Drawing.Color.WhiteSmoke;
-            this.toggleUnbekannt.Size = new System.Drawing.Size(45, 22);
-            this.toggleUnbekannt.TabIndex = 6;
-            this.toggleUnbekannt.UseVisualStyleBackColor = true;
-            this.toggleUnbekannt.CheckedChanged += new System.EventHandler(this.onToggleUnbekannt);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(309, 283);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 15);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Unbekannt";
-            // 
-            // gridStunden
-            // 
-            this.gridStunden.AllowUserToAddRows = false;
-            this.gridStunden.AllowUserToDeleteRows = false;
-            this.gridStunden.AllowUserToResizeColumns = false;
-            this.gridStunden.AllowUserToResizeRows = false;
-            this.gridStunden.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gridStunden.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.gridStunden.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.gridStunden.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridStunden.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Art,
-            this.Stunden});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightGreen;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridStunden.DefaultCellStyle = dataGridViewCellStyle1;
-            this.gridStunden.EnableHeadersVisualStyles = false;
-            this.gridStunden.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.gridStunden.Location = new System.Drawing.Point(258, 315);
-            this.gridStunden.Name = "gridStunden";
-            this.gridStunden.RowHeadersVisible = false;
-            this.gridStunden.RowHeadersWidth = 40;
-            this.gridStunden.RowTemplate.Height = 25;
-            this.gridStunden.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.gridStunden.Size = new System.Drawing.Size(200, 220);
-            this.gridStunden.TabIndex = 11;
-            this.gridStunden.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.OnValueChange);
-            // 
-            // Art
-            // 
-            this.Art.HeaderText = "Art";
-            this.Art.Name = "Art";
-            this.Art.ReadOnly = true;
-            // 
-            // Stunden
-            // 
-            this.Stunden.HeaderText = "Stunden";
-            this.Stunden.Name = "Stunden";
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.Green;
-            this.btnSave.BackgroundColor = System.Drawing.Color.Green;
-            this.btnSave.BorderColor = System.Drawing.Color.Transparent;
-            this.btnSave.BorderRadius = 0;
-            this.btnSave.BorderSize = 1;
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(258, 541);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(200, 40);
-            this.btnSave.TabIndex = 23;
-            this.btnSave.Text = "Speichern";
-            this.btnSave.TextColor = System.Drawing.Color.White;
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.OnButtonSave);
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel4.Location = new System.Drawing.Point(258, 541);
-            this.panel4.Margin = new System.Windows.Forms.Padding(0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(203, 43);
-            this.panel4.TabIndex = 24;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.label5.Location = new System.Drawing.Point(38, 564);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(123, 13);
-            this.label5.TabIndex = 26;
-            this.label5.Text = "Erläuterung zu Andere";
-            // 
-            // EheUndLeben
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.gridStunden);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.toggleKinder);
-            this.Controls.Add(this.toggleUnbekannt);
-            this.Controls.Add(this.toggleSonstige);
-            this.Controls.Add(this.togglePartnerschaft);
-            this.Controls.Add(this.tbErläuterung);
-            this.Controls.Add(this.groupAnmeldung);
-            this.Controls.Add(this.dropWirtschaft);
-            this.Controls.Add(this.dropLeistung);
-            this.Name = "EheUndLeben";
-            this.Size = new System.Drawing.Size(500, 590);
-            this.Load += new System.EventHandler(this.EheUndLeben_Load);
-            this.groupAnmeldung.ResumeLayout(false);
-            this.groupAnmeldung.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridStunden)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+		private void InitializeComponent()
+		{
+			DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+			dropLeistung = new DropDown();
+			dropWirtschaft = new DropDown();
+			groupAnmeldung = new GroupBox();
+			cbAndere = new CheckBox();
+			cbStraft = new CheckBox();
+			cbFamilie = new CheckBox();
+			cbPartn = new CheckBox();
+			cbGeld = new CheckBox();
+			cbMisshand = new CheckBox();
+			cbKörpBehind = new CheckBox();
+			cbSucht = new CheckBox();
+			cbPsychosen = new CheckBox();
+			cbSexuell = new CheckBox();
+			cbSuizid = new CheckBox();
+			cbTrennung = new CheckBox();
+			cbPsychisch = new CheckBox();
+			chKrankTod = new CheckBox();
+			cbKörper = new CheckBox();
+			tbErläuterung = new RJTextBox();
+			togglePartnerschaft = new RJCodeAdvance.RJControls.RJToggleButton();
+			toggleKinder = new RJCodeAdvance.RJControls.RJToggleButton();
+			label1 = new Label();
+			label2 = new Label();
+			toggleSonstige = new RJCodeAdvance.RJControls.RJToggleButton();
+			label3 = new Label();
+			toggleUnbekannt = new RJCodeAdvance.RJControls.RJToggleButton();
+			label4 = new Label();
+			gridStunden = new DataGridView();
+			Art = new DataGridViewTextBoxColumn();
+			Stunden = new DataGridViewTextBoxColumn();
+			btnSave = new RJCodeAdvance.RJControls.RJButton();
+			panel4 = new Panel();
+			label5 = new Label();
+			groupAnmeldung.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)gridStunden).BeginInit();
+			SuspendLayout();
+			// 
+			// dropLeistung
+			// 
+			dropLeistung.BackColor = Color.WhiteSmoke;
+			dropLeistung.BorderColor = Color.Black;
+			dropLeistung.BorderSize = 1;
+			dropLeistung.DropDownStyle = ComboBoxStyle.DropDownList;
+			dropLeistung.Font = new Font("Segoe UI", 10F);
+			dropLeistung.ForeColor = Color.DimGray;
+			dropLeistung.IconColor = Color.Black;
+			dropLeistung.ListBackColor = Color.FromArgb(230, 228, 245);
+			dropLeistung.ListTextColor = Color.DimGray;
+			dropLeistung.Location = new Point(38, 85);
+			dropLeistung.Margin = new Padding(10);
+			dropLeistung.MinimumSize = new Size(200, 30);
+			dropLeistung.Name = "dropLeistung";
+			dropLeistung.Padding = new Padding(1);
+			dropLeistung.Size = new Size(200, 32);
+			dropLeistung.TabIndex = 3;
+			dropLeistung.Texts = "";
+			// 
+			// dropWirtschaft
+			// 
+			dropWirtschaft.BackColor = Color.WhiteSmoke;
+			dropWirtschaft.BorderColor = Color.Black;
+			dropWirtschaft.BorderSize = 1;
+			dropWirtschaft.DropDownStyle = ComboBoxStyle.DropDownList;
+			dropWirtschaft.Font = new Font("Segoe UI", 8F);
+			dropWirtschaft.ForeColor = Color.DimGray;
+			dropWirtschaft.IconColor = Color.Black;
+			dropWirtschaft.ListBackColor = Color.FromArgb(230, 228, 245);
+			dropWirtschaft.ListTextColor = Color.DimGray;
+			dropWirtschaft.Location = new Point(258, 85);
+			dropWirtschaft.Margin = new Padding(10);
+			dropWirtschaft.MinimumSize = new Size(200, 30);
+			dropWirtschaft.Name = "dropWirtschaft";
+			dropWirtschaft.Padding = new Padding(1);
+			dropWirtschaft.Size = new Size(200, 32);
+			dropWirtschaft.TabIndex = 3;
+			dropWirtschaft.Texts = "";
+			// 
+			// groupAnmeldung
+			// 
+			groupAnmeldung.Controls.Add(cbAndere);
+			groupAnmeldung.Controls.Add(cbStraft);
+			groupAnmeldung.Controls.Add(cbFamilie);
+			groupAnmeldung.Controls.Add(cbPartn);
+			groupAnmeldung.Controls.Add(cbGeld);
+			groupAnmeldung.Controls.Add(cbMisshand);
+			groupAnmeldung.Controls.Add(cbKörpBehind);
+			groupAnmeldung.Controls.Add(cbSucht);
+			groupAnmeldung.Controls.Add(cbPsychosen);
+			groupAnmeldung.Controls.Add(cbSexuell);
+			groupAnmeldung.Controls.Add(cbSuizid);
+			groupAnmeldung.Controls.Add(cbTrennung);
+			groupAnmeldung.Controls.Add(cbPsychisch);
+			groupAnmeldung.Controls.Add(chKrankTod);
+			groupAnmeldung.Controls.Add(cbKörper);
+			groupAnmeldung.Location = new Point(38, 130);
+			groupAnmeldung.Name = "groupAnmeldung";
+			groupAnmeldung.Padding = new Padding(5);
+			groupAnmeldung.Size = new Size(200, 383);
+			groupAnmeldung.TabIndex = 4;
+			groupAnmeldung.TabStop = false;
+			groupAnmeldung.Text = "Anmeldegründe";
+			// 
+			// cbAndere
+			// 
+			cbAndere.AutoSize = true;
+			cbAndere.Location = new Point(8, 356);
+			cbAndere.Name = "cbAndere";
+			cbAndere.Size = new Size(118, 19);
+			cbAndere.TabIndex = 0;
+			cbAndere.Text = "Andere Probleme";
+			cbAndere.UseVisualStyleBackColor = true;
+			// 
+			// cbStraft
+			// 
+			cbStraft.AutoSize = true;
+			cbStraft.Location = new Point(8, 331);
+			cbStraft.Name = "cbStraft";
+			cbStraft.Size = new Size(77, 19);
+			cbStraft.TabIndex = 0;
+			cbStraft.Text = "Straftaten";
+			cbStraft.UseVisualStyleBackColor = true;
+			// 
+			// cbFamilie
+			// 
+			cbFamilie.AutoSize = true;
+			cbFamilie.Location = new Point(8, 306);
+			cbFamilie.Name = "cbFamilie";
+			cbFamilie.Size = new Size(128, 19);
+			cbFamilie.TabIndex = 0;
+			cbFamilie.Text = "Familiäre Probleme";
+			cbFamilie.UseVisualStyleBackColor = true;
+			// 
+			// cbPartn
+			// 
+			cbPartn.AutoSize = true;
+			cbPartn.Location = new Point(8, 281);
+			cbPartn.Name = "cbPartn";
+			cbPartn.Size = new Size(154, 19);
+			cbPartn.TabIndex = 0;
+			cbPartn.Text = "Probleme mit Partner*in";
+			cbPartn.UseVisualStyleBackColor = true;
+			// 
+			// cbGeld
+			// 
+			cbGeld.AutoSize = true;
+			cbGeld.Location = new Point(8, 256);
+			cbGeld.Name = "cbGeld";
+			cbGeld.Size = new Size(93, 19);
+			cbGeld.TabIndex = 0;
+			cbGeld.Text = "Geld / Arbeit";
+			cbGeld.UseVisualStyleBackColor = true;
+			// 
+			// cbMisshand
+			// 
+			cbMisshand.AutoSize = true;
+			cbMisshand.Location = new Point(8, 206);
+			cbMisshand.Name = "cbMisshand";
+			cbMisshand.Size = new Size(164, 19);
+			cbMisshand.TabIndex = 0;
+			cbMisshand.Text = "Allgemeine Misshandlung";
+			cbMisshand.UseVisualStyleBackColor = true;
+			// 
+			// cbKörpBehind
+			// 
+			cbKörpBehind.AutoSize = true;
+			cbKörpBehind.Location = new Point(8, 156);
+			cbKörpBehind.Name = "cbKörpBehind";
+			cbKörpBehind.Size = new Size(157, 19);
+			cbKörpBehind.TabIndex = 0;
+			cbKörpBehind.Text = "Körperliche Behinderung";
+			cbKörpBehind.UseVisualStyleBackColor = true;
+			// 
+			// cbSucht
+			// 
+			cbSucht.AutoSize = true;
+			cbSucht.Location = new Point(8, 106);
+			cbSucht.Name = "cbSucht";
+			cbSucht.Size = new Size(107, 19);
+			cbSucht.TabIndex = 0;
+			cbSucht.Text = "Suchtprobleme";
+			cbSucht.UseVisualStyleBackColor = true;
+			// 
+			// cbPsychosen
+			// 
+			cbPsychosen.AutoSize = true;
+			cbPsychosen.Location = new Point(83, 81);
+			cbPsychosen.Name = "cbPsychosen";
+			cbPsychosen.Size = new Size(82, 19);
+			cbPsychosen.TabIndex = 0;
+			cbPsychosen.Text = "Psychosen";
+			cbPsychosen.UseVisualStyleBackColor = true;
+			// 
+			// cbSexuell
+			// 
+			cbSexuell.AutoSize = true;
+			cbSexuell.Location = new Point(8, 231);
+			cbSexuell.Name = "cbSexuell";
+			cbSexuell.Size = new Size(123, 19);
+			cbSexuell.TabIndex = 0;
+			cbSexuell.Text = "Sexueller Übergriff";
+			cbSexuell.UseVisualStyleBackColor = true;
+			// 
+			// cbSuizid
+			// 
+			cbSuizid.AutoSize = true;
+			cbSuizid.Location = new Point(8, 81);
+			cbSuizid.Name = "cbSuizid";
+			cbSuizid.Size = new Size(57, 19);
+			cbSuizid.TabIndex = 0;
+			cbSuizid.Text = "Suizid";
+			cbSuizid.UseVisualStyleBackColor = true;
+			// 
+			// cbTrennung
+			// 
+			cbTrennung.AutoSize = true;
+			cbTrennung.Location = new Point(8, 181);
+			cbTrennung.Name = "cbTrennung";
+			cbTrennung.Size = new Size(143, 19);
+			cbTrennung.TabIndex = 0;
+			cbTrennung.Text = "Trennung / Scheidung";
+			cbTrennung.UseVisualStyleBackColor = true;
+			// 
+			// cbPsychisch
+			// 
+			cbPsychisch.AutoSize = true;
+			cbPsychisch.Location = new Point(8, 56);
+			cbPsychisch.Name = "cbPsychisch";
+			cbPsychisch.Size = new Size(145, 19);
+			cbPsychisch.TabIndex = 0;
+			cbPsychisch.Text = "Psychische Symptome";
+			cbPsychisch.UseVisualStyleBackColor = true;
+			// 
+			// chKrankTod
+			// 
+			chKrankTod.AutoSize = true;
+			chKrankTod.Location = new Point(8, 131);
+			chKrankTod.Name = "chKrankTod";
+			chKrankTod.Size = new Size(106, 19);
+			chKrankTod.TabIndex = 0;
+			chKrankTod.Text = "Krankheit / Tod";
+			chKrankTod.UseVisualStyleBackColor = true;
+			// 
+			// cbKörper
+			// 
+			cbKörper.AutoSize = true;
+			cbKörper.Location = new Point(8, 31);
+			cbKörper.Name = "cbKörper";
+			cbKörper.Size = new Size(147, 19);
+			cbKörper.TabIndex = 0;
+			cbKörper.Text = "Körperliche Symptome";
+			cbKörper.UseVisualStyleBackColor = true;
+			// 
+			// tbErläuterung
+			// 
+			tbErläuterung.BackColor = SystemColors.Window;
+			tbErläuterung.BorderColor = Color.Black;
+			tbErläuterung.BorderFocusColor = Color.Green;
+			tbErläuterung.BorderRadius = 0;
+			tbErläuterung.BorderSize = 1;
+			tbErläuterung.Font = new Font("Segoe UI", 9.75F);
+			tbErläuterung.ForeColor = Color.FromArgb(64, 64, 64);
+			tbErläuterung.Location = new Point(38, 526);
+			tbErläuterung.Margin = new Padding(10);
+			tbErläuterung.Multiline = false;
+			tbErläuterung.Name = "tbErläuterung";
+			tbErläuterung.Padding = new Padding(10, 7, 10, 7);
+			tbErläuterung.PasswordChar = false;
+			tbErläuterung.PlaceholderColor = Color.DarkGray;
+			tbErläuterung.PlaceholderText = "Erläuterung zu Andere";
+			tbErläuterung.Size = new Size(200, 32);
+			tbErläuterung.TabIndex = 5;
+			tbErläuterung.Texts = "";
+			tbErläuterung.UnderlinedStyle = true;
+			// 
+			// togglePartnerschaft
+			// 
+			togglePartnerschaft.AutoSize = true;
+			togglePartnerschaft.Location = new Point(258, 148);
+			togglePartnerschaft.MinimumSize = new Size(45, 22);
+			togglePartnerschaft.Name = "togglePartnerschaft";
+			togglePartnerschaft.OffBackColor = Color.Gray;
+			togglePartnerschaft.OffToggleColor = Color.Gainsboro;
+			togglePartnerschaft.OnBackColor = Color.Green;
+			togglePartnerschaft.OnToggleColor = Color.WhiteSmoke;
+			togglePartnerschaft.Size = new Size(45, 22);
+			togglePartnerschaft.TabIndex = 6;
+			togglePartnerschaft.UseVisualStyleBackColor = true;
+			// 
+			// toggleKinder
+			// 
+			toggleKinder.AutoSize = true;
+			toggleKinder.Location = new Point(258, 192);
+			toggleKinder.MinimumSize = new Size(45, 22);
+			toggleKinder.Name = "toggleKinder";
+			toggleKinder.OffBackColor = Color.Gray;
+			toggleKinder.OffToggleColor = Color.Gainsboro;
+			toggleKinder.OnBackColor = Color.Green;
+			toggleKinder.OnToggleColor = Color.WhiteSmoke;
+			toggleKinder.Size = new Size(45, 22);
+			toggleKinder.TabIndex = 6;
+			toggleKinder.UseVisualStyleBackColor = true;
+			// 
+			// label1
+			// 
+			label1.AutoSize = true;
+			label1.Location = new Point(309, 151);
+			label1.Name = "label1";
+			label1.Size = new Size(90, 15);
+			label1.TabIndex = 7;
+			label1.Text = "in Partnerschaft";
+			// 
+			// label2
+			// 
+			label2.AutoSize = true;
+			label2.Location = new Point(309, 195);
+			label2.Name = "label2";
+			label2.Size = new Size(52, 15);
+			label2.TabIndex = 7;
+			label2.Text = "mit Kind";
+			// 
+			// toggleSonstige
+			// 
+			toggleSonstige.AutoSize = true;
+			toggleSonstige.Location = new Point(258, 236);
+			toggleSonstige.MinimumSize = new Size(45, 22);
+			toggleSonstige.Name = "toggleSonstige";
+			toggleSonstige.OffBackColor = Color.Gray;
+			toggleSonstige.OffToggleColor = Color.Gainsboro;
+			toggleSonstige.OnBackColor = Color.Green;
+			toggleSonstige.OnToggleColor = Color.WhiteSmoke;
+			toggleSonstige.Size = new Size(45, 22);
+			toggleSonstige.TabIndex = 6;
+			toggleSonstige.UseVisualStyleBackColor = true;
+			// 
+			// label3
+			// 
+			label3.AutoSize = true;
+			label3.Location = new Point(309, 239);
+			label3.Name = "label3";
+			label3.Size = new Size(57, 15);
+			label3.TabIndex = 7;
+			label3.Text = "Sonstiges";
+			// 
+			// toggleUnbekannt
+			// 
+			toggleUnbekannt.AutoSize = true;
+			toggleUnbekannt.Location = new Point(258, 280);
+			toggleUnbekannt.MinimumSize = new Size(45, 22);
+			toggleUnbekannt.Name = "toggleUnbekannt";
+			toggleUnbekannt.OffBackColor = Color.Gray;
+			toggleUnbekannt.OffToggleColor = Color.Gainsboro;
+			toggleUnbekannt.OnBackColor = Color.Green;
+			toggleUnbekannt.OnToggleColor = Color.WhiteSmoke;
+			toggleUnbekannt.Size = new Size(45, 22);
+			toggleUnbekannt.TabIndex = 6;
+			toggleUnbekannt.UseVisualStyleBackColor = true;
+			toggleUnbekannt.CheckedChanged += onToggleUnbekannt;
+			// 
+			// label4
+			// 
+			label4.AutoSize = true;
+			label4.Location = new Point(309, 283);
+			label4.Name = "label4";
+			label4.Size = new Size(65, 15);
+			label4.TabIndex = 7;
+			label4.Text = "Unbekannt";
+			// 
+			// gridStunden
+			// 
+			gridStunden.AllowUserToAddRows = false;
+			gridStunden.AllowUserToDeleteRows = false;
+			gridStunden.AllowUserToResizeColumns = false;
+			gridStunden.AllowUserToResizeRows = false;
+			gridStunden.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+			gridStunden.BackgroundColor = SystemColors.ControlLight;
+			gridStunden.BorderStyle = BorderStyle.Fixed3D;
+			gridStunden.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			gridStunden.Columns.AddRange(new DataGridViewColumn[] { Art, Stunden });
+			dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle1.BackColor = SystemColors.Window;
+			dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+			dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+			dataGridViewCellStyle1.SelectionBackColor = Color.LightGreen;
+			dataGridViewCellStyle1.SelectionForeColor = SystemColors.Desktop;
+			dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+			gridStunden.DefaultCellStyle = dataGridViewCellStyle1;
+			gridStunden.EnableHeadersVisualStyles = false;
+			gridStunden.GridColor = SystemColors.ControlLight;
+			gridStunden.Location = new Point(258, 315);
+			gridStunden.Name = "gridStunden";
+			gridStunden.RowHeadersVisible = false;
+			gridStunden.RowHeadersWidth = 40;
+			gridStunden.RowTemplate.Height = 25;
+			gridStunden.ScrollBars = ScrollBars.None;
+			gridStunden.Size = new Size(200, 220);
+			gridStunden.TabIndex = 11;
+			gridStunden.CellValueChanged += OnValueChange;
+			// 
+			// Art
+			// 
+			Art.HeaderText = "Art";
+			Art.Name = "Art";
+			Art.ReadOnly = true;
+			// 
+			// Stunden
+			// 
+			Stunden.HeaderText = "Stunden";
+			Stunden.Name = "Stunden";
+			// 
+			// btnSave
+			// 
+			btnSave.BackColor = Color.Green;
+			btnSave.BackgroundColor = Color.Green;
+			btnSave.BorderColor = Color.Transparent;
+			btnSave.BorderRadius = 0;
+			btnSave.BorderSize = 1;
+			btnSave.FlatAppearance.BorderSize = 0;
+			btnSave.FlatStyle = FlatStyle.Flat;
+			btnSave.Font = new Font("Segoe UI", 12F);
+			btnSave.ForeColor = Color.White;
+			btnSave.Location = new Point(258, 541);
+			btnSave.Name = "btnSave";
+			btnSave.Size = new Size(200, 40);
+			btnSave.TabIndex = 23;
+			btnSave.Text = "Speichern";
+			btnSave.TextColor = Color.White;
+			btnSave.UseVisualStyleBackColor = false;
+			btnSave.Click += OnButtonSave;
+			// 
+			// panel4
+			// 
+			panel4.BackColor = Color.FromArgb(45, 0, 0, 0);
+			panel4.Location = new Point(258, 541);
+			panel4.Margin = new Padding(0);
+			panel4.Name = "panel4";
+			panel4.Size = new Size(203, 43);
+			panel4.TabIndex = 24;
+			// 
+			// label5
+			// 
+			label5.AutoSize = true;
+			label5.BackColor = Color.Transparent;
+			label5.Font = new Font("Segoe UI", 8.25F);
+			label5.ForeColor = Color.FromArgb(70, 70, 70);
+			label5.Location = new Point(38, 564);
+			label5.Name = "label5";
+			label5.Size = new Size(123, 13);
+			label5.TabIndex = 26;
+			label5.Text = "Erläuterung zu Andere";
+			// 
+			// EheUndLeben
+			// 
+			AutoScaleDimensions = new SizeF(7F, 15F);
+			AutoScaleMode = AutoScaleMode.Font;
+			Controls.Add(label5);
+			Controls.Add(btnSave);
+			Controls.Add(panel4);
+			Controls.Add(gridStunden);
+			Controls.Add(label2);
+			Controls.Add(label4);
+			Controls.Add(label3);
+			Controls.Add(label1);
+			Controls.Add(toggleKinder);
+			Controls.Add(toggleUnbekannt);
+			Controls.Add(toggleSonstige);
+			Controls.Add(togglePartnerschaft);
+			Controls.Add(tbErläuterung);
+			Controls.Add(groupAnmeldung);
+			Controls.Add(dropWirtschaft);
+			Controls.Add(dropLeistung);
+			Name = "EheUndLeben";
+			Size = new Size(500, 590);
+			Load += EheUndLeben_Load;
+			groupAnmeldung.ResumeLayout(false);
+			groupAnmeldung.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)gridStunden).EndInit();
+			ResumeLayout(false);
+			PerformLayout();
+		}
 
-        }
+		#endregion
 
-        #endregion
-
-        private DropDown dropLeistung;
+		private DropDown dropLeistung;
         private DropDown dropWirtschaft;
         private GroupBox groupAnmeldung;
         private CheckBox cbKörpBehind;

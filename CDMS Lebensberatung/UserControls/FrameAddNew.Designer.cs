@@ -13,816 +13,767 @@
             base.Dispose(disposing);
         }
 
-        #region Component Designer generated code
+		#region Component Designer generated code
 
-                                        private void InitializeComponent()
-        {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.tbJahr = new CDMS_Lebensberatung.UserControls.RJTextBox();
-            this.tbName = new CDMS_Lebensberatung.UserControls.RJTextBox();
-            this.tbNr = new CDMS_Lebensberatung.UserControls.RJTextBox();
-            this.tbWohnort = new CDMS_Lebensberatung.UserControls.RJTextBox();
-            this.dropBeratung = new CDMS_Lebensberatung.UserControls.DropDown();
-            this.dropMigra = new CDMS_Lebensberatung.UserControls.DropDown();
-            this.dropAnregung = new CDMS_Lebensberatung.UserControls.DropDown();
-            this.dropGrund = new CDMS_Lebensberatung.UserControls.DropDown();
-            this.toggleWieder = new RJCodeAdvance.RJControls.RJToggleButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.toggleAbgeschlossen = new RJCodeAdvance.RJControls.RJToggleButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnSave = new RJCodeAdvance.RJControls.RJButton();
-            this.ContentFrame = new System.Windows.Forms.Panel();
-            this.TabNavControl = new System.Windows.Forms.Panel();
-            this.ButtonP2a = new System.Windows.Forms.Button();
-            this.ButtonArge = new System.Windows.Forms.Button();
-            this.ButtonAllgSgs = new System.Windows.Forms.Button();
-            this.ButtonP56 = new System.Windows.Forms.Button();
-            this.ButtonMutterKind = new System.Windows.Forms.Button();
-            this.ButtonSgb8 = new System.Windows.Forms.Button();
-            this.ButtonEheUndLeben = new System.Windows.Forms.Button();
-            this.panelToggle = new System.Windows.Forms.Panel();
-            this.gridAlter = new System.Windows.Forms.DataGridView();
-            this.Person = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.m = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.w = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nb = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panelBlocker = new System.Windows.Forms.Panel();
-            this.rjButton1 = new RJCodeAdvance.RJControls.RJButton();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cbARGE = new System.Windows.Forms.CheckBox();
-            this.btnDebug = new RJCodeAdvance.RJControls.RJButton();
-            this.panelBlockerShadow = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.indicateSaved = new System.Windows.Forms.ProgressBar();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.tbDatum = new CDMS_Lebensberatung.UserControls.RJTextBox();
-            this.Abschlussdatum = new System.Windows.Forms.Label();
-            this.ContentFrame.SuspendLayout();
-            this.TabNavControl.SuspendLayout();
-            this.panelToggle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridAlter)).BeginInit();
-            this.panelBlocker.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // tbJahr
-            // 
-            this.tbJahr.BackColor = System.Drawing.SystemColors.Window;
-            this.tbJahr.BorderColor = System.Drawing.Color.Black;
-            this.tbJahr.BorderFocusColor = System.Drawing.Color.Green;
-            this.tbJahr.BorderRadius = 0;
-            this.tbJahr.BorderSize = 1;
-            this.tbJahr.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbJahr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbJahr.Location = new System.Drawing.Point(72, 18);
-            this.tbJahr.Margin = new System.Windows.Forms.Padding(0);
-            this.tbJahr.Multiline = false;
-            this.tbJahr.Name = "tbJahr";
-            this.tbJahr.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.tbJahr.PasswordChar = false;
-            this.tbJahr.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbJahr.PlaceholderText = "Jahr";
-            this.tbJahr.Size = new System.Drawing.Size(200, 32);
-            this.tbJahr.TabIndex = 0;
-            this.tbJahr.Texts = "";
-            this.tbJahr.UnderlinedStyle = true;
-            this.tbJahr.Click += new System.EventHandler(this.OnTextBoxClick);
-            this.tbJahr.Enter += new System.EventHandler(this.OnTextBoxClick);
-            // 
-            // tbName
-            // 
-            this.tbName.BackColor = System.Drawing.SystemColors.Window;
-            this.tbName.BorderColor = System.Drawing.Color.Black;
-            this.tbName.BorderFocusColor = System.Drawing.Color.Green;
-            this.tbName.BorderRadius = 0;
-            this.tbName.BorderSize = 1;
-            this.tbName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbName.Location = new System.Drawing.Point(72, 72);
-            this.tbName.Margin = new System.Windows.Forms.Padding(0);
-            this.tbName.Multiline = false;
-            this.tbName.Name = "tbName";
-            this.tbName.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.tbName.PasswordChar = false;
-            this.tbName.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbName.PlaceholderText = "Name";
-            this.tbName.Size = new System.Drawing.Size(200, 32);
-            this.tbName.TabIndex = 2;
-            this.tbName.Texts = "";
-            this.tbName.UnderlinedStyle = true;
-            this.tbName.Click += new System.EventHandler(this.OnTextBoxClick);
-            this.tbName.Enter += new System.EventHandler(this.OnTextBoxClick);
-            // 
-            // tbNr
-            // 
-            this.tbNr.BackColor = System.Drawing.SystemColors.Window;
-            this.tbNr.BorderColor = System.Drawing.Color.Black;
-            this.tbNr.BorderFocusColor = System.Drawing.Color.Green;
-            this.tbNr.BorderRadius = 0;
-            this.tbNr.BorderSize = 1;
-            this.tbNr.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbNr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbNr.Location = new System.Drawing.Point(280, 18);
-            this.tbNr.Margin = new System.Windows.Forms.Padding(0);
-            this.tbNr.Multiline = false;
-            this.tbNr.Name = "tbNr";
-            this.tbNr.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.tbNr.PasswordChar = false;
-            this.tbNr.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbNr.PlaceholderText = "Anmeldenummer";
-            this.tbNr.Size = new System.Drawing.Size(200, 32);
-            this.tbNr.TabIndex = 1;
-            this.tbNr.Texts = "";
-            this.tbNr.UnderlinedStyle = true;
-            this.tbNr.Click += new System.EventHandler(this.OnTextBoxClick);
-            this.tbNr.Enter += new System.EventHandler(this.OnTextBoxClick);
-            // 
-            // tbWohnort
-            // 
-            this.tbWohnort.BackColor = System.Drawing.SystemColors.Window;
-            this.tbWohnort.BorderColor = System.Drawing.Color.Black;
-            this.tbWohnort.BorderFocusColor = System.Drawing.Color.Green;
-            this.tbWohnort.BorderRadius = 0;
-            this.tbWohnort.BorderSize = 1;
-            this.tbWohnort.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbWohnort.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbWohnort.Location = new System.Drawing.Point(280, 72);
-            this.tbWohnort.Margin = new System.Windows.Forms.Padding(0);
-            this.tbWohnort.Multiline = false;
-            this.tbWohnort.Name = "tbWohnort";
-            this.tbWohnort.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.tbWohnort.PasswordChar = false;
-            this.tbWohnort.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbWohnort.PlaceholderText = "Wohnort";
-            this.tbWohnort.Size = new System.Drawing.Size(200, 32);
-            this.tbWohnort.TabIndex = 3;
-            this.tbWohnort.Texts = "";
-            this.tbWohnort.UnderlinedStyle = true;
-            this.tbWohnort.Click += new System.EventHandler(this.OnTextBoxClick);
-            this.tbWohnort.Enter += new System.EventHandler(this.OnTextBoxClick);
-            // 
-            // dropBeratung
-            // 
-            this.dropBeratung.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.dropBeratung.BorderColor = System.Drawing.Color.Black;
-            this.dropBeratung.BorderSize = 1;
-            this.dropBeratung.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dropBeratung.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dropBeratung.ForeColor = System.Drawing.Color.DimGray;
-            this.dropBeratung.IconColor = System.Drawing.Color.Black;
-            this.dropBeratung.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.dropBeratung.ListTextColor = System.Drawing.Color.DimGray;
-            this.dropBeratung.Location = new System.Drawing.Point(74, 140);
-            this.dropBeratung.Margin = new System.Windows.Forms.Padding(10);
-            this.dropBeratung.MinimumSize = new System.Drawing.Size(200, 30);
-            this.dropBeratung.Name = "dropBeratung";
-            this.dropBeratung.Padding = new System.Windows.Forms.Padding(1);
-            this.dropBeratung.Size = new System.Drawing.Size(200, 32);
-            this.dropBeratung.TabIndex = 4;
-            this.dropBeratung.Texts = "";
-            this.dropBeratung.Click += new System.EventHandler(this.OnDropDownClick);
-            this.dropBeratung.Enter += new System.EventHandler(this.OnDropDownClick);
-            // 
-            // dropMigra
-            // 
-            this.dropMigra.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.dropMigra.BorderColor = System.Drawing.Color.Black;
-            this.dropMigra.BorderSize = 1;
-            this.dropMigra.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dropMigra.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dropMigra.ForeColor = System.Drawing.Color.DimGray;
-            this.dropMigra.IconColor = System.Drawing.Color.Black;
-            this.dropMigra.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.dropMigra.ListTextColor = System.Drawing.Color.DimGray;
-            this.dropMigra.Location = new System.Drawing.Point(282, 140);
-            this.dropMigra.Margin = new System.Windows.Forms.Padding(10);
-            this.dropMigra.MinimumSize = new System.Drawing.Size(200, 30);
-            this.dropMigra.Name = "dropMigra";
-            this.dropMigra.Padding = new System.Windows.Forms.Padding(1);
-            this.dropMigra.Size = new System.Drawing.Size(200, 32);
-            this.dropMigra.TabIndex = 5;
-            this.dropMigra.Texts = "";
-            this.dropMigra.Click += new System.EventHandler(this.OnDropDownClick);
-            this.dropMigra.Enter += new System.EventHandler(this.OnDropDownClick);
-            // 
-            // dropAnregung
-            // 
-            this.dropAnregung.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.dropAnregung.BorderColor = System.Drawing.Color.Black;
-            this.dropAnregung.BorderSize = 1;
-            this.dropAnregung.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dropAnregung.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dropAnregung.ForeColor = System.Drawing.Color.DimGray;
-            this.dropAnregung.IconColor = System.Drawing.Color.Black;
-            this.dropAnregung.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.dropAnregung.ListTextColor = System.Drawing.Color.DimGray;
-            this.dropAnregung.Location = new System.Drawing.Point(74, 184);
-            this.dropAnregung.Margin = new System.Windows.Forms.Padding(10);
-            this.dropAnregung.MinimumSize = new System.Drawing.Size(200, 30);
-            this.dropAnregung.Name = "dropAnregung";
-            this.dropAnregung.Padding = new System.Windows.Forms.Padding(1);
-            this.dropAnregung.Size = new System.Drawing.Size(200, 32);
-            this.dropAnregung.TabIndex = 6;
-            this.dropAnregung.Texts = "";
-            this.dropAnregung.Click += new System.EventHandler(this.OnDropDownClick);
-            this.dropAnregung.Enter += new System.EventHandler(this.OnDropDownClick);
-            // 
-            // dropGrund
-            // 
-            this.dropGrund.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.dropGrund.BorderColor = System.Drawing.Color.DarkGray;
-            this.dropGrund.BorderSize = 1;
-            this.dropGrund.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dropGrund.Enabled = false;
-            this.dropGrund.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dropGrund.ForeColor = System.Drawing.Color.DimGray;
-            this.dropGrund.IconColor = System.Drawing.Color.Gray;
-            this.dropGrund.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.dropGrund.ListTextColor = System.Drawing.Color.DimGray;
-            this.dropGrund.Location = new System.Drawing.Point(280, 519);
-            this.dropGrund.Margin = new System.Windows.Forms.Padding(10);
-            this.dropGrund.MinimumSize = new System.Drawing.Size(200, 30);
-            this.dropGrund.Name = "dropGrund";
-            this.dropGrund.Padding = new System.Windows.Forms.Padding(1);
-            this.dropGrund.Size = new System.Drawing.Size(200, 32);
-            this.dropGrund.TabIndex = 11;
-            this.dropGrund.Texts = "";
-            this.dropGrund.Click += new System.EventHandler(this.OnDropDownClick);
-            this.dropGrund.Enter += new System.EventHandler(this.OnDropDownClick);
-            // 
-            // toggleWieder
-            // 
-            this.toggleWieder.AutoSize = true;
-            this.toggleWieder.Location = new System.Drawing.Point(20, 11);
-            this.toggleWieder.MinimumSize = new System.Drawing.Size(45, 22);
-            this.toggleWieder.Name = "toggleWieder";
-            this.toggleWieder.OffBackColor = System.Drawing.Color.Gray;
-            this.toggleWieder.OffToggleColor = System.Drawing.Color.Gainsboro;
-            this.toggleWieder.OnBackColor = System.Drawing.Color.Green;
-            this.toggleWieder.OnToggleColor = System.Drawing.Color.WhiteSmoke;
-            this.toggleWieder.Size = new System.Drawing.Size(45, 22);
-            this.toggleWieder.TabIndex = 8;
-            this.toggleWieder.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(71, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 17);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Wiederanmeldung";
-            // 
-            // toggleAbgeschlossen
-            // 
-            this.toggleAbgeschlossen.AutoSize = true;
-            this.toggleAbgeschlossen.Location = new System.Drawing.Point(20, 50);
-            this.toggleAbgeschlossen.MinimumSize = new System.Drawing.Size(45, 22);
-            this.toggleAbgeschlossen.Name = "toggleAbgeschlossen";
-            this.toggleAbgeschlossen.OffBackColor = System.Drawing.Color.Gray;
-            this.toggleAbgeschlossen.OffToggleColor = System.Drawing.Color.Gainsboro;
-            this.toggleAbgeschlossen.OnBackColor = System.Drawing.Color.Green;
-            this.toggleAbgeschlossen.OnToggleColor = System.Drawing.Color.WhiteSmoke;
-            this.toggleAbgeschlossen.Size = new System.Drawing.Size(45, 22);
-            this.toggleAbgeschlossen.TabIndex = 9;
-            this.toggleAbgeschlossen.UseVisualStyleBackColor = true;
-            this.toggleAbgeschlossen.CheckedChanged += new System.EventHandler(this.OnToggle);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(71, 51);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 17);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Abgeschlossen";
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.Green;
-            this.btnSave.BackgroundColor = System.Drawing.Color.Green;
-            this.btnSave.BorderColor = System.Drawing.Color.Transparent;
-            this.btnSave.BorderRadius = 0;
-            this.btnSave.BorderSize = 1;
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(280, 580);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(200, 40);
-            this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "Speichern";
-            this.btnSave.TextColor = System.Drawing.Color.White;
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.OnButtonSave);
-            // 
-            // ContentFrame
-            // 
-            this.ContentFrame.BackColor = System.Drawing.Color.White;
-            this.ContentFrame.Controls.Add(this.TabNavControl);
-            this.ContentFrame.Location = new System.Drawing.Point(525, 30);
-            this.ContentFrame.Name = "ContentFrame";
-            this.ContentFrame.Size = new System.Drawing.Size(500, 590);
-            this.ContentFrame.TabIndex = 7;
-            // 
-            // TabNavControl
-            // 
-            this.TabNavControl.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.TabNavControl.Controls.Add(this.ButtonP2a);
-            this.TabNavControl.Controls.Add(this.ButtonArge);
-            this.TabNavControl.Controls.Add(this.ButtonAllgSgs);
-            this.TabNavControl.Controls.Add(this.ButtonP56);
-            this.TabNavControl.Controls.Add(this.ButtonMutterKind);
-            this.TabNavControl.Controls.Add(this.ButtonSgb8);
-            this.TabNavControl.Controls.Add(this.ButtonEheUndLeben);
-            this.TabNavControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TabNavControl.Location = new System.Drawing.Point(0, 0);
-            this.TabNavControl.Name = "TabNavControl";
-            this.TabNavControl.Size = new System.Drawing.Size(500, 30);
-            this.TabNavControl.TabIndex = 8;
-            // 
-            // ButtonP2a
-            // 
-            this.ButtonP2a.AutoSize = true;
-            this.ButtonP2a.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ButtonP2a.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ButtonP2a.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ButtonP2a.FlatAppearance.BorderSize = 0;
-            this.ButtonP2a.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonP2a.Location = new System.Drawing.Point(408, 0);
-            this.ButtonP2a.Margin = new System.Windows.Forms.Padding(5);
-            this.ButtonP2a.Name = "ButtonP2a";
-            this.ButtonP2a.Size = new System.Drawing.Size(37, 30);
-            this.ButtonP2a.TabIndex = 3;
-            this.ButtonP2a.Text = "§ 2a";
-            this.ButtonP2a.UseVisualStyleBackColor = false;
-            this.ButtonP2a.Click += new System.EventHandler(this.ButtonP2a_Click);
-            this.ButtonP2a.Paint += new System.Windows.Forms.PaintEventHandler(this.OnTabNavPaint);
-            // 
-            // ButtonArge
-            // 
-            this.ButtonArge.AutoSize = true;
-            this.ButtonArge.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ButtonArge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ButtonArge.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ButtonArge.FlatAppearance.BorderSize = 0;
-            this.ButtonArge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonArge.Location = new System.Drawing.Point(362, 0);
-            this.ButtonArge.Margin = new System.Windows.Forms.Padding(5);
-            this.ButtonArge.Name = "ButtonArge";
-            this.ButtonArge.Size = new System.Drawing.Size(46, 30);
-            this.ButtonArge.TabIndex = 3;
-            this.ButtonArge.Text = "ARGE";
-            this.ButtonArge.UseVisualStyleBackColor = false;
-            this.ButtonArge.Click += new System.EventHandler(this.ButtonArge_Click);
-            this.ButtonArge.Paint += new System.Windows.Forms.PaintEventHandler(this.OnTabNavPaint);
-            // 
-            // ButtonAllgSgs
-            // 
-            this.ButtonAllgSgs.AutoSize = true;
-            this.ButtonAllgSgs.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ButtonAllgSgs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ButtonAllgSgs.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ButtonAllgSgs.FlatAppearance.BorderSize = 0;
-            this.ButtonAllgSgs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonAllgSgs.Location = new System.Drawing.Point(277, 0);
-            this.ButtonAllgSgs.Margin = new System.Windows.Forms.Padding(5);
-            this.ButtonAllgSgs.Name = "ButtonAllgSgs";
-            this.ButtonAllgSgs.Size = new System.Drawing.Size(85, 30);
-            this.ButtonAllgSgs.TabIndex = 3;
-            this.ButtonAllgSgs.Text = "allg. Schwgs.";
-            this.ButtonAllgSgs.UseVisualStyleBackColor = false;
-            this.ButtonAllgSgs.Click += new System.EventHandler(this.ButtonAllgSgs_Click);
-            this.ButtonAllgSgs.Paint += new System.Windows.Forms.PaintEventHandler(this.OnTabNavPaint);
-            // 
-            // ButtonP56
-            // 
-            this.ButtonP56.AutoSize = true;
-            this.ButtonP56.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ButtonP56.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ButtonP56.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ButtonP56.FlatAppearance.BorderSize = 0;
-            this.ButtonP56.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonP56.Location = new System.Drawing.Point(234, 0);
-            this.ButtonP56.Margin = new System.Windows.Forms.Padding(5);
-            this.ButtonP56.Name = "ButtonP56";
-            this.ButtonP56.Size = new System.Drawing.Size(43, 30);
-            this.ButtonP56.TabIndex = 3;
-            this.ButtonP56.Text = "§ 218";
-            this.ButtonP56.UseVisualStyleBackColor = false;
-            this.ButtonP56.Click += new System.EventHandler(this.ButtonP56_Click);
-            this.ButtonP56.Paint += new System.Windows.Forms.PaintEventHandler(this.OnTabNavPaint);
-            // 
-            // ButtonMutterKind
-            // 
-            this.ButtonMutterKind.AutoSize = true;
-            this.ButtonMutterKind.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ButtonMutterKind.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ButtonMutterKind.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ButtonMutterKind.FlatAppearance.BorderSize = 0;
-            this.ButtonMutterKind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonMutterKind.Location = new System.Drawing.Point(152, 0);
-            this.ButtonMutterKind.Margin = new System.Windows.Forms.Padding(5);
-            this.ButtonMutterKind.Name = "ButtonMutterKind";
-            this.ButtonMutterKind.Size = new System.Drawing.Size(82, 30);
-            this.ButtonMutterKind.TabIndex = 2;
-            this.ButtonMutterKind.Text = "Mutter-Kind";
-            this.ButtonMutterKind.UseVisualStyleBackColor = false;
-            this.ButtonMutterKind.Click += new System.EventHandler(this.ButtonMutterKind_Click);
-            this.ButtonMutterKind.Paint += new System.Windows.Forms.PaintEventHandler(this.OnTabNavPaint);
-            // 
-            // ButtonSgb8
-            // 
-            this.ButtonSgb8.AutoSize = true;
-            this.ButtonSgb8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ButtonSgb8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ButtonSgb8.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ButtonSgb8.FlatAppearance.BorderSize = 0;
-            this.ButtonSgb8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonSgb8.Location = new System.Drawing.Point(95, 0);
-            this.ButtonSgb8.Margin = new System.Windows.Forms.Padding(5);
-            this.ButtonSgb8.Name = "ButtonSgb8";
-            this.ButtonSgb8.Size = new System.Drawing.Size(57, 30);
-            this.ButtonSgb8.TabIndex = 0;
-            this.ButtonSgb8.Text = "SGB VIII";
-            this.ButtonSgb8.UseVisualStyleBackColor = false;
-            this.ButtonSgb8.Click += new System.EventHandler(this.ButtonSgb8_Click);
-            this.ButtonSgb8.Paint += new System.Windows.Forms.PaintEventHandler(this.OnTabNavPaint);
-            // 
-            // ButtonEheUndLeben
-            // 
-            this.ButtonEheUndLeben.AutoSize = true;
-            this.ButtonEheUndLeben.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ButtonEheUndLeben.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ButtonEheUndLeben.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ButtonEheUndLeben.FlatAppearance.BorderSize = 0;
-            this.ButtonEheUndLeben.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonEheUndLeben.Location = new System.Drawing.Point(0, 0);
-            this.ButtonEheUndLeben.Margin = new System.Windows.Forms.Padding(5);
-            this.ButtonEheUndLeben.Name = "ButtonEheUndLeben";
-            this.ButtonEheUndLeben.Size = new System.Drawing.Size(95, 30);
-            this.ButtonEheUndLeben.TabIndex = 1;
-            this.ButtonEheUndLeben.Text = "Ehe und Leben";
-            this.ButtonEheUndLeben.UseVisualStyleBackColor = false;
-            this.ButtonEheUndLeben.Click += new System.EventHandler(this.ButtonEheUndLeben_Click);
-            this.ButtonEheUndLeben.Paint += new System.Windows.Forms.PaintEventHandler(this.OnTabNavPaint);
-            // 
-            // panelToggle
-            // 
-            this.panelToggle.BackColor = System.Drawing.Color.White;
-            this.panelToggle.Controls.Add(this.toggleWieder);
-            this.panelToggle.Controls.Add(this.toggleAbgeschlossen);
-            this.panelToggle.Controls.Add(this.label1);
-            this.panelToggle.Controls.Add(this.label2);
-            this.panelToggle.Location = new System.Drawing.Point(74, 469);
-            this.panelToggle.Name = "panelToggle";
-            this.panelToggle.Padding = new System.Windows.Forms.Padding(3);
-            this.panelToggle.Size = new System.Drawing.Size(200, 82);
-            this.panelToggle.TabIndex = 8;
-            // 
-            // gridAlter
-            // 
-            this.gridAlter.AllowUserToAddRows = false;
-            this.gridAlter.AllowUserToDeleteRows = false;
-            this.gridAlter.AllowUserToResizeColumns = false;
-            this.gridAlter.AllowUserToResizeRows = false;
-            this.gridAlter.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gridAlter.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.gridAlter.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.gridAlter.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridAlter.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.gridAlter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridAlter.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Person,
-            this.m,
-            this.w,
-            this.nb});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightGreen;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridAlter.DefaultCellStyle = dataGridViewCellStyle4;
-            this.gridAlter.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.gridAlter.Location = new System.Drawing.Point(74, 238);
-            this.gridAlter.Name = "gridAlter";
-            this.gridAlter.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.gridAlter.RowHeadersVisible = false;
-            this.gridAlter.RowHeadersWidth = 40;
-            this.gridAlter.RowTemplate.Height = 25;
-            this.gridAlter.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.gridAlter.Size = new System.Drawing.Size(408, 203);
-            this.gridAlter.TabIndex = 7;
-            this.gridAlter.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.OnValueChanged);
-            // 
-            // Person
-            // 
-            this.Person.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Person.FillWeight = 105F;
-            this.Person.HeaderText = "Person";
-            this.Person.MinimumWidth = 100;
-            this.Person.Name = "Person";
-            this.Person.ReadOnly = true;
-            this.Person.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // m
-            // 
-            this.m.FillWeight = 52.11506F;
-            this.m.HeaderText = "männlich";
-            this.m.Name = "m";
-            this.m.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // w
-            // 
-            this.w.FillWeight = 52.11506F;
-            this.w.HeaderText = "weiblich";
-            this.w.Name = "w";
-            this.w.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // nb
-            // 
-            this.nb.FillWeight = 52.11506F;
-            this.nb.HeaderText = "non-binär";
-            this.nb.Name = "nb";
-            this.nb.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // panelBlocker
-            // 
-            this.panelBlocker.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panelBlocker.Controls.Add(this.rjButton1);
-            this.panelBlocker.Controls.Add(this.label3);
-            this.panelBlocker.Location = new System.Drawing.Point(525, 30);
-            this.panelBlocker.Name = "panelBlocker";
-            this.panelBlocker.Size = new System.Drawing.Size(500, 590);
-            this.panelBlocker.TabIndex = 14;
-            this.panelBlocker.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBlocker_Paint);
-            // 
-            // rjButton1
-            // 
-            this.rjButton1.BackColor = System.Drawing.Color.IndianRed;
-            this.rjButton1.BackgroundColor = System.Drawing.Color.IndianRed;
-            this.rjButton1.BorderColor = System.Drawing.Color.Transparent;
-            this.rjButton1.BorderRadius = 0;
-            this.rjButton1.BorderSize = 1;
-            this.rjButton1.FlatAppearance.BorderSize = 0;
-            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rjButton1.ForeColor = System.Drawing.Color.White;
-            this.rjButton1.Location = new System.Drawing.Point(152, 511);
-            this.rjButton1.Name = "rjButton1";
-            this.rjButton1.Size = new System.Drawing.Size(200, 40);
-            this.rjButton1.TabIndex = 6;
-            this.rjButton1.Text = "Ohne Seite 1 fortfahren";
-            this.rjButton1.TextColor = System.Drawing.Color.White;
-            this.rjButton1.UseVisualStyleBackColor = false;
-            this.rjButton1.Click += new System.EventHandler(this.OnButtonSkip);
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.IndianRed;
-            this.label3.Location = new System.Drawing.Point(0, 57);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(502, 198);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Da einige Tabellen auf allgemeine Daten zur \r\nPerson und Anmeldung zugreifen, ist" +
-    " es notwendig\r\ndiese zuerst vorzunehmen und zu speichern.";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cbARGE
-            // 
-            this.cbARGE.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbARGE.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbARGE.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.cbARGE.Location = new System.Drawing.Point(280, 474);
-            this.cbARGE.Name = "cbARGE";
-            this.cbARGE.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.cbARGE.Size = new System.Drawing.Size(200, 32);
-            this.cbARGE.TabIndex = 10;
-            this.cbARGE.Text = "ARGE: Nein";
-            this.cbARGE.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.cbARGE.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.cbARGE.UseVisualStyleBackColor = false;
-            this.cbARGE.CheckedChanged += new System.EventHandler(this.OnClick);
-            // 
-            // btnDebug
-            // 
-            this.btnDebug.BackColor = System.Drawing.Color.Gray;
-            this.btnDebug.BackgroundColor = System.Drawing.Color.Gray;
-            this.btnDebug.BorderColor = System.Drawing.Color.Transparent;
-            this.btnDebug.BorderRadius = 0;
-            this.btnDebug.BorderSize = 1;
-            this.btnDebug.FlatAppearance.BorderSize = 0;
-            this.btnDebug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDebug.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnDebug.ForeColor = System.Drawing.Color.White;
-            this.btnDebug.Location = new System.Drawing.Point(282, 184);
-            this.btnDebug.Name = "btnDebug";
-            this.btnDebug.Size = new System.Drawing.Size(200, 32);
-            this.btnDebug.TabIndex = 6;
-            this.btnDebug.Text = "(debug)";
-            this.btnDebug.TextColor = System.Drawing.Color.White;
-            this.btnDebug.UseVisualStyleBackColor = false;
-            this.btnDebug.Visible = false;
-            this.btnDebug.Click += new System.EventHandler(this.OnButtonFill);
-            // 
-            // panelBlockerShadow
-            // 
-            this.panelBlockerShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panelBlockerShadow.Location = new System.Drawing.Point(525, 30);
-            this.panelBlockerShadow.Margin = new System.Windows.Forms.Padding(0);
-            this.panelBlockerShadow.Name = "panelBlockerShadow";
-            this.panelBlockerShadow.Size = new System.Drawing.Size(502, 593);
-            this.panelBlockerShadow.TabIndex = 15;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(8, 689);
-            this.panel1.TabIndex = 16;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel2.Location = new System.Drawing.Point(8, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1080, 8);
-            this.panel2.TabIndex = 17;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel4.Location = new System.Drawing.Point(280, 580);
-            this.panel4.Margin = new System.Windows.Forms.Padding(0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(203, 43);
-            this.panel4.TabIndex = 22;
-            // 
-            // indicateSaved
-            // 
-            this.indicateSaved.ForeColor = System.Drawing.Color.Green;
-            this.indicateSaved.Location = new System.Drawing.Point(20, 662);
-            this.indicateSaved.Name = "indicateSaved";
-            this.indicateSaved.Size = new System.Drawing.Size(1051, 23);
-            this.indicateSaved.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.indicateSaved.TabIndex = 23;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            this.label4.Location = new System.Drawing.Point(72, 50);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 17);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Jahr";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            this.label5.Location = new System.Drawing.Point(280, 50);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(107, 17);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Anmeldenummer";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            this.label6.Location = new System.Drawing.Point(72, 104);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 17);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Name";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            this.label7.Location = new System.Drawing.Point(280, 104);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(58, 17);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "Wohnort";
-            // 
-            // tbDatum
-            // 
-            this.tbDatum.BackColor = System.Drawing.SystemColors.Window;
-            this.tbDatum.BorderColor = System.Drawing.Color.Black;
-            this.tbDatum.BorderFocusColor = System.Drawing.Color.Green;
-            this.tbDatum.BorderRadius = 0;
-            this.tbDatum.BorderSize = 1;
-            this.tbDatum.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbDatum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbDatum.Location = new System.Drawing.Point(74, 580);
-            this.tbDatum.Margin = new System.Windows.Forms.Padding(0);
-            this.tbDatum.Multiline = false;
-            this.tbDatum.Name = "tbDatum";
-            this.tbDatum.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.tbDatum.PasswordChar = false;
-            this.tbDatum.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbDatum.PlaceholderText = "Abgeschlossen am";
-            this.tbDatum.Size = new System.Drawing.Size(200, 32);
-            this.tbDatum.TabIndex = 12;
-            this.tbDatum.Texts = "";
-            this.tbDatum.UnderlinedStyle = true;
-            this.tbDatum.Click += new System.EventHandler(this.OnTextBoxClick);
-            this.tbDatum.Enter += new System.EventHandler(this.OnTextBoxClick);
-            // 
-            // Abschlussdatum
-            // 
-            this.Abschlussdatum.AutoSize = true;
-            this.Abschlussdatum.BackColor = System.Drawing.Color.Transparent;
-            this.Abschlussdatum.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Abschlussdatum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            this.Abschlussdatum.Location = new System.Drawing.Point(74, 612);
-            this.Abschlussdatum.Name = "Abschlussdatum";
-            this.Abschlussdatum.Size = new System.Drawing.Size(117, 17);
-            this.Abschlussdatum.TabIndex = 5;
-            this.Abschlussdatum.Text = "Abgeschlossen am";
-            // 
-            // FrameAddNew
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Controls.Add(this.indicateSaved);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.Abschlussdatum);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.cbARGE);
-            this.Controls.Add(this.panelBlocker);
-            this.Controls.Add(this.gridAlter);
-            this.Controls.Add(this.panelToggle);
-            this.Controls.Add(this.ContentFrame);
-            this.Controls.Add(this.btnDebug);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.tbWohnort);
-            this.Controls.Add(this.tbNr);
-            this.Controls.Add(this.tbDatum);
-            this.Controls.Add(this.tbName);
-            this.Controls.Add(this.tbJahr);
-            this.Controls.Add(this.dropGrund);
-            this.Controls.Add(this.dropMigra);
-            this.Controls.Add(this.dropAnregung);
-            this.Controls.Add(this.dropBeratung);
-            this.Controls.Add(this.panelBlockerShadow);
-            this.Controls.Add(this.panel4);
-            this.Margin = new System.Windows.Forms.Padding(0);
-            this.Name = "FrameAddNew";
-            this.Size = new System.Drawing.Size(1080, 690);
-            this.Tag = "Frame";
-            this.Load += new System.EventHandler(this.OnLoad);
-            this.ContentFrame.ResumeLayout(false);
-            this.TabNavControl.ResumeLayout(false);
-            this.TabNavControl.PerformLayout();
-            this.panelToggle.ResumeLayout(false);
-            this.panelToggle.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridAlter)).EndInit();
-            this.panelBlocker.ResumeLayout(false);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+		private void InitializeComponent()
+		{
+			DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+			DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+			tbJahr = new RJTextBox();
+			tbName = new RJTextBox();
+			tbNr = new RJTextBox();
+			tbWohnort = new RJTextBox();
+			dropBeratung = new DropDown();
+			dropMigra = new DropDown();
+			dropAnregung = new DropDown();
+			dropGrund = new DropDown();
+			toggleWieder = new RJCodeAdvance.RJControls.RJToggleButton();
+			label1 = new Label();
+			toggleAbgeschlossen = new RJCodeAdvance.RJControls.RJToggleButton();
+			label2 = new Label();
+			btnSave = new RJCodeAdvance.RJControls.RJButton();
+			ContentFrame = new Panel();
+			TabNavControl = new Panel();
+			ButtonP2a = new Button();
+			ButtonArge = new Button();
+			ButtonAllgSgs = new Button();
+			ButtonP56 = new Button();
+			ButtonMutterKind = new Button();
+			ButtonSgb8 = new Button();
+			ButtonEheUndLeben = new Button();
+			panelToggle = new Panel();
+			gridAlter = new DataGridView();
+			Person = new DataGridViewTextBoxColumn();
+			m = new DataGridViewTextBoxColumn();
+			w = new DataGridViewTextBoxColumn();
+			nb = new DataGridViewTextBoxColumn();
+			panelBlocker = new Panel();
+			rjButton1 = new RJCodeAdvance.RJControls.RJButton();
+			label3 = new Label();
+			cbARGE = new CheckBox();
+			btnDebug = new RJCodeAdvance.RJControls.RJButton();
+			indicateSaved = new ProgressBar();
+			label4 = new Label();
+			label5 = new Label();
+			label6 = new Label();
+			label7 = new Label();
+			tbDatum = new RJTextBox();
+			Abschlussdatum = new Label();
+			ContentFrame.SuspendLayout();
+			TabNavControl.SuspendLayout();
+			panelToggle.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)gridAlter).BeginInit();
+			panelBlocker.SuspendLayout();
+			SuspendLayout();
+			// 
+			// tbJahr
+			// 
+			tbJahr.BackColor = SystemColors.Window;
+			tbJahr.BorderColor = Color.Black;
+			tbJahr.BorderFocusColor = Color.Green;
+			tbJahr.BorderRadius = 0;
+			tbJahr.BorderSize = 1;
+			tbJahr.Font = new Font("Segoe UI", 9.75F);
+			tbJahr.ForeColor = Color.FromArgb(64, 64, 64);
+			tbJahr.Location = new Point(72, 18);
+			tbJahr.Margin = new Padding(0);
+			tbJahr.Multiline = false;
+			tbJahr.Name = "tbJahr";
+			tbJahr.Padding = new Padding(10, 7, 10, 7);
+			tbJahr.PasswordChar = false;
+			tbJahr.PlaceholderColor = Color.DarkGray;
+			tbJahr.PlaceholderText = "Jahr";
+			tbJahr.Size = new Size(200, 32);
+			tbJahr.TabIndex = 0;
+			tbJahr.Texts = "";
+			tbJahr.UnderlinedStyle = true;
+			tbJahr.Click += OnTextBoxClick;
+			tbJahr.Enter += OnTextBoxClick;
+			// 
+			// tbName
+			// 
+			tbName.BackColor = SystemColors.Window;
+			tbName.BorderColor = Color.Black;
+			tbName.BorderFocusColor = Color.Green;
+			tbName.BorderRadius = 0;
+			tbName.BorderSize = 1;
+			tbName.Font = new Font("Segoe UI", 9.75F);
+			tbName.ForeColor = Color.FromArgb(64, 64, 64);
+			tbName.Location = new Point(72, 72);
+			tbName.Margin = new Padding(0);
+			tbName.Multiline = false;
+			tbName.Name = "tbName";
+			tbName.Padding = new Padding(10, 7, 10, 7);
+			tbName.PasswordChar = false;
+			tbName.PlaceholderColor = Color.DarkGray;
+			tbName.PlaceholderText = "Name";
+			tbName.Size = new Size(200, 32);
+			tbName.TabIndex = 2;
+			tbName.Texts = "";
+			tbName.UnderlinedStyle = true;
+			tbName.Click += OnTextBoxClick;
+			tbName.Enter += OnTextBoxClick;
+			// 
+			// tbNr
+			// 
+			tbNr.BackColor = SystemColors.Window;
+			tbNr.BorderColor = Color.Black;
+			tbNr.BorderFocusColor = Color.Green;
+			tbNr.BorderRadius = 0;
+			tbNr.BorderSize = 1;
+			tbNr.Font = new Font("Segoe UI", 9.75F);
+			tbNr.ForeColor = Color.FromArgb(64, 64, 64);
+			tbNr.Location = new Point(280, 18);
+			tbNr.Margin = new Padding(0);
+			tbNr.Multiline = false;
+			tbNr.Name = "tbNr";
+			tbNr.Padding = new Padding(10, 7, 10, 7);
+			tbNr.PasswordChar = false;
+			tbNr.PlaceholderColor = Color.DarkGray;
+			tbNr.PlaceholderText = "Anmeldenummer";
+			tbNr.Size = new Size(200, 32);
+			tbNr.TabIndex = 1;
+			tbNr.Texts = "";
+			tbNr.UnderlinedStyle = true;
+			tbNr.Click += OnTextBoxClick;
+			tbNr.Enter += OnTextBoxClick;
+			// 
+			// tbWohnort
+			// 
+			tbWohnort.BackColor = SystemColors.Window;
+			tbWohnort.BorderColor = Color.Black;
+			tbWohnort.BorderFocusColor = Color.Green;
+			tbWohnort.BorderRadius = 0;
+			tbWohnort.BorderSize = 1;
+			tbWohnort.Font = new Font("Segoe UI", 9.75F);
+			tbWohnort.ForeColor = Color.FromArgb(64, 64, 64);
+			tbWohnort.Location = new Point(280, 72);
+			tbWohnort.Margin = new Padding(0);
+			tbWohnort.Multiline = false;
+			tbWohnort.Name = "tbWohnort";
+			tbWohnort.Padding = new Padding(10, 7, 10, 7);
+			tbWohnort.PasswordChar = false;
+			tbWohnort.PlaceholderColor = Color.DarkGray;
+			tbWohnort.PlaceholderText = "Wohnort";
+			tbWohnort.Size = new Size(200, 32);
+			tbWohnort.TabIndex = 3;
+			tbWohnort.Texts = "";
+			tbWohnort.UnderlinedStyle = true;
+			tbWohnort.Click += OnTextBoxClick;
+			tbWohnort.Enter += OnTextBoxClick;
+			// 
+			// dropBeratung
+			// 
+			dropBeratung.BackColor = Color.WhiteSmoke;
+			dropBeratung.BorderColor = Color.Black;
+			dropBeratung.BorderSize = 1;
+			dropBeratung.DropDownStyle = ComboBoxStyle.DropDownList;
+			dropBeratung.Font = new Font("Segoe UI", 10F);
+			dropBeratung.ForeColor = Color.DimGray;
+			dropBeratung.IconColor = Color.Black;
+			dropBeratung.ListBackColor = Color.FromArgb(230, 228, 245);
+			dropBeratung.ListTextColor = Color.DimGray;
+			dropBeratung.Location = new Point(74, 140);
+			dropBeratung.Margin = new Padding(10);
+			dropBeratung.MinimumSize = new Size(200, 30);
+			dropBeratung.Name = "dropBeratung";
+			dropBeratung.Padding = new Padding(1);
+			dropBeratung.Size = new Size(200, 32);
+			dropBeratung.TabIndex = 4;
+			dropBeratung.Texts = "";
+			dropBeratung.Click += OnDropDownClick;
+			dropBeratung.Enter += OnDropDownClick;
+			// 
+			// dropMigra
+			// 
+			dropMigra.BackColor = Color.WhiteSmoke;
+			dropMigra.BorderColor = Color.Black;
+			dropMigra.BorderSize = 1;
+			dropMigra.DropDownStyle = ComboBoxStyle.DropDownList;
+			dropMigra.Font = new Font("Segoe UI", 10F);
+			dropMigra.ForeColor = Color.DimGray;
+			dropMigra.IconColor = Color.Black;
+			dropMigra.ListBackColor = Color.FromArgb(230, 228, 245);
+			dropMigra.ListTextColor = Color.DimGray;
+			dropMigra.Location = new Point(282, 140);
+			dropMigra.Margin = new Padding(10);
+			dropMigra.MinimumSize = new Size(200, 30);
+			dropMigra.Name = "dropMigra";
+			dropMigra.Padding = new Padding(1);
+			dropMigra.Size = new Size(200, 32);
+			dropMigra.TabIndex = 5;
+			dropMigra.Texts = "";
+			dropMigra.Click += OnDropDownClick;
+			dropMigra.Enter += OnDropDownClick;
+			// 
+			// dropAnregung
+			// 
+			dropAnregung.BackColor = Color.WhiteSmoke;
+			dropAnregung.BorderColor = Color.Black;
+			dropAnregung.BorderSize = 1;
+			dropAnregung.DropDownStyle = ComboBoxStyle.DropDownList;
+			dropAnregung.Font = new Font("Segoe UI", 10F);
+			dropAnregung.ForeColor = Color.DimGray;
+			dropAnregung.IconColor = Color.Black;
+			dropAnregung.ListBackColor = Color.FromArgb(230, 228, 245);
+			dropAnregung.ListTextColor = Color.DimGray;
+			dropAnregung.Location = new Point(74, 184);
+			dropAnregung.Margin = new Padding(10);
+			dropAnregung.MinimumSize = new Size(200, 30);
+			dropAnregung.Name = "dropAnregung";
+			dropAnregung.Padding = new Padding(1);
+			dropAnregung.Size = new Size(200, 32);
+			dropAnregung.TabIndex = 6;
+			dropAnregung.Texts = "";
+			dropAnregung.Click += OnDropDownClick;
+			dropAnregung.Enter += OnDropDownClick;
+			// 
+			// dropGrund
+			// 
+			dropGrund.BackColor = Color.WhiteSmoke;
+			dropGrund.BorderColor = Color.DarkGray;
+			dropGrund.BorderSize = 1;
+			dropGrund.DropDownStyle = ComboBoxStyle.DropDownList;
+			dropGrund.Enabled = false;
+			dropGrund.Font = new Font("Segoe UI", 10F);
+			dropGrund.ForeColor = Color.DimGray;
+			dropGrund.IconColor = Color.Gray;
+			dropGrund.ListBackColor = Color.FromArgb(230, 228, 245);
+			dropGrund.ListTextColor = Color.DimGray;
+			dropGrund.Location = new Point(280, 519);
+			dropGrund.Margin = new Padding(10);
+			dropGrund.MinimumSize = new Size(200, 30);
+			dropGrund.Name = "dropGrund";
+			dropGrund.Padding = new Padding(1);
+			dropGrund.Size = new Size(200, 32);
+			dropGrund.TabIndex = 11;
+			dropGrund.Texts = "";
+			dropGrund.Click += OnDropDownClick;
+			dropGrund.Enter += OnDropDownClick;
+			// 
+			// toggleWieder
+			// 
+			toggleWieder.AutoSize = true;
+			toggleWieder.Location = new Point(20, 11);
+			toggleWieder.MinimumSize = new Size(45, 22);
+			toggleWieder.Name = "toggleWieder";
+			toggleWieder.OffBackColor = Color.Gray;
+			toggleWieder.OffToggleColor = Color.Gainsboro;
+			toggleWieder.OnBackColor = Color.Green;
+			toggleWieder.OnToggleColor = Color.WhiteSmoke;
+			toggleWieder.Size = new Size(45, 22);
+			toggleWieder.TabIndex = 8;
+			toggleWieder.UseVisualStyleBackColor = true;
+			// 
+			// label1
+			// 
+			label1.AutoSize = true;
+			label1.Font = new Font("Segoe UI", 9.75F);
+			label1.Location = new Point(71, 12);
+			label1.Name = "label1";
+			label1.Size = new Size(115, 17);
+			label1.TabIndex = 5;
+			label1.Text = "Wiederanmeldung";
+			// 
+			// toggleAbgeschlossen
+			// 
+			toggleAbgeschlossen.AutoSize = true;
+			toggleAbgeschlossen.Location = new Point(20, 50);
+			toggleAbgeschlossen.MinimumSize = new Size(45, 22);
+			toggleAbgeschlossen.Name = "toggleAbgeschlossen";
+			toggleAbgeschlossen.OffBackColor = Color.Gray;
+			toggleAbgeschlossen.OffToggleColor = Color.Gainsboro;
+			toggleAbgeschlossen.OnBackColor = Color.Green;
+			toggleAbgeschlossen.OnToggleColor = Color.WhiteSmoke;
+			toggleAbgeschlossen.Size = new Size(45, 22);
+			toggleAbgeschlossen.TabIndex = 9;
+			toggleAbgeschlossen.UseVisualStyleBackColor = true;
+			toggleAbgeschlossen.CheckedChanged += OnToggle;
+			// 
+			// label2
+			// 
+			label2.AutoSize = true;
+			label2.Font = new Font("Segoe UI", 9.75F);
+			label2.Location = new Point(71, 51);
+			label2.Name = "label2";
+			label2.Size = new Size(95, 17);
+			label2.TabIndex = 5;
+			label2.Text = "Abgeschlossen";
+			// 
+			// btnSave
+			// 
+			btnSave.BackColor = Color.Green;
+			btnSave.BackgroundColor = Color.Green;
+			btnSave.BorderColor = Color.Transparent;
+			btnSave.BorderRadius = 0;
+			btnSave.BorderSize = 1;
+			btnSave.FlatAppearance.BorderSize = 0;
+			btnSave.FlatStyle = FlatStyle.Flat;
+			btnSave.Font = new Font("Segoe UI", 12F);
+			btnSave.ForeColor = Color.White;
+			btnSave.Location = new Point(280, 580);
+			btnSave.Name = "btnSave";
+			btnSave.Size = new Size(200, 40);
+			btnSave.TabIndex = 100;
+			btnSave.Text = "Speichern";
+			btnSave.TextColor = Color.White;
+			btnSave.UseVisualStyleBackColor = false;
+			btnSave.Click += OnButtonSave;
+			// 
+			// ContentFrame
+			// 
+			ContentFrame.BackColor = Color.White;
+			ContentFrame.Controls.Add(TabNavControl);
+			ContentFrame.Location = new Point(525, 30);
+			ContentFrame.Name = "ContentFrame";
+			ContentFrame.Size = new Size(500, 590);
+			ContentFrame.TabIndex = 7;
+			// 
+			// TabNavControl
+			// 
+			TabNavControl.BackColor = Color.WhiteSmoke;
+			TabNavControl.Controls.Add(ButtonP2a);
+			TabNavControl.Controls.Add(ButtonArge);
+			TabNavControl.Controls.Add(ButtonAllgSgs);
+			TabNavControl.Controls.Add(ButtonP56);
+			TabNavControl.Controls.Add(ButtonMutterKind);
+			TabNavControl.Controls.Add(ButtonSgb8);
+			TabNavControl.Controls.Add(ButtonEheUndLeben);
+			TabNavControl.Dock = DockStyle.Top;
+			TabNavControl.Location = new Point(0, 0);
+			TabNavControl.Name = "TabNavControl";
+			TabNavControl.Size = new Size(500, 30);
+			TabNavControl.TabIndex = 8;
+			// 
+			// ButtonP2a
+			// 
+			ButtonP2a.AutoSize = true;
+			ButtonP2a.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+			ButtonP2a.BackColor = Color.FromArgb(200, 255, 255, 255);
+			ButtonP2a.Dock = DockStyle.Left;
+			ButtonP2a.FlatAppearance.BorderSize = 0;
+			ButtonP2a.FlatStyle = FlatStyle.Flat;
+			ButtonP2a.Location = new Point(408, 0);
+			ButtonP2a.Margin = new Padding(5);
+			ButtonP2a.Name = "ButtonP2a";
+			ButtonP2a.Size = new Size(37, 30);
+			ButtonP2a.TabIndex = 3;
+			ButtonP2a.Text = "§ 2a";
+			ButtonP2a.UseVisualStyleBackColor = false;
+			ButtonP2a.Click += ButtonP2a_Click;
+			ButtonP2a.Paint += OnTabNavPaint;
+			// 
+			// ButtonArge
+			// 
+			ButtonArge.AutoSize = true;
+			ButtonArge.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+			ButtonArge.BackColor = Color.FromArgb(200, 255, 255, 255);
+			ButtonArge.Dock = DockStyle.Left;
+			ButtonArge.FlatAppearance.BorderSize = 0;
+			ButtonArge.FlatStyle = FlatStyle.Flat;
+			ButtonArge.Location = new Point(362, 0);
+			ButtonArge.Margin = new Padding(5);
+			ButtonArge.Name = "ButtonArge";
+			ButtonArge.Size = new Size(46, 30);
+			ButtonArge.TabIndex = 3;
+			ButtonArge.Text = "ARGE";
+			ButtonArge.UseVisualStyleBackColor = false;
+			ButtonArge.Click += ButtonArge_Click;
+			ButtonArge.Paint += OnTabNavPaint;
+			// 
+			// ButtonAllgSgs
+			// 
+			ButtonAllgSgs.AutoSize = true;
+			ButtonAllgSgs.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+			ButtonAllgSgs.BackColor = Color.FromArgb(200, 255, 255, 255);
+			ButtonAllgSgs.Dock = DockStyle.Left;
+			ButtonAllgSgs.FlatAppearance.BorderSize = 0;
+			ButtonAllgSgs.FlatStyle = FlatStyle.Flat;
+			ButtonAllgSgs.Location = new Point(277, 0);
+			ButtonAllgSgs.Margin = new Padding(5);
+			ButtonAllgSgs.Name = "ButtonAllgSgs";
+			ButtonAllgSgs.Size = new Size(85, 30);
+			ButtonAllgSgs.TabIndex = 3;
+			ButtonAllgSgs.Text = "allg. Schwgs.";
+			ButtonAllgSgs.UseVisualStyleBackColor = false;
+			ButtonAllgSgs.Click += ButtonAllgSgs_Click;
+			ButtonAllgSgs.Paint += OnTabNavPaint;
+			// 
+			// ButtonP56
+			// 
+			ButtonP56.AutoSize = true;
+			ButtonP56.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+			ButtonP56.BackColor = Color.FromArgb(200, 255, 255, 255);
+			ButtonP56.Dock = DockStyle.Left;
+			ButtonP56.FlatAppearance.BorderSize = 0;
+			ButtonP56.FlatStyle = FlatStyle.Flat;
+			ButtonP56.Location = new Point(234, 0);
+			ButtonP56.Margin = new Padding(5);
+			ButtonP56.Name = "ButtonP56";
+			ButtonP56.Size = new Size(43, 30);
+			ButtonP56.TabIndex = 3;
+			ButtonP56.Text = "§ 218";
+			ButtonP56.UseVisualStyleBackColor = false;
+			ButtonP56.Click += ButtonP56_Click;
+			ButtonP56.Paint += OnTabNavPaint;
+			// 
+			// ButtonMutterKind
+			// 
+			ButtonMutterKind.AutoSize = true;
+			ButtonMutterKind.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+			ButtonMutterKind.BackColor = Color.FromArgb(200, 255, 255, 255);
+			ButtonMutterKind.Dock = DockStyle.Left;
+			ButtonMutterKind.FlatAppearance.BorderSize = 0;
+			ButtonMutterKind.FlatStyle = FlatStyle.Flat;
+			ButtonMutterKind.Location = new Point(152, 0);
+			ButtonMutterKind.Margin = new Padding(5);
+			ButtonMutterKind.Name = "ButtonMutterKind";
+			ButtonMutterKind.Size = new Size(82, 30);
+			ButtonMutterKind.TabIndex = 2;
+			ButtonMutterKind.Text = "Mutter-Kind";
+			ButtonMutterKind.UseVisualStyleBackColor = false;
+			ButtonMutterKind.Click += ButtonMutterKind_Click;
+			ButtonMutterKind.Paint += OnTabNavPaint;
+			// 
+			// ButtonSgb8
+			// 
+			ButtonSgb8.AutoSize = true;
+			ButtonSgb8.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+			ButtonSgb8.BackColor = Color.FromArgb(200, 255, 255, 255);
+			ButtonSgb8.Dock = DockStyle.Left;
+			ButtonSgb8.FlatAppearance.BorderSize = 0;
+			ButtonSgb8.FlatStyle = FlatStyle.Flat;
+			ButtonSgb8.Location = new Point(95, 0);
+			ButtonSgb8.Margin = new Padding(5);
+			ButtonSgb8.Name = "ButtonSgb8";
+			ButtonSgb8.Size = new Size(57, 30);
+			ButtonSgb8.TabIndex = 0;
+			ButtonSgb8.Text = "SGB VIII";
+			ButtonSgb8.UseVisualStyleBackColor = false;
+			ButtonSgb8.Click += ButtonSgb8_Click;
+			ButtonSgb8.Paint += OnTabNavPaint;
+			// 
+			// ButtonEheUndLeben
+			// 
+			ButtonEheUndLeben.AutoSize = true;
+			ButtonEheUndLeben.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+			ButtonEheUndLeben.BackColor = Color.FromArgb(200, 255, 255, 255);
+			ButtonEheUndLeben.Dock = DockStyle.Left;
+			ButtonEheUndLeben.FlatAppearance.BorderSize = 0;
+			ButtonEheUndLeben.FlatStyle = FlatStyle.Flat;
+			ButtonEheUndLeben.Location = new Point(0, 0);
+			ButtonEheUndLeben.Margin = new Padding(5);
+			ButtonEheUndLeben.Name = "ButtonEheUndLeben";
+			ButtonEheUndLeben.Size = new Size(95, 30);
+			ButtonEheUndLeben.TabIndex = 1;
+			ButtonEheUndLeben.Text = "Ehe und Leben";
+			ButtonEheUndLeben.UseVisualStyleBackColor = false;
+			ButtonEheUndLeben.Click += ButtonEheUndLeben_Click;
+			ButtonEheUndLeben.Paint += OnTabNavPaint;
+			// 
+			// panelToggle
+			// 
+			panelToggle.BackColor = Color.White;
+			panelToggle.Controls.Add(toggleWieder);
+			panelToggle.Controls.Add(toggleAbgeschlossen);
+			panelToggle.Controls.Add(label1);
+			panelToggle.Controls.Add(label2);
+			panelToggle.Location = new Point(74, 469);
+			panelToggle.Name = "panelToggle";
+			panelToggle.Padding = new Padding(3);
+			panelToggle.Size = new Size(200, 82);
+			panelToggle.TabIndex = 8;
+			// 
+			// gridAlter
+			// 
+			gridAlter.AllowUserToAddRows = false;
+			gridAlter.AllowUserToDeleteRows = false;
+			gridAlter.AllowUserToResizeColumns = false;
+			gridAlter.AllowUserToResizeRows = false;
+			gridAlter.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+			gridAlter.BackgroundColor = SystemColors.ControlLight;
+			gridAlter.BorderStyle = BorderStyle.Fixed3D;
+			gridAlter.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+			dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle1.BackColor = SystemColors.Control;
+			dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F);
+			dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+			dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+			dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+			dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+			gridAlter.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+			gridAlter.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			gridAlter.Columns.AddRange(new DataGridViewColumn[] { Person, m, w, nb });
+			dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle2.BackColor = SystemColors.Window;
+			dataGridViewCellStyle2.Font = new Font("Segoe UI", 11F);
+			dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+			dataGridViewCellStyle2.SelectionBackColor = Color.LightGreen;
+			dataGridViewCellStyle2.SelectionForeColor = SystemColors.ControlText;
+			dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+			gridAlter.DefaultCellStyle = dataGridViewCellStyle2;
+			gridAlter.GridColor = SystemColors.ControlLight;
+			gridAlter.Location = new Point(74, 238);
+			gridAlter.Name = "gridAlter";
+			gridAlter.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+			gridAlter.RowHeadersVisible = false;
+			gridAlter.RowHeadersWidth = 40;
+			gridAlter.RowTemplate.Height = 25;
+			gridAlter.ScrollBars = ScrollBars.None;
+			gridAlter.Size = new Size(408, 203);
+			gridAlter.TabIndex = 7;
+			gridAlter.CellContentClick += gridAlter_CellContentClick;
+			gridAlter.CellValueChanged += OnValueChanged;
+			// 
+			// Person
+			// 
+			Person.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+			Person.FillWeight = 105F;
+			Person.HeaderText = "Person";
+			Person.MinimumWidth = 100;
+			Person.Name = "Person";
+			Person.ReadOnly = true;
+			Person.SortMode = DataGridViewColumnSortMode.NotSortable;
+			// 
+			// m
+			// 
+			m.FillWeight = 52.11506F;
+			m.HeaderText = "männlich";
+			m.Name = "m";
+			m.SortMode = DataGridViewColumnSortMode.NotSortable;
+			// 
+			// w
+			// 
+			w.FillWeight = 52.11506F;
+			w.HeaderText = "weiblich";
+			w.Name = "w";
+			w.SortMode = DataGridViewColumnSortMode.NotSortable;
+			// 
+			// nb
+			// 
+			nb.FillWeight = 52.11506F;
+			nb.HeaderText = "non-binär";
+			nb.Name = "nb";
+			nb.SortMode = DataGridViewColumnSortMode.NotSortable;
+			// 
+			// panelBlocker
+			// 
+			panelBlocker.BackColor = Color.FromArgb(210, 255, 255, 255);
+			panelBlocker.Controls.Add(rjButton1);
+			panelBlocker.Controls.Add(label3);
+			panelBlocker.Location = new Point(525, 30);
+			panelBlocker.Name = "panelBlocker";
+			panelBlocker.Size = new Size(500, 590);
+			panelBlocker.TabIndex = 14;
+			panelBlocker.Paint += panelBlocker_Paint;
+			// 
+			// rjButton1
+			// 
+			rjButton1.BackColor = Color.IndianRed;
+			rjButton1.BackgroundColor = Color.IndianRed;
+			rjButton1.BorderColor = Color.Transparent;
+			rjButton1.BorderRadius = 0;
+			rjButton1.BorderSize = 1;
+			rjButton1.FlatAppearance.BorderSize = 0;
+			rjButton1.FlatStyle = FlatStyle.Flat;
+			rjButton1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+			rjButton1.ForeColor = Color.White;
+			rjButton1.Location = new Point(152, 511);
+			rjButton1.Name = "rjButton1";
+			rjButton1.Size = new Size(200, 40);
+			rjButton1.TabIndex = 6;
+			rjButton1.Text = "Ohne Seite 1 fortfahren";
+			rjButton1.TextColor = Color.White;
+			rjButton1.UseVisualStyleBackColor = false;
+			rjButton1.Click += OnButtonSkip;
+			// 
+			// label3
+			// 
+			label3.BackColor = Color.Transparent;
+			label3.Font = new Font("Segoe UI", 14F);
+			label3.ForeColor = Color.IndianRed;
+			label3.Location = new Point(0, 57);
+			label3.Name = "label3";
+			label3.Size = new Size(502, 198);
+			label3.TabIndex = 0;
+			label3.Text = "Da einige Tabellen auf allgemeine Daten zur \r\nPerson und Anmeldung zugreifen, ist es notwendig\r\ndiese zuerst vorzunehmen und zu speichern.";
+			label3.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// cbARGE
+			// 
+			cbARGE.BackColor = Color.WhiteSmoke;
+			cbARGE.Font = new Font("Segoe UI", 9.75F);
+			cbARGE.ImageAlign = ContentAlignment.TopCenter;
+			cbARGE.Location = new Point(280, 474);
+			cbARGE.Name = "cbARGE";
+			cbARGE.Padding = new Padding(10, 5, 5, 5);
+			cbARGE.Size = new Size(200, 32);
+			cbARGE.TabIndex = 10;
+			cbARGE.Text = "ARGE: Nein";
+			cbARGE.TextAlign = ContentAlignment.MiddleCenter;
+			cbARGE.TextImageRelation = TextImageRelation.TextBeforeImage;
+			cbARGE.UseVisualStyleBackColor = false;
+			cbARGE.CheckedChanged += OnClick;
+			// 
+			// btnDebug
+			// 
+			btnDebug.BackColor = Color.Gray;
+			btnDebug.BackgroundColor = Color.Gray;
+			btnDebug.BorderColor = Color.Transparent;
+			btnDebug.BorderRadius = 0;
+			btnDebug.BorderSize = 1;
+			btnDebug.FlatAppearance.BorderSize = 0;
+			btnDebug.FlatStyle = FlatStyle.Flat;
+			btnDebug.Font = new Font("Segoe UI", 12F);
+			btnDebug.ForeColor = Color.White;
+			btnDebug.Location = new Point(282, 184);
+			btnDebug.Name = "btnDebug";
+			btnDebug.Size = new Size(200, 32);
+			btnDebug.TabIndex = 6;
+			btnDebug.Text = "(debug)";
+			btnDebug.TextColor = Color.White;
+			btnDebug.UseVisualStyleBackColor = false;
+			btnDebug.Visible = false;
+			btnDebug.Click += OnButtonFill;
+			// 
+			// indicateSaved
+			// 
+			indicateSaved.ForeColor = Color.Green;
+			indicateSaved.Location = new Point(20, 662);
+			indicateSaved.Name = "indicateSaved";
+			indicateSaved.Size = new Size(1051, 23);
+			indicateSaved.Style = ProgressBarStyle.Continuous;
+			indicateSaved.TabIndex = 23;
+			// 
+			// label4
+			// 
+			label4.AutoSize = true;
+			label4.BackColor = Color.Transparent;
+			label4.Font = new Font("Segoe UI", 9.75F);
+			label4.ForeColor = Color.FromArgb(90, 90, 90);
+			label4.Location = new Point(72, 50);
+			label4.Name = "label4";
+			label4.Size = new Size(32, 17);
+			label4.TabIndex = 5;
+			label4.Text = "Jahr";
+			// 
+			// label5
+			// 
+			label5.AutoSize = true;
+			label5.BackColor = Color.Transparent;
+			label5.Font = new Font("Segoe UI", 9.75F);
+			label5.ForeColor = Color.FromArgb(90, 90, 90);
+			label5.Location = new Point(280, 50);
+			label5.Name = "label5";
+			label5.Size = new Size(107, 17);
+			label5.TabIndex = 5;
+			label5.Text = "Anmeldenummer";
+			// 
+			// label6
+			// 
+			label6.AutoSize = true;
+			label6.BackColor = Color.Transparent;
+			label6.Font = new Font("Segoe UI", 9.75F);
+			label6.ForeColor = Color.FromArgb(90, 90, 90);
+			label6.Location = new Point(72, 104);
+			label6.Name = "label6";
+			label6.Size = new Size(43, 17);
+			label6.TabIndex = 5;
+			label6.Text = "Name";
+			// 
+			// label7
+			// 
+			label7.AutoSize = true;
+			label7.BackColor = Color.Transparent;
+			label7.Font = new Font("Segoe UI", 9.75F);
+			label7.ForeColor = Color.FromArgb(90, 90, 90);
+			label7.Location = new Point(280, 104);
+			label7.Name = "label7";
+			label7.Size = new Size(58, 17);
+			label7.TabIndex = 5;
+			label7.Text = "Wohnort";
+			// 
+			// tbDatum
+			// 
+			tbDatum.BackColor = SystemColors.Window;
+			tbDatum.BorderColor = Color.Black;
+			tbDatum.BorderFocusColor = Color.Green;
+			tbDatum.BorderRadius = 0;
+			tbDatum.BorderSize = 1;
+			tbDatum.Font = new Font("Segoe UI", 9.75F);
+			tbDatum.ForeColor = Color.FromArgb(64, 64, 64);
+			tbDatum.Location = new Point(74, 580);
+			tbDatum.Margin = new Padding(0);
+			tbDatum.Multiline = false;
+			tbDatum.Name = "tbDatum";
+			tbDatum.Padding = new Padding(10, 7, 10, 7);
+			tbDatum.PasswordChar = false;
+			tbDatum.PlaceholderColor = Color.DarkGray;
+			tbDatum.PlaceholderText = "Abgeschlossen am";
+			tbDatum.Size = new Size(200, 32);
+			tbDatum.TabIndex = 12;
+			tbDatum.Texts = "";
+			tbDatum.UnderlinedStyle = true;
+			tbDatum.Click += OnTextBoxClick;
+			tbDatum.Enter += OnTextBoxClick;
+			// 
+			// Abschlussdatum
+			// 
+			Abschlussdatum.AutoSize = true;
+			Abschlussdatum.BackColor = Color.Transparent;
+			Abschlussdatum.Font = new Font("Segoe UI", 9.75F);
+			Abschlussdatum.ForeColor = Color.FromArgb(90, 90, 90);
+			Abschlussdatum.Location = new Point(74, 612);
+			Abschlussdatum.Name = "Abschlussdatum";
+			Abschlussdatum.Size = new Size(117, 17);
+			Abschlussdatum.TabIndex = 5;
+			Abschlussdatum.Text = "Abgeschlossen am";
+			// 
+			// FrameAddNew
+			// 
+			AutoScaleDimensions = new SizeF(7F, 15F);
+			AutoScaleMode = AutoScaleMode.Font;
+			BackColor = Color.FromArgb(160, 255, 255, 255);
+			Controls.Add(indicateSaved);
+			Controls.Add(label7);
+			Controls.Add(Abschlussdatum);
+			Controls.Add(label6);
+			Controls.Add(label5);
+			Controls.Add(label4);
+			Controls.Add(cbARGE);
+			Controls.Add(panelBlocker);
+			Controls.Add(gridAlter);
+			Controls.Add(panelToggle);
+			Controls.Add(ContentFrame);
+			Controls.Add(btnDebug);
+			Controls.Add(btnSave);
+			Controls.Add(tbWohnort);
+			Controls.Add(tbNr);
+			Controls.Add(tbDatum);
+			Controls.Add(tbName);
+			Controls.Add(tbJahr);
+			Controls.Add(dropGrund);
+			Controls.Add(dropMigra);
+			Controls.Add(dropAnregung);
+			Controls.Add(dropBeratung);
+			Margin = new Padding(0);
+			Name = "FrameAddNew";
+			Size = new Size(1080, 690);
+			Tag = "Frame";
+			Load += OnLoad;
+			ContentFrame.ResumeLayout(false);
+			TabNavControl.ResumeLayout(false);
+			TabNavControl.PerformLayout();
+			panelToggle.ResumeLayout(false);
+			panelToggle.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)gridAlter).EndInit();
+			panelBlocker.ResumeLayout(false);
+			ResumeLayout(false);
+			PerformLayout();
+		}
 
-        }
-
-        #endregion
-        private RJTextBox tbJahr;
+		#endregion
+		private RJTextBox tbJahr;
         private RJTextBox tbName;
         private RJTextBox tbNr;
         private RJTextBox tbWohnort;
@@ -855,10 +806,6 @@
         private DataGridViewTextBoxColumn w;
         private DataGridViewTextBoxColumn nb;
         private RJCodeAdvance.RJControls.RJButton rjButton1;
-        private Panel panelBlockerShadow;
-        private Panel panel1;
-        private Panel panel2;
-        private Panel panel4;
         private ProgressBar indicateSaved;
         private Label label4;
         private Label label5;
@@ -866,5 +813,5 @@
         private Label label7;
         private RJTextBox tbDatum;
         private Label Abschlussdatum;
-    }
+	}
 }
