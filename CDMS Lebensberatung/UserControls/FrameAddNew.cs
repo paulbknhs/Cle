@@ -282,7 +282,7 @@ public partial class FrameAddNew : UserControl
 		ReadInput.FromToggleSwitch(panelToggle, Dictionaries.Allgemein);
 		ReadInput.AgeFromGridView(this, Dictionaries.Allgemein);
 
-		if (cbARGE.Checked)
+		if (toggleARGE.Checked)
 			Dictionaries.Allgemein.Add("ARGE", "Ja");
 
 		Dictionaries.Allgemein.Add("Age", GetAgeFromRow(GetRelevantRow()));
@@ -438,11 +438,6 @@ public partial class FrameAddNew : UserControl
 		indicateSaved.Value = 0;
 	}
 
-	private void OnClick(object sender, EventArgs e)
-	{
-		var check = (CheckBox)sender;
-		check.Text = check.CheckState == CheckState.Checked ? "ARGE: Ja" : "ARGE: Nein";
-	}
 
 	private void OnTextBoxClick(object sender, EventArgs e)
 	{

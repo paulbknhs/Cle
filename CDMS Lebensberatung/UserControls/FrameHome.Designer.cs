@@ -45,8 +45,8 @@
 			labelHallo.AutoSize = true;
 			labelHallo.BackColor = Color.Transparent;
 			labelHallo.Font = new Font("Segoe UI", 32F);
-			labelHallo.ForeColor = Color.Green;
-			labelHallo.Location = new Point(41, 43);
+			labelHallo.ForeColor = Color.FromArgb(35, 78, 84);
+			labelHallo.Location = new Point(37, 39);
 			labelHallo.Margin = new Padding(0);
 			labelHallo.Name = "labelHallo";
 			labelHallo.Size = new Size(135, 59);
@@ -61,7 +61,7 @@
 			labelDatum.BackColor = Color.Transparent;
 			labelDatum.Font = new Font("Segoe UI", 16F);
 			labelDatum.ForeColor = Color.DimGray;
-			labelDatum.Location = new Point(45, 13);
+			labelDatum.Location = new Point(45, 9);
 			labelDatum.Margin = new Padding(0);
 			labelDatum.Name = "labelDatum";
 			labelDatum.Size = new Size(87, 30);
@@ -105,7 +105,7 @@
 			serverState.AutoSize = true;
 			serverState.BackColor = Color.Transparent;
 			serverState.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-			serverState.ForeColor = Color.IndianRed;
+			serverState.ForeColor = Color.FromArgb(35, 78, 84);
 			serverState.Location = new Point(82, 11);
 			serverState.Name = "serverState";
 			serverState.Size = new Size(94, 25);
@@ -132,12 +132,13 @@
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
-			BackColor = Color.FromArgb(160, 255, 255, 255);
+			BackColor = Color.FromArgb(40, 255, 255, 255);
+			BorderStyle = BorderStyle.Fixed3D;
 			Controls.Add(labelDatum);
 			Controls.Add(labelHallo);
 			Controls.Add(panelBack);
 			Name = "FrameHome";
-			Size = new Size(1080, 690);
+			Size = new Size(1076, 686);
 			Load += OnFrameLoad;
 			panelBack.ResumeLayout(false);
 			panelBack.PerformLayout();

@@ -28,12 +28,13 @@ public partial class Home : Form
 
     private void OnNavigationPaint(object sender, PaintEventArgs e)
     {
+        var highlightBrush = new SolidBrush(Color.FromArgb(35, 78, 84));
         var btn = (Button)sender;
         if (ReferenceEquals(btn.Tag, "selected"))
         {
-            e.Graphics.FillRectangle(Brushes.MediumTurquoise, new Rectangle(0, 0, 5, btn.Height));
+            e.Graphics.FillRectangle(highlightBrush, new Rectangle(0, 0, 5, btn.Height));
             btn.Font = new Font(btn.Font, FontStyle.Bold);
-            btn.ForeColor = Color.Black;
+            btn.ForeColor = Color.FromArgb(120, 45, 88, 94);
         }
         else
         {

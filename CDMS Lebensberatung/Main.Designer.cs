@@ -29,7 +29,7 @@
 			// 
 			// NavigationBar
 			// 
-			NavigationBar.BackColor = Color.LavenderBlush;
+			NavigationBar.BackColor = SystemColors.Control;
 			NavigationBar.Controls.Add(SettingsButton);
 			NavigationBar.Controls.Add(ExportButton);
 			NavigationBar.Controls.Add(SearchButton);
@@ -153,12 +153,13 @@
 			// Home
 			// 
 			AutoScaleMode = AutoScaleMode.None;
-			BackColor = SystemColors.ControlLightLight;
+			BackColor = Color.FromArgb(30, 45, 45);
 			BackgroundImageLayout = ImageLayout.Stretch;
 			ClientSize = new Size(1280, 686);
 			Controls.Add(NavigationBar);
 			DoubleBuffered = true;
 			FormBorderStyle = FormBorderStyle.FixedSingle;
+			HelpButton = true;
 			Icon = (Icon)resources.GetObject("$this.Icon");
 			MaximizeBox = false;
 			Name = "Home";

@@ -67,7 +67,7 @@
 			panel2.Controls.Add(label4);
 			panel2.Controls.Add(label1);
 			panel2.Controls.Add(label2);
-			panel2.Location = new Point(67, 45);
+			panel2.Location = new Point(63, 45);
 			panel2.Name = "panel2";
 			panel2.Size = new Size(959, 610);
 			panel2.TabIndex = 6;
@@ -225,10 +225,11 @@
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
-			BackColor = Color.FromArgb(160, 255, 255, 255);
+			BackColor = Color.FromArgb(40, 255, 255, 255);
+			BorderStyle = BorderStyle.Fixed3D;
 			Controls.Add(panel2);
 			Name = "FrameSettings";
-			Size = new Size(1080, 690);
+			Size = new Size(1076, 686);
 			Load += OnFrameLoad;
 			panel2.ResumeLayout(false);
 			panel2.PerformLayout();
