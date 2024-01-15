@@ -190,7 +190,6 @@ public partial class FrameAddNew : UserControl
 		SetDropDowns();
 		InitializeContent();
 		SetGridAlter();
-		if (AppDomain.CurrentDomain.FriendlyName.EndsWith("vshost.exe")) btnDebug.Visible = true;
 	}
 
 	private void OnToggle(object sender, EventArgs e)
@@ -467,7 +466,7 @@ public partial class FrameAddNew : UserControl
 
 	private void OnButtonSkip(object sender, EventArgs e)
 	{
-		panelBlocker.Visible = false;
+		
 	}
 
 	private void panelBlocker_Paint(object sender, PaintEventArgs e)
@@ -477,5 +476,15 @@ public partial class FrameAddNew : UserControl
 	private void gridAlter_CellContentClick(object sender, DataGridViewCellEventArgs e)
 	{
 
+	}
+
+	private void label2_Click(object sender, EventArgs e)
+	{
+
+	}
+
+	private void panelBlocker_Click(object sender, EventArgs e)
+	{
+		panelBlocker.Visible = false;
 	}
 }

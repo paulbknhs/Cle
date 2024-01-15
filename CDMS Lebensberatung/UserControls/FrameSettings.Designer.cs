@@ -67,9 +67,9 @@
 			panel2.Controls.Add(label4);
 			panel2.Controls.Add(label1);
 			panel2.Controls.Add(label2);
-			panel2.Location = new Point(63, 45);
+			panel2.Location = new Point(32, 32);
 			panel2.Name = "panel2";
-			panel2.Size = new Size(959, 610);
+			panel2.Size = new Size(1010, 621);
 			panel2.TabIndex = 6;
 			// 
 			// rjButton2
@@ -83,7 +83,7 @@
 			rjButton2.FlatStyle = FlatStyle.Flat;
 			rjButton2.Font = new Font("Segoe UI", 12F);
 			rjButton2.ForeColor = Color.Black;
-			rjButton2.Location = new Point(789, 287);
+			rjButton2.Location = new Point(836, 287);
 			rjButton2.Name = "rjButton2";
 			rjButton2.Size = new Size(140, 31);
 			rjButton2.TabIndex = 23;
@@ -94,8 +94,8 @@
 			// 
 			// rjButton1
 			// 
-			rjButton1.BackColor = Color.Green;
-			rjButton1.BackgroundColor = Color.Green;
+			rjButton1.BackColor = Color.FromArgb(24, 38, 37);
+			rjButton1.BackgroundColor = Color.FromArgb(24, 38, 37);
 			rjButton1.BorderColor = Color.Transparent;
 			rjButton1.BorderRadius = 0;
 			rjButton1.BorderSize = 1;
@@ -103,11 +103,11 @@
 			rjButton1.FlatStyle = FlatStyle.Flat;
 			rjButton1.Font = new Font("Segoe UI", 12F);
 			rjButton1.ForeColor = Color.White;
-			rjButton1.Location = new Point(729, 542);
+			rjButton1.Location = new Point(776, 350);
 			rjButton1.Name = "rjButton1";
 			rjButton1.Size = new Size(200, 40);
 			rjButton1.TabIndex = 23;
-			rjButton1.Text = "Speichern";
+			rjButton1.Text = "Übernehmen";
 			rjButton1.TextColor = Color.White;
 			rjButton1.UseVisualStyleBackColor = false;
 			rjButton1.Click += OnSaveConfig;
@@ -115,12 +115,12 @@
 			// tbDefaultPath
 			// 
 			tbDefaultPath.BackColor = SystemColors.Window;
-			tbDefaultPath.BorderColor = Color.Green;
-			tbDefaultPath.BorderFocusColor = Color.IndianRed;
+			tbDefaultPath.BorderColor = Color.FromArgb(24, 38, 37);
+			tbDefaultPath.BorderFocusColor = Color.FromArgb(24, 38, 37);
 			tbDefaultPath.BorderRadius = 0;
 			tbDefaultPath.BorderSize = 2;
 			tbDefaultPath.Font = new Font("Microsoft Sans Serif", 9.5F);
-			tbDefaultPath.ForeColor = Color.FromArgb(64, 64, 64);
+			tbDefaultPath.ForeColor = Color.FromArgb(24, 38, 37);
 			tbDefaultPath.Location = new Point(35, 287);
 			tbDefaultPath.Margin = new Padding(4);
 			tbDefaultPath.Multiline = false;
@@ -129,7 +129,7 @@
 			tbDefaultPath.PasswordChar = false;
 			tbDefaultPath.PlaceholderColor = Color.DarkGray;
 			tbDefaultPath.PlaceholderText = "";
-			tbDefaultPath.Size = new Size(750, 31);
+			tbDefaultPath.Size = new Size(794, 31);
 			tbDefaultPath.TabIndex = 0;
 			tbDefaultPath.Texts = "";
 			tbDefaultPath.UnderlinedStyle = true;
@@ -138,12 +138,12 @@
 			// tbServiceName
 			// 
 			tbServiceName.BackColor = SystemColors.Window;
-			tbServiceName.BorderColor = Color.Green;
-			tbServiceName.BorderFocusColor = Color.IndianRed;
+			tbServiceName.BorderColor = Color.FromArgb(24, 38, 37);
+			tbServiceName.BorderFocusColor = Color.FromArgb(24, 38, 37);
 			tbServiceName.BorderRadius = 0;
 			tbServiceName.BorderSize = 2;
 			tbServiceName.Font = new Font("Microsoft Sans Serif", 9.5F);
-			tbServiceName.ForeColor = Color.FromArgb(64, 64, 64);
+			tbServiceName.ForeColor = Color.FromArgb(24, 38, 37);
 			tbServiceName.Location = new Point(35, 192);
 			tbServiceName.Margin = new Padding(4);
 			tbServiceName.Multiline = false;
@@ -152,7 +152,7 @@
 			tbServiceName.PasswordChar = false;
 			tbServiceName.PlaceholderColor = Color.DarkGray;
 			tbServiceName.PlaceholderText = "";
-			tbServiceName.Size = new Size(894, 31);
+			tbServiceName.Size = new Size(941, 31);
 			tbServiceName.TabIndex = 0;
 			tbServiceName.Texts = "";
 			tbServiceName.UnderlinedStyle = true;
@@ -161,12 +161,12 @@
 			// tbConnectionString
 			// 
 			tbConnectionString.BackColor = SystemColors.Window;
-			tbConnectionString.BorderColor = Color.Green;
-			tbConnectionString.BorderFocusColor = Color.IndianRed;
+			tbConnectionString.BorderColor = Color.FromArgb(24, 38, 37);
+			tbConnectionString.BorderFocusColor = Color.FromArgb(24, 38, 37);
 			tbConnectionString.BorderRadius = 0;
 			tbConnectionString.BorderSize = 2;
 			tbConnectionString.Font = new Font("Microsoft Sans Serif", 9.5F);
-			tbConnectionString.ForeColor = Color.FromArgb(64, 64, 64);
+			tbConnectionString.ForeColor = Color.FromArgb(24, 38, 37);
 			tbConnectionString.Location = new Point(35, 113);
 			tbConnectionString.Margin = new Padding(4);
 			tbConnectionString.Multiline = false;
@@ -175,7 +175,7 @@
 			tbConnectionString.PasswordChar = false;
 			tbConnectionString.PlaceholderColor = Color.DarkGray;
 			tbConnectionString.PlaceholderText = "";
-			tbConnectionString.Size = new Size(894, 31);
+			tbConnectionString.Size = new Size(941, 31);
 			tbConnectionString.TabIndex = 0;
 			tbConnectionString.Texts = "";
 			tbConnectionString.UnderlinedStyle = true;
@@ -225,7 +225,7 @@
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
-			BackColor = Color.FromArgb(40, 255, 255, 255);
+			BackColor = Color.FromArgb(30, 255, 255, 255);
 			BorderStyle = BorderStyle.Fixed3D;
 			Controls.Add(panel2);
 			Name = "FrameSettings";

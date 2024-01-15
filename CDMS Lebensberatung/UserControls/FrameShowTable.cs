@@ -69,11 +69,6 @@ public partial class FrameShowTable : UserControl
 			> 0 => $"{table.Rows.Count} Einträge",
 			_ => "Keine Einträge"
 		};
-		txtRows.ForeColor = table.Rows.Count switch
-		{
-			> 0 => Color.Green,
-			_ => Color.Red
-		};
 	}
 
 	private void GetDataFiltered()
@@ -98,11 +93,6 @@ public partial class FrameShowTable : UserControl
 		{
 			> 0 => $"{table.Rows.Count} Einträge",
 			_ => "Keine Einträge"
-		};
-		txtRows.ForeColor = table.Rows.Count switch
-		{
-			> 0 => Color.Green,
-			_ => Color.Red
 		};
 	}
 

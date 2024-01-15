@@ -132,7 +132,7 @@
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
-			BackColor = Color.FromArgb(40, 255, 255, 255);
+			BackColor = Color.FromArgb(30, 255, 255, 255);
 			BorderStyle = BorderStyle.Fixed3D;
 			Controls.Add(labelDatum);
 			Controls.Add(labelHallo);
