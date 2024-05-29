@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows10.0.22621.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>True</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <PlatformTarget>x64</PlatformTarget>
+    <AssemblyName>$(MSBuildProjectName)</AssemblyName>
+    <Platforms>AnyCPU;x64</Platforms>
+    <StartupObject>Cle.Classes.Program</StartupObject>
+    <SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
+    <GenerateDocumentationFile>False</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="images\**" />
+    <Compile Remove="last_build\**" />
+    <Compile Remove="Resources\**" />
+    <EmbeddedResource Remove="images\**" />
+    <EmbeddedResource Remove="last_build\**" />
+    <EmbeddedResource Remove="Resources\**" />
+    <None Remove="images\**" />
+    <None Remove="last_build\**" />
+    <None Remove="Resources\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.0" />
+    <PackageReference Include="Microsoft.Windows.Compatibility" Version="8.0.5" />
+    <PackageReference Include="RJCodeAdvance.RJControls" Version="1.0.0">
+      <NoWarn>NU1701</NoWarn>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>
