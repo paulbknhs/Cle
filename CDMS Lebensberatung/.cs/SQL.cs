@@ -7,7 +7,9 @@ namespace CDMS_Lebensberatung.cs;
 public class SQL
 {
     private SqlConnection _connection;
-    private readonly string _connectionString = "Data Source=\"localhost\\SQLEXPRESS01\"; Initial Catalog=active_db; Integrated Security=True; TrustServerCertificate=True";
+
+    private readonly string _connectionString =
+        "Data Source=\"localhost\\SQLEXPRESS01\"; Initial Catalog=active_db; Integrated Security=True; TrustServerCertificate=True";
 
     public SQL(string connectionString)
     {
@@ -97,8 +99,29 @@ public class SQL
 
         foreach (var kvp in filters)
             required.Append($"[{kvp.Key}] LIKE '%{kvp.Value}%' AND ");
-        
 
+        required.Length -= 5;
+        using var command = new SqlCommand(
+            $"SELECT * FROM [dbo].[{tableName}] WHERE {required}",
+            _connection
+        );
+        using var reader = command.ExecuteReader();
+        dataTable.Load(reader);
+        return dataTable;
+    }
+    
+    public DataTable GetStrictlyFiltered (string tableName, Dictionary<string, string[]> filters)
+    {
+        var dataTable = new DataTable();
+        var required = new StringBuilder();
+
+        // create a string that contains all the required filters
+        foreach (var kvp in filters)
+        {
+            var filterValues = string.Join(" OR ", kvp.Value.Select(value => $"[{kvp.Key}] = '{value}'"));
+            required.Append($"({filterValues}) AND ");
+        }
+        
         required.Length -= 5;
         using var command = new SqlCommand(
             $"SELECT * FROM [dbo].[{tableName}] WHERE {required}",
@@ -112,7 +135,7 @@ public class SQL
     public bool DeleteData(string tableName, string id)
     {
         using var command = new SqlCommand(
-            $"DELETE FROM [dbo].[{tableName}] WHERE ID = {id}", _connection );
+            $"DELETE FROM [dbo].[{tableName}] WHERE ID = {id}", _connection);
         using var reader = command.ExecuteReader();
 
         return true;

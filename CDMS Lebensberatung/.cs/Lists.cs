@@ -203,4 +203,9 @@ public static class Lists
     {
         "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"
     };
+
+    public static List<string> Comparators = new()
+    {
+        "ist genau", "ist nicht", "Wert ist kleiner als", "Wert ist größer als"
+    };
 }
