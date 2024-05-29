@@ -4,12 +4,12 @@ using System.Text;
 
 namespace CDMS_Lebensberatung.cs;
 
-public class Sql
+public class SQL
 {
     private SqlConnection _connection;
-    private readonly string _connectionString;
+    private readonly string _connectionString = "Data Source=\"localhost\\SQLEXPRESS01\"; Initial Catalog=active_db; Integrated Security=True; TrustServerCertificate=True";
 
-    public Sql(string connectionString)
+    public SQL(string connectionString)
     {
         _connectionString = connectionString;
     }

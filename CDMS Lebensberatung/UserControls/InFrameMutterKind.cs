@@ -41,7 +41,7 @@ public partial class MutterKind : UserControl
         var result = ReadInput.LetUserVerify(Dictionaries.MutterKind);
         if (result != DialogResult.OK) return;
 
-        Sql database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        SQL database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
         database.Connect();
         database.InsertStringDict("Mutter Kind", Dictionaries.MutterKind);
         database.Disconnect();

@@ -50,7 +50,7 @@ public partial class P218 : UserControl
 
         allgemeinAlter.Add("Gender", gender);
 
-        Sql database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        SQL database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
         database.Connect();
         database.InsertStringDict("§ 218", Dictionaries.P218);
         database.InsertStringDict("Allgemein", allgemeinAlter);

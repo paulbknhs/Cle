@@ -93,7 +93,7 @@ public partial class Sgb8 : UserControl
         var result = ReadInput.LetUserVerify(Dictionaries.Sgb8);
         if (result != DialogResult.OK) return;
 
-        Sql database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        SQL database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
         database.Connect();
         database.InsertStringDict("SGB VIII", Dictionaries.Sgb8);
         database.Disconnect();

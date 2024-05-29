@@ -51,7 +51,7 @@ public static class Statistics
         };
 
         var filter = new Dictionary<string, string> { { "Wieder", "Nein" } };
-        Sql db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        SQL db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
         db.Connect();
         var dataTable = db.GetDataFiltered("Allgemein", filter);
         db.Disconnect();
@@ -96,7 +96,7 @@ public static class Statistics
         };
 
         var filter = new Dictionary<string, string> { { "Wieder", "Ja" } };
-        Sql db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        SQL db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
         db.Connect();
         var dataTable = db.GetDataFiltered("Allgemein", filter);
         db.Disconnect();
@@ -140,7 +140,7 @@ public static class Statistics
             { "Rechtsanwaltliche Erstberatung", 0 }
         };
 
-        Sql db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        SQL db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
         db.Connect();
         var dataTable = db.GetFullTable("Allgemein");
         db.Disconnect();
@@ -176,7 +176,7 @@ public static class Statistics
 
     public static DataTable Wohnort()
     {
-        Sql db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        SQL db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
         db.Connect();
         var dataTable = db.GetFullTable("Allgemein");
         db.Disconnect();
@@ -207,7 +207,7 @@ public static class Statistics
 
     public static DataTable GründeFürEheUndLeben()
     {
-        Sql db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        SQL db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
         db.Connect();
         var dataTable = db.GetColumn("Ehe und Leben", "Anmeldegründe");
         db.Disconnect();
@@ -255,7 +255,7 @@ public static class Statistics
 
         var grundSgb8Anzahl = new Dictionary<string, int>();
 
-        Sql db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        SQL db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
         db.Connect();
         var dataTable = db.GetColumn("SGB VIII", "Hilfe");
         db.Disconnect();
@@ -281,7 +281,7 @@ public static class Statistics
 
     public static DataTable SchwangerschaftAufteilung()
     {
-        Sql db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        SQL db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
 
         var table = new DataTable();
 

@@ -51,7 +51,7 @@ public partial class ARGE : UserControl
         var result = ReadInput.LetUserVerify(Dictionaries.ARGE);
         if (result != DialogResult.OK) return;
 
-        Sql database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        SQL database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
         database.Connect();
         database.InsertStringDict("ARGE", Dictionaries.ARGE);
         database.Disconnect();

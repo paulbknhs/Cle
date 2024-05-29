@@ -27,7 +27,7 @@ public partial class P2a : UserControl
         var result = ReadInput.LetUserVerify(Dictionaries.P2a);
         if (result != DialogResult.OK) return;
 
-        Sql database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        SQL database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
         database.Connect();
         database.InsertStringDict("§ 2a", Dictionaries.P2a);
         database.Disconnect();        

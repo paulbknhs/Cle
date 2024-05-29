@@ -1,16 +1,15 @@
-﻿using System.Configuration;
-using System.Data;
-using System.Linq;
-using Accessibility;
+﻿using System.Data;
 using CDMS_Lebensberatung.cs;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.Office.Interop.Excel;
 using DataTable = System.Data.DataTable;
 
 namespace CDMS_Lebensberatung.UserControls;
 
 public partial class FrameShowTable : UserControl
 {
+    private const string ConnectionString =
+        "Data Source=\"localhost\\SQLEXPRESS01\"; Initial Catalog=active_db; Integrated Security=True; TrustServerCertificate=True";
+
     public FrameShowTable()
     {
         InitializeComponent();
@@ -20,7 +19,6 @@ public partial class FrameShowTable : UserControl
     {
         dropTabelle.DataSource = Lists.Tabellen;
         dropTabelle.SelectedIndex = 0;
-        dropFilter.DataSource = gridData.Columns.Cast<DataGridViewColumn>().Select(x => x.HeaderText).ToList();
         GetData();
     }
 
@@ -38,8 +36,7 @@ public partial class FrameShowTable : UserControl
                 "Bestätigung", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             return;
 
-
-        Sql database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        SQL database = new(ConnectionString);
         database.Connect();
         database.DeleteData(table, id);
 
@@ -48,13 +45,13 @@ public partial class FrameShowTable : UserControl
 
     private void GetData()
     {
-        Sql database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        SQL database = new(ConnectionString);
         database.Connect();
 
         var table = database.GetFullTable(dropTabelle.SelectedItem.ToString());
         database.Disconnect();
-        
-        List<string> toRemove = new() { "Age", "Gender" };
+
+        List<string> toRemove = ["Age", "Gender"];
         table = RemoveColumns(table, toRemove);
         if (table.Columns.Contains("Beratungsart"))
         {
@@ -62,7 +59,9 @@ public partial class FrameShowTable : UserControl
             foreach (var r in rowsToRemove)
                 table.Rows.Remove(r);
         }
+
         gridData.DataSource = table;
+        dropCategory.DataSource = gridData.Columns.Cast<DataGridViewColumn>().Select(x => x.HeaderText).ToList();
 
         txtRows.Text = table.Rows.Count switch
         {
@@ -72,14 +71,14 @@ public partial class FrameShowTable : UserControl
         txtRows.ForeColor = table.Rows.Count switch
         {
             > 0 => Color.Green,
-            _   => Color.Red
+            _ => Color.Red
         };
     }
 
     private void GetDataFiltered()
     {
         var tableName = dropTabelle.SelectedItem.ToString() ?? "";
-        Sql database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        SQL database = new(ConnectionString);
         database.Connect();
         var table = database.GetDataFiltered(tableName, Dictionaries.Filters);
         database.Disconnect();
@@ -116,13 +115,13 @@ public partial class FrameShowTable : UserControl
         Console.WriteLine(tbListFilters.Texts);
 
         if (Dictionaries.Filters.ContainsKey(key)) Dictionaries.Filters[key] = value;
-        else  Dictionaries.Filters.Add(key, value);
+        else Dictionaries.Filters.Add(key, value);
         UpdateFiltered();
     }
 
     public static DataTable RemoveColumns(DataTable table, List<string> toRemove)
     {
-        foreach (var columnName in toRemove.Where(columnName => table.Columns.Contains(columnName))) 
+        foreach (var columnName in toRemove.Where(columnName => table.Columns.Contains(columnName)))
             table.Columns.Remove(columnName);
         return table;
     }
@@ -149,8 +148,8 @@ public partial class FrameShowTable : UserControl
         else GetDataFiltered();
     }
 
-    private void OnTableChange(object sender, EventArgs e)
-    {   
-        OnReset(rjButton2, EventArgs.Empty);
+    private void onCategorySelect(object sender, EventArgs e)
+    {
+        dropCategory.
     }
 }

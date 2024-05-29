@@ -16,6 +16,9 @@ namespace CDMS_Lebensberatung.UserControls;
 
 public partial class FrameStatistics : UserControl
 {
+    private const string CONNECTION_STRING =
+        "Data Source=\"localhost\\SQLEXPRESS01\"; Initial Catalog=active_db; Integrated Security=True; TrustServerCertificate=True";
+
     public FrameStatistics()
     {
         InitializeComponent();
@@ -24,7 +27,7 @@ public partial class FrameStatistics : UserControl
 
     public static List<int> CollectAgesUnfiltered()
     {
-        Sql db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        SQL db = new(CONNECTION_STRING);
         db.Connect();
         var dataTable = db.GetFullTable("Allgemein");
         db.Disconnect();
@@ -114,7 +117,7 @@ public partial class FrameStatistics : UserControl
             query.Append(filters[i]);
         }
 
-        Sql db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        SQL db = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
         db.Connect();
         var dataTable = db.SendQuery(query.ToString());
         db.Disconnect();

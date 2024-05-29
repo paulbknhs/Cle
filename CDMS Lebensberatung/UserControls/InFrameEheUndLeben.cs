@@ -97,7 +97,7 @@ public partial class EheUndLeben : UserControl
         var result = ReadInput.LetUserVerify(Dictionaries.EheUndLeben);
         if (result != DialogResult.OK) return;
 
-        Sql database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        SQL database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
         database.Connect();
         database.InsertStringDict("Ehe und Leben", Dictionaries.EheUndLeben);
         database.Disconnect();

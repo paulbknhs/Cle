@@ -31,7 +31,7 @@ public partial class AllgSgs : UserControl
         var result = ReadInput.LetUserVerify(Dictionaries.AllgSgs);
         if (result != DialogResult.OK) return;
 
-        Sql database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        SQL database = new(ConfigurationManager.AppSettings.Get("ConnectionString"));
         database.Connect();
         database.InsertStringDict("Allgemeine Schwangerschaft", Dictionaries.AllgSgs);
         database.Disconnect();

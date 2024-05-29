@@ -1,117 +1,106 @@
 using CDMS_Lebensberatung.UserControls;
+using System.Drawing;
+using System.Windows.Forms;
 
-namespace CDMS_Lebensberatung;
-
-public partial class Home : Form
-{ 
-    public Home()
+namespace CDMS_Lebensberatung
+{
+    public partial class Home : Form
     {
-        InitializeComponent();
-    }
-
-    #region Highlight Navigation
-
-    private void SelectNavigation(object selection)
-    {
-        var selectedButton = (Button)selection;
-        foreach (Control control in NavigationBar.Controls)
+        public Home()
         {
-            if (control is not Button b || b.Tag == null)
-                continue;
-            b.Tag = null;
-            b.Invalidate();
+            InitializeComponent();
         }
 
-        selectedButton.Tag = "selected";
-        selectedButton.Invalidate();
-    }
+        #region Highlight Navigation
 
-    private void OnNavigationPaint(object sender, PaintEventArgs e)
-    {
-        var btn = (Button)sender;
-        if (ReferenceEquals(btn.Tag, "selected"))
+        private void SelectNavigation(Button selectedButton)
         {
-            e.Graphics.FillRectangle(Brushes.MediumTurquoise, new Rectangle(0, 0, 5, btn.Height));
-            btn.Font = new Font(btn.Font, FontStyle.Bold);
-            btn.ForeColor = Color.Black;
-        }
-        else
-        {
-            btn.Font = new Font(btn.Font, FontStyle.Regular);
-            btn.ForeColor = Color.FromArgb(40, 40, 40);
-        }
-    }
+            foreach (Control control in NavigationBar.Controls)
+            {
+                if (control is Button button)
+                {
+                    button.Tag = null;
+                    button.Invalidate();
+                }
+            }
 
-    #endregion
-
-    private void OnHomeLoad(object sender, EventArgs e)
-    {
-        var frameSettings = new FrameSettings();
-        frameSettings.Location = new Point(200, 0);
-        frameSettings.Name = "frameSettings";
-        Controls.Add(frameSettings);
-        frameSettings.Visible = false;
-
-        var frameAddNew = new FrameAddNew();
-        frameAddNew.Location = new Point(200, 0);
-        frameAddNew.Name = "frameAddNew";
-        Controls.Add(frameAddNew);
-        frameAddNew.Visible = false;
-
-        var frameShowTable = new FrameShowTable();
-        frameShowTable.Location = new Point(200, 0);
-        frameShowTable.Name = "frameShowTable";
-        Controls.Add(frameShowTable);
-        frameShowTable.Visible = false;
-        
-        var frameStatistics = new FrameStatistics();
-        frameStatistics.Location = new Point(200, 0);
-        frameStatistics.Name = "frameStatistics";
-        Controls.Add(frameStatistics);
-        frameStatistics.Visible = false;
-
-        var frameHome = new FrameHome();
-        frameHome.Location = new Point(200, 0);
-        frameHome.Name = "frameHome";
-        Controls.Add(frameHome);
-        frameHome.Visible = true;
-
-        SelectNavigation(HomeButton);
-    }
-
-    private void OnClickOnNavigation(object sender, EventArgs e)
-    {
-        var btn = (Button)sender;
-        SelectNavigation(btn);
-
-        foreach (var control in Controls)
-        {
-            if (control is not UserControl userControl) continue;
-            userControl.Visible = false;
+            selectedButton.Tag = "selected";
+            selectedButton.Invalidate();
         }
 
-        switch (btn.Name)
+        private void OnNavigationPaint(object sender, PaintEventArgs e)
         {
-            case "HomeButton":
-                Controls.Find("frameHome", true)[0].Visible = true;
-                break;
+            if (sender is Button button)
+            {
+                if (button.Tag?.ToString() == "selected")
+                {
+                    e.Graphics.FillRectangle(Brushes.MediumTurquoise, new Rectangle(0, 0, 5, button.Height));
+                    button.Font = new Font(button.Font, FontStyle.Bold);
+                    button.ForeColor = Color.Black;
+                }
+                else
+                {
+                    button.Font = new Font(button.Font, FontStyle.Regular);
+                    button.ForeColor = Color.FromArgb(40, 40, 40);
+                }
+            }
+        }
 
-            case "AddButton":
-                Controls.Find("frameAddNew", true)[0].Visible = true;
-                break;
+        #endregion
 
-            case "SearchButton":
-                Controls.Find("frameShowTable", true)[0].Visible = true;
-                break;
+        private void OnHomeLoad(object sender, EventArgs e)
+        {
+            AddUserControl(new FrameSettings(), "frameSettings");
+            AddUserControl(new FrameAddNew(), "frameAddNew");
+            AddUserControl(new FrameShowTable(), "frameShowTable");
+            AddUserControl(new FrameStatistics(), "frameStatistics");
+            AddUserControl(new FrameHome(), "frameHome", true);
 
-            case "ExportButton":
-                Controls.Find("frameStatistics", true)[0].Visible = true;
-                break;
+            SelectNavigation(HomeButton);
+        }
 
-            case "SettingsButton":
-                Controls.Find("frameSettings", true)[0].Visible = true;
-                break;
-                
+        private void AddUserControl(UserControl userControl, string name, bool isVisible = false)
+        {
+            userControl.Location = new Point(200, 0);
+            userControl.Name = name;
+            userControl.Visible = isVisible;
+            Controls.Add(userControl);
+        }
+
+        private void OnClickOnNavigation(object sender, EventArgs e)
+        {
+            if (sender is Button btn)
+            {
+                SelectNavigation(btn);
+
+                HideAllUserControls();
+
+                var frameName = btn.Name switch
+                {
+                    "HomeButton" => "frameHome",
+                    "AddButton" => "frameAddNew",
+                    "SearchButton" => "frameShowTable",
+                    "ExportButton" => "frameStatistics",
+                    "SettingsButton" => "frameSettings",
+                    _ => null
+                };
+
+                if (frameName != null)
+                {
+                    Controls.Find(frameName, true)[0].Visible = true;
+                }
+            }
+        }
+
+        private void HideAllUserControls()
+        {
+            foreach (Control control in Controls)
+            {
+                if (control is UserControl userControl)
+                {
+                    userControl.Visible = false;
+                }
+            }
         }
     }
 }
