@@ -28,6 +28,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.0" />
     <PackageReference Include="Microsoft.Windows.Compatibility" Version="8.0.5" />
     <PackageReference Include="RJCodeAdvance.RJControls" Version="1.0.0">

@@ -33,7 +33,7 @@
             ExportButton.FlatStyle = FlatStyle.Flat;
             ExportButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             ExportButton.ForeColor = Color.Black;
-            ExportButton.Image = Cle.Properties.images.export24x24;
+            ExportButton.Image = Properties.images.export24x24;
             ExportButton.ImageAlign = ContentAlignment.MiddleLeft;
             ExportButton.Location = new Point(0, 184);
             ExportButton.Margin = new Padding(0);
@@ -55,7 +55,7 @@
             SearchButton.FlatStyle = FlatStyle.Flat;
             SearchButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             SearchButton.ForeColor = Color.Black;
-            SearchButton.Image = Cle.Properties.images.search_db24x24;
+            SearchButton.Image = Properties.images.search_db24x24;
             SearchButton.ImageAlign = ContentAlignment.MiddleLeft;
             SearchButton.Location = new Point(0, 134);
             SearchButton.Margin = new Padding(0);
@@ -77,7 +77,7 @@
             AddButton.FlatStyle = FlatStyle.Flat;
             AddButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             AddButton.ForeColor = Color.Black;
-            AddButton.Image = Cle.Properties.images.add_new24x24;
+            AddButton.Image = Properties.images.add_new24x24;
             AddButton.ImageAlign = ContentAlignment.MiddleLeft;
             AddButton.Location = new Point(0, 84);
             AddButton.Margin = new Padding(0);
@@ -99,7 +99,7 @@
             HomeButton.FlatStyle = FlatStyle.Flat;
             HomeButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             HomeButton.ForeColor = Color.Black;
-            HomeButton.Image = Cle.Properties.images.home24x24;
+            HomeButton.Image = Properties.images.home24x24;
             HomeButton.ImageAlign = ContentAlignment.MiddleLeft;
             HomeButton.Location = new Point(0, 15);
             HomeButton.Margin = new Padding(0);
