@@ -6,9 +6,9 @@ using static System.DateTime;
 
 namespace CDMS_Lebensberatung.UserControls;
 
-public partial class FrameHome : UserControl
+public partial class home : UserControl
 {
-    public FrameHome()
+    public home()
     {
         InitializeComponent();
     }

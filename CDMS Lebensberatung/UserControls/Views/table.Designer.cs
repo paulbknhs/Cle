@@ -1,6 +1,8 @@
-﻿namespace CDMS_Lebensberatung.UserControls
+﻿using CDMS_Lebensberatung.UserControls.CustomControls;
+
+namespace CDMS_Lebensberatung.UserControls
 {
-    partial class FrameShowTable
+    partial class table
     {
                                 private System.ComponentModel.IContainer components = null;
 
@@ -57,11 +59,11 @@
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
             dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = Color.LightGreen;
+            dataGridViewCellStyle2.SelectionBackColor = Color.SkyBlue;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.ControlText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             gridData.DefaultCellStyle = dataGridViewCellStyle2;
-            gridData.Location = new Point(65, 180);
+            gridData.Location = new Point(3, 114);
             gridData.Margin = new Padding(10);
             gridData.MultiSelect = false;
             gridData.Name = "gridData";
@@ -75,73 +77,73 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
             gridData.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             gridData.RowHeadersVisible = false;
-            gridData.Size = new Size(1000, 494);
+            gridData.Size = new Size(1077, 576);
             gridData.TabIndex = 0;
             // 
             // buttonDelete
             // 
-            buttonDelete.BackColor = Color.IndianRed;
-            buttonDelete.BackgroundColor = Color.IndianRed;
+            buttonDelete.BackColor = Color.Salmon;
+            buttonDelete.BackgroundColor = Color.Salmon;
             buttonDelete.BorderColor = Color.Black;
             buttonDelete.BorderRadius = 0;
             buttonDelete.BorderSize = 0;
             buttonDelete.FlatAppearance.BorderSize = 0;
             buttonDelete.FlatStyle = FlatStyle.Flat;
             buttonDelete.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            buttonDelete.ForeColor = Color.White;
-            buttonDelete.Location = new Point(865, 60);
+            buttonDelete.ForeColor = Color.DimGray;
+            buttonDelete.Location = new Point(877, 41);
             buttonDelete.Name = "buttonDelete";
             buttonDelete.Size = new Size(200, 32);
             buttonDelete.TabIndex = 13;
             buttonDelete.Text = "Eintrag löschen";
-            buttonDelete.TextColor = Color.White;
+            buttonDelete.TextColor = Color.DimGray;
             buttonDelete.UseVisualStyleBackColor = false;
             buttonDelete.Click += OnDelete;
             // 
             // rjButton1
             // 
-            rjButton1.BackColor = Color.Green;
-            rjButton1.BackgroundColor = Color.Green;
+            rjButton1.BackColor = Color.LightBlue;
+            rjButton1.BackgroundColor = Color.LightBlue;
             rjButton1.BorderColor = Color.White;
             rjButton1.BorderRadius = 0;
             rjButton1.BorderSize = 0;
             rjButton1.FlatAppearance.BorderSize = 0;
             rjButton1.FlatStyle = FlatStyle.Flat;
             rjButton1.Font = new Font("Segoe UI", 9F);
-            rjButton1.ForeColor = Color.White;
-            rjButton1.Location = new Point(438, 22);
+            rjButton1.ForeColor = Color.Black;
+            rjButton1.Location = new Point(415, 3);
             rjButton1.Name = "rjButton1";
             rjButton1.Size = new Size(159, 32);
             rjButton1.TabIndex = 13;
             rjButton1.Text = "Filter hinzufügen";
-            rjButton1.TextColor = Color.White;
+            rjButton1.TextColor = Color.Black;
             rjButton1.UseVisualStyleBackColor = false;
             rjButton1.Click += OnFilterAdd;
             // 
             // rjButton2
             // 
-            rjButton2.BackColor = Color.IndianRed;
-            rjButton2.BackgroundColor = Color.IndianRed;
+            rjButton2.BackColor = Color.Salmon;
+            rjButton2.BackgroundColor = Color.Salmon;
             rjButton2.BorderColor = Color.White;
             rjButton2.BorderRadius = 0;
             rjButton2.BorderSize = 0;
             rjButton2.FlatAppearance.BorderSize = 0;
             rjButton2.FlatStyle = FlatStyle.Flat;
-            rjButton2.Font = new Font("Segoe UI", 9F);
-            rjButton2.ForeColor = Color.White;
-            rjButton2.Location = new Point(438, 60);
+            rjButton2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rjButton2.ForeColor = Color.DimGray;
+            rjButton2.Location = new Point(415, 41);
             rjButton2.Name = "rjButton2";
             rjButton2.Size = new Size(159, 32);
             rjButton2.TabIndex = 13;
             rjButton2.Text = "Zurücksetzen";
-            rjButton2.TextColor = Color.White;
+            rjButton2.TextColor = Color.DimGray;
             rjButton2.UseVisualStyleBackColor = false;
             rjButton2.Click += OnReset;
             // 
             // btnUpdate
             // 
-            btnUpdate.BackColor = Color.White;
-            btnUpdate.BackgroundColor = Color.White;
+            btnUpdate.BackColor = Color.LightBlue;
+            btnUpdate.BackgroundColor = Color.LightBlue;
             btnUpdate.BorderColor = Color.Black;
             btnUpdate.BorderRadius = 0;
             btnUpdate.BorderSize = 0;
@@ -149,7 +151,7 @@
             btnUpdate.FlatStyle = FlatStyle.Flat;
             btnUpdate.Font = new Font("Segoe UI", 9F);
             btnUpdate.ForeColor = Color.Black;
-            btnUpdate.Location = new Point(603, 22);
+            btnUpdate.Location = new Point(580, 3);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(159, 32);
             btnUpdate.TabIndex = 13;
@@ -160,35 +162,35 @@
             // 
             // txtRows
             // 
-            txtRows.BackColor = Color.White;
-            txtRows.BorderStyle = BorderStyle.FixedSingle;
-            txtRows.ForeColor = Color.IndianRed;
-            txtRows.Location = new Point(603, 60);
+            txtRows.BackColor = Color.Azure;
+            txtRows.ForeColor = Color.Salmon;
+            txtRows.Location = new Point(745, 3);
             txtRows.Name = "txtRows";
-            txtRows.Size = new Size(159, 32);
+            txtRows.Size = new Size(126, 32);
             txtRows.TabIndex = 22;
             txtRows.Text = "Keine Einträge";
             txtRows.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panelActiveFilters
             // 
-            panelActiveFilters.Location = new Point(65, 100);
+            panelActiveFilters.BackColor = Color.LightBlue;
+            panelActiveFilters.Location = new Point(3, 79);
             panelActiveFilters.Name = "panelActiveFilters";
-            panelActiveFilters.Size = new Size(1000, 67);
+            panelActiveFilters.Size = new Size(1074, 31);
             panelActiveFilters.TabIndex = 23;
             // 
             // dropCategory
             // 
             dropCategory.BackColor = Color.WhiteSmoke;
-            dropCategory.BorderColor = Color.Green;
+            dropCategory.BorderColor = Color.LightBlue;
             dropCategory.BorderSize = 1;
-            dropCategory.DropDownStyle = ComboBoxStyle.DropDown;
+            dropCategory.DropDownStyle = ComboBoxStyle.DropDownList;
             dropCategory.Font = new Font("Segoe UI", 10F);
             dropCategory.ForeColor = Color.DimGray;
-            dropCategory.IconColor = Color.Green;
-            dropCategory.ListBackColor = Color.FromArgb(230, 228, 245);
+            dropCategory.IconColor = Color.LightBlue;
+            dropCategory.ListBackColor = Color.White;
             dropCategory.ListTextColor = Color.DimGray;
-            dropCategory.Location = new Point(26, 22);
+            dropCategory.Location = new Point(3, 3);
             dropCategory.MinimumSize = new Size(200, 30);
             dropCategory.Name = "dropCategory";
             dropCategory.Padding = new Padding(1);
@@ -200,15 +202,15 @@
             // dropValue
             // 
             dropValue.BackColor = Color.WhiteSmoke;
-            dropValue.BorderColor = Color.Green;
+            dropValue.BorderColor = Color.LightBlue;
             dropValue.BorderSize = 1;
-            dropValue.DropDownStyle = ComboBoxStyle.DropDown;
+            dropValue.DropDownStyle = ComboBoxStyle.DropDownList;
             dropValue.Font = new Font("Segoe UI", 10F);
             dropValue.ForeColor = Color.DimGray;
-            dropValue.IconColor = Color.Green;
-            dropValue.ListBackColor = Color.FromArgb(230, 228, 245);
+            dropValue.IconColor = Color.LightBlue;
+            dropValue.ListBackColor = Color.White;
             dropValue.ListTextColor = Color.DimGray;
-            dropValue.Location = new Point(232, 22);
+            dropValue.Location = new Point(209, 3);
             dropValue.MinimumSize = new Size(200, 30);
             dropValue.Name = "dropValue";
             dropValue.Padding = new Padding(1);
@@ -219,15 +221,15 @@
             // dropTable
             // 
             dropTable.BackColor = Color.WhiteSmoke;
-            dropTable.BorderColor = Color.Green;
+            dropTable.BorderColor = Color.LightBlue;
             dropTable.BorderSize = 1;
-            dropTable.DropDownStyle = ComboBoxStyle.DropDown;
+            dropTable.DropDownStyle = ComboBoxStyle.DropDownList;
             dropTable.Font = new Font("Segoe UI", 10F);
             dropTable.ForeColor = Color.DimGray;
-            dropTable.IconColor = Color.Green;
-            dropTable.ListBackColor = Color.FromArgb(230, 228, 245);
+            dropTable.IconColor = Color.LightBlue;
+            dropTable.ListBackColor = Color.White;
             dropTable.ListTextColor = Color.DimGray;
-            dropTable.Location = new Point(865, 24);
+            dropTable.Location = new Point(877, 5);
             dropTable.MinimumSize = new Size(200, 30);
             dropTable.Name = "dropTable";
             dropTable.Padding = new Padding(1);
@@ -238,15 +240,15 @@
             // dropComparator
             // 
             dropComparator.BackColor = Color.WhiteSmoke;
-            dropComparator.BorderColor = Color.Green;
+            dropComparator.BorderColor = Color.LightBlue;
             dropComparator.BorderSize = 1;
-            dropComparator.DropDownStyle = ComboBoxStyle.DropDown;
+            dropComparator.DropDownStyle = ComboBoxStyle.DropDownList;
             dropComparator.Font = new Font("Segoe UI", 10F);
             dropComparator.ForeColor = Color.DimGray;
-            dropComparator.IconColor = Color.Green;
-            dropComparator.ListBackColor = Color.FromArgb(230, 228, 245);
+            dropComparator.IconColor = Color.LightBlue;
+            dropComparator.ListBackColor = Color.White;
             dropComparator.ListTextColor = Color.DimGray;
-            dropComparator.Location = new Point(26, 58);
+            dropComparator.Location = new Point(3, 39);
             dropComparator.MinimumSize = new Size(200, 30);
             dropComparator.Name = "dropComparator";
             dropComparator.Padding = new Padding(1);
@@ -255,11 +257,11 @@
             dropComparator.Texts = "";
             dropComparator.OnSelectedIndexChanged += onCategorySelect;
             // 
-            // FrameShowTable
+            // table
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(160, 255, 255, 255);
+            BackColor = Color.Azure;
             Controls.Add(dropValue);
             Controls.Add(dropTable);
             Controls.Add(dropComparator);
@@ -272,7 +274,7 @@
             Controls.Add(buttonDelete);
             Controls.Add(gridData);
             Margin = new Padding(0);
-            Name = "FrameShowTable";
+            Name = "table";
             Size = new Size(1080, 690);
             Tag = "Frame";
             Load += OnLoad;

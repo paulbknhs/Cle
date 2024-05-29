@@ -1,6 +1,8 @@
-﻿namespace CDMS_Lebensberatung.UserControls
+﻿using CDMS_Lebensberatung.UserControls.CustomControls;
+
+namespace CDMS_Lebensberatung.UserControls
 {
-    partial class FrameAddNew
+    partial class add
     {
                                 private System.ComponentModel.IContainer components = null;
 
@@ -51,7 +53,6 @@
             rjButton1 = new RJCodeAdvance.RJControls.RJButton();
             label3 = new Label();
             cbARGE = new CheckBox();
-            btnDebug = new RJCodeAdvance.RJControls.RJButton();
             indicateSaved = new ProgressBar();
             label4 = new Label();
             label5 = new Label();
@@ -68,14 +69,14 @@
             // 
             // tbJahr
             // 
-            tbJahr.BackColor = SystemColors.Window;
-            tbJahr.BorderColor = Color.Black;
-            tbJahr.BorderFocusColor = Color.Green;
-            tbJahr.BorderRadius = 0;
+            tbJahr.BackColor = Color.White;
+            tbJahr.BorderColor = Color.DimGray;
+            tbJahr.BorderFocusColor = Color.SkyBlue;
+            tbJahr.BorderRadius = 4;
             tbJahr.BorderSize = 1;
             tbJahr.Font = new Font("Segoe UI", 9.75F);
             tbJahr.ForeColor = Color.FromArgb(64, 64, 64);
-            tbJahr.Location = new Point(72, 18);
+            tbJahr.Location = new Point(12, 12);
             tbJahr.Margin = new Padding(0);
             tbJahr.Multiline = false;
             tbJahr.Name = "tbJahr";
@@ -92,14 +93,14 @@
             // 
             // tbName
             // 
-            tbName.BackColor = SystemColors.Window;
-            tbName.BorderColor = Color.Black;
-            tbName.BorderFocusColor = Color.Green;
-            tbName.BorderRadius = 0;
+            tbName.BackColor = Color.White;
+            tbName.BorderColor = Color.DimGray;
+            tbName.BorderFocusColor = Color.SkyBlue;
+            tbName.BorderRadius = 4;
             tbName.BorderSize = 1;
             tbName.Font = new Font("Segoe UI", 9.75F);
             tbName.ForeColor = Color.FromArgb(64, 64, 64);
-            tbName.Location = new Point(72, 72);
+            tbName.Location = new Point(9, 65);
             tbName.Margin = new Padding(0);
             tbName.Multiline = false;
             tbName.Name = "tbName";
@@ -116,14 +117,14 @@
             // 
             // tbNr
             // 
-            tbNr.BackColor = SystemColors.Window;
-            tbNr.BorderColor = Color.Black;
-            tbNr.BorderFocusColor = Color.Green;
-            tbNr.BorderRadius = 0;
+            tbNr.BackColor = Color.White;
+            tbNr.BorderColor = Color.DimGray;
+            tbNr.BorderFocusColor = Color.SkyBlue;
+            tbNr.BorderRadius = 4;
             tbNr.BorderSize = 1;
             tbNr.Font = new Font("Segoe UI", 9.75F);
             tbNr.ForeColor = Color.FromArgb(64, 64, 64);
-            tbNr.Location = new Point(280, 18);
+            tbNr.Location = new Point(234, 12);
             tbNr.Margin = new Padding(0);
             tbNr.Multiline = false;
             tbNr.Name = "tbNr";
@@ -140,14 +141,14 @@
             // 
             // tbWohnort
             // 
-            tbWohnort.BackColor = SystemColors.Window;
-            tbWohnort.BorderColor = Color.Black;
-            tbWohnort.BorderFocusColor = Color.Green;
-            tbWohnort.BorderRadius = 0;
+            tbWohnort.BackColor = Color.White;
+            tbWohnort.BorderColor = Color.DimGray;
+            tbWohnort.BorderFocusColor = Color.SkyBlue;
+            tbWohnort.BorderRadius = 4;
             tbWohnort.BorderSize = 1;
             tbWohnort.Font = new Font("Segoe UI", 9.75F);
             tbWohnort.ForeColor = Color.FromArgb(64, 64, 64);
-            tbWohnort.Location = new Point(280, 72);
+            tbWohnort.Location = new Point(234, 65);
             tbWohnort.Margin = new Padding(0);
             tbWohnort.Multiline = false;
             tbWohnort.Name = "tbWohnort";
@@ -165,15 +166,15 @@
             // dropBeratung
             // 
             dropBeratung.BackColor = Color.WhiteSmoke;
-            dropBeratung.BorderColor = Color.Black;
+            dropBeratung.BorderColor = Color.SkyBlue;
             dropBeratung.BorderSize = 1;
             dropBeratung.DropDownStyle = ComboBoxStyle.DropDownList;
             dropBeratung.Font = new Font("Segoe UI", 10F);
             dropBeratung.ForeColor = Color.DimGray;
-            dropBeratung.IconColor = Color.Black;
-            dropBeratung.ListBackColor = Color.FromArgb(230, 228, 245);
+            dropBeratung.IconColor = Color.SkyBlue;
+            dropBeratung.ListBackColor = Color.Azure;
             dropBeratung.ListTextColor = Color.DimGray;
-            dropBeratung.Location = new Point(74, 140);
+            dropBeratung.Location = new Point(12, 124);
             dropBeratung.Margin = new Padding(10);
             dropBeratung.MinimumSize = new Size(200, 30);
             dropBeratung.Name = "dropBeratung";
@@ -187,15 +188,15 @@
             // dropMigra
             // 
             dropMigra.BackColor = Color.WhiteSmoke;
-            dropMigra.BorderColor = Color.Black;
+            dropMigra.BorderColor = Color.SkyBlue;
             dropMigra.BorderSize = 1;
             dropMigra.DropDownStyle = ComboBoxStyle.DropDownList;
             dropMigra.Font = new Font("Segoe UI", 10F);
             dropMigra.ForeColor = Color.DimGray;
-            dropMigra.IconColor = Color.Black;
-            dropMigra.ListBackColor = Color.FromArgb(230, 228, 245);
+            dropMigra.IconColor = Color.SkyBlue;
+            dropMigra.ListBackColor = Color.Azure;
             dropMigra.ListTextColor = Color.DimGray;
-            dropMigra.Location = new Point(282, 140);
+            dropMigra.Location = new Point(234, 124);
             dropMigra.Margin = new Padding(10);
             dropMigra.MinimumSize = new Size(200, 30);
             dropMigra.Name = "dropMigra";
@@ -209,15 +210,15 @@
             // dropAnregung
             // 
             dropAnregung.BackColor = Color.WhiteSmoke;
-            dropAnregung.BorderColor = Color.Black;
+            dropAnregung.BorderColor = Color.SkyBlue;
             dropAnregung.BorderSize = 1;
             dropAnregung.DropDownStyle = ComboBoxStyle.DropDownList;
             dropAnregung.Font = new Font("Segoe UI", 10F);
             dropAnregung.ForeColor = Color.DimGray;
-            dropAnregung.IconColor = Color.Black;
-            dropAnregung.ListBackColor = Color.FromArgb(230, 228, 245);
+            dropAnregung.IconColor = Color.SkyBlue;
+            dropAnregung.ListBackColor = Color.Azure;
             dropAnregung.ListTextColor = Color.DimGray;
-            dropAnregung.Location = new Point(74, 184);
+            dropAnregung.Location = new Point(12, 168);
             dropAnregung.Margin = new Padding(10);
             dropAnregung.MinimumSize = new Size(200, 30);
             dropAnregung.Name = "dropAnregung";
@@ -231,21 +232,21 @@
             // dropGrund
             // 
             dropGrund.BackColor = Color.WhiteSmoke;
-            dropGrund.BorderColor = Color.DarkGray;
+            dropGrund.BorderColor = Color.SkyBlue;
             dropGrund.BorderSize = 1;
             dropGrund.DropDownStyle = ComboBoxStyle.DropDownList;
             dropGrund.Enabled = false;
             dropGrund.Font = new Font("Segoe UI", 10F);
             dropGrund.ForeColor = Color.DimGray;
-            dropGrund.IconColor = Color.Gray;
-            dropGrund.ListBackColor = Color.FromArgb(230, 228, 245);
+            dropGrund.IconColor = Color.SkyBlue;
+            dropGrund.ListBackColor = Color.Azure;
             dropGrund.ListTextColor = Color.DimGray;
-            dropGrund.Location = new Point(280, 519);
+            dropGrund.Location = new Point(218, 483);
             dropGrund.Margin = new Padding(10);
             dropGrund.MinimumSize = new Size(200, 30);
             dropGrund.Name = "dropGrund";
             dropGrund.Padding = new Padding(1);
-            dropGrund.Size = new Size(200, 32);
+            dropGrund.Size = new Size(216, 32);
             dropGrund.TabIndex = 11;
             dropGrund.Texts = "";
             dropGrund.Click += OnDropDownClick;
@@ -259,7 +260,7 @@
             toggleWieder.Name = "toggleWieder";
             toggleWieder.OffBackColor = Color.Gray;
             toggleWieder.OffToggleColor = Color.Gainsboro;
-            toggleWieder.OnBackColor = Color.Green;
+            toggleWieder.OnBackColor = Color.SkyBlue;
             toggleWieder.OnToggleColor = Color.WhiteSmoke;
             toggleWieder.Size = new Size(45, 22);
             toggleWieder.TabIndex = 8;
@@ -283,7 +284,7 @@
             toggleAbgeschlossen.Name = "toggleAbgeschlossen";
             toggleAbgeschlossen.OffBackColor = Color.Gray;
             toggleAbgeschlossen.OffToggleColor = Color.Gainsboro;
-            toggleAbgeschlossen.OnBackColor = Color.Green;
+            toggleAbgeschlossen.OnBackColor = Color.SkyBlue;
             toggleAbgeschlossen.OnToggleColor = Color.WhiteSmoke;
             toggleAbgeschlossen.Size = new Size(45, 22);
             toggleAbgeschlossen.TabIndex = 9;
@@ -302,21 +303,21 @@
             // 
             // btnSave
             // 
-            btnSave.BackColor = Color.Green;
-            btnSave.BackgroundColor = Color.Green;
+            btnSave.BackColor = Color.SkyBlue;
+            btnSave.BackgroundColor = Color.SkyBlue;
             btnSave.BorderColor = Color.Transparent;
             btnSave.BorderRadius = 0;
             btnSave.BorderSize = 1;
             btnSave.FlatAppearance.BorderSize = 0;
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Segoe UI", 12F);
-            btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(280, 580);
+            btnSave.ForeColor = Color.Black;
+            btnSave.Location = new Point(12, 589);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(200, 40);
+            btnSave.Size = new Size(422, 40);
             btnSave.TabIndex = 100;
             btnSave.Text = "Speichern";
-            btnSave.TextColor = Color.White;
+            btnSave.TextColor = Color.Black;
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += OnButtonSave;
             // 
@@ -324,9 +325,9 @@
             // 
             ContentFrame.BackColor = Color.White;
             ContentFrame.Controls.Add(TabNavControl);
-            ContentFrame.Location = new Point(525, 30);
+            ContentFrame.Location = new Point(571, 12);
             ContentFrame.Name = "ContentFrame";
-            ContentFrame.Size = new Size(500, 590);
+            ContentFrame.Size = new Size(500, 640);
             ContentFrame.TabIndex = 7;
             // 
             // TabNavControl
@@ -478,7 +479,7 @@
             panelToggle.Controls.Add(toggleAbgeschlossen);
             panelToggle.Controls.Add(label1);
             panelToggle.Controls.Add(label2);
-            panelToggle.Location = new Point(74, 469);
+            panelToggle.Location = new Point(12, 433);
             panelToggle.Name = "panelToggle";
             panelToggle.Padding = new Padding(3);
             panelToggle.Size = new Size(200, 82);
@@ -508,18 +509,18 @@
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 11F);
             dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = Color.LightGreen;
+            dataGridViewCellStyle2.SelectionBackColor = Color.SkyBlue;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.ControlText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             gridAlter.DefaultCellStyle = dataGridViewCellStyle2;
-            gridAlter.GridColor = SystemColors.ControlLight;
-            gridAlter.Location = new Point(74, 238);
+            gridAlter.GridColor = Color.Azure;
+            gridAlter.Location = new Point(12, 213);
             gridAlter.Name = "gridAlter";
             gridAlter.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             gridAlter.RowHeadersVisible = false;
             gridAlter.RowHeadersWidth = 40;
             gridAlter.ScrollBars = ScrollBars.None;
-            gridAlter.Size = new Size(408, 203);
+            gridAlter.Size = new Size(422, 203);
             gridAlter.TabIndex = 7;
             gridAlter.CellContentClick += gridAlter_CellContentClick;
             gridAlter.CellValueChanged += OnValueChanged;
@@ -557,32 +558,33 @@
             // 
             // panelBlocker
             // 
-            panelBlocker.BackColor = Color.FromArgb(210, 255, 255, 255);
+            panelBlocker.BackColor = Color.Azure;
+            panelBlocker.BorderStyle = BorderStyle.Fixed3D;
             panelBlocker.Controls.Add(rjButton1);
             panelBlocker.Controls.Add(label3);
-            panelBlocker.Location = new Point(525, 30);
+            panelBlocker.Location = new Point(571, 15);
             panelBlocker.Name = "panelBlocker";
-            panelBlocker.Size = new Size(500, 590);
+            panelBlocker.Size = new Size(500, 637);
             panelBlocker.TabIndex = 14;
             panelBlocker.Paint += panelBlocker_Paint;
             // 
             // rjButton1
             // 
-            rjButton1.BackColor = Color.IndianRed;
-            rjButton1.BackgroundColor = Color.IndianRed;
+            rjButton1.BackColor = Color.SkyBlue;
+            rjButton1.BackgroundColor = Color.SkyBlue;
             rjButton1.BorderColor = Color.Transparent;
             rjButton1.BorderRadius = 0;
             rjButton1.BorderSize = 1;
             rjButton1.FlatAppearance.BorderSize = 0;
             rjButton1.FlatStyle = FlatStyle.Flat;
             rjButton1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            rjButton1.ForeColor = Color.White;
-            rjButton1.Location = new Point(152, 511);
+            rjButton1.ForeColor = Color.Black;
+            rjButton1.Location = new Point(152, 545);
             rjButton1.Name = "rjButton1";
             rjButton1.Size = new Size(200, 40);
             rjButton1.TabIndex = 6;
             rjButton1.Text = "Ohne Seite 1 fortfahren";
-            rjButton1.TextColor = Color.White;
+            rjButton1.TextColor = Color.Black;
             rjButton1.UseVisualStyleBackColor = false;
             rjButton1.Click += OnButtonSkip;
             // 
@@ -590,7 +592,7 @@
             // 
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 14F);
-            label3.ForeColor = Color.IndianRed;
+            label3.ForeColor = Color.DimGray;
             label3.Location = new Point(0, 57);
             label3.Name = "label3";
             label3.Size = new Size(502, 198);
@@ -603,10 +605,10 @@
             cbARGE.BackColor = Color.WhiteSmoke;
             cbARGE.Font = new Font("Segoe UI", 9.75F);
             cbARGE.ImageAlign = ContentAlignment.TopCenter;
-            cbARGE.Location = new Point(280, 474);
+            cbARGE.Location = new Point(218, 438);
             cbARGE.Name = "cbARGE";
             cbARGE.Padding = new Padding(10, 5, 5, 5);
-            cbARGE.Size = new Size(200, 32);
+            cbARGE.Size = new Size(216, 32);
             cbARGE.TabIndex = 10;
             cbARGE.Text = "ARGE: Nein";
             cbARGE.TextAlign = ContentAlignment.MiddleCenter;
@@ -614,33 +616,12 @@
             cbARGE.UseVisualStyleBackColor = false;
             cbARGE.CheckedChanged += OnClick;
             // 
-            // btnDebug
-            // 
-            btnDebug.BackColor = Color.Gray;
-            btnDebug.BackgroundColor = Color.Gray;
-            btnDebug.BorderColor = Color.Transparent;
-            btnDebug.BorderRadius = 0;
-            btnDebug.BorderSize = 1;
-            btnDebug.FlatAppearance.BorderSize = 0;
-            btnDebug.FlatStyle = FlatStyle.Flat;
-            btnDebug.Font = new Font("Segoe UI", 12F);
-            btnDebug.ForeColor = Color.White;
-            btnDebug.Location = new Point(282, 184);
-            btnDebug.Name = "btnDebug";
-            btnDebug.Size = new Size(200, 32);
-            btnDebug.TabIndex = 999;
-            btnDebug.Text = "(debug)";
-            btnDebug.TextColor = Color.White;
-            btnDebug.UseVisualStyleBackColor = false;
-            btnDebug.Visible = false;
-            btnDebug.Click += OnButtonFill;
-            // 
             // indicateSaved
             // 
             indicateSaved.ForeColor = Color.Green;
-            indicateSaved.Location = new Point(20, 662);
+            indicateSaved.Location = new Point(12, 635);
             indicateSaved.Name = "indicateSaved";
-            indicateSaved.Size = new Size(1051, 23);
+            indicateSaved.Size = new Size(422, 17);
             indicateSaved.Style = ProgressBarStyle.Continuous;
             indicateSaved.TabIndex = 23;
             // 
@@ -650,7 +631,7 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI", 9.75F);
             label4.ForeColor = Color.FromArgb(90, 90, 90);
-            label4.Location = new Point(72, 50);
+            label4.Location = new Point(12, 45);
             label4.Name = "label4";
             label4.Size = new Size(32, 17);
             label4.TabIndex = 5;
@@ -662,7 +643,7 @@
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI", 9.75F);
             label5.ForeColor = Color.FromArgb(90, 90, 90);
-            label5.Location = new Point(280, 50);
+            label5.Location = new Point(234, 45);
             label5.Name = "label5";
             label5.Size = new Size(107, 17);
             label5.TabIndex = 5;
@@ -674,7 +655,7 @@
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Segoe UI", 9.75F);
             label6.ForeColor = Color.FromArgb(90, 90, 90);
-            label6.Location = new Point(72, 104);
+            label6.Location = new Point(9, 97);
             label6.Name = "label6";
             label6.Size = new Size(43, 17);
             label6.TabIndex = 5;
@@ -686,7 +667,7 @@
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Segoe UI", 9.75F);
             label7.ForeColor = Color.FromArgb(90, 90, 90);
-            label7.Location = new Point(280, 104);
+            label7.Location = new Point(234, 97);
             label7.Name = "label7";
             label7.Size = new Size(58, 17);
             label7.TabIndex = 5;
@@ -694,14 +675,14 @@
             // 
             // tbDatum
             // 
-            tbDatum.BackColor = SystemColors.Window;
-            tbDatum.BorderColor = Color.Black;
-            tbDatum.BorderFocusColor = Color.Green;
-            tbDatum.BorderRadius = 0;
+            tbDatum.BackColor = Color.White;
+            tbDatum.BorderColor = Color.DimGray;
+            tbDatum.BorderFocusColor = Color.SkyBlue;
+            tbDatum.BorderRadius = 4;
             tbDatum.BorderSize = 1;
             tbDatum.Font = new Font("Segoe UI", 9.75F);
             tbDatum.ForeColor = Color.FromArgb(64, 64, 64);
-            tbDatum.Location = new Point(74, 580);
+            tbDatum.Location = new Point(12, 525);
             tbDatum.Margin = new Padding(0);
             tbDatum.Multiline = false;
             tbDatum.Name = "tbDatum";
@@ -722,17 +703,17 @@
             Abschlussdatum.BackColor = Color.Transparent;
             Abschlussdatum.Font = new Font("Segoe UI", 9.75F);
             Abschlussdatum.ForeColor = Color.FromArgb(90, 90, 90);
-            Abschlussdatum.Location = new Point(74, 612);
+            Abschlussdatum.Location = new Point(12, 557);
             Abschlussdatum.Name = "Abschlussdatum";
             Abschlussdatum.Size = new Size(117, 17);
             Abschlussdatum.TabIndex = 5;
             Abschlussdatum.Text = "Abgeschlossen am";
             // 
-            // FrameAddNew
+            // add
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(160, 255, 255, 255);
+            BackColor = Color.Azure;
             Controls.Add(indicateSaved);
             Controls.Add(label7);
             Controls.Add(Abschlussdatum);
@@ -744,7 +725,6 @@
             Controls.Add(gridAlter);
             Controls.Add(panelToggle);
             Controls.Add(ContentFrame);
-            Controls.Add(btnDebug);
             Controls.Add(btnSave);
             Controls.Add(tbWohnort);
             Controls.Add(tbNr);
@@ -756,7 +736,7 @@
             Controls.Add(dropAnregung);
             Controls.Add(dropBeratung);
             Margin = new Padding(0);
-            Name = "FrameAddNew";
+            Name = "add";
             Size = new Size(1080, 690);
             Tag = "Frame";
             Load += OnLoad;
@@ -799,7 +779,6 @@
         private Panel panelBlocker;
         private Label label3;
         private CheckBox cbARGE;
-        private RJCodeAdvance.RJControls.RJButton btnDebug;
         private DataGridViewTextBoxColumn Person;
         private DataGridViewTextBoxColumn m;
         private DataGridViewTextBoxColumn w;

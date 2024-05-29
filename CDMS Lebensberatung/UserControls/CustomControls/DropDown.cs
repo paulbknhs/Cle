@@ -2,7 +2,7 @@
 using System.Drawing.Design;
 using System.Drawing.Drawing2D;
 
-namespace CDMS_Lebensberatung.UserControls;
+namespace CDMS_Lebensberatung.UserControls.CustomControls;
 
 [DefaultEvent("OnSelectedIndexChanged")]
 public class DropDown : UserControl

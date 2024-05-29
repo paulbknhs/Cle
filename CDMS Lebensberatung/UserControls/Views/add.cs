@@ -4,14 +4,15 @@ using System.Text;
 using System.Text.RegularExpressions;
 using CDMS_Lebensberatung.AddSpecific;
 using CDMS_Lebensberatung.cs;
+using CDMS_Lebensberatung.UserControls.CustomControls;
 using Microsoft.IdentityModel.Tokens;
 using RJCodeAdvance.RJControls;
 
 namespace CDMS_Lebensberatung.UserControls;
 
-public partial class FrameAddNew : UserControl
+public partial class add : UserControl
 {
-    public FrameAddNew()
+    public add()
     {
         InitializeComponent();
     }
@@ -38,7 +39,7 @@ public partial class FrameAddNew : UserControl
         var btn = (Button)sender;
         if (ReferenceEquals(btn.Tag, "selected"))
         {
-            e.Graphics.FillRectangle(Brushes.Green, new Rectangle(0, 0, btn.Width, 2));
+            e.Graphics.FillRectangle(Brushes.SkyBlue, new Rectangle(0, 0, btn.Width, 2));
             btn.Font = new Font(btn.Font, FontStyle.Bold);
         }
         else
@@ -190,7 +191,6 @@ public partial class FrameAddNew : UserControl
         SetDropDowns();
         InitializeContent();
         SetGridAlter();
-        if (AppDomain.CurrentDomain.FriendlyName.EndsWith("vshost.exe")) btnDebug.Visible = true;
     }
 
     private void OnToggle(object sender, EventArgs e)

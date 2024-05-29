@@ -18,7 +18,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
-            SettingsButton = new Button();
             ExportButton = new Button();
             SearchButton = new Button();
             AddButton = new Button();
@@ -27,34 +26,12 @@
             NavigationBar.SuspendLayout();
             SuspendLayout();
             // 
-            // SettingsButton
-            // 
-            SettingsButton.BackColor = Color.Transparent;
-            SettingsButton.FlatAppearance.BorderSize = 0;
-            SettingsButton.FlatStyle = FlatStyle.Flat;
-            SettingsButton.Font = new Font("Segoe UI", 11F);
-            SettingsButton.ForeColor = Color.Black;
-            SettingsButton.Image = Properties.images.settings24x24;
-            SettingsButton.ImageAlign = ContentAlignment.MiddleLeft;
-            SettingsButton.Location = new Point(0, 640);
-            SettingsButton.Margin = new Padding(0);
-            SettingsButton.Name = "SettingsButton";
-            SettingsButton.Padding = new Padding(10);
-            SettingsButton.Size = new Size(200, 50);
-            SettingsButton.TabIndex = 0;
-            SettingsButton.Tag = "setting";
-            SettingsButton.Text = "    Einstellungen";
-            SettingsButton.TextImageRelation = TextImageRelation.ImageBeforeText;
-            SettingsButton.UseVisualStyleBackColor = false;
-            SettingsButton.Click += OnClickOnNavigation;
-            SettingsButton.Paint += OnNavigationPaint;
-            // 
             // ExportButton
             // 
             ExportButton.BackColor = Color.Transparent;
             ExportButton.FlatAppearance.BorderSize = 0;
             ExportButton.FlatStyle = FlatStyle.Flat;
-            ExportButton.Font = new Font("NotoSans NF", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ExportButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             ExportButton.ForeColor = Color.Black;
             ExportButton.Image = Properties.images.export24x24;
             ExportButton.ImageAlign = ContentAlignment.MiddleLeft;
@@ -65,7 +42,7 @@
             ExportButton.Size = new Size(200, 50);
             ExportButton.TabIndex = 0;
             ExportButton.Tag = "stat";
-            ExportButton.Text = "    Exportieren";
+            ExportButton.Text = "    Statistik";
             ExportButton.TextImageRelation = TextImageRelation.ImageBeforeText;
             ExportButton.UseVisualStyleBackColor = false;
             ExportButton.Click += OnClickOnNavigation;
@@ -76,7 +53,7 @@
             SearchButton.BackColor = Color.Transparent;
             SearchButton.FlatAppearance.BorderSize = 0;
             SearchButton.FlatStyle = FlatStyle.Flat;
-            SearchButton.Font = new Font("NotoSans NF", 12F);
+            SearchButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             SearchButton.ForeColor = Color.Black;
             SearchButton.Image = Properties.images.search_db24x24;
             SearchButton.ImageAlign = ContentAlignment.MiddleLeft;
@@ -87,7 +64,7 @@
             SearchButton.Size = new Size(200, 50);
             SearchButton.TabIndex = 0;
             SearchButton.Tag = "show";
-            SearchButton.Text = "    Anzeigen";
+            SearchButton.Text = "    Tabellen";
             SearchButton.TextImageRelation = TextImageRelation.ImageBeforeText;
             SearchButton.UseVisualStyleBackColor = false;
             SearchButton.Click += OnClickOnNavigation;
@@ -98,7 +75,7 @@
             AddButton.BackColor = Color.Transparent;
             AddButton.FlatAppearance.BorderSize = 0;
             AddButton.FlatStyle = FlatStyle.Flat;
-            AddButton.Font = new Font("NotoSans NF", 12F);
+            AddButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             AddButton.ForeColor = Color.Black;
             AddButton.Image = Properties.images.add_new24x24;
             AddButton.ImageAlign = ContentAlignment.MiddleLeft;
@@ -109,7 +86,7 @@
             AddButton.Size = new Size(200, 50);
             AddButton.TabIndex = 0;
             AddButton.Tag = "add";
-            AddButton.Text = "    Eintrag erstellen";
+            AddButton.Text = "    Neu erstellen";
             AddButton.TextImageRelation = TextImageRelation.ImageBeforeText;
             AddButton.UseVisualStyleBackColor = false;
             AddButton.Click += OnClickOnNavigation;
@@ -120,7 +97,7 @@
             HomeButton.BackColor = Color.Transparent;
             HomeButton.FlatAppearance.BorderSize = 0;
             HomeButton.FlatStyle = FlatStyle.Flat;
-            HomeButton.Font = new Font("NotoSans NF", 12F);
+            HomeButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             HomeButton.ForeColor = Color.Black;
             HomeButton.Image = Properties.images.home24x24;
             HomeButton.ImageAlign = ContentAlignment.MiddleLeft;
@@ -131,7 +108,7 @@
             HomeButton.Size = new Size(200, 50);
             HomeButton.TabIndex = 0;
             HomeButton.Tag = "home";
-            HomeButton.Text = "    Startseite";
+            HomeButton.Text = "    Start";
             HomeButton.TextImageRelation = TextImageRelation.ImageBeforeText;
             HomeButton.UseVisualStyleBackColor = false;
             HomeButton.Click += OnClickOnNavigation;
@@ -139,8 +116,8 @@
             // 
             // NavigationBar
             // 
-            NavigationBar.BackColor = Color.PaleTurquoise;
-            NavigationBar.Controls.Add(SettingsButton);
+            NavigationBar.BackColor = Color.SkyBlue;
+            NavigationBar.BorderStyle = BorderStyle.Fixed3D;
             NavigationBar.Controls.Add(ExportButton);
             NavigationBar.Controls.Add(SearchButton);
             NavigationBar.Controls.Add(AddButton);
@@ -154,16 +131,18 @@
             // Home
             // 
             AutoScaleMode = AutoScaleMode.None;
-            BackColor = SystemColors.ControlLightLight;
+            BackColor = Color.White;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1280, 686);
             Controls.Add(NavigationBar);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            IsMdiContainer = true;
             MaximizeBox = false;
             Name = "Home";
             SizeGripStyle = SizeGripStyle.Hide;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CDMS Lebensberatung";
             Load += OnHomeLoad;
             NavigationBar.ResumeLayout(false);
@@ -171,7 +150,6 @@
         }
 
         #endregion
-        private Button SettingsButton;
         private Button ExportButton;
         private Button SearchButton;
         private Button AddButton;

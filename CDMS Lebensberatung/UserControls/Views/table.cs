@@ -5,12 +5,12 @@ using DataTable = System.Data.DataTable;
 
 namespace CDMS_Lebensberatung.UserControls;
 
-public partial class FrameShowTable : UserControl
+public partial class table : UserControl
 {
   private const string ConnectionString =
       "Data Source=\"localhost\\SQLEXPRESS01\"; Initial Catalog=active_db; Integrated Security=True; TrustServerCertificate=True";
 
-  public FrameShowTable()
+  public table()
   {
     InitializeComponent();
   }

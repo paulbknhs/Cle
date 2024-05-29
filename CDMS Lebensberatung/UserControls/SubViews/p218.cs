@@ -1,9 +1,7 @@
 ﻿using System.Configuration;
-using System.Diagnostics;
 using CDMS_Lebensberatung.cs;
 using CDMS_Lebensberatung.UserControls;
-using RJCodeAdvance.RJControls;
-using RJTextBox = CDMS_Lebensberatung.UserControls.RJTextBox;
+using CDMS_Lebensberatung.UserControls.CustomControls;
 
 namespace CDMS_Lebensberatung.AddSpecific;
 
