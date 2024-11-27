@@ -1,195 +1,201 @@
-﻿using Cle.Classes;
-using Microsoft.IdentityModel.Tokens;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
-using DataTable = System.Data.DataTable;
+using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
+using Cle.Classes;
+using Microsoft.IdentityModel.Tokens;
 
-namespace Cle.UserControls.Views;
-
-public partial class table : UserControl
+namespace Cle.UserControls.Views
 {
-    public table()
+    public partial class Table : UserControl
     {
-        InitializeComponent();
-    }
-
-    private void OnLoad(object sender, EventArgs e)
-    {
-        dropTable.DataSource = Lists.Tabellen;
-        dropTable.SelectedIndex = 0;
-        dropComparator.DataSource = Lists.Comparators;
-        GetData();
-        dropCategory.DataSource = gridData.Columns.Cast<DataGridViewColumn>().Select(x => x.HeaderText).ToList();
-    }
-
-    private void OnDelete(object sender, EventArgs e)
-    {
-        var table = dropTable.SelectedItem.ToString();
-        foreach (DataGridViewCell cell in gridData.SelectedCells)
-            cell.OwningRow.Selected = true;
-
-        var row = gridData.SelectedCells[0].OwningRow;
-        var id = row.Cells[0].Value.ToString();
-
-        if (MessageBox.Show(
-                $"Ausgewählten Eintrag mit ID: {id} unwiderruflich aus Tabelle \"{dropTable.SelectedItem}\" entfernen?",
-                "Bestätigung", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-            return;
-
-        SQL database = new();
-        database.Connect();
-        database.DeleteData(table, id);
-
-        OnUpdateClick(btnUpdate, EventArgs.Empty);
-    }
-
-    private void GetData()
-    {
-        SQL database = new();
-        database.Connect();
-
-        var table = database.GetFullTable(dropTable.SelectedItem.ToString());
-        database.Disconnect();
-
-        List<string> toRemove = ["Age", "Gender"];
-        table = RemoveColumns(table, toRemove);
-        if (table.Columns.Contains("Beratungsart"))
+        public Table()
         {
-            var rowsToRemove = table.AsEnumerable().Where(r => r["Beratungsart"].ToString() == "§218").ToList();
-            foreach (var r in rowsToRemove)
-                table.Rows.Remove(r);
+            InitializeComponent();
         }
 
-        gridData.DataSource = table;
-        dropCategory.DataSource = gridData.Columns.Cast<DataGridViewColumn>().Select(x => x.HeaderText).ToList();
-
-        txtRows.Text = table.Rows.Count switch
+        public static DataTable RemoveColumns(DataTable table, List<string> columnsToRemove)
         {
-            > 0 => $"{table.Rows.Count} Einträge",
-            _ => "Keine Einträge"
-        };
-        txtRows.ForeColor = table.Rows.Count switch
-        {
-            > 0 => Color.Green,
-            _ => Color.Red
-        };
-    }
-
-    private void GetDataFiltered()
-    {
-        var tableName = dropTable.SelectedItem.ToString() ?? "";
-        SQL database = new();
-        database.Connect();
-        var table = database.GetStrictlyFiltered(tableName, Dictionaries.Filters);
-        database.Disconnect();
-
-        List<string> toRemove = ["Age", "Gender"];
-        table = RemoveColumns(table, toRemove);
-        if (table.Columns.Contains("Beratungsart"))
-        {
-            var rowsToRemove = table.AsEnumerable().Where(r => r["Beratungsart"].ToString() == "§218").ToList();
-            foreach (var r in rowsToRemove)
-                table.Rows.Remove(r);
+            foreach (var column in columnsToRemove.Where(table.Columns.Contains))
+            {
+                table.Columns.Remove(column);
+            }
+            return table;
         }
 
-        gridData.DataSource = table;
-        txtRows.Text = table.Rows.Count switch
+        private void GetData()
         {
-            1 => "1 Eintrag",
-            > 1 => $"{table.Rows.Count} Einträge",
-            _ => "Keine Einträge"
-        };
-        txtRows.ForeColor = table.Rows.Count switch
-        {
-            > 0 => Color.Green,
-            _ => Color.Red
-        };
-    }
+            using var database = new SQL();
+            database.Connect();
 
-    private void OnFilterAdd(object sender, EventArgs e)
-    {
-        // check if Dictionary Filters already contains the selected category. if not create an empty array and add the selected category with its value. if it does exist, add the selected value to the existing categories array
-        if (Dictionaries.Filters.ContainsKey(dropCategory.SelectedItem.ToString()))
-        {
-            // append the value to the existing array
-            Dictionaries.Filters[dropCategory.SelectedItem.ToString()] = Dictionaries
-                .Filters[dropCategory.SelectedItem.ToString()]
-                .Append(dropValue.SelectedItem.ToString())
-                .ToArray();
-        }
-        else
-        {
-            Dictionaries.Filters.Add(dropCategory.SelectedItem.ToString(),
-                [dropValue.SelectedItem.ToString()]);
+            var dataTable = database.GetFullTable(dropTable.SelectedItem?.ToString() ?? string.Empty);
+
+            if (dataTable.Columns.Contains("Beratungsart"))
+            {
+                var rowsToRemove = dataTable.AsEnumerable()
+                    .Where(r => r["Beratungsart"].ToString() == "§218")
+                    .ToList();
+
+                foreach (var row in rowsToRemove)
+                {
+                    dataTable.Rows.Remove(row);
+                }
+            }
+
+            gridData.DataSource = dataTable;
+            UpdateRowCountLabel(dataTable.Rows.Count);
         }
 
-        var filterButton = new Button
+        private void GetDataFiltered()
         {
-            Text = $"{dropCategory.SelectedItem}: {dropValue.SelectedItem}",
-            AutoSize = true,
-            BackColor = Color.LightGray,
-            Margin = new Padding(5, 0, 5, 0)
-        };
-        filterButton.Click += OnFilterButtonClick;
-        panelActiveFilters.Controls.Add(filterButton);
-        GetDataFiltered();
-    }
+            var tableName = dropTable.SelectedItem?.ToString() ?? string.Empty;
 
-    private void OnFilterButtonClick(object sender, EventArgs e)
-    {
-        var filterButton = (Button)sender;
-        var filterText = filterButton.Text;
-        var filterParts = filterText.Split(':');
-        var category = filterParts[0].Trim();
-        var value = filterParts[1].Trim();
-        // remove the filter with this value from the dictionaries key, if its the last value, remove the key
-        if (Dictionaries.Filters[category].Length == 1)
-        {
-            Dictionaries.Filters.Remove(category);
+            using var database = new SQL();
+            database.Connect();
+            var dataTable = database.GetStrictlyFiltered(tableName, Dictionaries.Filters);
+
+            // Example columns to remove
+            var columnsToRemove = new List<string> { "Age", "Gender" };
+            dataTable = RemoveColumns(dataTable, columnsToRemove);
+
+            if (dataTable.Columns.Contains("Beratungsart"))
+            {
+                var rowsToRemove = dataTable.AsEnumerable()
+                    .Where(r => r["Beratungsart"].ToString() == "§218")
+                    .ToList();
+
+                foreach (var row in rowsToRemove)
+                {
+                    dataTable.Rows.Remove(row);
+                }
+            }
+
+            gridData.DataSource = dataTable;
+            UpdateRowCountLabel(dataTable.Rows.Count);
         }
-        else
+
+        private void UpdateRowCountLabel(int rowCount)
         {
-            Dictionaries.Filters[category] = Dictionaries.Filters[category].Where(x => x != value).ToArray();
+            txtRows.Text = rowCount switch
+            {
+                0 => "Keine Einträge",
+                1 => "1 Eintrag",
+                _ => $"{rowCount} Einträge"
+            };
+            txtRows.ForeColor = rowCount > 0 ? Color.Green : Color.Red;
         }
 
+        private void OnDelete(object sender, EventArgs e)
+        {
+            var tableName = dropTable.SelectedItem?.ToString() ?? string.Empty;
 
-        panelActiveFilters.Controls.Remove(filterButton);
+            foreach (DataGridViewCell cell in gridData.SelectedCells)
+            {
+                cell.OwningRow.Selected = true;
+            }
 
-        GetDataFiltered();
-        OnUpdateClick(btnUpdate, EventArgs.Empty);
-    }
+            var row = gridData.SelectedCells[0].OwningRow;
+            var id = row.Cells[0].Value.ToString();
 
-    public static DataTable RemoveColumns(DataTable table, List<string> toRemove)
-    {
-        foreach (var columnName in toRemove.Where(columnName => table.Columns.Contains(columnName)))
-            table.Columns.Remove(columnName);
-        return table;
-    }
+            if (MessageBox.Show(
+                $"Ausgewählten Eintrag mit ID: {id} unwiderruflich aus Tabelle \"{tableName}\" entfernen?",
+                "Bestätigung",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question) == DialogResult.No)
+            {
+                return;
+            }
 
-    private void OnReset(object sender, EventArgs e)
-    {
-        GetData();
-        panelActiveFilters.Controls.Clear();
-        Dictionaries.Filters.Clear();
-    }
+            using var database = new SQL();
+            database.Connect();
+            database.DeleteData(tableName, id);
 
-    private void OnUpdateClick(object sender, EventArgs e)
-    {
-        if (Dictionaries.Filters.IsNullOrEmpty()) GetData();
-        else GetDataFiltered();
-    }
+            OnUpdateClick(btnUpdate, EventArgs.Empty);
+        }
 
-    private void onCategorySelect(object sender, EventArgs e)
-    {
-        // get selected column name
-        var columnName = dropCategory.SelectedItem.ToString();
+        private void OnFilterAdd(object sender, EventArgs e)
+        {
+            var category = dropCat.SelectedItem?.ToString();
+            var keyword = tbKeyword.Text;
 
-        // get all possible entries in certain column 
-        var entries = gridData.Rows.Cast<DataGridViewRow>().Select(x => x.Cells[columnName].Value.ToString()).Distinct().ToList();
-        dropValue.DataSource = entries;
-    }
+            if (string.IsNullOrWhiteSpace(category) || string.IsNullOrWhiteSpace(keyword))
+            {
+                return;
+            }
 
-    private void gridData_CellContentClick(object sender, DataGridViewCellEventArgs e)
-    {
+            if (Dictionaries.Filters.ContainsKey(category))
+            {
+                Dictionaries.Filters[category] = Dictionaries.Filters[category].Append(keyword).ToArray();
+            }
+            else
+            {
+                Dictionaries.Filters.Add(category, new[] { keyword });
+            }
 
+            var filterButton = new Button
+            {
+                Text = $"{category}: {keyword}",
+                AutoSize = true,
+                BackColor = Color.LightGray,
+                Margin = new Padding(5, 0, 5, 0)
+            };
+            filterButton.Click += OnFilterButtonClick;
+            panelActiveFilters.Controls.Add(filterButton);
+
+            GetDataFiltered();
+        }
+
+        private void OnFilterButtonClick(object sender, EventArgs e)
+        {
+            var filterButton = (Button)sender;
+            var filterParts = filterButton.Text.Split(':');
+            var category = filterParts[0].Trim();
+            var value = filterParts[1].Trim();
+
+            if (Dictionaries.Filters[category].Length == 1)
+            {
+                Dictionaries.Filters.Remove(category);
+            }
+            else
+            {
+                Dictionaries.Filters[category] = Dictionaries.Filters[category].Where(x => x != value).ToArray();
+            }
+
+            panelActiveFilters.Controls.Remove(filterButton);
+
+            GetDataFiltered();
+            OnUpdateClick(btnUpdate, EventArgs.Empty);
+        }
+
+        private void OnLoad(object sender, EventArgs e)
+        {
+            dropTable.DataSource = Lists.Tabellen;
+            dropTable.SelectedIndex = 0;
+            GetData();
+            dropCat.DataSource = gridData.Columns.Cast<DataGridViewColumn>()
+                .Select(x => x.HeaderText)
+                .ToList();
+        }
+
+        private void OnReset(object sender, EventArgs e)
+        {
+            GetData();
+            panelActiveFilters.Controls.Clear();
+            Dictionaries.Filters.Clear();
+        }
+
+        private void OnUpdateClick(object sender, EventArgs e)
+        {
+            if (Dictionaries.Filters.IsNullOrEmpty())
+            {
+                GetData();
+            }
+            else
+            {
+                GetDataFiltered();
+            }
+        }
     }
 }

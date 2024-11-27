@@ -1,12 +1,12 @@
 namespace Cle.Classes
 {
-    internal static class Program
+  internal static class Program
+  {
+    [STAThread]
+    private static void Main()
     {
-        [STAThread]
-        static void Main()
-        {
-            ApplicationConfiguration.Initialize();
-            Application.Run(new Home());
-        }
+      ApplicationConfiguration.Initialize();
+      Application.Run(new Window());
     }
+  }
 }

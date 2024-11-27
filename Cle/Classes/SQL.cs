@@ -1,186 +1,182 @@
-﻿using System.Data;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Text;
 
-namespace Cle.Classes;
-
-public class SQL
+namespace Cle.Classes
 {
-    private readonly SqlConnection _connection;
-
-    private readonly string _connectionString =
-        "Data Source=\"localhost\\SQLEXPRESS\"; Initial Catalog=active_db; Integrated Security=True; TrustServerCertificate=True";
-
-    /// <summary>
-    ///     Initializes a new instance of the SQL class with a fixed connection string.
-    /// </summary>
-    /// <param name="connectionString">The connection string to the database.</param>
-    public SQL()
+    public class SQL : IDisposable
     {
-        _connection = new SqlConnection(_connectionString);
-    }
+        private const string ConnectionString =
+            "Data Source=windows10\\SQLEXPRESS; Initial Catalog=active_db; Integrated Security=True; TrustServerCertificate=True";
 
-    /// <summary>
-    ///     Opens the database connection.
-    /// </summary>
-    public void Connect()
-    {
-        _connection.Open();
-    }
+        private readonly SqlConnection connection;
 
-    /// <summary>
-    ///     Closes the database connection.
-    /// </summary>
-    public void Disconnect()
-    {
-        _connection.Close();
-    }
-
-    /// <summary>
-    ///     Inserts a dictionary of string values into the specified table.
-    /// </summary>
-    /// <param name="tableName">The name of the table.</param>
-    /// <param name="data">The dictionary containing the column names and values.</param>
-    /// <exception cref="ArgumentException">Thrown when the dictionary is empty.</exception>
-    public void InsertStringDict(string tableName, Dictionary<string, string> data)
-    {
-        if (data.Count == 0)
-            throw new ArgumentException("Dictionary enthält keine Einträge", nameof(data));
-
-        var columns = string.Join(",", data.Keys.Select(key => $"[{key}]"));
-        var values = string.Join(",", data.Values.Select(value => $"'{value}'"));
-
-        var command = new SqlCommand(
-            $"INSERT INTO [dbo].[{tableName}] ({columns}) VALUES ({values})",
-            _connection
-        );
-        command.ExecuteNonQuery();
-    }
-
-    /// <summary>
-    ///     Gets the number of rows in the specified table.
-    /// </summary>
-    /// <param name="tableName">The name of the table.</param>
-    /// <returns>The number of rows in the table.</returns>
-    public int GetNumberOfRows(string tableName)
-    {
-        using var command = new SqlCommand($"SELECT COUNT(*) FROM [{tableName}]", _connection);
-        var count = (int)command.ExecuteScalar();
-        return count;
-    }
-
-    /// <summary>
-    ///     Retrieves the full table from the database.
-    /// </summary>
-    /// <param name="tableName">The name of the table.</param>
-    /// <returns>A DataTable containing the full table data.</returns>
-    public DataTable GetFullTable(string tableName)
-    {
-        var dataTable = new DataTable();
-
-        using var command = new SqlCommand($"SELECT * FROM [{tableName}]", _connection);
-        using var adapter = new SqlDataAdapter(command);
-        adapter.Fill(dataTable);
-        return dataTable;
-    }
-
-    /// <summary>
-    ///     Retrieves a specific column from the specified table.
-    /// </summary>
-    /// <param name="tableName">The name of the table.</param>
-    /// <param name="columnName">The name of the column.</param>
-    /// <returns>A DataTable containing the column data.</returns>
-    public DataTable GetColumn(string tableName, string columnName)
-    {
-        var columnTable = new DataTable();
-
-        using var command = new SqlCommand(
-            $"SELECT [{columnName}] FROM [{tableName}]",
-            _connection
-        );
-        using var adapter = new SqlDataAdapter(command);
-        adapter.Fill(columnTable);
-        return columnTable;
-    }
-
-    /// <summary>
-    ///     Executes a custom query and retrieves the result as a DataTable.
-    /// </summary>
-    /// <param name="query">The custom query to execute.</param>
-    /// <returns>A DataTable containing the query result.</returns>
-    public DataTable SendQuery(string query)
-    {
-        var dataTable = new DataTable();
-
-        using var command = new SqlCommand(query, _connection);
-        using var adapter = new SqlDataAdapter(command);
-        adapter.Fill(dataTable);
-        return dataTable;
-    }
-
-    /// <summary>
-    ///     Retrieves filtered data from the specified table based on the provided filters.
-    /// </summary>
-    /// <param name="tableName">The name of the table.</param>
-    /// <param name="filters">The dictionary containing the column names and filter values.</param>
-    /// <returns>A DataTable containing the filtered data.</returns>
-    public DataTable GetDataFiltered(string tableName, Dictionary<string, string> filters)
-    {
-        var dataTable = new DataTable();
-        var required = new StringBuilder();
-
-        foreach (var kvp in filters)
-            required.Append($"[{kvp.Key}] LIKE '%{kvp.Value}%' AND ");
-
-        required.Length -= 5;
-        using var command = new SqlCommand(
-            $"SELECT * FROM [dbo].[{tableName}] WHERE {required}",
-            _connection
-        );
-        using var reader = command.ExecuteReader();
-        dataTable.Load(reader);
-        return dataTable;
-    }
-
-    /// <summary>
-    ///     Retrieves strictly filtered data from the specified table based on the provided filters.
-    /// </summary>
-    /// <param name="tableName">The name of the table.</param>
-    /// <param name="filters">The dictionary containing the column names and filter values.</param>
-    /// <returns>A DataTable containing the filtered data.</returns>
-    public DataTable GetStrictlyFiltered(string tableName, Dictionary<string, string[]> filters)
-    {
-        var dataTable = new DataTable();
-        var required = new StringBuilder();
-
-        foreach (var kvp in filters)
+        public SQL()
         {
-            var filterValues = string.Join(" OR ", kvp.Value.Select(value => $"[{kvp.Key}] = '{value}'"));
-            required.Append($"({filterValues}) AND ");
+            connection = new SqlConnection(ConnectionString);
         }
 
-        required.Length -= 5;
-        using var command = new SqlCommand(
-            $"SELECT * FROM [dbo].[{tableName}] WHERE {required}",
-            _connection
-        );
-        using var reader = command.ExecuteReader();
-        dataTable.Load(reader);
-        return dataTable;
-    }
+        public void Connect()
+        {
+            try
+            {
+                if (connection.State != ConnectionState.Open)
+                {
+                    connection.Open();
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.Error.WriteLine($"Error connecting to database: {ex.Message}");
+                throw;
+            }
+        }
 
-    /// <summary>
-    ///     Deletes data from the specified table based on the provided ID.
-    /// </summary>
-    /// <param name="tableName">The name of the table.</param>
-    /// <param name="id">The ID of the data to delete.</param>
-    /// <returns>True if the data was successfully deleted, otherwise false.</returns>
-    public bool DeleteData(string tableName, string id)
-    {
-        using var command = new SqlCommand(
-            $"DELETE FROM [dbo].[{tableName}] WHERE ID = {id}", _connection);
-        command.ExecuteNonQuery();
+        public void Disconnect()
+        {
+            if (connection.State != ConnectionState.Closed)
+            {
+                connection.Close();
+            }
+        }
 
-        return true;
+        public bool DeleteData(string tableName, string id)
+        {
+            var query = $"DELETE FROM [dbo].[{tableName}] WHERE ID = @id";
+
+            using var command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@id", id);
+            return command.ExecuteNonQuery() > 0;
+        }
+
+        public DataTable GetColumn(string tableName, string columnName)
+        {
+            var dataTable = new DataTable();
+            var query = $"SELECT [{columnName}] FROM [{tableName}]";
+
+            using var command = new SqlCommand(query, connection);
+            using var adapter = new SqlDataAdapter(command);
+            adapter.Fill(dataTable);
+            return dataTable;
+        }
+
+        public DataTable GetDataFiltered(string tableName, Dictionary<string, string> filters)
+        {
+            if (filters == null || filters.Count == 0)
+            {
+                return GetFullTable(tableName);
+            }
+
+            var queryBuilder = new StringBuilder($"SELECT * FROM [dbo].[{tableName}] WHERE ");
+            var parameters = new List<SqlParameter>();
+
+            foreach (var (key, value) in filters)
+            {
+                var paramName = $"@{key}";
+                queryBuilder.Append($"[{key}] LIKE {paramName} AND ");
+                parameters.Add(new SqlParameter(paramName, $"%{value}%"));
+            }
+
+            queryBuilder.Length -= 5; // Remove trailing " AND "
+
+            using var command = new SqlCommand(queryBuilder.ToString(), connection);
+            command.Parameters.AddRange(parameters.ToArray());
+
+            using var reader = command.ExecuteReader();
+            var dataTable = new DataTable();
+            dataTable.Load(reader);
+            return dataTable;
+        }
+
+        public DataTable GetFullTable(string tableName)
+        {
+            var dataTable = new DataTable();
+            var query = $"SELECT * FROM [{tableName}]";
+
+            using var command = new SqlCommand(query, connection);
+            using var adapter = new SqlDataAdapter(command);
+            adapter.Fill(dataTable);
+            return dataTable;
+        }
+
+        public int GetNumberOfRows(string tableName)
+        {
+            var query = $"SELECT COUNT(*) FROM [{tableName}]";
+
+            using var command = new SqlCommand(query, connection);
+            return (int)command.ExecuteScalar();
+        }
+
+        public DataTable GetStrictlyFiltered(string tableName, Dictionary<string, string[]> filters)
+        {
+            if (filters == null || filters.Count == 0 || filters.All(kvp => kvp.Value.Length == 0))
+            {
+                return GetFullTable(tableName);
+            }
+
+            var queryBuilder = new StringBuilder($"SELECT * FROM [dbo].[{tableName}] WHERE ");
+            var parameters = new List<SqlParameter>();
+            int paramIndex = 0;
+
+            foreach (var (key, values) in filters.Where(kvp => kvp.Value.Length > 0))
+            {
+                var conditions = values.Select(value =>
+                {
+                    var paramName = $"@p{paramIndex++}";
+                    parameters.Add(new SqlParameter(paramName, value));
+                    return $"[{key}] = {paramName}";
+                });
+
+                queryBuilder.Append($"({string.Join(" OR ", conditions)}) AND ");
+            }
+
+            queryBuilder.Length -= 5; // Remove trailing " AND "
+
+            using var command = new SqlCommand(queryBuilder.ToString(), connection);
+            command.Parameters.AddRange(parameters.ToArray());
+
+            using var reader = command.ExecuteReader();
+            var dataTable = new DataTable();
+            dataTable.Load(reader);
+            return dataTable;
+        }
+
+        public void InsertStringDict(string tableName, Dictionary<string, string> data)
+        {
+            if (data == null || data.Count == 0)
+            {
+                throw new ArgumentException("The dictionary cannot be empty.", nameof(data));
+            }
+
+            var columns = string.Join(",", data.Keys.Select(key => $"[{key}]"));
+            var values = string.Join(",", data.Keys.Select((_, i) => $"@param{i}"));
+            var query = $"INSERT INTO [dbo].[{tableName}] ({columns}) VALUES ({values})";
+
+            using var command = new SqlCommand(query, connection);
+            foreach (var (key, value) in data.Select((kvp) => (kvp.Key, kvp.Value)))
+            {
+                command.Parameters.AddWithValue($"@param", value);
+            }
+
+            command.ExecuteNonQuery();
+        }
+
+        public DataTable SendQuery(string query)
+        {
+            var dataTable = new DataTable();
+
+            using var command = new SqlCommand(query, connection);
+            using var adapter = new SqlDataAdapter(command);
+            adapter.Fill(dataTable);
+            return dataTable;
+        }
+
+        public void Dispose()
+        {
+            connection?.Dispose();
+        }
     }
 }

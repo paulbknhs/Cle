@@ -2,7 +2,7 @@
 
 namespace Cle.UserControls.Views
 {
-    partial class table
+    partial class Table
     {
                                 private System.ComponentModel.IContainer components = null;
 
@@ -29,10 +29,13 @@ namespace Cle.UserControls.Views
             btnUpdate = new RJCodeAdvance.RJControls.RJButton();
             txtRows = new Label();
             panelActiveFilters = new FlowLayoutPanel();
-            dropCategory = new DropDown();
-            dropValue = new DropDown();
-            dropTable = new DropDown();
-            dropComparator = new DropDown();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            dropTable = new ComboBox();
+            dropCat = new ComboBox();
+            label1 = new Label();
+            label2 = new Label();
+            tbKeyword = new TextBox();
             ((System.ComponentModel.ISupportInitialize)gridData).BeginInit();
             SuspendLayout();
             // 
@@ -63,7 +66,7 @@ namespace Cle.UserControls.Views
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.ControlText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             gridData.DefaultCellStyle = dataGridViewCellStyle2;
-            gridData.Location = new Point(3, 114);
+            gridData.Location = new Point(3, 127);
             gridData.Margin = new Padding(10);
             gridData.MultiSelect = false;
             gridData.Name = "gridData";
@@ -77,9 +80,9 @@ namespace Cle.UserControls.Views
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
             gridData.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             gridData.RowHeadersVisible = false;
-            gridData.Size = new Size(1077, 576);
+            gridData.RowHeadersWidth = 51;
+            gridData.Size = new Size(1077, 563);
             gridData.TabIndex = 0;
-            gridData.CellContentClick += gridData_CellContentClick;
             // 
             // buttonDelete
             // 
@@ -112,9 +115,9 @@ namespace Cle.UserControls.Views
             rjButton1.FlatStyle = FlatStyle.Flat;
             rjButton1.Font = new Font("Segoe UI", 9F);
             rjButton1.ForeColor = Color.Black;
-            rjButton1.Location = new Point(415, 3);
+            rjButton1.Location = new Point(10, 12);
             rjButton1.Name = "rjButton1";
-            rjButton1.Size = new Size(159, 32);
+            rjButton1.Size = new Size(312, 32);
             rjButton1.TabIndex = 13;
             rjButton1.Text = "Filter hinzufügen";
             rjButton1.TextColor = Color.Black;
@@ -132,7 +135,7 @@ namespace Cle.UserControls.Views
             rjButton2.FlatStyle = FlatStyle.Flat;
             rjButton2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             rjButton2.ForeColor = Color.DimGray;
-            rjButton2.Location = new Point(415, 41);
+            rjButton2.Location = new Point(580, 12);
             rjButton2.Name = "rjButton2";
             rjButton2.Size = new Size(159, 32);
             rjButton2.TabIndex = 13;
@@ -152,7 +155,7 @@ namespace Cle.UserControls.Views
             btnUpdate.FlatStyle = FlatStyle.Flat;
             btnUpdate.Font = new Font("Segoe UI", 9F);
             btnUpdate.ForeColor = Color.Black;
-            btnUpdate.Location = new Point(580, 3);
+            btnUpdate.Location = new Point(694, 38);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(159, 32);
             btnUpdate.TabIndex = 13;
@@ -174,99 +177,65 @@ namespace Cle.UserControls.Views
             // 
             // panelActiveFilters
             // 
-            panelActiveFilters.BackColor = Color.LightBlue;
-            panelActiveFilters.Location = new Point(3, 79);
+            panelActiveFilters.Location = new Point(328, 12);
+            panelActiveFilters.Margin = new Padding(3, 2, 3, 2);
             panelActiveFilters.Name = "panelActiveFilters";
-            panelActiveFilters.Size = new Size(1074, 31);
+            panelActiveFilters.Size = new Size(339, 89);
             panelActiveFilters.TabIndex = 23;
-            // 
-            // dropCategory
-            // 
-            dropCategory.BackColor = Color.WhiteSmoke;
-            dropCategory.BorderColor = Color.LightBlue;
-            dropCategory.BorderSize = 1;
-            dropCategory.DropDownStyle = ComboBoxStyle.DropDownList;
-            dropCategory.Font = new Font("Segoe UI", 10F);
-            dropCategory.ForeColor = Color.DimGray;
-            dropCategory.IconColor = Color.LightBlue;
-            dropCategory.ListBackColor = Color.White;
-            dropCategory.ListTextColor = Color.DimGray;
-            dropCategory.Location = new Point(3, 3);
-            dropCategory.MinimumSize = new Size(200, 30);
-            dropCategory.Name = "dropCategory";
-            dropCategory.Padding = new Padding(1);
-            dropCategory.Size = new Size(200, 30);
-            dropCategory.TabIndex = 24;
-            dropCategory.Texts = "";
-            dropCategory.OnSelectedIndexChanged += onCategorySelect;
-            // 
-            // dropValue
-            // 
-            dropValue.BackColor = Color.WhiteSmoke;
-            dropValue.BorderColor = Color.LightBlue;
-            dropValue.BorderSize = 1;
-            dropValue.DropDownStyle = ComboBoxStyle.DropDownList;
-            dropValue.Font = new Font("Segoe UI", 10F);
-            dropValue.ForeColor = Color.DimGray;
-            dropValue.IconColor = Color.LightBlue;
-            dropValue.ListBackColor = Color.White;
-            dropValue.ListTextColor = Color.DimGray;
-            dropValue.Location = new Point(209, 3);
-            dropValue.MinimumSize = new Size(200, 30);
-            dropValue.Name = "dropValue";
-            dropValue.Padding = new Padding(1);
-            dropValue.Size = new Size(200, 30);
-            dropValue.TabIndex = 24;
-            dropValue.Texts = "";
             // 
             // dropTable
             // 
-            dropTable.BackColor = Color.WhiteSmoke;
-            dropTable.BorderColor = Color.LightBlue;
-            dropTable.BorderSize = 1;
-            dropTable.DropDownStyle = ComboBoxStyle.DropDownList;
-            dropTable.Font = new Font("Segoe UI", 10F);
-            dropTable.ForeColor = Color.DimGray;
-            dropTable.IconColor = Color.LightBlue;
-            dropTable.ListBackColor = Color.White;
-            dropTable.ListTextColor = Color.DimGray;
-            dropTable.Location = new Point(877, 5);
-            dropTable.MinimumSize = new Size(200, 30);
+            dropTable.FormattingEnabled = true;
+            dropTable.Location = new Point(877, 9);
             dropTable.Name = "dropTable";
-            dropTable.Padding = new Padding(1);
-            dropTable.Size = new Size(200, 30);
+            dropTable.Size = new Size(200, 23);
             dropTable.TabIndex = 24;
-            dropTable.Texts = "";
             // 
-            // dropComparator
+            // dropCat
             // 
-            dropComparator.BackColor = Color.WhiteSmoke;
-            dropComparator.BorderColor = Color.LightBlue;
-            dropComparator.BorderSize = 1;
-            dropComparator.DropDownStyle = ComboBoxStyle.DropDownList;
-            dropComparator.Font = new Font("Segoe UI", 10F);
-            dropComparator.ForeColor = Color.DimGray;
-            dropComparator.IconColor = Color.LightBlue;
-            dropComparator.ListBackColor = Color.White;
-            dropComparator.ListTextColor = Color.DimGray;
-            dropComparator.Location = new Point(3, 39);
-            dropComparator.MinimumSize = new Size(200, 30);
-            dropComparator.Name = "dropComparator";
-            dropComparator.Padding = new Padding(1);
-            dropComparator.Size = new Size(200, 30);
-            dropComparator.TabIndex = 24;
-            dropComparator.Texts = "";
-            dropComparator.OnSelectedIndexChanged += onCategorySelect;
+            dropCat.FormattingEnabled = true;
+            dropCat.Location = new Point(169, 54);
+            dropCat.Name = "dropCat";
+            dropCat.Size = new Size(153, 23);
+            dropCat.TabIndex = 25;
             // 
-            // table
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F);
+            label1.Location = new Point(10, 52);
+            label1.Name = "label1";
+            label1.Size = new Size(153, 21);
+            label1.TabIndex = 26;
+            label1.Text = "Spaltenbezeichnung:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F);
+            label2.Location = new Point(44, 78);
+            label2.Name = "label2";
+            label2.Size = new Size(119, 21);
+            label2.TabIndex = 26;
+            label2.Text = "muss enthalten:";
+            // 
+            // tbKeyword
+            // 
+            tbKeyword.Location = new Point(169, 78);
+            tbKeyword.Name = "tbKeyword";
+            tbKeyword.Size = new Size(153, 23);
+            tbKeyword.TabIndex = 27;
+            // 
+            // Table
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Azure;
-            Controls.Add(dropValue);
+            Controls.Add(tbKeyword);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(dropCat);
             Controls.Add(dropTable);
-            Controls.Add(dropComparator);
-            Controls.Add(dropCategory);
             Controls.Add(panelActiveFilters);
             Controls.Add(txtRows);
             Controls.Add(btnUpdate);
@@ -275,12 +244,13 @@ namespace Cle.UserControls.Views
             Controls.Add(buttonDelete);
             Controls.Add(gridData);
             Margin = new Padding(0);
-            Name = "table";
+            Name = "Table";
             Size = new Size(1080, 690);
             Tag = "Frame";
             Load += OnLoad;
             ((System.ComponentModel.ISupportInitialize)gridData).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -291,10 +261,14 @@ namespace Cle.UserControls.Views
         private RJCodeAdvance.RJControls.RJButton rjButton2;
         private RJCodeAdvance.RJControls.RJButton btnUpdate;
         private Label txtRows;
-        private FlowLayoutPanel panelActiveFilters;
-        private DropDown dropCategory;
-        private DropDown dropValue;
-        private DropDown dropTable;
         private DropDown dropComparator;
+        private FlowLayoutPanel panelActiveFilters;
+    private ColumnHeader columnHeader1;
+    private ColumnHeader columnHeader2;
+    private ComboBox dropTable;
+    private ComboBox dropCat;
+        private Label label1;
+        private Label label2;
+        private TextBox tbKeyword;
     }
 }

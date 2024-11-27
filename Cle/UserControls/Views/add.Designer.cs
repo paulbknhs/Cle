@@ -2,7 +2,7 @@
 
 namespace Cle.UserControls.Views
 {
-    partial class add
+    partial class Add
     {
                                 private System.ComponentModel.IContainer components = null;
 
@@ -21,6 +21,7 @@ namespace Cle.UserControls.Views
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             tbJahr = new RJTextBox();
             tbName = new RJTextBox();
             tbNr = new RJTextBox();
@@ -76,7 +77,7 @@ namespace Cle.UserControls.Views
             tbJahr.BorderSize = 1;
             tbJahr.Font = new Font("Segoe UI", 9.75F);
             tbJahr.ForeColor = Color.FromArgb(64, 64, 64);
-            tbJahr.Location = new Point(12, 12);
+            tbJahr.Location = new Point(12, 15);
             tbJahr.Margin = new Padding(0);
             tbJahr.Multiline = false;
             tbJahr.Name = "tbJahr";
@@ -88,8 +89,6 @@ namespace Cle.UserControls.Views
             tbJahr.TabIndex = 0;
             tbJahr.Texts = "";
             tbJahr.UnderlinedStyle = true;
-            tbJahr.Click += OnTextBoxClick;
-            tbJahr.Enter += OnTextBoxClick;
             // 
             // tbName
             // 
@@ -112,8 +111,6 @@ namespace Cle.UserControls.Views
             tbName.TabIndex = 2;
             tbName.Texts = "";
             tbName.UnderlinedStyle = true;
-            tbName.Click += OnTextBoxClick;
-            tbName.Enter += OnTextBoxClick;
             // 
             // tbNr
             // 
@@ -136,8 +133,6 @@ namespace Cle.UserControls.Views
             tbNr.TabIndex = 1;
             tbNr.Texts = "";
             tbNr.UnderlinedStyle = true;
-            tbNr.Click += OnTextBoxClick;
-            tbNr.Enter += OnTextBoxClick;
             // 
             // tbWohnort
             // 
@@ -160,8 +155,6 @@ namespace Cle.UserControls.Views
             tbWohnort.TabIndex = 3;
             tbWohnort.Texts = "";
             tbWohnort.UnderlinedStyle = true;
-            tbWohnort.Click += OnTextBoxClick;
-            tbWohnort.Enter += OnTextBoxClick;
             // 
             // dropBeratung
             // 
@@ -182,8 +175,6 @@ namespace Cle.UserControls.Views
             dropBeratung.Size = new Size(200, 32);
             dropBeratung.TabIndex = 4;
             dropBeratung.Texts = "";
-            dropBeratung.Click += OnDropDownClick;
-            dropBeratung.Enter += OnDropDownClick;
             // 
             // dropMigra
             // 
@@ -204,8 +195,6 @@ namespace Cle.UserControls.Views
             dropMigra.Size = new Size(200, 32);
             dropMigra.TabIndex = 5;
             dropMigra.Texts = "";
-            dropMigra.Click += OnDropDownClick;
-            dropMigra.Enter += OnDropDownClick;
             // 
             // dropAnregung
             // 
@@ -226,8 +215,6 @@ namespace Cle.UserControls.Views
             dropAnregung.Size = new Size(200, 32);
             dropAnregung.TabIndex = 6;
             dropAnregung.Texts = "";
-            dropAnregung.Click += OnDropDownClick;
-            dropAnregung.Enter += OnDropDownClick;
             // 
             // dropGrund
             // 
@@ -249,8 +236,6 @@ namespace Cle.UserControls.Views
             dropGrund.Size = new Size(216, 32);
             dropGrund.TabIndex = 11;
             dropGrund.Texts = "";
-            dropGrund.Click += OnDropDownClick;
-            dropGrund.Enter += OnDropDownClick;
             // 
             // toggleWieder
             // 
@@ -289,7 +274,6 @@ namespace Cle.UserControls.Views
             toggleAbgeschlossen.Size = new Size(45, 22);
             toggleAbgeschlossen.TabIndex = 9;
             toggleAbgeschlossen.UseVisualStyleBackColor = true;
-            toggleAbgeschlossen.CheckedChanged += OnToggle;
             // 
             // label2
             // 
@@ -361,8 +345,6 @@ namespace Cle.UserControls.Views
             ButtonP2a.TabIndex = 3;
             ButtonP2a.Text = "§ 2a";
             ButtonP2a.UseVisualStyleBackColor = false;
-            ButtonP2a.Click += ButtonP2a_Click;
-            ButtonP2a.Paint += OnTabNavPaint;
             // 
             // ButtonArge
             // 
@@ -379,8 +361,6 @@ namespace Cle.UserControls.Views
             ButtonArge.TabIndex = 3;
             ButtonArge.Text = "ARGE";
             ButtonArge.UseVisualStyleBackColor = false;
-            ButtonArge.Click += ButtonArge_Click;
-            ButtonArge.Paint += OnTabNavPaint;
             // 
             // ButtonAllgSgs
             // 
@@ -397,8 +377,6 @@ namespace Cle.UserControls.Views
             ButtonAllgSgs.TabIndex = 3;
             ButtonAllgSgs.Text = "allg. Schwgs.";
             ButtonAllgSgs.UseVisualStyleBackColor = false;
-            ButtonAllgSgs.Click += ButtonAllgSgs_Click;
-            ButtonAllgSgs.Paint += OnTabNavPaint;
             // 
             // ButtonP56
             // 
@@ -415,8 +393,6 @@ namespace Cle.UserControls.Views
             ButtonP56.TabIndex = 3;
             ButtonP56.Text = "§ 218";
             ButtonP56.UseVisualStyleBackColor = false;
-            ButtonP56.Click += ButtonP56_Click;
-            ButtonP56.Paint += OnTabNavPaint;
             // 
             // ButtonMutterKind
             // 
@@ -433,8 +409,6 @@ namespace Cle.UserControls.Views
             ButtonMutterKind.TabIndex = 2;
             ButtonMutterKind.Text = "Mutter-Kind";
             ButtonMutterKind.UseVisualStyleBackColor = false;
-            ButtonMutterKind.Click += ButtonMutterKind_Click;
-            ButtonMutterKind.Paint += OnTabNavPaint;
             // 
             // ButtonSgb8
             // 
@@ -451,8 +425,6 @@ namespace Cle.UserControls.Views
             ButtonSgb8.TabIndex = 0;
             ButtonSgb8.Text = "SGB VIII";
             ButtonSgb8.UseVisualStyleBackColor = false;
-            ButtonSgb8.Click += ButtonSgb8_Click;
-            ButtonSgb8.Paint += OnTabNavPaint;
             // 
             // ButtonEheUndLeben
             // 
@@ -469,8 +441,6 @@ namespace Cle.UserControls.Views
             ButtonEheUndLeben.TabIndex = 1;
             ButtonEheUndLeben.Text = "Ehe und Leben";
             ButtonEheUndLeben.UseVisualStyleBackColor = false;
-            ButtonEheUndLeben.Click += ButtonEheUndLeben_Click;
-            ButtonEheUndLeben.Paint += OnTabNavPaint;
             // 
             // panelToggle
             // 
@@ -491,28 +461,30 @@ namespace Cle.UserControls.Views
             gridAlter.AllowUserToDeleteRows = false;
             gridAlter.AllowUserToResizeColumns = false;
             gridAlter.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = SystemColors.GradientActiveCaption;
+            gridAlter.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             gridAlter.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            gridAlter.BackgroundColor = SystemColors.ControlLight;
-            gridAlter.BorderStyle = BorderStyle.Fixed3D;
+            gridAlter.BackgroundColor = SystemColors.GradientInactiveCaption;
+            gridAlter.BorderStyle = BorderStyle.None;
             gridAlter.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            gridAlter.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            gridAlter.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             gridAlter.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             gridAlter.Columns.AddRange(new DataGridViewColumn[] { Person, m, w, nb });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 11F);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = Color.SkyBlue;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            gridAlter.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 11F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.SkyBlue;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            gridAlter.DefaultCellStyle = dataGridViewCellStyle3;
             gridAlter.GridColor = Color.Azure;
             gridAlter.Location = new Point(12, 213);
             gridAlter.Name = "gridAlter";
@@ -522,8 +494,6 @@ namespace Cle.UserControls.Views
             gridAlter.ScrollBars = ScrollBars.None;
             gridAlter.Size = new Size(422, 203);
             gridAlter.TabIndex = 7;
-            gridAlter.CellContentClick += gridAlter_CellContentClick;
-            gridAlter.CellValueChanged += OnValueChanged;
             // 
             // Person
             // 
@@ -566,7 +536,6 @@ namespace Cle.UserControls.Views
             panelBlocker.Name = "panelBlocker";
             panelBlocker.Size = new Size(500, 637);
             panelBlocker.TabIndex = 14;
-            panelBlocker.Paint += panelBlocker_Paint;
             // 
             // rjButton1
             // 
@@ -586,7 +555,6 @@ namespace Cle.UserControls.Views
             rjButton1.Text = "Ohne Seite 1 fortfahren";
             rjButton1.TextColor = Color.Black;
             rjButton1.UseVisualStyleBackColor = false;
-            rjButton1.Click += OnButtonSkip;
             // 
             // label3
             // 
@@ -614,7 +582,6 @@ namespace Cle.UserControls.Views
             cbARGE.TextAlign = ContentAlignment.MiddleCenter;
             cbARGE.TextImageRelation = TextImageRelation.TextBeforeImage;
             cbARGE.UseVisualStyleBackColor = false;
-            cbARGE.CheckedChanged += OnClick;
             // 
             // indicateSaved
             // 
@@ -694,8 +661,6 @@ namespace Cle.UserControls.Views
             tbDatum.TabIndex = 12;
             tbDatum.Texts = "";
             tbDatum.UnderlinedStyle = true;
-            tbDatum.Click += OnTextBoxClick;
-            tbDatum.Enter += OnTextBoxClick;
             // 
             // Abschlussdatum
             // 
@@ -709,7 +674,7 @@ namespace Cle.UserControls.Views
             Abschlussdatum.TabIndex = 5;
             Abschlussdatum.Text = "Abgeschlossen am";
             // 
-            // add
+            // Add
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -736,7 +701,7 @@ namespace Cle.UserControls.Views
             Controls.Add(dropAnregung);
             Controls.Add(dropBeratung);
             Margin = new Padding(0);
-            Name = "add";
+            Name = "Add";
             Size = new Size(1080, 690);
             Tag = "Frame";
             Load += OnLoad;
@@ -791,5 +756,5 @@ namespace Cle.UserControls.Views
         private Label label7;
         private RJTextBox tbDatum;
         private Label Abschlussdatum;
-	}
+    }
 }
