@@ -1,7 +1,7 @@
 ﻿using System.Data;
-using System.ServiceProcess;
 using System.Text;
 using Cle.Classes;
+using ClosedXML.Excel;
 
 namespace Cle.UserControls.Views;
 
@@ -137,20 +137,13 @@ public partial class FrameStatistics : UserControl
         return boxes;
     }
 
-    public void UpdateGrid()
+    private void UpdateGrid()
     {
         gridAge.DataSource = Statistics.ListeZuTabelle(CollectAgesUnfiltered());
     }
 
-    private static bool IsServiceRunning()
-    {
-        var sc = new ServiceController(ConnectionString);
-        return sc.Status == ServiceControllerStatus.Running;
-    }
-
     private void OnLoad(object sender, EventArgs e)
     {
-        if (IsServiceRunning()) UpdateGrid();
 
         for (var i = 0; i < checkListStats.Items.Count; i++) checkListStats.SetItemChecked(i, true);
     }
@@ -166,14 +159,41 @@ public partial class FrameStatistics : UserControl
         var tableList = new List<DataTable>();
         var checkedList = (from object? item in checkListStats.CheckedItems select item.ToString()).ToList();
 
-
         if (checkedList.Contains("Neuanmeldungen nach Beratungsart")) tableList.Add(Statistics.BeratungAlsNeu());
         if (checkedList.Contains("Fortführungen nach Beratungsart")) tableList.Add(Statistics.BeratungAlsAlt());
         if (checkedList.Contains("Gesamt nach Beratungsart")) tableList.Add(Statistics.Beratung());
         if (checkedList.Contains("Gesamt nach Ort")) tableList.Add(Statistics.Wohnort());
         if (checkedList.Contains("Anmeldegründe LB")) tableList.Add(Statistics.GründeFürEheUndLeben());
         if (checkedList.Contains("Anmeldegründe SGB VIII")) tableList.Add(Statistics.GründeFürErziehung());
-        if (checkedList.Contains("Art der Beratung für Schwangere"))
-            tableList.Add(Statistics.SchwangerschaftAufteilung());
+        if (checkedList.Contains("Art der Beratung für Schwangere")) tableList.Add(Statistics.SchwangerschaftAufteilung());
+
+        if (tableList.Count == 0)
+        {
+            MessageBox.Show("Keine Daten zum Exportieren ausgewählt.", "Export", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return;
+        }
+
+        using (var workbook = new XLWorkbook())
+        {
+            for (int i = 0; i < tableList.Count; i++)
+            {
+                var table = tableList[i];
+                var worksheet = workbook.Worksheets.Add($"Tabelle {i + 1}");
+                worksheet.Cell(1, 1).InsertTable(table);
+            }
+
+            using (var saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "Excel Workbook|*.xlsx";
+                saveFileDialog.Title = "Speichern Sie die Excel-Datei";
+                saveFileDialog.FileName = "Export.xlsx";
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    workbook.SaveAs(saveFileDialog.FileName);
+                    MessageBox.Show("Daten erfolgreich exportiert.", "Export", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
     }
 }
