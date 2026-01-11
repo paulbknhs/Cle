@@ -124,42 +124,28 @@ public class SQL
     /// <param name="tableName">The name of the table.</param>
     /// <param name="filters">The dictionary containing the column names and filter values.</param>
     /// <returns>A DataTable containing the filtered data.</returns>
-    public DataTable GetDataFiltered(string tableName, Dictionary<string, string> filters)
+    public DataTable GetCombinedFiltered(string tableName, Dictionary<string, string[]> strictFilters,
+        Dictionary<string, string[]> likeFilters)
     {
         var dataTable = new DataTable();
-        var required = new StringBuilder();
+        var whereClauses = new List<string>();
 
-        foreach (var kvp in filters)
-            required.Append($"[{kvp.Key}] LIKE '%{kvp.Value}%' AND ");
-
-        required.Length -= 5;
-        using var command = new SqlCommand(
-            $"SELECT * FROM [dbo].[{tableName}] WHERE {required}",
-            _connection
-        );
-        using var reader = command.ExecuteReader();
-        dataTable.Load(reader);
-        return dataTable;
-    }
-
-    /// <summary>
-    ///     Retrieves strictly filtered data from the specified table based on the provided filters.
-    /// </summary>
-    /// <param name="tableName">The name of the table.</param>
-    /// <param name="filters">The dictionary containing the column names and filter values.</param>
-    /// <returns>A DataTable containing the filtered data.</returns>
-    public DataTable GetStrictlyFiltered(string tableName, Dictionary<string, string[]> filters)
-    {
-        var dataTable = new DataTable();
-        var required = new StringBuilder();
-
-        foreach (var kvp in filters)
+        foreach (var kvp in strictFilters)
         {
             var filterValues = string.Join(" OR ", kvp.Value.Select(value => $"[{kvp.Key}] = '{value}'"));
-            required.Append($"({filterValues}) AND ");
+            whereClauses.Add($"({filterValues})");
         }
 
-        required.Length -= 5;
+        foreach (var kvp in likeFilters)
+        {
+            var filterValues =
+                string.Join(" OR ", kvp.Value.Select(value => $"[{kvp.Key}] LIKE '%{value}%'"));
+            whereClauses.Add($"({filterValues})");
+        }
+
+        if (whereClauses.Count == 0) return GetFullTable(tableName);
+
+        var required = string.Join(" AND ", whereClauses);
         using var command = new SqlCommand(
             $"SELECT * FROM [dbo].[{tableName}] WHERE {required}",
             _connection

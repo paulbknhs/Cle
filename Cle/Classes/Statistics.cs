@@ -49,10 +49,10 @@ public static class Statistics
             { "Rechtsanwaltliche Erstberatung", 0 }
         };
 
-        var filter = new Dictionary<string, string> { { "Wieder", "Nein" } };
+        var filter = new Dictionary<string, string[]> { { "Wieder", new[] { "Nein" } } };
         SQL db = new();
         db.Connect();
-        var dataTable = db.GetDataFiltered("Allgemein", filter);
+        var dataTable = db.GetCombinedFiltered("Allgemein", filter, new Dictionary<string, string[]>());
         db.Disconnect();
 
         foreach (DataRow row in dataTable.Rows)
@@ -94,10 +94,10 @@ public static class Statistics
             { "Rechtsanwaltliche Erstberatung", 0 }
         };
 
-        var filter = new Dictionary<string, string> { { "Wieder", "Ja" } };
+        var filter = new Dictionary<string, string[]> { { "Wieder", new[] { "Ja" } } };
         SQL db = new();
         db.Connect();
-        var dataTable = db.GetDataFiltered("Allgemein", filter);
+        var dataTable = db.GetCombinedFiltered("Allgemein", filter, new Dictionary<string, string[]>());
         db.Disconnect();
 
         foreach (DataRow row in dataTable.Rows)

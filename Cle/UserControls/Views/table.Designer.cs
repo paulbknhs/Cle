@@ -1,4 +1,5 @@
 ﻿using Cle.UserControls.CustomControls;
+using RJCodeAdvance.RJControls;
 
 namespace Cle.UserControls.Views
 {
@@ -33,6 +34,7 @@ namespace Cle.UserControls.Views
             dropValue = new DropDown();
             dropTable = new DropDown();
             dropComparator = new DropDown();
+            this.tbFilterString = new RJCodeAdvance.RJControls.RJTextBox();
             ((System.ComponentModel.ISupportInitialize)gridData).BeginInit();
             SuspendLayout();
             // 
@@ -219,6 +221,29 @@ namespace Cle.UserControls.Views
             dropValue.TabIndex = 24;
             dropValue.Texts = "";
             // 
+            // tbFilterString
+            // 
+            tbFilterString.BackColor = Color.WhiteSmoke;
+            tbFilterString.BorderColor = Color.LightBlue;
+            tbFilterString.BorderFocusColor = Color.HotPink;
+            tbFilterString.BorderRadius = 0;
+            tbFilterString.BorderSize = 1;
+            tbFilterString.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbFilterString.ForeColor = Color.DimGray;
+            tbFilterString.Location = new Point(209, 39);
+            tbFilterString.Margin = new Padding(4);
+            tbFilterString.Multiline = false;
+            tbFilterString.Name = "tbFilterString";
+            tbFilterString.Padding = new Padding(10, 7, 10, 7);
+            tbFilterString.PasswordChar = false;
+            tbFilterString.PlaceholderColor = Color.DarkGray;
+            tbFilterString.PlaceholderText = "";
+            tbFilterString.Size = new Size(200, 32);
+            tbFilterString.TabIndex = 25;
+            tbFilterString.Texts = "";
+            tbFilterString.UnderlinedStyle = false;
+            tbFilterString.Visible = false;
+            // 
             // dropTable
             // 
             dropTable.BackColor = Color.WhiteSmoke;
@@ -263,6 +288,7 @@ namespace Cle.UserControls.Views
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Azure;
+            Controls.Add(this.tbFilterString);
             Controls.Add(dropValue);
             Controls.Add(dropTable);
             Controls.Add(dropComparator);
@@ -296,5 +322,6 @@ namespace Cle.UserControls.Views
         private DropDown dropValue;
         private DropDown dropTable;
         private DropDown dropComparator;
+        private RJCodeAdvance.RJControls.RJTextBox tbFilterString;
     }
 }

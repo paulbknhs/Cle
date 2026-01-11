@@ -1,15 +1,19 @@
 ﻿using Cle.Classes;
 using Microsoft.IdentityModel.Tokens;
 using System.Data;
-using DataTable = System.Data.DataTable;
+using ComboBox = System.Windows.Forms.ComboBox;
 
 namespace Cle.UserControls.Views;
 
 public partial class table : UserControl
 {
+    private readonly Dictionary<string, string[]> _likeFilters = new();
+    private readonly Dictionary<string, string[]> _strictFilters = new();
+
     public table()
     {
         InitializeComponent();
+        dropComparator.OnSelectedIndexChanged += OnComparatorChanged;
     }
 
     private void OnLoad(object sender, EventArgs e)
@@ -17,8 +21,28 @@ public partial class table : UserControl
         dropTable.DataSource = Lists.Tabellen;
         dropTable.SelectedIndex = 0;
         dropComparator.DataSource = Lists.Comparators;
+        dropComparator.SelectedIndex = 0;
         GetData();
         dropCategory.DataSource = gridData.Columns.Cast<DataGridViewColumn>().Select(x => x.HeaderText).ToList();
+    }
+
+    private void OnComparatorChanged(object sender, EventArgs e)
+    {
+        if (dropComparator.SelectedItem.ToString() == "ist genau")
+        {
+            dropValue.Visible = true;
+            tbFilterString.Visible = false;
+            dropValue.DropDownStyle = ComboBoxStyle.DropDownList;
+            onCategorySelect(sender, e);
+        }
+        else // This means "enthält" or other comparators
+        {
+            dropValue.Visible = false;
+            tbFilterString.Visible = true;
+            dropValue.DataSource = null; // Clear dropdown source
+            dropValue.Texts = ""; // Clear text from dropValue
+            tbFilterString.Texts = ""; // Clear text from tbFilterString
+        }
     }
 
     private void OnDelete(object sender, EventArgs e)
@@ -54,7 +78,7 @@ public partial class table : UserControl
         table = RemoveColumns(table, toRemove);
         if (table.Columns.Contains("Beratungsart"))
         {
-            var rowsToRemove = table.AsEnumerable().Where(r => r["Beratungsart"].ToString() == "§218").ToList();
+            var rowsToRemove = table.AsEnumerable().Where(r => r.Field<string>("Beratungsart") == "§218").ToList();
             foreach (var r in rowsToRemove)
                 table.Rows.Remove(r);
         }
@@ -79,14 +103,14 @@ public partial class table : UserControl
         var tableName = dropTable.SelectedItem.ToString() ?? "";
         SQL database = new();
         database.Connect();
-        var table = database.GetStrictlyFiltered(tableName, Dictionaries.Filters);
+        var table = database.GetCombinedFiltered(tableName, _strictFilters, _likeFilters);
         database.Disconnect();
 
         List<string> toRemove = ["Age", "Gender"];
         table = RemoveColumns(table, toRemove);
         if (table.Columns.Contains("Beratungsart"))
         {
-            var rowsToRemove = table.AsEnumerable().Where(r => r["Beratungsart"].ToString() == "§218").ToList();
+            var rowsToRemove = table.AsEnumerable().Where(r => r.Field<string>("Beratungsart") == "§218").ToList();
             foreach (var r in rowsToRemove)
                 table.Rows.Remove(r);
         }
@@ -107,24 +131,37 @@ public partial class table : UserControl
 
     private void OnFilterAdd(object sender, EventArgs e)
     {
-        // check if Dictionary Filters already contains the selected category. if not create an empty array and add the selected category with its value. if it does exist, add the selected value to the existing categories array
-        if (Dictionaries.Filters.ContainsKey(dropCategory.SelectedItem.ToString()))
+        var category = dropCategory.SelectedItem.ToString();
+        var comparator = dropComparator.SelectedItem.ToString();
+        var value = "";
+
+        if (comparator == "ist genau")
         {
-            // append the value to the existing array
-            Dictionaries.Filters[dropCategory.SelectedItem.ToString()] = Dictionaries
-                .Filters[dropCategory.SelectedItem.ToString()]
-                .Append(dropValue.SelectedItem.ToString())
-                .ToArray();
+            value = dropValue.Texts;
         }
+        else if (comparator == "enthält")
+        {
+            value = tbFilterString.Texts;
+        }
+        // Add other comparators here if needed
+
+        if (string.IsNullOrEmpty(value))
+        {
+            MessageBox.Show("Bitte geben Sie einen Wert für den Filter an.", "Leerer Wert", MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+            return;
+        }
+
+        var filterDict = comparator == "ist genau" ? _strictFilters : _likeFilters;
+
+        if (filterDict.ContainsKey(category))
+            filterDict[category] = filterDict[category].Append(value).ToArray();
         else
-        {
-            Dictionaries.Filters.Add(dropCategory.SelectedItem.ToString(),
-                [dropValue.SelectedItem.ToString()]);
-        }
+            filterDict.Add(category, [value]);
 
         var filterButton = new Button
         {
-            Text = $"{dropCategory.SelectedItem}: {dropValue.SelectedItem}",
+            Text = $"'{category}' {comparator} '{value}'",
             AutoSize = true,
             BackColor = Color.LightGray,
             Margin = new Padding(5, 0, 5, 0)
@@ -138,24 +175,28 @@ public partial class table : UserControl
     {
         var filterButton = (Button)sender;
         var filterText = filterButton.Text;
-        var filterParts = filterText.Split(':');
-        var category = filterParts[0].Trim();
-        var value = filterParts[1].Trim();
-        // remove the filter with this value from the dictionaries key, if its the last value, remove the key
-        if (Dictionaries.Filters[category].Length == 1)
-        {
-            Dictionaries.Filters.Remove(category);
-        }
-        else
-        {
-            Dictionaries.Filters[category] = Dictionaries.Filters[category].Where(x => x != value).ToArray();
-        }
 
+        var parts = filterText.Split(new[] { " " }, 3, StringSplitOptions.RemoveEmptyEntries);
+        var category = parts[0].Trim('\'');
+        var comparator = parts[1];
+        var value = parts[2].Trim('\'');
+
+        var filterDict = comparator == "ist genau" ? _strictFilters : _likeFilters;
+
+        if (filterDict.ContainsKey(category))
+        {
+            if (filterDict[category].Length == 1)
+                filterDict.Remove(category);
+            else
+                filterDict[category] = filterDict[category].Where(x => x != value).ToArray();
+        }
 
         panelActiveFilters.Controls.Remove(filterButton);
 
-        GetDataFiltered();
-        OnUpdateClick(btnUpdate, EventArgs.Empty);
+        if (_strictFilters.Count == 0 && _likeFilters.Count == 0)
+            OnReset(sender, e);
+        else
+            GetDataFiltered();
     }
 
     public static DataTable RemoveColumns(DataTable table, List<string> toRemove)
@@ -169,27 +210,34 @@ public partial class table : UserControl
     {
         GetData();
         panelActiveFilters.Controls.Clear();
-        Dictionaries.Filters.Clear();
+        _strictFilters.Clear();
+        _likeFilters.Clear();
     }
 
     private void OnUpdateClick(object sender, EventArgs e)
     {
-        if (Dictionaries.Filters.IsNullOrEmpty()) GetData();
-        else GetDataFiltered();
+        if (_strictFilters.Count == 0 && _likeFilters.Count == 0)
+            GetData();
+        else
+            GetDataFiltered();
     }
 
     private void onCategorySelect(object sender, EventArgs e)
     {
-        // get selected column name
-        var columnName = dropCategory.SelectedItem.ToString();
+        if (dropComparator.SelectedItem.ToString() != "ist genau" || !dropValue.Visible) return;
 
-        // get all possible entries in certain column 
-        var entries = gridData.Rows.Cast<DataGridViewRow>().Select(x => x.Cells[columnName].Value.ToString()).Distinct().ToList();
+        var columnName = dropCategory.SelectedItem.ToString();
+        if (string.IsNullOrEmpty(columnName)) return;
+
+        var entries = gridData.Rows.Cast<DataGridViewRow>()
+            .Select(x => x.Cells[columnName].Value?.ToString())
+            .Where(s => !string.IsNullOrEmpty(s))
+            .Distinct()
+            .ToList();
         dropValue.DataSource = entries;
     }
 
     private void gridData_CellContentClick(object sender, DataGridViewCellEventArgs e)
     {
-
     }
 }
