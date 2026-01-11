@@ -206,6 +206,6 @@ public static class Lists
 
     public static List<string> Comparators = new()
     {
-        "ist genau", "ist nicht", "Wert ist kleiner als", "Wert ist größer als"
+        "ist genau", "ist nicht", "Wert ist kleiner als", "Wert ist größer als", "enthält", "enthält nicht"
     };
 }
